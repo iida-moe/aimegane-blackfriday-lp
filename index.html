@@ -160,7 +160,7 @@
   .ba-lbl { white-space: nowrap; font-size: 15px; font-weight: 700; color: var(--sub); margin-bottom: 2px; }
   .ba-lbl-y { color: var(--tx); display: flex; align-items: center; gap: 6px; }
   .ba-badge { display: inline-block; background: var(--bk); color: var(--ac); font-weight: 900; font-size: 1.1em; padding: 3px 10px; border-radius: 4px; transform: rotate(-2deg); }
-  .ba-mk { background: linear-gradient(transparent 84%, var(--ac) 84%, var(--ac) 94%, transparent 94%); }
+  .ba-mk { color: #e8352a; }
   .ba-row { align-items: flex-end; }
   .ba-arrow { margin-bottom: 14px; }
   .ba-in { font-size: 12px; color: var(--sub); margin-top: 8px; }
@@ -183,8 +183,9 @@
   .ba-col:first-child { flex-direction: row; align-items: baseline; gap: 8px; }
   .ba-arrow { transform: rotate(90deg); margin: 2px 0 6px; }
   .ba-bubble .ba-set { gap: 0; }
-  .ba-bubble .ba-set li { flex: 1; width: auto; font-size: 10.5px; }
-  .ba-bubble .ba-set li.plus { flex: 0 0 auto; font-size: 12px; }
+  .ba-bubble .ba-set li { flex: 1; width: auto; font-size: 12px; white-space: nowrap; }
+  .ba-bubble .ba-set li.plus { flex: 0 0 auto; font-size: 10px; color: #aaa; }
+  .ba-bubble .ba-set li svg { width: 34px; height: 24px; }
   .ba-set li.has-tag { position: relative; }
   .ba-tag { position: absolute; bottom: calc(100% + 4px); left: 50%; transform: translateX(-50%); white-space: nowrap; background: var(--red); color: #fff; font-size: 12px; font-weight: 900; padding: 4px 10px; border-radius: 14px; box-shadow: 0 2px 6px rgba(192,57,43,.35); }
   .ba-tag::after { content: ""; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); border: 6px solid transparent; border-top-color: var(--red); }
@@ -249,6 +250,11 @@
   .ba-off .off3-t { margin-top: 0; }
   .ba-off .off3 li { background: var(--bg2); padding-left: 2px; padding-right: 2px; }
   .ba-off .off3 { gap: 6px; }
+  .off3-grp { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-top: 14px; }
+  .off3-grp span { font-size: 11px; font-weight: 900; text-align: center; border-radius: 20px; padding: 3px 0; white-space: nowrap; }
+  .off3-grp .g1 { background: var(--bk); color: var(--ac); }
+  .off3-grp .g2 { grid-column: 2 / 4; border: 1.5px solid #e8352a; color: #e8352a; }
+  .ba-off .off3-grp + .off3 { margin-top: 16px; }
   .ba-off .off3-y { font-size: 23px; }
   .ba-off .off3-n { font-size: 13px; }
   .two-who2 { font-size: 15px; font-weight: 700; margin-top: 12px; }
@@ -538,10 +544,12 @@
     .ba-arrow { transform: none; margin: 0; align-self: flex-end; padding-bottom: 16px; }
     .ba-bubble .ba-set { gap: 12px; }
     .ba-bubble .ba-set li { flex: none; width: 88px; font-size: 14px; }
+    .ba-bubble .ba-set li svg { width: 60px; height: 42px; } .ba-bubble .ba-set li.plus { font-size: 20px; }
     .ba-bubble .ba-set li.plus { width: auto; font-size: 22px; }
     .otoku-row .off3-t { margin-top: 0; font-size: 22px; }
     .ba-off { margin-top: 36px; padding-top: 32px; }
     .otoku-row .off3, .ba-off .off3 { gap: 24px; }
+    .off3-grp { gap: 24px; } .off3-grp span { font-size: 15px; padding: 5px 0; }
     .ba-off .off3-n { font-size: 20px; }
     .off3 svg { width: 48px; height: 48px; }
     .off3-n { font-size: 20px; }
@@ -672,7 +680,7 @@
       <div class="ba-row">
         <div class="ba-col"><p class="ba-lbl">メガネ一式 通常価格</p><p class="ba-before">13,200円</p></div>
         <span class="ba-arrow" aria-hidden="true">▶</span>
-        <div class="ba-col"><p class="ba-lbl ba-lbl-y"><span class="ba-badge">ブラックフライデー限定</span>対象商品</p><p class="ba-after"><span class="ba-mk">8<span class="cm">,</span>800<small>円〜</small></span></p><p class="ba-note">（税込）※割引条件あり</p></div>
+        <div class="ba-col"><p class="ba-lbl ba-lbl-y"><span class="ba-badge">ブラックフライデー限定</span>対象商品</p><p class="ba-after"><span class="ba-mk">8<span class="cm">,</span>800<small>円〜</small></span></p><p class="ba-note">（税込）下の3つの割引を使った場合</p></div>
       </div>
       <div class="ba-bubble">
       <p class="ba-bubble-t">すべてまとめて</p>
@@ -692,6 +700,7 @@
     <div class="ba-off">
     <!-- ② 3つの割引（同じカードの中） -->
     <p class="off3-t"><span class="marker">8,800円</span>になる、3つの割引</p>
+    <div class="off3-grp" aria-hidden="true"><span class="g1">どなたでも</span><span class="g2">＋ 当てはまる方は、さらに</span></div>
     <ol class="off3">
       <li>
         <span class="off3-no">1</span>
