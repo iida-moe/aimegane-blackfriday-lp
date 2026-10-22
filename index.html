@@ -189,7 +189,8 @@
   .ba-set li.has-tag { position: relative; }
   .ba-tag { position: absolute; bottom: calc(100% + 4px); left: 50%; transform: translateX(-50%); white-space: nowrap; background: var(--red); color: #fff; font-size: 12px; font-weight: 900; padding: 4px 10px; border-radius: 14px; box-shadow: 0 2px 6px rgba(192,57,43,.35); }
   .ba-tag::after { content: ""; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); border: 6px solid transparent; border-top-color: var(--red); }
-  .ba-bubble-t { font-size: 13px; font-weight: 700; margin: 0 0 38px 4px; }
+  .ba-bubble-t { font-size: 17px; font-weight: 900; text-align: center; margin: 2px 0 38px; letter-spacing: .02em; }
+  .ba-bubble-t em { font-style: normal; color: #e8352a; }
   .ba-bubble .ba-set { margin-top: 0; padding-top: 0; border-top: 0; }
   /* お得：3つの割引 */
   .off3-t { font-size: 18px; font-weight: 900; text-align: center; margin-top: 32px; }
@@ -532,7 +533,7 @@
     .ba-head .ba-t { font-size: 40px; }
     .ba-note { font-size: 13px; }
     .ba-bubble { max-width: 820px; margin: 64px auto 0; padding: 18px 24px 22px; }
-      .ba-bubble-t { font-size: 16px; margin-bottom: 48px; }
+      .ba-bubble-t { font-size: 22px; margin-bottom: 48px; }
     .ba-tag { font-size: 17px; padding: 6px 16px; border-radius: 20px; }
     .ba-bubble::before, .ba-bubble::after { left: 65%; }
     .ba-row { flex-direction: row; align-items: stretch; gap: 24px; margin-bottom: 24px; }
@@ -683,7 +684,7 @@
         <div class="ba-col"><p class="ba-lbl ba-lbl-y"><span class="ba-badge">ブラックフライデー限定</span>対象商品</p><p class="ba-after"><span class="ba-mk">8<span class="cm">,</span>800<small>円〜</small></span></p><p class="ba-note">（税込）下の3つの割引を使った場合</p></div>
       </div>
       <div class="ba-bubble">
-      <p class="ba-bubble-t">すべてまとめて</p>
+      <p class="ba-bubble-t">すべてまとめて、<em>この価格！</em></p>
       <ul class="ba-set" aria-label="セットの中身">
         <li><svg class="ico" viewBox="0 0 48 32"><circle cx="14" cy="17" r="9"/><circle cx="34" cy="17" r="9"/><path d="M23,16 Q24,13 25,16 M5,15 L1,12 M43,15 L47,12"/></svg>フレーム</li>
         <li class="plus" aria-hidden="true">＋</li>
