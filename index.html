@@ -203,6 +203,41 @@
   .off3-y .st { margin-left: 2px; display: flex; flex-direction: column; font-size: 11px; line-height: 1.05; text-align: left; letter-spacing: .02em; align-self: flex-end; margin-bottom: 5px; }
   .off3-y small { display: block; font-size: 13px; letter-spacing: .04em; }
   .off3-note { text-align: center; margin-top: 12px !important; }
+
+  /* 10/22 PRICE作り直し */
+  .pr2 { text-align: center; }
+  .pr2-t { font-size: 20px; font-weight: 900; }
+  .pr2 .ba-set { margin-top: 34px; padding-top: 0; border-top: 0; gap: 0; }
+  .pr2 .ba-set li { flex: 1; width: auto; font-size: 10.5px; }
+  .pr2 .ba-set li.plus { flex: 0 0 auto; font-size: 12px; }
+  .pr2-base { margin-top: 22px; padding-top: 20px; border-top: 1px dashed var(--line); }
+  .pr2-lbl { font-size: 14px; font-weight: 700; color: var(--sub); }
+  .pr2-s { font-size: 20px; text-decoration-color: var(--red); text-decoration-thickness: 2px; margin-left: 4px; }
+  .pr2-off { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 4px 8px; margin-top: 12px; }
+  .pr2-off .ba-badge { font-size: 14px; }
+  .pr2-who { font-size: 13px; font-weight: 700; }
+  .pr2-y { font-size: 26px; font-weight: 800; color: #e8352a; line-height: 1; }
+  .pr2-y small { font-size: 14px; font-weight: 900; margin-left: 1px; }
+  .pr2-arw { font-size: 12px; color: var(--sub); margin-top: 8px; }
+  .pr2-mid { font-weight: 900; line-height: 1; margin-top: 4px; }
+  .pr2-mid .pr2-num { font-size: 52px; }
+  .pr2-mid small { font-size: 20px; }
+  .pr2-tax { font-size: 12px; color: var(--sub); font-weight: 400; }
+  .pr2-plus { margin-top: 24px; background: var(--bg2); border-radius: 12px; padding: 14px 10px; }
+  .pr2-plus-t { font-size: 14px; font-weight: 900; }
+  .pr2-two { display: flex; gap: 8px; margin-top: 10px; }
+  .pr2-c { flex: 1; background: #fff; border-radius: 10px; padding: 10px 4px; }
+  .pr2-c .ico { width: 30px; height: 30px; display: block; margin: 0 auto 4px; }
+  .pr2-c-n { font-size: 12px; font-weight: 700; }
+  .pr2-c-y { font-size: 24px; font-weight: 800; color: #e8352a; line-height: 1.2; }
+  .pr2-c-y small { font-size: 13px; font-weight: 900; }
+  .pr2-final { margin-top: 18px; }
+  .pr2-final-t { font-size: 14px; font-weight: 900; }
+  .pr2-big { color: #e8352a; font-weight: 900; line-height: 1; margin-top: 2px; }
+  .pr2-big .pr2-num { font-size: 76px; }
+  .pr2-big small { font-size: 24px; }
+  .pr2-note { margin-top: 14px; }
+  .pr2-num, .pr2-y, .pr2-c-y, .pr2-s { font-family: 'Barlow Semi Condensed', 'Noto Sans JP', sans-serif; font-weight: 800; letter-spacing: 0; }
   .ba-off { margin-top: 28px; padding-top: 24px; border-top: 1px dashed var(--line); }
   .ba-off .off3-t { margin-top: 0; }
   .ba-off .off3 li { background: var(--bg2); padding-left: 2px; padding-right: 2px; }
@@ -460,6 +495,16 @@
 
     /* お得な内容：ビフォーアフターと3つの割引を横並び */
     .otoku-row .ba { padding: 48px 40px 36px; }
+    .pr2 .ba-set, .pr2-base, .pr2-plus, .pr2-final { max-width: 620px; margin-left: auto; margin-right: auto; }
+    .pr2-t { font-size: 28px; }
+    .pr2 .ba-set { margin-top: 56px; }
+    .pr2 .ba-set li { font-size: 14px; }
+    .pr2-lbl { font-size: 16px; } .pr2-s { font-size: 24px; }
+    .pr2-off .ba-badge { font-size: 17px; } .pr2-who { font-size: 15px; } .pr2-y { font-size: 34px; }
+    .pr2-mid .pr2-num { font-size: 72px; } .pr2-mid small { font-size: 26px; }
+    .pr2-plus { padding: 20px 20px; } .pr2-plus-t { font-size: 17px; }
+    .pr2-c { padding: 16px 8px; } .pr2-c .ico { width: 38px; height: 38px; } .pr2-c-n { font-size: 15px; } .pr2-c-y { font-size: 32px; }
+    .pr2-final-t { font-size: 17px; } .pr2-big .pr2-num { font-size: 104px; } .pr2-big small { font-size: 32px; }
     .ba-img { width: 180px; }
     .ba-t { font-size: 22px; }
     .ba-before { font-size: 56px; }
@@ -597,7 +642,7 @@
     </div>
     <h1 class="fv-img"><img class="fv-sp" src="images/blackfriday_fv_1290_2193.jpg?v=1019f" alt="ブラックフライデー BLACK FRIDAY 11/13(金)〜11/29(日) 対象のメガネ一式 8,800円〜(税込)※割引条件あり 遠近両用も追加料金0円" width="1290" height="2193"><img class="fv-pc-text" src="images/blackfriday_fv-pc-text.png?v=1020a" alt="ブラックフライデー BLACK FRIDAY 11/13(金)〜11/29(日) 対象のメガネ一式 8,800円〜(税込)※割引条件あり 遠近両用も追加料金0円" width="813" height="478"></h1>
     <div class="fv-cta">
-      <a href="#shop-search" class="btn btn-white btn-arw" data-cta-location="fv"><span>近くのお店で予約する</span><span class="arw" aria-hidden="true">▶</span></a>
+      <a href="#shop-search" class="btn btn-arw" data-cta-location="fv"><span>近くのお店で予約する</span><span class="arw" aria-hidden="true">▶</span></a>
     </div>
   </header>
   <nav class="menu" id="menu" aria-hidden="true">
@@ -616,15 +661,9 @@
   <section class="sec otoku" id="otoku">
     <div class="sec-head"><p class="sec-en">PRICE</p><h2 class="sec-ja">お得な内容</h2></div>
     <div class="otoku-row">
-    <!-- ① いくらが、いくらになる？ -->
-    <div class="ba">
-      <div class="ba-row">
-        <div class="ba-col"><p class="ba-lbl">メガネ一式 通常価格</p><p class="ba-before">13,200円</p></div>
-        <span class="ba-arrow" aria-hidden="true">▶</span>
-        <div class="ba-col"><p class="ba-lbl ba-lbl-y"><span class="ba-badge">ブラックフライデー限定</span>対象商品</p><p class="ba-after"><span class="ba-mk">8<span class="cm">,</span>800<small>円〜</small></span></p><p class="ba-note">（税込）※割引条件あり</p></div>
-      </div>
-      <div class="ba-bubble">
-      <p class="ba-bubble-t">すべてまとめて</p>
+    <!-- 10/22 作り直し：すべてまとめてこの価格 → 2,200円OFFで11,000円 → さらにLINE・処方箋で8,800円〜。変更前 _保存/index.before-1022-price.html -->
+    <div class="ba pr2">
+      <p class="pr2-t">すべてまとめて、この価格！</p>
       <ul class="ba-set" aria-label="セットの中身">
         <li><svg class="ico" viewBox="0 0 48 32"><circle cx="14" cy="17" r="9"/><circle cx="34" cy="17" r="9"/><path d="M23,16 Q24,13 25,16 M5,15 L1,12 M43,15 L47,12"/></svg>フレーム</li>
         <li class="plus" aria-hidden="true">＋</li>
@@ -636,36 +675,36 @@
         <li class="plus" aria-hidden="true">＋</li>
         <li><svg class="ico" viewBox="0 0 48 32"><path d="M24,3 L36,7 Q36,22 24,29 Q12,22 12,7 Z"/><path d="M19,16 L23,20 L30,12"/></svg>保証</li>
       </ul>
+
+      <div class="pr2-base">
+        <p class="pr2-lbl">メガネ一式 通常価格 <s class="pr2-s">13<span class="cm">,</span>200円</s></p>
+        <p class="pr2-off"><span class="ba-badge">ブラックフライデー限定</span><span class="pr2-who">どなたでも</span><b class="pr2-y">2<span class="cm">,</span>200<small>円OFF</small></b></p>
+        <p class="pr2-arw" aria-hidden="true">▼</p>
+        <p class="pr2-mid"><span class="pr2-num">11<span class="cm">,</span>000</span><small>円</small><span class="pr2-tax">（税込）</span></p>
       </div>
 
-    <div class="ba-off">
-    <!-- ② 3つの割引（同じカードの中） -->
-    <p class="off3-t"><span class="marker">8,800円</span>になる、3つの割引</p>
-    <ol class="off3">
-      <li>
-        <span class="off3-no">1</span>
-        <svg class="ico" viewBox="0 0 40 40"><path d="M8,8 H22 L34,20 L22,32 L8,32 Z"/><circle cx="14" cy="14" r="2"/></svg>
-        <p class="off3-n">期間限定割引</p>
-        <p class="off3-who">どなたでも</p>
-        <p class="off3-y"><span class="num">2<span class="cm">,</span>200</span><span class="st"><span>円</span><span>OFF</span></span></p>
-      </li>
-      <li>
-        <span class="off3-no">2</span>
-        <svg class="ico" viewBox="0 0 40 40"><path d="M6,10 H34 V28 H18 L11,34 V28 H6 Z"/><path d="M13,19 H27"/></svg>
-        <p class="off3-n">LINE登録</p>
-        <p class="off3-who">はじめての方</p>
-        <p class="off3-y"><span class="num">1<span class="cm">,</span>100</span><span class="st"><span>円</span><span>OFF</span></span></p>
-      </li>
-      <li>
-        <span class="off3-no">3</span>
-        <svg class="ico" viewBox="0 0 40 40"><path d="M10,6 H25 L31,12 V34 H10 Z"/><path d="M15,16 H26 M15,22 H26 M15,28 H22"/></svg>
-        <p class="off3-n">処方箋</p>
-        <p class="off3-who">お持ちの方</p>
-        <p class="off3-y"><span class="num">1<span class="cm">,</span>100</span><span class="st"><span>円</span><span>OFF</span></span></p>
-      </li>
-    </ol>
-    <p class="note off3-note">※価格はすべて税込　※標準レンズの場合　※本庄南大通り店を除く</p>
-    </div>
+      <div class="pr2-plus">
+        <p class="pr2-plus-t sl"><span>さらに、この割引も使えます</span></p>
+        <div class="pr2-two">
+          <div class="pr2-c">
+            <svg class="ico" viewBox="0 0 40 40"><path d="M6,10 H34 V28 H18 L11,34 V28 H6 Z"/><path d="M13,19 H27"/></svg>
+            <p class="pr2-c-n">LINE新規登録</p>
+            <p class="pr2-c-y">−1<span class="cm">,</span>100<small>円</small></p>
+          </div>
+          <div class="pr2-c">
+            <svg class="ico" viewBox="0 0 40 40"><path d="M10,6 H25 L31,12 V34 H10 Z"/><path d="M15,16 H26 M15,22 H26 M15,28 H22"/></svg>
+            <p class="pr2-c-n">処方箋をお持ちの方</p>
+            <p class="pr2-c-y">−1<span class="cm">,</span>100<small>円</small></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pr2-final">
+        <p class="pr2-final-t">両方使うと</p>
+        <p class="pr2-big"><span class="pr2-num">8<span class="cm">,</span>800</span><small>円〜</small></p>
+        <p class="pr2-tax">（税込）</p>
+      </div>
+      <p class="note pr2-note">※価格はすべて税込　※標準レンズの場合<br>※本庄南大通り店を除く</p>
     </div>
     </div>
 
@@ -892,7 +931,7 @@
 
 <!-- 追従CTA -->
 <div class="float-cta" id="floatCta">
-  <a href="#shop-search" class="btn btn-white btn-arw" data-cta-location="floating"><span>スムーズに案内｜Web予約</span><span class="arw" aria-hidden="true">▶</span></a>
+  <a href="#shop-search" class="btn btn-arw" data-cta-location="floating"><span>スムーズに案内｜Web予約</span><span class="arw" aria-hidden="true">▶</span></a>
 </div>
 
 <script>
