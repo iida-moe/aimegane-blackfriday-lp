@@ -107,6 +107,12 @@
   }
   .fv-img { position: relative; z-index: 2; }
   .fv .hd { z-index: 5; }
+  /* スクロールしたら黒い帯でロゴとメニューが上から降りてくる */
+  .fv .hd.is-fixed { position: fixed; z-index: 55; background: #000; padding: 8px 16px 8px var(--side); box-shadow: 0 2px 12px rgba(0,0,0,.35); animation: hd-down .3s ease; }
+  .fv .hd.is-fixed .hd-logo img { width: 130px; }
+  @keyframes hd-down { from { transform: translateY(-100%); } to { transform: none; } }
+  @media (prefers-reduced-motion: reduce) { .fv .hd.is-fixed { animation: none; } }
+  section[id] { scroll-margin-top: 64px; }
   .fv .fv-cta { z-index: 4; }
   @media (prefers-reduced-motion: reduce) { .fv-confetti { display: none; } }
   /* ===== 2 お得な内容 ===== */
@@ -545,6 +551,7 @@
 
     /* ヘッダー */
     .fv .hd { position: absolute; padding: 28px 48px 0; }
+    .fv .hd.is-fixed { position: fixed; padding: 12px 48px; } .fv .hd.is-fixed .hd-logo img { width: 170px; } .fv .hd.is-fixed .hd-nav a { font-size: 16px; } section[id] { scroll-margin-top: 84px; }
     .hd-logo img { width: 240px; }
     .hd-menu { display: none; }
     .hd-nav { display: flex; align-items: center; gap: 36px; }
@@ -1275,6 +1282,13 @@ document.querySelectorAll('.hs-tabs button').forEach(b=>{
     bar.classList.toggle('show', b.bottom<0 && r.bottom>vh*0.4);
   }
   addEventListener('scroll',check,{passive:true}); addEventListener('resize',check); addEventListener('load',check); check();
+})();
+
+// ===== ヘッダー：FVを半分すぎたら黒い帯で固定 =====
+(function(){
+  const hd=document.querySelector('.fv .hd'), fv=document.getElementById('fv'); if(!hd||!fv) return;
+  function check(){ hd.classList.toggle('is-fixed', window.scrollY > fv.offsetHeight*0.5); }
+  addEventListener('scroll',check,{passive:true}); addEventListener('resize',check); check();
 })();
 
 // ===== 追従CTA：FVの予約ボタンが見えなくなったら出す。店舗セクションと最終CTAが見えている間は隠す =====
