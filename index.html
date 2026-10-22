@@ -206,12 +206,16 @@
 
   /* 10/22 PRICE作り直し */
   .pr2 { text-align: center; }
-  .pr2-t { font-size: 20px; font-weight: 900; }
-  .pr2 .ba-set { margin-top: 50px; padding-top: 0; border-top: 0; gap: 0; }
+  .pr2 .ba-set { padding-top: 0; border-top: 0; gap: 0; }
   .pr2 .ba-set li { flex: 1; width: auto; font-size: 10.5px; }
   .pr2 .ba-set li.plus { flex: 0 0 auto; font-size: 12px; }
-  .pr2-eq { font-size: 34px; font-weight: 900; line-height: 1; margin-top: 10px; transform: rotate(90deg); }
-  .pr2-top { color: #e8352a; font-weight: 900; line-height: 1; margin-top: 8px; }
+  .pr2-bub { position: relative; border: 2px solid var(--ac); border-radius: 14px; padding: 12px 8px 14px; }
+  .pr2-bub::before, .pr2-bub::after { content: ""; position: absolute; left: 50%; transform: translateX(-50%); border-style: solid; border-color: transparent; }
+  .pr2-bub::before { top: 100%; border-width: 14px 13px 0; border-top-color: var(--ac); }
+  .pr2-bub::after { top: calc(100% - 1px); border-width: 11px 10px 0; border-top-color: #fff; }
+  .pr2-bub-t { font-size: 17px; font-weight: 900; }
+  .pr2-bub .ba-set { margin-top: 40px; }
+  .pr2-top { color: #e8352a; font-weight: 900; line-height: 1; margin-top: 22px; }
   .pr2-top .pr2-num { font-size: 84px; }
   .pr2-top small { font-size: 26px; }
   .pr2-tax { font-size: 12px; color: var(--sub); margin-top: 4px; }
@@ -487,8 +491,7 @@
     /* お得な内容：ビフォーアフターと3つの割引を横並び */
     .otoku-row .ba { padding: 48px 40px 36px; }
     .pr2 .ba-set, .pr2-rc { max-width: 560px; margin-left: auto; margin-right: auto; }
-    .pr2-t { font-size: 28px; }
-    .pr2 .ba-set { margin-top: 76px; }
+    .pr2-bub { max-width: 620px; margin: 0 auto; padding: 18px 24px 20px; } .pr2-bub-t { font-size: 22px; } .pr2-bub .ba-set { margin-top: 56px; }
     .pr2 .ba-set li { font-size: 14px; }
     .pr2-top .pr2-num { font-size: 120px; } .pr2-top small { font-size: 36px; }
     .pr2-rc { padding: 24px 32px 20px; } .pr2-rc-t { font-size: 17px; }
@@ -652,8 +655,9 @@
     <div class="otoku-row">
     <!-- 10/22 作り直し：すべてまとめてこの価格 → 2,200円OFFで11,000円 → さらにLINE・処方箋で8,800円〜。変更前 _保存/index.before-1022-price.html -->
     <div class="ba pr2">
-      <p class="pr2-t">すべてまとめて、この価格！</p>
-      <ul class="ba-set" aria-label="セットの中身">
+      <div class="pr2-bub">
+        <p class="pr2-bub-t">すべてまとめて</p>
+        <ul class="ba-set" aria-label="セットの中身">
         <li><svg class="ico" viewBox="0 0 48 32"><circle cx="14" cy="17" r="9"/><circle cx="34" cy="17" r="9"/><path d="M23,16 Q24,13 25,16 M5,15 L1,12 M43,15 L47,12"/></svg>フレーム</li>
         <li class="plus" aria-hidden="true">＋</li>
         <li class="has-tag"><span class="ba-tag">遠近両用もOK</span><svg class="ico" viewBox="0 0 48 32"><circle cx="22" cy="17" r="12"/><path d="M15,13 Q17,9 21,8 M14,18 Q14,16 15,15"/><path d="M38,4 V10 M35,7 H41" stroke-width="2"/></svg>レンズ</li>
@@ -664,8 +668,7 @@
         <li class="plus" aria-hidden="true">＋</li>
         <li><svg class="ico" viewBox="0 0 48 32"><path d="M24,3 L36,7 Q36,22 24,29 Q12,22 12,7 Z"/><path d="M19,16 L23,20 L30,12"/></svg>保証</li>
       </ul>
-
-      <p class="pr2-eq" aria-hidden="true">＝</p>
+      </div>
       <p class="pr2-top"><span class="pr2-num">8<span class="cm">,</span>800</span><small>円〜</small></p>
       <p class="pr2-tax">（税込）※割引条件あり</p>
 
