@@ -214,6 +214,11 @@
   .pr2-bub::before { top: 100%; border-width: 14px 13px 0; border-top-color: var(--ac); }
   .pr2-bub::after { top: calc(100% - 1px); border-width: 11px 10px 0; border-top-color: #fff; }
   .pr2-bub-t { font-size: 15px; font-weight: 700; }
+  /* 遠近両用もOK：見えたらぽんっと出て、そのあと小さく跳ねる */
+  .pr2 .ba-tag { opacity: 0; transform: translate(-50%, 10px) scale(.6); transition: opacity .3s ease, transform .5s cubic-bezier(.34,1.8,.64,1); }
+  .pr2 .ba-tag.on { opacity: 1; transform: translate(-50%, 0) scale(1); animation: tag-hop 2.4s ease-in-out .8s infinite; }
+  @keyframes tag-hop { 0%, 60%, 100% { transform: translate(-50%, 0); } 70% { transform: translate(-50%, -6px); } 80% { transform: translate(-50%, 0); } 88% { transform: translate(-50%, -3px); } }
+  @media (prefers-reduced-motion: reduce) { .pr2 .ba-tag, .pr2 .ba-tag.on { opacity: 1; transform: translate(-50%, 0); transition: none; animation: none; } }
   .pr2-bub .ba-set { margin-top: 40px; }
   .pr2-top { color: #e8352a; font-weight: 900; line-height: 1; margin-top: 22px; }
   .pr2-top .pr2-num { font-size: 84px; }
@@ -1163,7 +1168,7 @@ document.querySelectorAll('.hs-tabs button').forEach(b=>{
 
 // ===== CTAの上の吹き出し：見えたらぴょこっと出す =====
 (function(){
-  const els=document.querySelectorAll('.cta-pop');
+  const els=document.querySelectorAll('.cta-pop, .pr2 .ba-tag');
   if(!('IntersectionObserver' in window)){els.forEach(e=>e.classList.add('on'));return;}
   const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target);}}),{threshold:1});
   els.forEach(e=>io.observe(e));
