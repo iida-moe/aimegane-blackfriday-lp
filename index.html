@@ -247,6 +247,47 @@
   .pr2-num { font-weight: 800; }
   .pr2-note { margin-top: 12px; text-align: left; line-height: 1.7; }
   .pr2-num, .pr2-y, .pr2-c-y, .pr2-s { font-family: 'Barlow Semi Condensed', 'Noto Sans JP', sans-serif; font-weight: 800; letter-spacing: 0; }
+
+  /* 10/22 ストーリー順の割引カード */
+  .st4 { text-align: center; }
+  .st4 .num { font-family: 'Barlow Semi Condensed', 'Noto Sans JP', sans-serif; font-weight: 800; letter-spacing: 0; }
+  .st4-badge { font-size: 20px !important; padding: 6px 14px !important; }
+  .st4-hero-t { font-size: 17px; font-weight: 900; margin-top: 14px; }
+  .st4-hero-y { color: #e8352a; line-height: 1; margin-top: 2px; }
+  .st4-hero-y .num { font-size: 74px; }
+  .st4-hero-y { white-space: nowrap; }
+  .st4-off { font-size: 22px; font-weight: 900; margin-left: 2px; }
+  .st4-ex { margin-top: 22px; border: 1.5px solid var(--line); border-radius: 12px; padding: 16px 10px 14px; position: relative; }
+  .st4-ex-l { position: absolute; top: -11px; left: 50%; transform: translateX(-50%); background: #fff; padding: 0 10px; font-size: 12px; font-weight: 700; color: var(--sub); }
+  .st4-ex-name { font-size: 15px; font-weight: 900; }
+  .st4 .ba-set { margin-top: 30px; padding-top: 0; border-top: 0; gap: 0; }
+  .st4 .ba-set li { flex: 1; width: auto; font-size: 11px; white-space: nowrap; }
+  .st4 .ba-set li.plus { flex: 0 0 auto; font-size: 10px; color: #aaa; }
+  .st4 .ba-set li svg { width: 30px; height: 22px; }
+  .st4-ex-row { display: flex; align-items: flex-end; justify-content: center; gap: 10px; margin-top: 12px; padding-top: 12px; border-top: 1px dashed var(--line); }
+  .st4-ex-k { font-size: 11px; font-weight: 700; color: var(--sub); }
+  .st4-k-red { color: #e8352a; }
+  .st4-ex-b { font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 800; font-size: 26px; color: #888; text-decoration: line-through; text-decoration-color: #e8352a; line-height: 1.1; }
+  .st4-ex-a { font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 800; font-size: 34px; line-height: 1.1; }
+  .st4-ex-b small, .st4-ex-a small { font-size: .5em; }
+  .st4-arw { color: #e8352a; font-size: 12px; padding-bottom: 10px; }
+  .st4-more { font-size: 16px; font-weight: 900; margin-top: 22px; }
+  .st4-two { display: flex; align-items: center; gap: 4px; margin-top: 10px; }
+  .st4-c { flex: 1; background: var(--bg2); border-radius: 10px; padding: 12px 4px; }
+  .st4-c .ico { width: 26px; height: 26px; display: block; margin: 0 auto; }
+  .st4-c-t { font-size: 12px; font-weight: 700; line-height: 1.4; margin-top: 4px; }
+  .st4-c-y { color: #e8352a; line-height: 1; margin-top: 6px; }
+  .st4-c-y .num { font-size: 28px; }
+  .st4-c-y small { font-size: 12px; font-weight: 900; }
+  .st4-plus { font-size: 18px; font-weight: 900; color: #aaa; }
+  .st4-down { color: #e8352a; font-size: 14px; margin-top: 12px; }
+  .st4-fin { margin-top: 6px; background: #fff3f2; border: 2px solid #e8352a; border-radius: 14px; padding: 12px 10px 14px; }
+  .st4-fin-t { font-size: 15px; font-weight: 900; }
+  .st4-fin-y { color: #e8352a; line-height: 1; }
+  .st4-fin-y .num { font-size: 72px; }
+  .st4-fin-y small { font-size: 24px; font-weight: 900; }
+  .st4-fin-ok { display: inline-block; margin-top: 8px; background: #e8352a; color: #fff; font-size: 14px; font-weight: 900; border-radius: 20px; padding: 3px 14px; }
+  .st4-note { text-align: left; margin-top: 14px !important; line-height: 1.7; }
   .ba-off { margin-top: 28px; padding-top: 24px; border-top: 1px dashed var(--line); }
   .ba-off .off3-t { margin-top: 0; }
   .ba-off .off3 li { background: var(--bg2); padding-left: 0; padding-right: 0; display: flex; flex-direction: column; align-items: center; }
@@ -523,6 +564,13 @@
 
     /* お得な内容：ビフォーアフターと3つの割引を横並び */
     .otoku-row .ba { padding: 48px 40px 36px; }
+    .st4-hero, .st4-ex, .st4-two, .st4-fin, .st4-note { max-width: 620px; margin-left: auto; margin-right: auto; }
+    .st4-badge { font-size: 26px !important; } .st4-hero-t { font-size: 22px; } .st4-hero-y .num { font-size: 130px; } .st4-off { font-size: 38px; }
+    .st4-ex-name { font-size: 18px; } .st4 .ba-set li { font-size: 14px; } .st4 .ba-set li svg { width: 48px; height: 34px; } .st4 .ba-set li.plus { font-size: 18px; }
+    .st4-ex-k { font-size: 14px; } .st4-ex-b { font-size: 36px; } .st4-ex-a { font-size: 48px; }
+    .st4-more { font-size: 20px; } .st4-c { padding: 18px 8px; } .st4-c .ico { width: 36px; height: 36px; } .st4-c-t { font-size: 16px; } .st4-c-y .num { font-size: 40px; } .st4-c-y small { font-size: 16px; } .st4-plus { font-size: 26px; padding: 0 8px; }
+    .st4-fin-t { font-size: 18px; } .st4-fin-y .num { font-size: 110px; } .st4-fin-y small { font-size: 34px; } .st4-fin-ok { font-size: 18px; }
+
     .pr2 .ba-set, .pr2-rc, .pr2-note { max-width: 560px; margin-left: auto; margin-right: auto; }
     .pr2-bub { max-width: 620px; margin: 0 auto; padding: 18px 24px 20px; } .pr2-bub-t { font-size: 18px; } .pr2-bub .ba-set { margin-top: 56px; }
     .pr2 .ba-set li { font-size: 14px; }
@@ -692,16 +740,18 @@
   <section class="sec otoku" id="otoku">
     <div class="sec-head"><p class="sec-en">PRICE</p><h2 class="sec-ja">お得な内容</h2></div>
     <div class="otoku-row">
-    <!-- ① いくらが、いくらになる？ -->
-    <div class="ba">
-      <div class="ba-row">
-        <div class="ba-col"><p class="ba-lbl">メガネ一式 通常価格</p><p class="ba-before">13,200円</p></div>
-        <span class="ba-arrow" aria-hidden="true">▶</span>
-        <div class="ba-col"><p class="ba-lbl ba-lbl-y"><span class="ba-badge">ブラックフライデー限定</span>対象商品</p><p class="ba-after"><span class="ba-mk">8<span class="cm">,</span>800<small>円〜</small></span></p><p class="ba-note">（税込）下の3つの割引を使った場合</p></div>
+    <!-- 10/22 ストーリー順：①2,200円OFF → ②商品例 13,200→11,000 → ③さらにLINE・処方箋 → ④すべて使って8,800円。変更前 _保存/index.before-1022-story.html -->
+    <div class="ba st4">
+      <div class="st4-hero">
+        <p><span class="ba-badge st4-badge">ブラックフライデー限定</span></p>
+        <p class="st4-hero-t">対象商品が</p>
+        <p class="st4-hero-y"><span class="num">2<span class="cm">,</span>200</span><span class="st4-off">円OFF！</span></p>
       </div>
-      <div class="ba-bubble">
-      <p class="ba-bubble-t">すべてまとめて、<em>この価格！</em></p>
-      <ul class="ba-set" aria-label="セットの中身">
+
+      <div class="st4-ex">
+        <p class="st4-ex-l">商品例</p>
+        <p class="st4-ex-name">メガネ一式</p>
+        <ul class="ba-set" aria-label="セットの中身">
         <li><svg class="ico" viewBox="0 0 48 32"><circle cx="14" cy="17" r="9"/><circle cx="34" cy="17" r="9"/><path d="M23,16 Q24,13 25,16 M5,15 L1,12 M43,15 L47,12"/></svg>フレーム</li>
         <li class="plus" aria-hidden="true">＋</li>
         <li class="has-tag"><span class="ba-tag">遠近両用もOK</span><svg class="ico" viewBox="0 0 48 32"><circle cx="22" cy="17" r="12"/><path d="M15,13 Q17,9 21,8 M14,18 Q14,16 15,15"/><path d="M38,4 V10 M35,7 H41" stroke-width="2"/></svg>レンズ</li>
@@ -712,34 +762,27 @@
         <li class="plus" aria-hidden="true">＋</li>
         <li><svg class="ico" viewBox="0 0 48 32"><path d="M24,3 L36,7 Q36,22 24,29 Q12,22 12,7 Z"/><path d="M19,16 L23,20 L30,12"/></svg>保証</li>
       </ul>
+        <div class="st4-ex-row">
+          <div><p class="st4-ex-k">通常価格</p><p class="st4-ex-b">13<span class="cm">,</span>200<small>円</small></p></div>
+          <span class="st4-arw" aria-hidden="true">▶</span>
+          <div><p class="st4-ex-k st4-k-red">ブラックフライデー限定</p><p class="st4-ex-a">11<span class="cm">,</span>000<small>円</small></p></div>
+        </div>
       </div>
 
-    <div class="ba-off">
-    <!-- ② 3つの割引（同じカードの中） -->
-    <p class="off3-t"><span class="marker">8,800円</span>になる割引</p>
-    <!-- 10/22 主役の2,200円OFFを大きく1枚、LINEと処方箋は「さらに」で下に2枚 -->
-    <div class="off-main">
-      <p class="off-main-h"><span class="ba-badge">ブラックフライデー限定</span></p>
-      <p class="off-main-t">対象商品が、どなたでも</p>
-      <p class="off3-y off-main-y"><span class="num">2<span class="cm">,</span>200</span><span class="st"><span>円</span><span>OFF</span></span></p>
-    </div>
-    <p class="off-more-t sl"><span>さらに、当てはまる方は</span></p>
-    <ul class="off-sub">
-      <li>
-        <svg class="ico" viewBox="0 0 40 40"><path d="M6,10 H34 V28 H18 L11,34 V28 H6 Z"/><path d="M13,19 H27"/></svg>
-        <p class="off3-n">LINEお友だち登録</p>
-        <p class="off3-who">当日使えるクーポン配布</p>
-        <p class="off3-y"><span class="num">1<span class="cm">,</span>100</span><span class="st"><span>円</span><span>OFF</span></span></p>
-      </li>
-      <li>
-        <svg class="ico" viewBox="0 0 40 40"><path d="M10,6 H25 L31,12 V34 H10 Z"/><path d="M15,16 H26 M15,22 H26 M15,28 H22"/></svg>
-        <p class="off3-n">眼科の処方箋持参</p>
-        <p class="off3-who">お持ちの方</p>
-        <p class="off3-y"><span class="num">1<span class="cm">,</span>100</span><span class="st"><span>円</span><span>OFF</span></span></p>
-      </li>
-    </ul>
-    <p class="note off3-note">※価格はすべて税込　※標準レンズの場合　※本庄南大通り店を除く</p>
-    </div>
+      <p class="st4-more sl"><span>さらに</span></p>
+      <div class="st4-two">
+        <div class="st4-c"><svg class="ico" viewBox="0 0 40 40"><path d="M6,10 H34 V28 H18 L11,34 V28 H6 Z"/><path d="M13,19 H27"/></svg><p class="st4-c-t">LINEお友だち登録で<br>当日使える</p><p class="st4-c-y"><span class="num">1<span class="cm">,</span>100</span><small>円OFF</small></p></div>
+        <span class="st4-plus" aria-hidden="true">＋</span>
+        <div class="st4-c"><svg class="ico" viewBox="0 0 40 40"><path d="M10,6 H25 L31,12 V34 H10 Z"/><path d="M15,16 H26 M15,22 H26 M15,28 H22"/></svg><p class="st4-c-t">眼科の処方箋<br>持参で</p><p class="st4-c-y"><span class="num">1<span class="cm">,</span>100</span><small>円OFF</small></p></div>
+      </div>
+
+      <p class="st4-down" aria-hidden="true">▼</p>
+      <div class="st4-fin">
+        <p class="st4-fin-t">すべて使って</p>
+        <p class="st4-fin-y"><span class="num">8<span class="cm">,</span>800</span><small>円</small></p>
+        <p class="st4-fin-ok">遠近両用もOK</p>
+      </div>
+      <p class="note st4-note">※価格はすべて税込<br>※標準レンズの場合<br>※本庄南大通り店を除く</p>
     </div>
     </div>
 
