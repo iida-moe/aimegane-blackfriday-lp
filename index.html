@@ -667,11 +667,16 @@
   <section class="sec otoku" id="otoku">
     <div class="sec-head"><p class="sec-en">PRICE</p><h2 class="sec-ja">お得な内容</h2></div>
     <div class="otoku-row">
-    <!-- 10/22 作り直し：すべてまとめてこの価格 → 2,200円OFFで11,000円 → さらにLINE・処方箋で8,800円〜。変更前 _保存/index.before-1022-price.html -->
-    <div class="ba pr2">
-      <div class="pr2-bub">
-        <p class="pr2-bub-t">すべてまとめて、この価格！</p>
-        <ul class="ba-set" aria-label="セットの中身">
+    <!-- ① いくらが、いくらになる？ -->
+    <div class="ba">
+      <div class="ba-row">
+        <div class="ba-col"><p class="ba-lbl">メガネ一式 通常価格</p><p class="ba-before">13,200円</p></div>
+        <span class="ba-arrow" aria-hidden="true">▶</span>
+        <div class="ba-col"><p class="ba-lbl ba-lbl-y"><span class="ba-badge">ブラックフライデー限定</span>対象商品</p><p class="ba-after"><span class="ba-mk">8<span class="cm">,</span>800<small>円〜</small></span></p><p class="ba-note">（税込）※割引条件あり</p></div>
+      </div>
+      <div class="ba-bubble">
+      <p class="ba-bubble-t">すべてまとめて</p>
+      <ul class="ba-set" aria-label="セットの中身">
         <li><svg class="ico" viewBox="0 0 48 32"><circle cx="14" cy="17" r="9"/><circle cx="34" cy="17" r="9"/><path d="M23,16 Q24,13 25,16 M5,15 L1,12 M43,15 L47,12"/></svg>フレーム</li>
         <li class="plus" aria-hidden="true">＋</li>
         <li class="has-tag"><span class="ba-tag">遠近両用もOK</span><svg class="ico" viewBox="0 0 48 32"><circle cx="22" cy="17" r="12"/><path d="M15,13 Q17,9 21,8 M14,18 Q14,16 15,15"/><path d="M38,4 V10 M35,7 H41" stroke-width="2"/></svg>レンズ</li>
@@ -683,30 +688,35 @@
         <li><svg class="ico" viewBox="0 0 48 32"><path d="M24,3 L36,7 Q36,22 24,29 Q12,22 12,7 Z"/><path d="M19,16 L23,20 L30,12"/></svg>保証</li>
       </ul>
       </div>
-      <p class="pr2-top"><span class="pr2-num">8<span class="cm">,</span>800</span><small>円〜</small></p>
-      <p class="pr2-tax">（税込）割引をすべて使った場合</p>
 
-      <div class="pr2-rc">
-        <p class="pr2-rc-t">8,800円になるまで</p>
-        <div class="pr2-st">
-          <p class="pr2-st-h"><span>1</span>どなたでも</p>
-          <ul class="pr2-rows">
-            <li><span>メガネ一式 通常価格</span><b class="pr2-gray">13<span class="cm">,</span>200円</b></li>
-            <li><span>ブラックフライデー限定</span><b class="pr2-red">−2<span class="cm">,</span>200円</b></li>
-          </ul>
-          <p class="pr2-res"><span>▶</span><b>11<span class="cm">,</span>000<small>円</small></b></p>
-        </div>
-        <p class="pr2-and" aria-hidden="true">▼</p>
-        <div class="pr2-st">
-          <p class="pr2-st-h"><span>2</span>11,000円から、当てはまる方はさらに</p>
-          <ul class="pr2-rows">
-            <li><span>LINE新規登録</span><b class="pr2-red">−1<span class="cm">,</span>100円</b></li>
-            <li><span>処方箋をお持ちの方</span><b class="pr2-red">−1<span class="cm">,</span>100円</b></li>
-          </ul>
-          <p class="pr2-res fin"><span>両方使うと ▶</span><b>8<span class="cm">,</span>800<small>円</small></b></p>
-        </div>
-      </div>
-      <p class="note pr2-note">※価格はすべて税込<br>※標準レンズの場合<br>※本庄南大通り店を除く</p>
+    <div class="ba-off">
+    <!-- ② 3つの割引（同じカードの中） -->
+    <p class="off3-t"><span class="marker">8,800円</span>になる、3つの割引</p>
+    <ol class="off3">
+      <li>
+        <span class="off3-no">1</span>
+        <svg class="ico" viewBox="0 0 40 40"><path d="M8,8 H22 L34,20 L22,32 L8,32 Z"/><circle cx="14" cy="14" r="2"/></svg>
+        <p class="off3-n">期間限定割引</p>
+        <p class="off3-who">どなたでも</p>
+        <p class="off3-y"><span class="num">2<span class="cm">,</span>200</span><span class="st"><span>円</span><span>OFF</span></span></p>
+      </li>
+      <li>
+        <span class="off3-no">2</span>
+        <svg class="ico" viewBox="0 0 40 40"><path d="M6,10 H34 V28 H18 L11,34 V28 H6 Z"/><path d="M13,19 H27"/></svg>
+        <p class="off3-n">LINE登録</p>
+        <p class="off3-who">はじめての方</p>
+        <p class="off3-y"><span class="num">1<span class="cm">,</span>100</span><span class="st"><span>円</span><span>OFF</span></span></p>
+      </li>
+      <li>
+        <span class="off3-no">3</span>
+        <svg class="ico" viewBox="0 0 40 40"><path d="M10,6 H25 L31,12 V34 H10 Z"/><path d="M15,16 H26 M15,22 H26 M15,28 H22"/></svg>
+        <p class="off3-n">処方箋</p>
+        <p class="off3-who">お持ちの方</p>
+        <p class="off3-y"><span class="num">1<span class="cm">,</span>100</span><span class="st"><span>円</span><span>OFF</span></span></p>
+      </li>
+    </ol>
+    <p class="note off3-note">※価格はすべて税込　※標準レンズの場合　※本庄南大通り店を除く</p>
+    </div>
     </div>
     </div>
 
