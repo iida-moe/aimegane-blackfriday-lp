@@ -249,7 +249,9 @@
   .pr2-num, .pr2-y, .pr2-c-y, .pr2-s { font-family: 'Barlow Semi Condensed', 'Noto Sans JP', sans-serif; font-weight: 800; letter-spacing: 0; }
   .ba-off { margin-top: 28px; padding-top: 24px; border-top: 1px dashed var(--line); }
   .ba-off .off3-t { margin-top: 0; }
-  .ba-off .off3 li { background: var(--bg2); padding-left: 2px; padding-right: 2px; }
+  .ba-off .off3 li { background: var(--bg2); padding-left: 0; padding-right: 0; display: flex; flex-direction: column; align-items: center; }
+  .ba-off .off3 li .off3-y { margin-top: auto; padding-top: 6px; }
+  .ba-off .off3-n { line-height: 1.35; }
   .ba-off .off3 { gap: 6px; }
   .off3-grp { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-top: 14px; }
   .off3-grp span { font-size: 11px; font-weight: 900; text-align: center; border-radius: 20px; padding: 3px 0; white-space: nowrap; }
@@ -257,7 +259,7 @@
   .off3-grp .g2 { grid-column: 2 / 4; border: 1.5px solid #e8352a; color: #e8352a; }
   .ba-off .off3-grp + .off3 { margin-top: 16px; }
   .ba-off .off3-y { font-size: 23px; }
-  .ba-off .off3-n { font-size: 13px; }
+  .ba-off .off3-n { font-size: 12px; letter-spacing: -.03em; white-space: nowrap; }
   .two-who2 { font-size: 15px; font-weight: 700; margin-top: 12px; }
   .two-who2 span { font-size: 26px; font-weight: 900; border-bottom: 4px solid var(--ac); padding: 0 2px; }
   .two-who3 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; }
@@ -706,21 +708,21 @@
       <li>
         <span class="off3-no">1</span>
         <svg class="ico" viewBox="0 0 40 40"><path d="M8,8 H22 L34,20 L22,32 L8,32 Z"/><circle cx="14" cy="14" r="2"/></svg>
-        <p class="off3-n">期間限定割引</p>
-        <p class="off3-who">どなたでも</p>
+        <p class="off3-n">ブラック<br>フライデー限定</p>
+        <p class="off3-who">対象商品</p>
         <p class="off3-y"><span class="num">2<span class="cm">,</span>200</span><span class="st"><span>円</span><span>OFF</span></span></p>
       </li>
       <li>
         <span class="off3-no">2</span>
         <svg class="ico" viewBox="0 0 40 40"><path d="M6,10 H34 V28 H18 L11,34 V28 H6 Z"/><path d="M13,19 H27"/></svg>
-        <p class="off3-n">LINE登録</p>
-        <p class="off3-who">はじめての方</p>
+        <p class="off3-n">LINE<br>お友だち登録</p>
+        <p class="off3-who">当日使える<br>クーポン配布</p>
         <p class="off3-y"><span class="num">1<span class="cm">,</span>100</span><span class="st"><span>円</span><span>OFF</span></span></p>
       </li>
       <li>
         <span class="off3-no">3</span>
         <svg class="ico" viewBox="0 0 40 40"><path d="M10,6 H25 L31,12 V34 H10 Z"/><path d="M15,16 H26 M15,22 H26 M15,28 H22"/></svg>
-        <p class="off3-n">処方箋</p>
+        <p class="off3-n">眼科の<br>処方箋持参</p>
         <p class="off3-who">お持ちの方</p>
         <p class="off3-y"><span class="num">1<span class="cm">,</span>100</span><span class="st"><span>円</span><span>OFF</span></span></p>
       </li>
@@ -933,7 +935,7 @@
       <p class="note">【注意事項】<br>
       ※期間：2026年11月13日(金)〜11月29日(日)<br>
       ※本庄南大通り店を除く全店で実施<br>
-      ※8,800円は、13,200円の対象のメガネ一式に、期間限定割引2,200円・LINE新規登録1,100円・処方箋持参1,100円の割引をすべて使った場合の価格です<br>
+      ※8,800円は、13,200円の対象のメガネ一式に、ブラックフライデー限定割引2,200円・LINEお友だち登録の当日クーポン1,100円・眼科の処方箋持参1,100円の割引をすべて使った場合の価格です<br>
       ※標準レンズの場合。超薄型・コーティング・レンズのグレード変更等は別途料金<br>
       ※対象ブランドのお取り扱いデザインは店舗によって異なります<br>
       ※価格はすべて税込</p>
