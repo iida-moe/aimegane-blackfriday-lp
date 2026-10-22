@@ -253,6 +253,18 @@
   .ba-off .off3 li .off3-y { margin-top: auto; padding-top: 6px; }
   .ba-off .off3-n { line-height: 1.35; }
   .ba-off .off3 { gap: 6px; }
+  .off-main { margin-top: 16px; background: #fff7d6; border: 2px solid var(--ac); border-radius: 14px; padding: 16px 12px 14px; text-align: center; }
+  .off-main-h .ba-badge { font-size: 15px; }
+  .off-main-t { font-size: 15px; font-weight: 700; margin-top: 10px; }
+  .ba-off .off3-y.off-main-y { font-size: 64px; margin-top: 2px; line-height: 1; }
+  .ba-off .off-main-y .st { font-size: 18px; margin-bottom: 6px; }
+  .off-more-t { font-size: 14px; font-weight: 900; margin-top: 18px; }
+  .off-sub { list-style: none; margin: 10px 0 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .off-sub li { background: var(--bg2); border-radius: 10px; padding: 12px 4px; text-align: center; display: flex; flex-direction: column; align-items: center; }
+  .off-sub .ico { width: 28px; height: 28px; }
+  .off-sub .off3-n { font-size: 13px; margin-top: 4px; white-space: nowrap; }
+  .ba-off .off-sub .off3-y { margin-top: auto; padding-top: 4px; font-size: 26px; }
+
   .off3-grp { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-top: 14px; }
   .off3-grp span { font-size: 11px; font-weight: 900; text-align: center; border-radius: 20px; padding: 3px 0; white-space: nowrap; }
   .off3-grp .g1 { background: var(--bk); color: var(--ac); }
@@ -552,7 +564,9 @@
     .otoku-row .off3-t { margin-top: 0; font-size: 22px; }
     .ba-off { margin-top: 36px; padding-top: 32px; }
     .otoku-row .off3, .ba-off .off3 { gap: 24px; }
-    .off3-grp { gap: 24px; } .off3-grp span { font-size: 15px; padding: 5px 0; }
+    .off-main, .off-sub, .off-more-t { max-width: 640px; margin-left: auto; margin-right: auto; }
+    .off-main-h .ba-badge { font-size: 20px; } .off-main-t { font-size: 18px; } .ba-off .off3-y.off-main-y { font-size: 96px; } .ba-off .off-main-y .st { font-size: 26px; margin-bottom: 10px; }
+    .off-more-t { font-size: 17px; } .off-sub .ico { width: 36px; height: 36px; } .off-sub .off3-n { font-size: 17px; } .off-sub .off3-who { font-size: 14px; } .ba-off .off-sub .off3-y { font-size: 34px; } .off-sub li { padding: 18px 8px; }
     .ba-off .off3-n { font-size: 20px; }
     .off3 svg { width: 48px; height: 48px; }
     .off3-n { font-size: 20px; }
@@ -702,31 +716,28 @@
 
     <div class="ba-off">
     <!-- ② 3つの割引（同じカードの中） -->
-    <p class="off3-t"><span class="marker">8,800円</span>になる、3つの割引</p>
-    <div class="off3-grp" aria-hidden="true"><span class="g1">どなたでも</span><span class="g2">＋ 当てはまる方は、さらに</span></div>
-    <ol class="off3">
+    <p class="off3-t"><span class="marker">8,800円</span>になる割引</p>
+    <!-- 10/22 主役の2,200円OFFを大きく1枚、LINEと処方箋は「さらに」で下に2枚 -->
+    <div class="off-main">
+      <p class="off-main-h"><span class="ba-badge">ブラックフライデー限定</span></p>
+      <p class="off-main-t">対象商品が、どなたでも</p>
+      <p class="off3-y off-main-y"><span class="num">2<span class="cm">,</span>200</span><span class="st"><span>円</span><span>OFF</span></span></p>
+    </div>
+    <p class="off-more-t sl"><span>さらに、当てはまる方は</span></p>
+    <ul class="off-sub">
       <li>
-        <span class="off3-no">1</span>
-        <svg class="ico" viewBox="0 0 40 40"><path d="M8,8 H22 L34,20 L22,32 L8,32 Z"/><circle cx="14" cy="14" r="2"/></svg>
-        <p class="off3-n">ブラック<br>フライデー限定</p>
-        <p class="off3-who">対象商品</p>
-        <p class="off3-y"><span class="num">2<span class="cm">,</span>200</span><span class="st"><span>円</span><span>OFF</span></span></p>
-      </li>
-      <li>
-        <span class="off3-no">2</span>
         <svg class="ico" viewBox="0 0 40 40"><path d="M6,10 H34 V28 H18 L11,34 V28 H6 Z"/><path d="M13,19 H27"/></svg>
-        <p class="off3-n">LINE<br>お友だち登録</p>
-        <p class="off3-who">当日使える<br>クーポン配布</p>
+        <p class="off3-n">LINEお友だち登録</p>
+        <p class="off3-who">当日使えるクーポン配布</p>
         <p class="off3-y"><span class="num">1<span class="cm">,</span>100</span><span class="st"><span>円</span><span>OFF</span></span></p>
       </li>
       <li>
-        <span class="off3-no">3</span>
         <svg class="ico" viewBox="0 0 40 40"><path d="M10,6 H25 L31,12 V34 H10 Z"/><path d="M15,16 H26 M15,22 H26 M15,28 H22"/></svg>
-        <p class="off3-n">眼科の<br>処方箋持参</p>
+        <p class="off3-n">眼科の処方箋持参</p>
         <p class="off3-who">お持ちの方</p>
         <p class="off3-y"><span class="num">1<span class="cm">,</span>100</span><span class="st"><span>円</span><span>OFF</span></span></p>
       </li>
-    </ol>
+    </ul>
     <p class="note off3-note">※価格はすべて税込　※標準レンズの場合　※本庄南大通り店を除く</p>
     </div>
     </div>
