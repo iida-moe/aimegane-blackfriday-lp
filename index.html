@@ -263,7 +263,9 @@
   .st4-hero-y { color: #e8352a; line-height: 1; margin-top: -6px; }
   .st4-hero-y .num { font-size: 74px; }
   .st4-hero-y { white-space: nowrap; }
-  .st4-off { font-size: 22px; font-weight: 900; margin-left: 2px; }
+  /* 円／OFF！を縦2段にして、2,200の高さにそろえる（右上の空白をなくす） */
+  .st4-hero-y { display: flex; align-items: flex-end; }
+  .st4-off { display: flex; flex-direction: column; font-size: 26px; font-weight: 900; line-height: 1; margin: 0 0 7px 4px; }
   .st4-ex { margin-top: 22px; border: 1.5px solid var(--line); border-radius: 12px; padding: 16px 10px 14px; position: relative; }
   .st4-ex-l { position: absolute; top: -11px; left: 50%; transform: translateX(-50%); background: #fff; padding: 0 10px; font-size: 12px; font-weight: 700; color: var(--sub); }
   .st4-ex-name { font-size: 15px; font-weight: 900; }
@@ -573,7 +575,7 @@
     /* お得な内容：ビフォーアフターと3つの割引を横並び */
     .otoku-row .ba { padding: 48px 40px 36px; }
     .st4-hero, .st4-ex, .st4-two, .st4-fin, .st4-note { max-width: 620px; margin-left: auto; margin-right: auto; }
-    .st4-badge { font-size: 26px !important; } .st4-hero-t { font-size: 22px; } .st4-hero-y { margin-top: -12px; } .st4-hero-y .num { font-size: 130px; } .st4-off { font-size: 38px; }
+    .st4-badge { font-size: 26px !important; } .st4-hero-t { font-size: 22px; } .st4-hero-y { margin-top: -12px; } .st4-hero-y .num { font-size: 130px; } .st4-off { font-size: 46px; margin: 0 0 12px 6px; }
     .st4-ex-name { font-size: 18px; } .st4 .ba-set li { font-size: 14px; } .st4 .ba-set li svg { width: 48px; height: 34px; } .st4 .ba-set li.plus { font-size: 18px; }
     .st4-ex-k { font-size: 14px; } .st4-ex-b { font-size: 36px; } .st4-ex-a { font-size: 48px; }
     .st4-more { font-size: 20px; } .st4-c { padding: 18px 8px; } .st4-c .ico { width: 36px; height: 36px; } .st4-c-t { font-size: 16px; } .st4-c-y .num { font-size: 40px; } .st4-c-y small { font-size: 16px; } .st4-plus { font-size: 26px; padding: 0 8px; }
@@ -755,7 +757,7 @@
         <p><span class="ba-badge st4-badge">ブラックフライデー限定</span></p>
         <div class="st4-hero-in">
         <p class="st4-hero-t">メガネ一式 対象商品が</p>
-        <p class="st4-hero-y"><span class="num">2<span class="cm">,</span>200</span><span class="st4-off">円OFF！</span></p>
+        <p class="st4-hero-y"><span class="num">2<span class="cm">,</span>200</span><span class="st4-off"><span>円</span><span>OFF！</span></span></p>
         </div>
       </div>
 
