@@ -276,7 +276,11 @@
   .st4-ex-row { display: flex; align-items: flex-end; justify-content: center; gap: 10px; margin-top: 12px; padding-top: 12px; border-top: 1px dashed var(--line); }
   .st4-ex-k { font-size: 11px; font-weight: 700; color: var(--sub); }
   .st4-k-red { color: #e8352a; }
-  .st4-ex-b { font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 800; font-size: 26px; color: #888; text-decoration: line-through; text-decoration-color: #e8352a; line-height: 1.1; }
+  .st4-ex-b { font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 800; font-size: 26px; color: #888; line-height: 1.1; display: inline-block; position: relative; }
+  /* 取り消し線は1本だけ（text-decorationだとカンマ・円で線が分かれる） */
+  .st4-ex-b::after { content: ""; position: absolute; left: -2px; right: -2px; top: 54%; height: 2px; background: #e8352a; }
+  .st4-ex-all { margin-top: 14px; font-size: 15px; font-weight: 900; }
+  .st4-ex-all em { font-style: normal; color: #e8352a; }
   .st4-ex-a { font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 800; font-size: 34px; line-height: 1.1; }
   .st4-ex-b small, .st4-ex-a small { font-size: .5em; }
   .st4-arw { color: #e8352a; font-size: 12px; padding-bottom: 10px; }
@@ -578,7 +582,7 @@
     .st4-hero, .st4-ex, .st4-two, .st4-fin, .st4-note { max-width: 620px; margin-left: auto; margin-right: auto; }
     .st4-badge { font-size: 26px !important; } .st4-hero-t { font-size: 22px; } .st4-hero-y { margin-top: -12px; } .st4-hero-y .num { font-size: 130px; } .st4-off { font-size: 46px; margin: 0 0 12px 6px; }
     .st4-ex-name { font-size: 18px; } .st4 .ba-set li { font-size: 14px; } .st4 .ba-set li svg { width: 48px; height: 34px; } .st4 .ba-set li.plus { font-size: 18px; }
-    .st4-ex-k { font-size: 14px; } .st4-ex-b { font-size: 36px; } .st4-ex-a { font-size: 48px; }
+    .st4-ex-k { font-size: 14px; } .st4-ex-b { font-size: 36px; } .st4-ex-a { font-size: 48px; } .st4-ex-all { font-size: 20px; margin-top: 20px; } .st4-ex-b::after { height: 3px; }
     .st4-more { font-size: 20px; } .st4-c { padding: 18px 8px; } .st4-c .ico { width: 36px; height: 36px; } .st4-c-t { font-size: 16px; } .st4-c-y .num { font-size: 40px; } .st4-c-y small { font-size: 16px; } .st4-plus { font-size: 26px; padding: 0 8px; }
     .st4-fin-t { font-size: 18px; } .st4-fin-y .num { font-size: 110px; } .st4-fin-y small { font-size: 34px; } .st4-fin-ok { font-size: 18px; }
 
@@ -776,6 +780,7 @@
         <li class="plus" aria-hidden="true">＋</li>
         <li><svg class="ico" viewBox="0 0 48 32"><path d="M24,3 L36,7 Q36,22 24,29 Q12,22 12,7 Z"/><path d="M19,16 L23,20 L30,12"/></svg>保証</li>
       </ul>
+        <p class="st4-ex-all sl"><span>すべてまとめて、<em>この価格！</em></span></p>
         <div class="st4-ex-row">
           <div><p class="st4-ex-k">通常価格</p><p class="st4-ex-b">13<span class="cm">,</span>200<small>円</small></p></div>
           <span class="st4-arw" aria-hidden="true">▶</span>
