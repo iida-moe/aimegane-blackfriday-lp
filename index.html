@@ -468,7 +468,16 @@
   .hear-y .num { font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 800; font-size: 44px; }
   .hear-y .st { display: flex; flex-direction: column; font-size: 14px; font-weight: 900; line-height: 1; text-align: left; margin: 0 0 6px 2px; }
   .hear-d { font-size: 13px; line-height: 1.8; margin-top: 14px; padding-top: 12px; border-top: 1px dashed var(--line); }
-  .hear .hearing-n { margin-top: 12px; }
+  .hear .hearing-n { margin-top: 10px; }
+  .hear-b { font-weight: 900; color: var(--bk); }
+  .hear-d, .hear-q-d { word-break: auto-phrase; text-wrap: pretty; } /* 言葉の区切りで折り返す */
+  /* 認定補聴器技能者とは？の吹き出し（しっぽは上の本文を指す） */
+  .hear-q { position: relative; margin-top: 20px; background: var(--ac-pale); border: 1.5px solid var(--ac); border-radius: 10px; padding: 12px 14px; }
+  .hear-q::before { content: ""; position: absolute; bottom: 100%; left: 32px; border: 10px solid transparent; border-bottom-color: var(--ac); }
+  .hear-q::after { content: ""; position: absolute; bottom: 100%; left: 34px; border: 8px solid transparent; border-bottom-color: var(--ac-pale); }
+  .hear-q-t { display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 900; }
+  .hear-q-i { display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; border-radius: 50%; background: var(--bk); color: var(--ac); font-size: 12px; font-weight: 900; flex: none; }
+  .hear-q-d { font-size: 13px; line-height: 1.7; margin-top: 6px; }
   /* スターキーのロゴ：メーカー画像なので切りぬかず白い背景ごと表示 */
   .hearing .hearing-logo { display: block; width: 96px; height: auto; border-radius: 6px; margin-bottom: 6px; }
   .hearing-mk { font-weight: 900; background: var(--ac); padding: 1px 4px; } /* 文字の上までぬるマーカー */
@@ -926,7 +935,11 @@
       <div class="hear-body">
       <div class="hear-top"><div><p class="hear-jp">スターキー</p><p class="hear-br">Gシリーズ</p></div><img class="hear-logo" src="images/blackfriday_starkey-logo_830_476.webp" alt="Starkey（スターキー）" width="830" height="476" loading="lazy"></div>
       <p class="hear-y"><span class="num">2<span class="cm">,</span>200</span><span class="st"><span>円</span><span>OFF</span></span></p>
-      <p class="hear-d">補聴器は全店で取り扱っています。<br><span class="hearing-mk">2週間の無料貸出</span>で、おうちで試せます。<span class="hearing-n">※認定補聴器技能者が在籍する店舗もあります（不在の日もあるため、ご相談はご予約がおすすめです）</span></p>
+      <p class="hear-d">補聴器は全店で取り扱っています。<br><b class="hear-b">認定補聴器技能者</b>が在籍する店舗もあり、きこえに合わせた補聴器選びから調整までお手伝いします。<br><span class="hearing-mk">2週間の無料貸出</span>で、おうちで試せます。<span class="hearing-n">※技能者が不在の日もあるため、ご相談はご予約がおすすめです</span></p>
+      <div class="hear-q">
+        <p class="hear-q-t"><span class="hear-q-i" aria-hidden="true">?</span>認定補聴器技能者とは？</p>
+        <p class="hear-q-d">公益財団法人テクノエイド協会が認定する、補聴器の専門資格です。きこえを測り、お一人おひとりに合わせて補聴器を調整する知識と技術を持っています。</p>
+      </div>
       </div>
       </div>
     </div>
