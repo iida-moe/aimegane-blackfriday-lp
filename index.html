@@ -452,6 +452,17 @@
   .hearing img { width: 96px; height: auto; flex-shrink: 0; }
   .hearing-t { display: flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 700; line-height: 1.4; }
   .hearing-tag { background: var(--bk); color: var(--ac); font-size: 12px; font-weight: 900; padding: 2px 8px; border-radius: 4px; }
+  /* 補聴器：白カード・中央に縦積み。ロゴはメーカー画像なので切りぬかず白背景ごと（白カードになじませる） */
+  .hear { margin-top: 48px; border: 2px solid var(--bk); border-radius: 12px; padding: 20px 20px 24px; text-align: center; background: #fff; }
+  .hear-logo { display: block; width: 130px; height: auto; margin: -6px auto -10px; }
+  .hear-prod { display: block; width: 160px; height: auto; margin: 16px auto 0; }
+  .hear-t { font-size: 17px; font-weight: 900; line-height: 1.4; margin-top: 18px; }
+  .hear-t small { display: block; font-size: 12px; font-weight: 700; color: var(--sub); margin-top: 2px; }
+  .hear-y { display: flex; justify-content: center; align-items: flex-end; color: #e8352a; line-height: 1; margin-top: 8px; }
+  .hear-y .num { font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 800; font-size: 44px; }
+  .hear-y .st { display: flex; flex-direction: column; font-size: 14px; font-weight: 900; line-height: 1; text-align: left; margin: 0 0 6px 2px; }
+  .hear-d { font-size: 14px; line-height: 1.9; margin-top: 20px; padding-top: 18px; border-top: 1px dashed var(--line); }
+  .hear .hearing-n { margin-top: 12px; }
   /* スターキーのロゴ：メーカー画像なので切りぬかず白い背景ごと表示 */
   .hearing .hearing-logo { display: block; width: 96px; height: auto; border-radius: 6px; margin-bottom: 6px; }
   .hearing-mk { font-weight: 900; background: var(--ac); padding: 1px 4px; } /* 文字の上までぬるマーカー */
@@ -681,7 +692,7 @@
     .pick-tx { font-size: 14px; margin-top: 8px; }
     .pick-br { font-size: 20px; }
     .pick-pr { font-size: 15px; } .pick-pr small { display: inline; }
-      .hearing, .pick .btn { max-width: 480px; margin-left: auto; margin-right: auto; }
+      .hearing, .hear, .pick .btn { max-width: 480px; margin-left: auto; margin-right: auto; }
 
     /* 選ばれる理由：3列 */
     .reasons { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: start; }
@@ -900,11 +911,13 @@
     <p class="note">※お取り扱いのデザインは店舗によって異なります</p>
     <p class="cta-pop sl"><span>標準レンズで遠近両用も追加料金<b>0円</b></span></p>
     <a href="#shop-search" class="btn" data-cta-location="pickup">近くのお店で実物を見る</a>
-    <div class="hearing">
-      <img src="images/blackfriday_hochouki_400_313.png" alt="補聴器 Gシリーズ" width="400" height="313" loading="lazy">
-      <div><img class="hearing-logo" src="images/blackfriday_starkey-logo_830_476.webp" alt="Starkey（スターキー）" width="830" height="476" loading="lazy"><p class="hearing-t">対象の補聴器も<small>（Gシリーズ）</small></p>
-      <p class="off3-y hearing-y"><span class="num">2<span class="cm">,</span>200</span><span class="st"><span>円</span><span>OFF</span></span></p></div>
-      <p class="hearing-d">補聴器は全店で取り扱っています。<br><span class="hearing-mk">2週間の無料貸出</span>で、おうちで試せます。<br><span class="hearing-n">※認定補聴器技能者が在籍する店舗もあります（不在の日もあるため、ご相談はご予約がおすすめです）</span></p>
+    <!-- 10/23 補聴器：白カード・中央に縦積み（補聴器_比較.html のC）。変更前 _保存/index.before-1023-starkey.html -->
+    <div class="hear">
+      <img class="hear-logo" src="images/blackfriday_starkey-logo_830_476.webp" alt="Starkey（スターキー）" width="830" height="476" loading="lazy">
+      <img class="hear-prod" src="images/blackfriday_hochouki_400_313.png" alt="スターキーの補聴器 Gシリーズ" width="400" height="313" loading="lazy">
+      <p class="hear-t">補聴器もブラックフライデー対象<small>（Gシリーズ）</small></p>
+      <p class="hear-y"><span class="num">2<span class="cm">,</span>200</span><span class="st"><span>円</span><span>OFF</span></span></p>
+      <p class="hear-d">補聴器は全店で取り扱っています。<br><span class="hearing-mk">2週間の無料貸出</span>で、おうちで試せます。<span class="hearing-n">※認定補聴器技能者が在籍する店舗もあります（不在の日もあるため、ご相談はご予約がおすすめです）</span></p>
     </div>
   </section>
 
