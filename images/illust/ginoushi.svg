@@ -1,13 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360">
   <g fill="none" stroke="#333333" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
     <!-- スタッフ（上半身） -->
-    <circle cx="230" cy="120" r="56"/>
+    <circle cx="230" cy="158" r="56"/>
     <path d="M118,330 Q118,222 230,214 Q342,222 342,330"/>
     <path d="M200,218 L230,262 L260,218" stroke-width="5"/>
     <!-- メガネ -->
-    <circle cx="207" cy="124" r="18" stroke-width="5"/>
-    <circle cx="253" cy="124" r="18" stroke-width="5"/>
-    <path d="M225,122 Q230,116 235,122 M189,120 L176,114 M271,120 L284,114" stroke-width="4"/>
+    <circle cx="207" cy="162" r="18" stroke-width="5"/>
+    <circle cx="253" cy="162" r="18" stroke-width="5"/>
+    <path d="M225,160 Q230,154 235,160 M189,158 L176,152 M271,158 L284,152" stroke-width="4"/>
     <!-- 名札 -->
     <rect x="270" y="262" width="44" height="26" rx="3" stroke-width="4"/>
     <!-- 資格のメダル -->
