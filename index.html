@@ -413,17 +413,18 @@
   #reason { background: var(--bg2); }
   .pick-en { font-size: 32px; font-weight: 900; letter-spacing: .08em; text-align: center; line-height: 1.2; }
   .pick-wrap { margin: 24px 0 0; }
-  .pick-track { display: grid; gap: 16px; }
+  /* 10/23 スマホは2列×2段・説明1行（比較 PICKUP_比較.html のB） */
+  .pick-track { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
   .pick-card { display: flex; flex-direction: column; background: #fff; border: 1px solid var(--line); }
-  .pick-img { background: var(--bg2); padding: 24px 40px; }
+  .pick-img { background: var(--bg2); padding: 14px 10px; }
   .pick-img img { display: block; width: 100%; height: auto; aspect-ratio: 800 / 381; object-fit: contain; }
-  .pick-body { flex: 1; display: flex; flex-direction: column; padding: 18px 20px 20px; }
-  .pick-jp { font-size: 11px; font-weight: 700; color: var(--sub); letter-spacing: .1em; }
-  .pick-br { font-size: 22px; font-weight: 700; letter-spacing: .02em; line-height: 1.3; margin-top: 4px; }
-  .pick-tx { font-size: 14px; color: #555; line-height: 1.8; margin: 10px 0 auto; }
-  .pick-pr { font-size: 15px; font-weight: 700; margin-top: 14px; }
+  .pick-body { flex: 1; display: flex; flex-direction: column; padding: 10px 10px 12px; }
+  .pick-jp { font-size: 11px; font-weight: 700; color: var(--sub); letter-spacing: .05em; }
+  .pick-br { font-size: 17px; font-weight: 700; letter-spacing: .02em; line-height: 1.3; margin-top: 2px; }
+  .pick-tx { font-size: 12px; color: #555; line-height: 1.5; margin: 6px 0 auto; }
+  .pick-pr { font-size: 13px; font-weight: 700; line-height: 1.4; margin-top: 8px; }
   .pick-pr span { font-size: 12px; margin-right: 4px; }
-  .pick-pr small { font-size: 11px; font-weight: 400; }
+  .pick-pr small { display: block; font-size: 11px; font-weight: 400; }
   .pick-lead { text-align: center; font-size: 14px; color: var(--sub); margin-top: 12px; }
   .pick .note { text-align: center; margin-top: 6px; }
   .pick .btn { margin-top: 24px; }
@@ -659,8 +660,9 @@
     .pick-track { grid-template-columns: repeat(4, 1fr); gap: 20px; }
     .pick-img { padding: 24px 16px; }
     .pick-body { padding: 16px 16px 18px; }
-    .pick-tx { font-size: 13px; }
+    .pick-tx { font-size: 14px; margin-top: 8px; }
     .pick-br { font-size: 20px; }
+    .pick-pr { font-size: 15px; } .pick-pr small { display: inline; }
       .hearing, .pick .btn { max-width: 480px; margin-left: auto; margin-right: auto; }
 
     /* 選ばれる理由：3列 */
@@ -843,7 +845,7 @@
           <div class="pick-img"><img src="images/frames/lvr-1.png" alt="エルブイアール のフレーム" width="800" height="381" loading="lazy"></div>
           <div class="pick-body">
             <div class="pick-head"><p class="pick-jp">エルブイアール</p><p class="pick-br">LVR</p></div>
-            <p class="pick-tx">クラシカルなボストン型。日本人のお顔にもかけやすく、手ごろな価格で高級感のある一本。</p>
+            <p class="pick-tx">クラシカルなボストン型</p>
             <p class="pick-pr"><span>セット</span>◯◯,◯◯◯円〜<small>（税込）</small></p>
           </div>
         </div>
@@ -851,7 +853,7 @@
           <div class="pick-img"><img src="images/frames/nyx-1.png" alt="ニクス のフレーム" width="800" height="381" loading="lazy"></div>
           <div class="pick-body">
             <div class="pick-head"><p class="pick-jp">ニクス</p><p class="pick-br">NYX</p></div>
-            <p class="pick-tx">金属パーツまでブラックで統一。8.0mm厚のアセテートを使った、性別を選ばないシンプルな形。</p>
+            <p class="pick-tx">オールブラックの定番形</p>
             <p class="pick-pr"><span>セット</span>◯◯,◯◯◯円〜<small>（税込）</small></p>
           </div>
         </div>
@@ -859,7 +861,7 @@
           <div class="pick-img"><img src="images/frames/blancchic-2.png" alt="ブランシック のフレーム" width="800" height="381" loading="lazy"></div>
           <div class="pick-body">
             <div class="pick-head"><p class="pick-jp">ブランシック</p><p class="pick-br">Blancchic</p></div>
-            <p class="pick-tx">小顔効果とトレンド感のある大きめレンズで、視野も広々。βチタンで軽いかけ心地。</p>
+            <p class="pick-tx">大きめレンズで小顔効果</p>
             <p class="pick-pr"><span>セット</span>◯◯,◯◯◯円〜<small>（税込）</small></p>
           </div>
         </div>
@@ -867,7 +869,7 @@
           <div class="pick-img"><img src="images/frames/up-renoma-1.png" alt="ユーピーレノマ のフレーム" width="800" height="381" loading="lazy"></div>
           <div class="pick-body">
             <div class="pick-head"><p class="pick-jp">ユーピーレノマ</p><p class="pick-br">U.P renoma</p></div>
-            <p class="pick-tx">穏やかで知的な印象のスクエア。落ち着いたベーシックカラーで、ビジネスにも普段使いにも。</p>
+            <p class="pick-tx">知的な印象のスクエア</p>
             <p class="pick-pr"><span>セット</span>◯◯,◯◯◯円〜<small>（税込）</small></p>
           </div>
         </div>
