@@ -337,6 +337,15 @@
   .two-who3 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; }
   .two-who3 .two-who2 { margin-top: 0; }
   .two-who3 svg { width: 110px; height: 100px; display: block; margin: 12px auto 0; }
+  .two-who3 { grid-template-columns: auto auto; justify-content: center; gap: 28px; } /* 真ん中が空きすぎないように寄せる */
+  .two-rows { display: grid; grid-template-columns: auto auto; justify-content: center; align-items: center; gap: 4px 10px; margin-top: 8px; }
+  .two-rl { font-size: 18px; font-weight: 900; line-height: 1.3; text-align: right; }
+  .two-rl small { display: block; font-size: 12px; font-weight: 400; color: var(--sub); }
+  .two-rn { font-weight: 900; line-height: 1; white-space: nowrap; text-align: left; }
+  .two-rn .num { font-size: 80px; }
+  .two-rn small { font-size: 28px; }
+  .two-rn-s .num { font-size: 56px; }
+  .two-rn-s small { font-size: 22px; }
   .two-ill { margin: 16px auto 0; }
   .two-ill svg { width: 220px; height: 110px; display: block; margin: 0 auto; }
   .two-ill-note { font-size: 10px; color: #aaa; }
@@ -549,7 +558,7 @@
   .float-cta .btn span:first-child { white-space: nowrap; font-size: 16px; }
 
   /* 数字はFV（イラレ）に近い書体に */
-  .ba-after, .ba-before, .off3-y .num, .two-main-n, .closing-copy b, .hc-n, .total b { font-family: 'Barlow Semi Condensed', 'Noto Sans JP', sans-serif; font-weight: 800; letter-spacing: 0; }
+  .ba-after, .ba-before, .off3-y .num, .two-main-n, .two-rn .num, .closing-copy b, .hc-n, .total b { font-family: 'Barlow Semi Condensed', 'Noto Sans JP', sans-serif; font-weight: 800; letter-spacing: 0; }
   .ba-after small, .two-main-n small, .hc-n small { font-family: 'Noto Sans JP', sans-serif; }
   .ba-before { font-weight: 600; }
   .cm { font-size: .8em; }
@@ -648,7 +657,8 @@
     .off3 li { padding: 24px 8px 18px; }
     .two { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 8px 40px; padding: 32px 40px; text-align: center; }
     .two .two-label, .two .two-who3, .two .two-ill-note { grid-column: 1; }
-    .two .two-t, .two .two-main, .two .two-sub { grid-column: 2; }
+    .two .two-t, .two .two-main, .two .two-sub, .two .two-rows { grid-column: 2; }
+    .two .two-rows { grid-row: 2 / 4; align-self: start; }
     .two .two-label { justify-self: center; }
     .two .two-t { grid-row: 1 / 2; align-self: end; }
     .two .two-main { grid-row: 2 / 3; }
@@ -827,11 +837,13 @@
       </div>
       <p class="two-ill-note">※イラストは差し替え予定</p>
       <p class="two-t"><span class="sl">メガネ2本同時購入で</span></p>
-      <div class="two-main">
-        <p class="two-main-l">2本目以降<small>（安い方）</small></p>
-        <p class="two-main-n"><span class="marker">20</span><small>%OFF</small></p>
+      <!-- 10/23 1本目10%・2本目以降20%の2行に（数字の左をそろえる）。変更前 _保存/index.before-1023-two.html -->
+      <div class="two-rows">
+        <p class="two-rl">1本目</p>
+        <p class="two-rn two-rn-s"><span class="num">10</span><small>%OFF</small></p>
+        <p class="two-rl">2本目以降<small>（安い方）</small></p>
+        <p class="two-rn"><span class="num marker">20</span><small>%OFF</small></p>
       </div>
-      <p class="two-sub">さらに1本目も <b>10%OFF</b></p>
     </div>
   </section>
 
