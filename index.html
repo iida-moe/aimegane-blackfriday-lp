@@ -392,7 +392,10 @@
   #lensImg + .lens-for { margin-top: 4px; word-break: auto-phrase; }
   .lens-for + .lens-rec { margin-top: 14px; } /* 図の上の白い余白ぶん、タブに寄せる */
   /* 理由の入口：アイコン左＋2行見出し（2行目赤）＋左ぞろえの短い説明 */
-  .reason:has(.rh) { padding: 28px 20px; }
+  .reason:has(.rh) { padding: 28px 20px; position: relative; counter-increment: reason; }
+  .reasons { counter-reset: reason; }
+  /* カード左上の角に番号（①②③） */
+  .reason:has(.rh)::before { content: counter(reason); position: absolute; top: -14px; left: -6px; width: 40px; height: 40px; border-radius: 50%; background: var(--bk); color: var(--ac); font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 800; font-size: 24px; line-height: 40px; text-align: center; box-shadow: 0 2px 6px rgba(0,0,0,.2); }
   .rh { display: flex; align-items: center; gap: 16px; text-align: left; padding-left: 4px; }
   .rh-ico { flex: none; width: 72px; height: 72px; }
   .reason .rh h3 { margin: 0; font-size: 19px; font-weight: 900; line-height: 1.5; letter-spacing: .04em; }
