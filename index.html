@@ -443,7 +443,7 @@
   .lens-rec { margin-top: 8px; text-align: left; }
   .reason .lens-hint { font-size: 12px; font-weight: 700; color: var(--sub); text-align: center; margin-top: 16px; }
   .reason .lens-hint + .lens-tabs { margin-top: 6px; }
-  .lens-rec .lens-chk { margin-top: 0; }
+  .lens-rec .lens-chk { margin-top: 4px; }
   .lens-chk + .lens-rec-t { margin-top: 16px !important; }
   .lens-rec-t { font-size: 14px !important; font-weight: 900; color: var(--tx) !important; margin-top: 14px !important; }
   .lens-rec-t:first-child { margin-top: 0 !important; }
@@ -1035,9 +1035,10 @@
         <button role="tab" aria-selected="false" data-lens="assist">アシスト</button>
       </div>
       <img class="reason-ill" id="lensImg" src="images/illust/lens-enkin.svg" alt="遠近両用レンズの見え方" width="640" height="360">
-      <p class="lens-for" id="lensFor">遠くも手元も、1本で見たい方に</p>
+      <p class="lens-for" id="lensFor">遠くも手元も、これ1本で</p>
       <!-- 10/23 こんな方におすすめ＋使うシーン（タブで切りかえ・中身はJSのLENS）。変更前 _保存/index.before-1023-lensrec.html -->
       <div class="lens-rec">
+        <p class="lens-rec-t">こんな方におすすめ！</p>
         <ul class="lens-chk" id="lensChk"></ul>
         <p class="lens-rec-t">使うシーン</p>
         <ul class="lens-scene" id="lensScene"></ul>
@@ -1411,18 +1412,18 @@ const SCENE_ICON = {
   hand:  '<path d="M6,32 Q20,24 34,32"/><path d="M14,16 L26,16 L24,26 L16,26 Z"/><path d="M20,8 V12"/>'
 };
 const LENS = {
-  enkin:  { src:'images/illust/lens-enkin.svg',  alt:'遠近両用レンズの見え方', forText:'遠くも手元も、1本で見たい方に',
-            chk:['メガネのかけ外しが面倒になってきた','老眼鏡を持ち歩きたくない','外出先でも手元を見たい'],
+  enkin:  { src:'images/illust/lens-enkin.svg',  alt:'遠近両用レンズの見え方', forText:'遠くも手元も、これ1本で',
+            chk:['メガネのかけ外しが面倒になってきた','手元用のメガネを持ち歩きたくない','外出先でも手元を見たい'],
             scene:[['car','運転'],['walk','お出かけ'],['phone','スマホ'],['book','読書']] },
-  chukin: { src:'images/illust/lens-chukin.svg', alt:'中近両用レンズの見え方', forText:'おうちの中や職場で、楽に見たい方に',
+  chukin: { src:'images/illust/lens-chukin.svg', alt:'中近両用レンズの見え方', forText:'お部屋の中から手元まで、これ1本で',
             chk:['家の中で過ごす時間が長い','料理や家事を楽にしたい','会話やテレビと手元を両方見たい'],
             scene:[['pot','料理・家事'],['tv','テレビ'],['pc','デスクワーク'],['phone','スマホ']] },
-  kinkin: { src:'images/illust/lens-kinkin.svg', alt:'近々レンズの見え方',     forText:'パソコンや手元の作業が多い方に',
+  kinkin: { src:'images/illust/lens-kinkin.svg', alt:'近々レンズの見え方',     forText:'パソコンから手元まで、広く見やすく',
             chk:['パソコン作業が長い','デスクまわりを広く見たい','手元の細かい作業が多い'],
             scene:[['pc','パソコン'],['book','書類・読書'],['hand','手作業'],['phone','スマホ']] },
-  assist: { src:'images/illust/lens-assist.svg', alt:'アシストレンズの見え方', forText:'スマホを見ると目が疲れやすい方に',
-            chk:['夕方になると目が疲れる','スマホの文字が見えにくいときがある','老眼鏡はまだ早いかなと思う'],
-            scene:[['phone','スマホ'],['pc','パソコン'],['book','読書'],['walk','ふだん使い']] }
+  assist: { src:'images/illust/lens-assist.svg', alt:'アシストレンズの見え方', forText:'スマホを見るときの目の負担を軽く',
+            chk:['夕方になると目が疲れる','スマホの文字が見えにくいときがある','手元用のメガネはまだ早いかなと思う'],
+            scene:[['phone','スマホ'],['pc','パソコン'],['book','読書'],['walk','お出かけ']] }
 };
 function renderLensRec(d){
   document.getElementById('lensChk').innerHTML = d.chk.map(t=>'<li>'+t+'</li>').join('');
