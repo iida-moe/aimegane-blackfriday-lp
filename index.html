@@ -385,12 +385,13 @@
   .reason p { font-size: 14px; color: #444; }
   .reason-ill { width: 100%; margin: 12px 0 0; }
   /* 理由の入口：アイコン左＋2行見出し（2行目赤）＋左ぞろえの短い説明 */
-  .rh { display: flex; align-items: center; gap: 14px; text-align: left; }
-  .rh-ico { flex: none; width: 64px; height: 64px; fill: none; stroke: var(--bk); stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
-  .reason .rh h3 { margin: 0; font-size: 17px; line-height: 1.4; }
+  .reason:has(.rh) { padding: 28px 20px; }
+  .rh { display: flex; align-items: center; gap: 16px; text-align: left; padding-left: 4px; }
+  .rh-ico { flex: none; width: 72px; height: 72px; }
+  .reason .rh h3 { margin: 0; font-size: 19px; font-weight: 900; line-height: 1.5; letter-spacing: .04em; }
   .rh h3 em { display: block; font-style: normal; font-size: 22px; color: #e8352a; }
-  .rh h3 em b { font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 800; font-size: 1.4em; line-height: 1; margin: 0 1px; }
-  .reason .rh-d { text-align: left; font-size: 14px; color: var(--tx); line-height: 1.8; margin-top: 12px; word-break: auto-phrase; }
+  .rh h3 em b { font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 800; font-size: 1.3em; line-height: 1; margin: 0 1px; }
+  .reason .rh-d { text-align: left; font-size: 15px; font-weight: 500; color: var(--tx); line-height: 2; letter-spacing: .03em; margin-top: 14px; word-break: auto-phrase; }
   .rh-d small { display: block; font-size: 11px; color: var(--sub); line-height: 1.6; margin-top: 4px; }
   .rh-d + .lens-tabs { margin-top: 16px; }
   .reason .reason-note { font-size: 11px; color: var(--sub); text-align: left; line-height: 1.6; margin-top: 8px; word-break: auto-phrase; }
@@ -407,7 +408,7 @@
   @media (max-width: 359px) {
     .lens-zero-l { font-size: 13px; } .lens-zero-r { font-size: 20px; } .lens-zero b { font-size: 60px; }
     .lens-tabs button { font-size: 12px; white-space: nowrap; }
-    .rh { gap: 10px; } .rh-ico { width: 50px; height: 50px; } .reason .rh h3 { font-size: 15px; } .rh h3 em { font-size: 20px; }
+    .rh { gap: 10px; } .rh-ico { width: 60px; height: 60px; } .reason .rh h3 { font-size: 15px; letter-spacing: 0; } .rh h3 em { font-size: 19px; }
   }
   .lens-q { font-size: 16px; font-weight: 700; text-align: center; margin-top: 16px; color: var(--tx) !important; }
   .lens-tabs { display: flex; gap: 6px; margin-top: 10px; }
@@ -988,8 +989,8 @@
     <div class="reason">
       <!-- 10/24 入口を「アイコン左＋2行見出し（2行目赤）＋左ぞろえの短い説明」に（旬の駅の形）。変更前 _保存/index.before-1024-reasonhead.html -->
       <div class="rh">
-        <svg class="rh-ico" viewBox="0 0 64 64" aria-hidden="true"><circle cx="18" cy="34" r="13" fill="#f4e030"/><circle cx="46" cy="34" r="13" fill="#f4e030"/><path d="M31,32 Q32,28 33,32 M5,30 L2,24 M59,30 L62,24"/><path d="M12,30 Q14,26 18,25" stroke-width="2"/></svg>
-        <h3>遠近両用・中近・近々も<em>追加料金<b>0</b>円</em></h3>
+        <svg class="rh-ico" viewBox="0 0 64 64" aria-hidden="true"><ellipse cx="32" cy="52" rx="26" ry="4" fill="#ecebe4"/><circle cx="18" cy="32" r="13" fill="#fff6b3" stroke="#222" stroke-width="4.5"/><circle cx="46" cy="32" r="13" fill="#fff6b3" stroke="#222" stroke-width="4.5"/><path d="M30,30 Q32,26 34,30" stroke="#222" stroke-width="4" fill="none"/><path d="M5,29 L1,24 M59,29 L63,24" stroke="#222" stroke-width="4" stroke-linecap="round"/><path d="M11,29 Q13,24 18,23" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M39,29 Q41,24 46,23" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>
+        <h3>遠近・中近・近々も<em>追加料金<b>0</b>円</em></h3>
       </div>
       <p class="rh-d">細かい文字が見にくくなった方へ。見え方や過ごし方に合わせて、レンズを選べます。<small>※対象のメガネ一式・標準レンズの場合</small></p>
       <div class="lens-tabs" role="tablist">
@@ -1011,15 +1012,15 @@
 
     <div class="reason">
       <div class="rh">
-        <svg class="rh-ico" viewBox="0 0 64 64" aria-hidden="true"><circle cx="26" cy="20" r="10"/><path d="M8,58 Q8,36 26,35 Q44,36 44,58"/><circle cx="22" cy="20" r="3.5" stroke-width="1.8"/><circle cx="30" cy="20" r="3.5" stroke-width="1.8"/><circle cx="49" cy="38" r="10" fill="#f4e030"/><path d="M44,38 L48,42 L54,34" stroke-width="2.2"/></svg>
-        <h3>国家資格の眼鏡作製技能士<em>全店に在籍</em></h3>
+        <svg class="rh-ico" viewBox="0 0 64 64" aria-hidden="true"><ellipse cx="32" cy="58" rx="26" ry="4" fill="#ecebe4"/><path d="M8,58 Q8,36 27,35 Q46,36 46,58 Z" fill="#3a3a3a"/><path d="M21,36 L27,46 L33,36 Z" fill="#fff"/><circle cx="27" cy="20" r="12" fill="#f3e2cf"/><path d="M15,18 Q16,7 27,7 Q38,7 39,18 Q33,12 27,13 Q20,13 15,18 Z" fill="#3a3a3a"/><circle cx="22.5" cy="21" r="4" fill="none" stroke="#222" stroke-width="1.8"/><circle cx="31.5" cy="21" r="4" fill="none" stroke="#222" stroke-width="1.8"/><path d="M26.5,21 H27.5" stroke="#222" stroke-width="1.8"/><circle cx="50" cy="42" r="11" fill="#f4e030"/><path d="M45,42 L49,46 L55,38" fill="none" stroke="#222" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3>眼鏡作製技能士が<em>全店に在籍</em></h3>
       </div>
-      <p class="rh-d">「手元が見えにくい」「遠近両用ははじめてで不安」そんなお悩みをじっくり聞いて、ぴったりの度数を測ります。<small>※技能士が不在の日もあるため、ご来店前のご予約がおすすめです</small></p>
+      <p class="rh-d">国家資格をもつスタッフが、「手元が見えにくい」「遠近両用ははじめてで不安」などのお悩みを聞いて、ぴったりの度数を測ります。<small>※技能士が不在の日もあるため、ご来店前のご予約がおすすめです</small></p>
     </div>
 
     <div class="reason">
       <div class="rh">
-        <svg class="rh-ico" viewBox="0 0 64 64" aria-hidden="true"><path d="M32,6 L54,14 Q54,44 32,58 Q10,44 10,14 Z" fill="#f4e030"/><path d="M22,32 L29,39 L42,25" stroke-width="3"/></svg>
+        <svg class="rh-ico" viewBox="0 0 64 64" aria-hidden="true"><ellipse cx="32" cy="60" rx="22" ry="3.5" fill="#ecebe4"/><path d="M32,4 L55,12 Q55,43 32,57 Q9,43 9,12 Z" fill="#f4e030"/><path d="M32,4 L55,12 Q55,43 32,57 Z" fill="#e6cf1c"/><path d="M21,30 L29,38 L43,23" fill="none" stroke="#222" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <h3>ご購入でついてくる<em>充実の保証</em></h3>
       </div>
       <p class="rh-d">ふだんのメガネのほか、お子さまや白内障の手術後の方に向けた保証もあります。</p>
