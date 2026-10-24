@@ -384,6 +384,15 @@
   .reason h3 { font-size: 20px; font-weight: 900; margin: 8px 0; line-height: 1.4; }
   .reason p { font-size: 14px; color: #444; }
   .reason-ill { width: 100%; margin: 12px 0 0; }
+  /* 理由の入口：アイコン左＋2行見出し（2行目赤）＋左ぞろえの短い説明 */
+  .rh { display: flex; align-items: center; gap: 14px; text-align: left; }
+  .rh-ico { flex: none; width: 64px; height: 64px; fill: none; stroke: var(--bk); stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
+  .reason .rh h3 { margin: 0; font-size: 17px; line-height: 1.4; }
+  .rh h3 em { display: block; font-style: normal; font-size: 22px; color: #e8352a; }
+  .rh h3 em b { font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 800; font-size: 1.4em; line-height: 1; margin: 0 1px; }
+  .reason .rh-d { text-align: left; font-size: 14px; color: var(--tx); line-height: 1.8; margin-top: 12px; word-break: auto-phrase; }
+  .rh-d small { display: block; font-size: 11px; color: var(--sub); line-height: 1.6; margin-top: 4px; }
+  .rh-d + .lens-tabs { margin-top: 16px; }
   .reason .reason-note { font-size: 11px; color: var(--sub); text-align: left; line-height: 1.6; margin-top: 8px; word-break: auto-phrase; }
   .reason .lens-lead { font-size: 15px; color: var(--tx); line-height: 1.8; }
   /* 遠近・中近・近々も追加料金0円：左に2段の文字・右に大きい0（鯖江LPの見せ方） */
@@ -398,6 +407,7 @@
   @media (max-width: 359px) {
     .lens-zero-l { font-size: 13px; } .lens-zero-r { font-size: 20px; } .lens-zero b { font-size: 60px; }
     .lens-tabs button { font-size: 12px; white-space: nowrap; }
+    .rh { gap: 10px; } .rh-ico { width: 50px; height: 50px; } .reason .rh h3 { font-size: 15px; } .rh h3 em { font-size: 20px; }
   }
   .lens-q { font-size: 16px; font-weight: 700; text-align: center; margin-top: 16px; color: var(--tx) !important; }
   .lens-tabs { display: flex; gap: 6px; margin-top: 10px; }
@@ -976,11 +986,12 @@
 
     <div class="reasons">
     <div class="reason">
-      <span class="reason-no">理由 1</span>
-      <h3>見え方に合わせて選べるレンズ</h3>
-      <p class="lens-lead lens-to">細かい文字が見にくくなった方へ</p>
-      <p class="lens-zero"><span class="lens-zero-l"><span>遠近両用・中近・近々も</span><span class="lens-zero-r">追加料金</span></span><b class="num">0</b><span class="lens-zero-r lens-zero-y">円</span></p>
-      <p class="lens-zero-n">※対象のメガネ一式・標準レンズの場合</p>
+      <!-- 10/24 入口を「アイコン左＋2行見出し（2行目赤）＋左ぞろえの短い説明」に（旬の駅の形）。変更前 _保存/index.before-1024-reasonhead.html -->
+      <div class="rh">
+        <svg class="rh-ico" viewBox="0 0 64 64" aria-hidden="true"><circle cx="18" cy="34" r="13" fill="#f4e030"/><circle cx="46" cy="34" r="13" fill="#f4e030"/><path d="M31,32 Q32,28 33,32 M5,30 L2,24 M59,30 L62,24"/><path d="M12,30 Q14,26 18,25" stroke-width="2"/></svg>
+        <h3>遠近両用・中近・近々も<em>追加料金<b>0</b>円</em></h3>
+      </div>
+      <p class="rh-d">細かい文字が見にくくなった方へ。見え方や過ごし方に合わせて、レンズを選べます。<small>※対象のメガネ一式・標準レンズの場合</small></p>
       <div class="lens-tabs" role="tablist">
         <button role="tab" aria-selected="true" data-lens="enkin">遠近両用</button>
         <button role="tab" aria-selected="false" data-lens="chukin">中近</button>
@@ -999,17 +1010,19 @@
     </div>
 
     <div class="reason">
-      <span class="reason-no">理由 2</span>
-      <h3>国家資格の<br>眼鏡作製技能士が全店に在籍</h3>
-      <p class="lens-lead">「手元が見えにくい」<br>「遠近両用ははじめてで不安」<br>そんなお悩みをじっくり聞いて、<br>ぴったりの度数を測ります。</p>
-      <img class="reason-ill" src="images/illust/ginoushi.svg" alt="" width="640" height="360">
-      <p class="reason-note">※技能士が不在の日もあるため、ご来店前のご予約がおすすめです</p>
+      <div class="rh">
+        <svg class="rh-ico" viewBox="0 0 64 64" aria-hidden="true"><circle cx="26" cy="20" r="10"/><path d="M8,58 Q8,36 26,35 Q44,36 44,58"/><circle cx="22" cy="20" r="3.5" stroke-width="1.8"/><circle cx="30" cy="20" r="3.5" stroke-width="1.8"/><circle cx="49" cy="38" r="10" fill="#f4e030"/><path d="M44,38 L48,42 L54,34" stroke-width="2.2"/></svg>
+        <h3>国家資格の眼鏡作製技能士<em>全店に在籍</em></h3>
+      </div>
+      <p class="rh-d">「手元が見えにくい」「遠近両用ははじめてで不安」そんなお悩みをじっくり聞いて、ぴったりの度数を測ります。<small>※技能士が不在の日もあるため、ご来店前のご予約がおすすめです</small></p>
     </div>
 
     <div class="reason">
-      <span class="reason-no">理由 3</span>
-      <h3>充実した保証</h3>
-      <p>ご購入いただくと、保証がついてきます。</p>
+      <div class="rh">
+        <svg class="rh-ico" viewBox="0 0 64 64" aria-hidden="true"><path d="M32,6 L54,14 Q54,44 32,58 Q10,44 10,14 Z" fill="#f4e030"/><path d="M22,32 L29,39 L42,25" stroke-width="3"/></svg>
+        <h3>ご購入でついてくる<em>充実の保証</em></h3>
+      </div>
+      <p class="rh-d">ふだんのメガネのほか、お子さまや白内障の手術後の方に向けた保証もあります。</p>
       <div class="lens-tabs hs-tabs" role="tablist">
         <button role="tab" aria-selected="true" data-hs="std">通常保証<br><small>どなたでも</small></button>
         <button role="tab" aria-selected="false" data-hs="kids">キッズ&amp;<br>ジュニア保証<br><small>中学生以下</small></button>
