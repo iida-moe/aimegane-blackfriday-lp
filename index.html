@@ -9,7 +9,7 @@
 <meta name="description" content="アイメガネのブラックフライデー。11/13(金)〜11/29(日)。対象のメガネ一式が割引をぜんぶ使うと8,800円〜。遠近両用も追加料金0円。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Barlow+Condensed:wght@700&family=Barlow+Semi+Condensed:wght@600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Roboto:wght@900&family=Roboto+Condensed:wght@900&family=Barlow+Condensed:wght@700&family=Barlow+Semi+Condensed:wght@600;800&display=swap" rel="stylesheet">
 <style>
   :root {
     --bk: #111;
@@ -936,6 +936,38 @@
   @media (max-width: 359px) { .fv .fv-cta .btn-arw, .float-cta .btn-arw { font-size: 15px; padding-left: 12px; padding-right: 56px; } }
   /* 合計の黄色ラベル：PCは文字が大きいぶん位置と余白を調整 */
   @media (min-width: 1024px) { .st4-fin { margin-top: 30px; padding-top: 40px; } .st4-fin-t { top: -24px; padding: 6px 26px; margin: 0; } .st4-fin-from { font-size: 16px; } .st4-fin-save { width: 92px; height: 92px; font-size: 14px; top: 22px; right: -18px; } .st4-fin-save span { font-size: 19px; } }
+  /* ===== PC（1024px〜）の直し 10/24 ===== */
+  .fvp { display: none; }
+  @media (min-width: 1024px) {
+    .fv { background: #000 !important; } /* 背景画像の黄色い紙吹雪をやめ、金の紙吹雪だけに */
+    /* FV：画像をやめて文字で組む */
+    .fv-img .fv-pc-text { display: none !important; }
+    .fvp { display: block; position: relative; z-index: 2; color: #fff; text-align: center; }
+    .fvp-date { font-family: 'Roboto', sans-serif; font-weight: 900; font-size: clamp(28px, 2.4vw, 40px); line-height: 1.2; }
+    .fvp-date small { font-family: 'Noto Sans JP', sans-serif; font-size: .5em; font-weight: 700; margin: 0 .1em; }
+    .fvp-kana { font-size: clamp(15px, 1.2vw, 20px); font-weight: 700; margin-top: clamp(14px, 1.4vw, 24px); }
+    .fvp-en { font-family: 'Roboto Condensed', 'Roboto', sans-serif; font-weight: 900; font-size: clamp(60px, 5.6vw, 100px); color: var(--ac); line-height: 1; margin-top: 4px; }
+    .fvp-row { display: flex; align-items: center; justify-content: center; gap: clamp(32px, 3.5vw, 64px); margin-top: clamp(20px, 2.2vw, 40px); }
+    .fvp-price { text-align: left; }
+    .fvp-lead { font-size: clamp(20px, 1.8vw, 30px); font-weight: 700; }
+    .fvp-y { display: flex; align-items: flex-end; gap: 10px; line-height: .8; margin-top: 10px; }
+    .fvp-y b { font-family: 'Roboto', sans-serif; font-weight: 900; font-size: clamp(100px, 9.4vw, 168px); color: #f0352b; letter-spacing: -.02em; }
+    .fvp-y span { display: flex; flex-direction: column; font-size: clamp(30px, 2.6vw, 46px); font-weight: 700; line-height: 1.1; padding-bottom: 4px; }
+    .fvp-y small { font-size: .55em; }
+    .fvp-note { font-size: clamp(12px, .9vw, 14px); margin-top: 12px; }
+    .fvp-badge { display: flex; align-items: center; gap: clamp(14px, 1.3vw, 22px); border: 1.5px solid rgba(255,255,255,.6); border-radius: 16px; padding: clamp(18px, 1.6vw, 28px) clamp(22px, 2vw, 36px); }
+    .fvp-badge svg { width: clamp(80px, 7vw, 120px); flex: none; }
+    .fvp-badge-t { font-size: clamp(22px, 2vw, 34px); font-weight: 700; line-height: 1.3; text-align: left; white-space: nowrap; }
+    .fvp-zero { display: flex; align-items: flex-end; color: var(--ac); font-size: clamp(26px, 2.2vw, 38px); font-weight: 900; line-height: .8; }
+    .fvp-zero b { font-family: 'Roboto', sans-serif; font-size: clamp(76px, 7vw, 120px); line-height: .76; margin-right: 2px; }
+    .fv .fv-cta { margin-top: clamp(28px, 2.6vw, 48px); }
+    /* 選ばれる理由：横3列をやめて縦に1枚ずつ（長さがそろわない・幅がせまいため） */
+    .reasons { display: block; max-width: 720px; margin: 0 auto; }
+    .reasons .reason { margin-top: 48px; padding: 40px 48px; }
+    .reasons .reason:first-child { margin-top: 0; }
+    .reasons .reason .talk, .reasons .reason .lens-rec, .reasons .reason .hs-acc { max-width: 520px; margin-left: auto; margin-right: auto; }
+    .reasons .reason .reason-ill { max-width: 520px; margin-left: auto; margin-right: auto; display: block; }
+  }
 </style><style>
   .preview-gate { position: fixed; inset: 0; z-index: 9999; background: #000; display: flex; align-items: center; justify-content: center; padding: 20px; }
   .preview-gate-box { background: #fff; border: 2px solid #f4e030; border-radius: 12px; padding: clamp(24px, 5vw, 40px); width: 100%; max-width: 340px; text-align: center; }
@@ -992,6 +1024,24 @@
       </nav>      <button class="hd-menu" id="menuBtn" aria-label="メニューを開く" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
     </div>
     <h1 class="fv-img"><img class="fv-sp" src="images/blackfriday_fv_1290_2193.jpg?v=1024b" alt="ブラックフライデー BLACK FRIDAY 11/13(金)〜11/29(日) 対象のメガネ一式 8,800円〜(税込)※割引条件あり 遠近両用も追加料金0円" width="1290" height="2193"><img class="fv-pc-text" src="images/blackfriday_fv-pc-text.png?v=1020a" alt="ブラックフライデー BLACK FRIDAY 11/13(金)〜11/29(日) 対象のメガネ一式 8,800円〜(税込)※割引条件あり 遠近両用も追加料金0円" width="813" height="478"></h1>
+    <!-- 10/24 PCのFVは文字で組む（SPの画像と同じ並び：日付→BLACK FRIDAY→8,800円→遠近0円） -->
+    <div class="fvp" aria-hidden="true">
+      <p class="fvp-date">11/13<small>(金)</small>〜11/29<small>(日)</small></p>
+      <p class="fvp-kana">ブラックフライデー</p>
+      <p class="fvp-en">BLACK FRIDAY</p>
+      <div class="fvp-row">
+        <div class="fvp-price">
+          <p class="fvp-lead">対象のメガネ一式</p>
+          <p class="fvp-y"><b>8,800</b><span>円〜<small>(税込)</small></span></p>
+          <p class="fvp-note">※割引条件あり</p>
+        </div>
+        <div class="fvp-badge">
+          <svg viewBox="0 0 80 32"><g fill="none" stroke="#fff" stroke-width="4.4" stroke-linejoin="round" stroke-linecap="round"><path d="M3,6 Q3,4 6,4 H33 Q36,4 35.5,7 L33,20 Q31.5,28 24,28 H15 Q7.5,28 5.5,20 Z"/><path d="M77,6 Q77,4 74,4 H47 Q44,4 44.5,7 L47,20 Q48.5,28 56,28 H65 Q72.5,28 74.5,20 Z"/><path d="M35.5,8 Q40,5.5 44.5,8"/></g></svg>
+          <p class="fvp-badge-t">遠近両用<br>追加料金</p>
+          <p class="fvp-zero"><b>0</b>円</p>
+        </div>
+      </div>
+    </div>
     <div class="fv-cta">
       <a href="#shop-search" class="btn btn-arw" data-cta-location="fv"><span>近くのお店で予約する</span><span class="arw" aria-hidden="true">▶</span></a>
     </div>
