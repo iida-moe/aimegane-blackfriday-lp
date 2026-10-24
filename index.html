@@ -439,9 +439,9 @@
   .talk-row { display: flex; align-items: flex-end; gap: 8px; }
   .talk-staff { flex-direction: row-reverse; }
   /* 理由2のアイコン：会話と同じスタッフの顔＋黄のチェック丸 */
-  .rh-ico-face { position: relative; display: block; }
-  .rh-ico-face img { display: block; width: 100%; height: 100%; }
-  .rh-ico-face svg { position: absolute; right: -2px; bottom: 0; width: 28px; height: 28px; }
+  .rh-ico-face { position: relative; display: flex; align-items: center; justify-content: center; background: var(--bg2); border-radius: 50%; }
+  .rh-ico-face img { display: block; width: 66%; height: auto; }
+  .rh-ico-face svg { position: absolute; right: -2px; bottom: -2px; width: 26px; height: 26px; }
   .talk-face { flex: none; width: 46px; height: 46px; display: block; }
   .talk-who { flex: none; display: flex; flex-direction: column; align-items: center; }
   .talk-who small { font-size: 10px; font-weight: 700; color: var(--sub); margin-top: 2px; }
