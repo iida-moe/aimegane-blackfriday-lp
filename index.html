@@ -389,7 +389,7 @@
   /* 見出しのかたまりとレンズを選ぶ部分を分けて、ぎちぎちに見えないように */
   .reason .lens-hint { margin-top: 28px !important; padding-top: 24px; border-top: 1px dashed var(--line); }
   .reason .rh-to { margin-bottom: 14px !important; }
-  #lensImg + .lens-for { margin-top: 4px; }
+  #lensImg + .lens-for { margin-top: 4px; word-break: auto-phrase; }
   .lens-for + .lens-rec { margin-top: 14px; } /* 図の上の白い余白ぶん、タブに寄せる */
   /* 理由の入口：アイコン左＋2行見出し（2行目赤）＋左ぞろえの短い説明 */
   .reason:has(.rh) { padding: 28px 20px; }
@@ -1415,7 +1415,7 @@ const LENS = {
   enkin:  { src:'images/illust/lens-enkin.svg',  alt:'遠近両用レンズの見え方', forText:'遠くも手元も、これ1本で',
             chk:['メガネのかけ外しが面倒になってきた','手元用のメガネを持ち歩きたくない','外出先でも手元を見たい'],
             scene:[['car','運転'],['walk','お出かけ'],['phone','スマホ'],['book','読書']] },
-  chukin: { src:'images/illust/lens-chukin.svg', alt:'中近両用レンズの見え方', forText:'テレビから手元まで、お部屋の中で快適に',
+  chukin: { src:'images/illust/lens-chukin.svg', alt:'中近両用レンズの見え方', forText:'お部屋の中で、テレビも手元も',
             chk:['家の中で過ごす時間が長い','料理や家事を楽にしたい','会話やテレビと手元を両方見たい'],
             scene:[['pot','料理・家事'],['tv','テレビ'],['pc','デスクワーク'],['phone','スマホ']] },
   kinkin: { src:'images/illust/lens-kinkin.svg', alt:'近々レンズの見え方',     forText:'デスクまわりを広く、見やすく',
