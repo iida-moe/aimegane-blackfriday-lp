@@ -2,7 +2,7 @@
 <defs><clipPath id="l"><path d="M70,70 H290 Q330,70 328,110 L318,240 Q312,290 262,290 H98 Q48,290 42,240 L32,110 Q30,70 70,70 Z"/></clipPath></defs>
 <g clip-path="url(#l)"><rect x="0" y="0" width="400" height="360" fill="#D6EBF7"/></g>
 <g fill="none" stroke="#D9822B" stroke-width="3" stroke-dasharray="6 6" stroke-linecap="round"></g>
-<g clip-path="url(#l)"><ellipse cx="180" cy="248" rx="80" ry="28" fill="#F7D3DF"/></g>
+<ellipse cx="180" cy="246" rx="86" ry="28" fill="none" stroke="#D0453A" stroke-width="3.5" stroke-dasharray="8 6"/>
 <path d="M70,70 H290 Q330,70 328,110 L318,240 Q312,290 262,290 H98 Q48,290 42,240 L32,110 Q30,70 70,70 Z" fill="none" stroke="#333333" stroke-width="6" stroke-linejoin="round"/>
 <path d="M180,140 L360,120 M180,246 L360,260" fill="none" stroke="#333333" stroke-width="2" stroke-dasharray="2 6" stroke-opacity=".8"/>
 <circle cx="180" cy="140" r="5" fill="#333333"/>
