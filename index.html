@@ -432,7 +432,11 @@
   .lens-tabs { display: flex; gap: 6px; margin-top: 10px; }
   .lens-tabs button { flex: 1; font-size: 14px; font-weight: 700; padding: 10px 0; border-radius: 20px; border: 1.5px solid var(--bk); background: #fff; color: var(--tx); cursor: pointer; }
   .lens-tabs button[aria-selected="true"] { background: var(--bk); color: var(--ac); }
-  .lens-rec { margin-top: 14px; text-align: left; }
+  .lens-rec { margin-top: 8px; text-align: left; }
+  .reason .lens-hint { font-size: 12px; font-weight: 700; color: var(--sub); text-align: center; margin-top: 16px; }
+  .reason .lens-hint + .lens-tabs { margin-top: 6px; }
+  .lens-rec .lens-chk { margin-top: 0; }
+  .lens-chk + .lens-rec-t { margin-top: 16px !important; }
   .lens-rec-t { font-size: 14px !important; font-weight: 900; color: var(--tx) !important; margin-top: 14px !important; }
   .lens-rec-t:first-child { margin-top: 0 !important; }
   .lens-chk { list-style: none; margin-top: 6px; }
@@ -1015,6 +1019,7 @@
         </div>
       </div>
       <p class="rh-d rh-note"><small>※対象のメガネ一式・標準レンズの場合</small></p>
+      <p class="lens-hint">＼ タップで切りかわります ／</p>
       <div class="lens-tabs" role="tablist">
         <button role="tab" aria-selected="true" data-lens="enkin">遠近両用</button>
         <button role="tab" aria-selected="false" data-lens="chukin">中近</button>
@@ -1025,7 +1030,6 @@
       <p class="lens-for" id="lensFor">遠くも手元も、1本で見たい方に</p>
       <!-- 10/23 こんな方におすすめ＋使うシーン（タブで切りかえ・中身はJSのLENS）。変更前 _保存/index.before-1023-lensrec.html -->
       <div class="lens-rec">
-        <p class="lens-rec-t">こんな方におすすめ</p>
         <ul class="lens-chk" id="lensChk"></ul>
         <p class="lens-rec-t">使うシーン</p>
         <ul class="lens-scene" id="lensScene"></ul>
