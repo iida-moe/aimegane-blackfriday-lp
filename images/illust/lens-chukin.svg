@@ -7,6 +7,6 @@
 <path d="M180,166 L360,120 M180,258 L360,260" fill="none" stroke="#333333" stroke-width="2" stroke-dasharray="2 6" stroke-opacity=".8"/>
 <circle cx="180" cy="166" r="5" fill="#333333"/>
 <circle cx="180" cy="258" r="5" fill="#333333"/>
-<g fill="none" stroke="#333333" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"><rect x="372" y="102" width="66" height="40" rx="4"/><path d="M392,90 L405,102 L418,90"/><rect x="392" y="236" width="26" height="46" rx="5"/><path d="M401,274 H409"/></g>
+<g fill="none" stroke="#333333" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"><rect x="374" y="98" width="62" height="38" rx="4"/><path d="M405,136 V146 M392,148 H418"/><rect x="392" y="236" width="26" height="46" rx="5"/><path d="M401,274 H409"/></g>
 <g font-family="'Noto Sans JP', sans-serif" font-weight="700"><text x="456" y="120" font-size="36" fill="#222222">中間</text><text x="456" y="154" font-size="28" fill="#666" font-weight="400">テレビ・家事</text><text x="456" y="260" font-size="36" fill="#222222">手元</text><text x="456" y="294" font-size="28" fill="#666" font-weight="400">スマホ・本</text></g>
 </svg>
