@@ -397,7 +397,8 @@
   .reason .rh h3.rh-zero { display: flex; align-items: flex-end; gap: 2px; color: #e8352a; line-height: 1; }
   .rh-zl { display: flex; flex-direction: column; gap: 6px; }
   .rh h3 .rh-zl > span { font-size: 17px; color: var(--tx); letter-spacing: .02em; white-space: nowrap; }
-  .rh h3 .rh-zl em { display: block; font-style: normal; font-size: 31px; letter-spacing: .01em; color: #e8352a; white-space: nowrap; }
+  /* 追加料金は1行目と左右の端をそろえる（文字の間を広げてぴったりの幅に） */
+  .rh h3 .rh-zl em { display: block; font-style: normal; font-size: 29px; letter-spacing: 0; color: #e8352a; white-space: nowrap; text-align: justify; text-align-last: justify; }
   .rh-zero > b { font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 800; font-size: 70px; line-height: .74; margin-left: 4px; }
   .rh-zero .rh-yen { font-size: 24px; font-weight: 900; }
   .reason .rh-d { text-align: left; font-size: 15px; font-weight: 500; color: var(--tx); line-height: 2; letter-spacing: .03em; margin-top: 14px; word-break: auto-phrase; }
@@ -418,7 +419,7 @@
     .lens-zero-l { font-size: 13px; } .lens-zero-r { font-size: 20px; } .lens-zero b { font-size: 60px; }
     .lens-tabs button { font-size: 12px; white-space: nowrap; }
     .rh { gap: 10px; } .rh-ico { width: 60px; height: 60px; } .reason .rh h3 { font-size: 15px; letter-spacing: 0; } .rh h3 em { font-size: 19px; } .rh h3 em:has(b) { font-size: 22px; }
-    .rh h3 .rh-zl > span { font-size: 14px; } .rh h3 .rh-zl em { font-size: 26px; } .rh-zero > b { font-size: 58px; } .rh-zero .rh-yen { font-size: 20px; }
+    .rh h3 .rh-zl > span { font-size: 14px; } .rh h3 .rh-zl em { font-size: 23px; } .rh-zero > b { font-size: 58px; } .rh-zero .rh-yen { font-size: 20px; }
   }
   .lens-q { font-size: 16px; font-weight: 700; text-align: center; margin-top: 16px; color: var(--tx) !important; }
   .lens-tabs { display: flex; gap: 6px; margin-top: 10px; }
