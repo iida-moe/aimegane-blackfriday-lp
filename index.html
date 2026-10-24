@@ -380,7 +380,9 @@
   /* ===== 3 選ばれる理由 ===== */
   .reason { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 24px 16px; margin-top: 16px; text-align: center; }
   .reason .note { text-align: left; }
-  .reason-no { font-size: 12px; font-weight: 700; display: inline-block; background: var(--ac); padding: 0 10px; border-radius: 10px; }
+  .reason-no { font-size: 12px; font-weight: 700; display: inline-flex; align-items: center; background: var(--ac); padding: 2px 4px 2px 12px; border-radius: 20px; }
+  /* 理由の中身を一言（黒地×黄） */
+  .reason-no b { margin-left: 8px; background: var(--bk); color: var(--ac); font-size: 15px; font-weight: 900; padding: 2px 12px; border-radius: 20px; }
   .reason h3 { font-size: 20px; font-weight: 900; margin: 8px 0; line-height: 1.4; }
   .reason p { font-size: 14px; color: #444; }
   .reason-ill { width: 100%; margin: 12px 0 0; }
@@ -977,7 +979,7 @@
 
     <div class="reasons">
     <div class="reason">
-      <span class="reason-no">理由 1</span>
+      <span class="reason-no">理由 1<b>選べるレンズ</b></span>
       <p class="lens-lead lens-to">細かい文字が見にくくなった方へ</p>
       <h3 class="lens-zero"><span class="lens-zero-l"><span>遠近両用・中近・近々も</span><span class="lens-zero-r">追加料金</span></span><b class="num">0</b><span class="lens-zero-r lens-zero-y">円</span></h3>
       <p class="lens-zero-n">※対象のメガネ一式・標準レンズの場合</p>
@@ -999,7 +1001,7 @@
     </div>
 
     <div class="reason">
-      <span class="reason-no">理由 2</span>
+      <span class="reason-no">理由 2<b>専門スタッフ</b></span>
       <h3>国家資格の<br>眼鏡作製技能士が全店に在籍</h3>
       <p class="lens-lead">「手元が見えにくい」<br>「遠近両用ははじめてで不安」<br>そんなお悩みをじっくり聞いて、<br>ぴったりの度数を測ります。</p>
       <img class="reason-ill" src="images/illust/ginoushi.svg" alt="" width="640" height="360">
@@ -1007,7 +1009,7 @@
     </div>
 
     <div class="reason">
-      <span class="reason-no">理由 3</span>
+      <span class="reason-no">理由 3<b>安心の保証</b></span>
       <h3>充実した保証</h3>
       <p>ご購入いただくと、保証がついてきます。</p>
       <div class="lens-tabs hs-tabs" role="tablist">
