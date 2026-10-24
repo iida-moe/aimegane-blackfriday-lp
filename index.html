@@ -1548,9 +1548,23 @@ document.querySelectorAll('.lens-tabs:not(.hs-tabs) button').forEach(b=>{
 
 
 
+// ===== 更新したらFVから見せる（ブラウザが前の位置を覚えて途中から始まらないように） =====
+if('scrollRestoration' in history){history.scrollRestoration='manual';}
+if(!location.hash){window.scrollTo(0,0);}
+
+// ===== ブラックフライデー限定バッジ：画面に入るたびにハンコのようにペタッ =====
+(function(){
+  const b=document.querySelector('.st4-badge'); if(!b) return;
+  if(!('IntersectionObserver' in window)){b.classList.add('on');return;}
+  new IntersectionObserver(es=>es.forEach(e=>{
+    if(e.intersectionRatio>=0.6){b.classList.add("on");}
+    else if(e.intersectionRatio===0){b.classList.remove('on');}
+  }),{threshold:[0,0.6]}).observe(b);
+})();
+
 // ===== CTAの上の吹き出し：見えたらぴょこっと出す =====
 (function(){
-  const els=document.querySelectorAll('.cta-pop, .pr2 .ba-tag, .st4-badge');
+  const els=document.querySelectorAll('.cta-pop, .pr2 .ba-tag');
   if(!('IntersectionObserver' in window)){els.forEach(e=>e.classList.add('on'));return;}
   const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target);}}),{threshold:0.3});
   els.forEach(e=>io.observe(e));
