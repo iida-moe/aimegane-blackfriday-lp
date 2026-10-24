@@ -520,7 +520,8 @@
   /* 10/24 保証カードを縦積みに：左に名前＋説明、右に大きい数字 */
   .hc3, .hc3.hc4 { grid-template-columns: 1fr; }
   .hc3 li { display: grid; grid-template-columns: 1fr auto; grid-template-areas: "t n" "d n"; align-items: center; column-gap: 12px; padding: 14px 18px; text-align: left; }
-  .hc3 .hc-t { grid-area: t; justify-self: start; font-size: 16px !important; }
+  .hc3 .hc-t { grid-area: t; justify-self: start; font-size: 16px !important; border-bottom: 0; padding-bottom: 0; margin-bottom: 0; }
+  .hc-u { font-weight: 900; background: linear-gradient(transparent 60%, var(--ac) 60%, var(--ac) 92%, transparent 92%); }
   .hc3 .hc-d { grid-area: d; margin-top: 2px; font-size: 13px !important; }
   .hc3 .hc-d br { display: none; }
   .hc3 .hc-n { grid-area: n; font-size: 48px !important; }
@@ -1119,13 +1120,13 @@
         <button role="tab" aria-selected="false" data-hs="cat">白内障<br>手術後の方へ</button>
       </div>
       <ul class="hc3" data-hs-panel="std">
-        <li><p class="hc-t">視え方保証</p><p class="hc-n"><span class="marker">6</span><small>か月</small></p><p class="hc-d">度数交換が<br>何度でも無料</p></li>
+        <li><p class="hc-t">視え方保証</p><p class="hc-n"><span class="marker">6</span><small>か月</small></p><p class="hc-d">度数交換が<br><span class="hc-u">何度でも無料</span></p></li>
         <li><p class="hc-t">品質保証</p><p class="hc-n"><span class="marker">1</span><small>年</small></p><p class="hc-d">不具合は<br>無料で交換</p></li>
         <li><p class="hc-t">アイ情補償</p><p class="hc-n"><span class="marker">1</span><small>年</small></p><p class="hc-d">うっかり破損<br>50%引き</p></li>
       </ul>
       <p class="hs-catch" data-hs-panel="kids" hidden>元気に遊んで<span class="marker">壊しちゃっても大丈夫！</span><small>成長で度数が変わっても、1年間は何度でも交換OK</small></p>
       <ul class="hc3" data-hs-panel="kids" hidden>
-        <li><p class="hc-t">視え方保証</p><p class="hc-n"><span class="marker">1</span><small>年</small></p><p class="hc-d">度数交換が<br>何度でも無料</p></li>
+        <li><p class="hc-t">視え方保証</p><p class="hc-n"><span class="marker">1</span><small>年</small></p><p class="hc-d">度数交換が<br><span class="hc-u">何度でも無料</span></p></li>
         <li><p class="hc-t">品質保証</p><p class="hc-n"><span class="marker">1</span><small>年</small></p><p class="hc-d">不具合は<br>無料で交換</p></li>
         <li><p class="hc-t">破損・紛失</p><p class="hc-n"><span class="marker">1</span><small>回目無料</small></p><p class="hc-d">2回目・紛失は<br>50%引き</p></li>
       </ul>
