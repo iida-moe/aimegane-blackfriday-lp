@@ -631,6 +631,23 @@
   .hear-q-t { display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 900; }
   .hear-q-i { display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; border-radius: 50%; background: var(--bk); color: var(--ac); font-size: 12px; font-weight: 900; flex: none; }
   .hear-q-d { font-size: 13px; line-height: 1.7; margin-top: 6px; }
+  /* 10/24 補聴器カードの組み直し */
+  .hear-img { position: relative; }
+  .hear-img .hear-logo { position: absolute; top: 10px; left: 10px; width: 76px; margin: 0; border-radius: 6px; }
+  .hear-top { align-items: flex-end; }
+  .hear-top .hear-y { margin: 0; }
+  .hear-chk { margin-top: 12px; padding-top: 10px; border-top: 1px dashed var(--line); }
+  .hear-chk li { font-size: 14px; word-break: auto-phrase; }
+  .hear .hear-chk + .hearing-n { margin-top: 6px; word-break: auto-phrase; }
+  @media (max-width: 359px) { .hear-body { padding-left: 14px; padding-right: 14px; } .hear-chk li { font-size: 13px; } }
+  /* 認定補聴器技能者とは？：タップで開く */
+  details.hear-q { margin-top: 14px; padding: 0; }
+  details.hear-q::before, details.hear-q::after { display: none; }
+  .hear-q summary { list-style: none; cursor: pointer; padding: 10px 40px 10px 12px; position: relative; }
+  .hear-q summary::-webkit-details-marker { display: none; }
+  .hear-q summary::after { content: "+"; position: absolute; right: 12px; top: 50%; transform: translateY(-50%); width: 22px; height: 22px; border-radius: 50%; background: var(--bk); color: var(--ac); font-size: 16px; font-weight: 900; line-height: 22px; text-align: center; }
+  .hear-q[open] summary::after { content: "−"; }
+  .hear-q .hear-q-d { margin: 0; padding: 0 14px 12px; }
   /* スターキーのロゴ：メーカー画像なので切りぬかず白い背景ごと表示 */
   .hearing .hearing-logo { display: block; width: 96px; height: auto; border-radius: 6px; margin-bottom: 6px; }
   .hearing-mk { font-weight: 900; background: var(--ac); padding: 1px 4px; } /* 文字の上までぬるマーカー */
@@ -1086,15 +1103,20 @@
     <div class="hear">
       <p class="hear-t">補聴器もブラックフライデー対象</p>
       <div class="hear-card">
-      <div class="hear-img"><img class="hear-prod" src="images/blackfriday_hochouki_400_313.png" alt="スターキーの補聴器 Gシリーズ" width="400" height="313" loading="lazy"></div>
+      <div class="hear-img"><img class="hear-prod" src="images/blackfriday_hochouki_400_313.png" alt="スターキーの補聴器 Gシリーズ" width="400" height="313" loading="lazy"><img class="hear-logo" src="images/blackfriday_starkey-logo_830_476.webp" alt="Starkey（スターキー）" width="830" height="476" loading="lazy"></div>
       <div class="hear-body">
-      <div class="hear-top"><div><p class="hear-jp">スターキー</p><p class="hear-br">Gシリーズ</p></div><img class="hear-logo" src="images/blackfriday_starkey-logo_830_476.webp" alt="Starkey（スターキー）" width="830" height="476" loading="lazy"></div>
-      <p class="hear-y"><span class="num">2<span class="cm">,</span>200</span><span class="st"><span>円</span><span>OFF</span></span></p>
-      <p class="hear-d">全店で補聴器を取り扱っています。<br><b class="hear-b">認定補聴器技能者</b>が在籍しており、きこえに合わせた補聴器選びから調整までサポートします。<br><span class="hearing-mk">2週間の無料貸出</span>で、おうちで試せます。<span class="hearing-n">※技能者が不在の日もあるため、ご相談はご予約がおすすめです</span></p>
-      <div class="hear-q">
-        <p class="hear-q-t"><span class="hear-q-i" aria-hidden="true">?</span>認定補聴器技能者とは？</p>
+      <!-- 10/24 名前（左）と値引き（右）を1行に・説明はチェックリスト・技能者の説明は開閉。変更前 _保存/index.before-1024-hear.html -->
+      <div class="hear-top"><div><p class="hear-jp">スターキー</p><p class="hear-br">Gシリーズ</p></div><p class="hear-y"><span class="num">2<span class="cm">,</span>200</span><span class="st"><span>円</span><span>OFF</span></span></p></div>
+      <ul class="lens-chk hear-chk">
+        <li>全店で補聴器を取り扱っています</li>
+        <li><b class="hear-b">認定補聴器技能者</b>が在籍し、きこえに合わせた補聴器選びから調整までサポートします</li>
+        <li><span class="hearing-mk">2週間の無料貸出</span>で、おうちで試せます</li>
+      </ul>
+      <p class="hearing-n">※技能者が不在の日もあるため、ご相談はご予約がおすすめです</p>
+      <details class="hear-q">
+        <summary class="hear-q-t"><span class="hear-q-i" aria-hidden="true">?</span>認定補聴器技能者とは？</summary>
         <p class="hear-q-d">公益財団法人テクノエイド協会が認定する、補聴器の専門資格です。きこえを測り、お一人おひとりに合わせて補聴器を調整する知識と技術を持っています。</p>
-      </div>
+      </details>
       </div>
       </div>
     </div>
