@@ -291,11 +291,12 @@
   .st4-ex-b small, .st4-ex-a small { font-size: .5em; }
   .st4-arw { color: #e8352a; font-size: 12px; padding-bottom: 10px; }
   .st4-more { font-size: 16px; font-weight: 900; margin-top: 22px; }
-  /* さらに：1文字ずつぴょんぴょん弾む */
-  .hop i { display: inline-block; font-style: normal; animation: hop 2.2s ease-in-out infinite; }
+  /* さらに：見えたら1回だけ、1文字ずつぴょんと弾む */
+  .hop i { display: inline-block; font-style: normal; }
+  .hop.on i { animation: hop 1.2s ease-out both; }
   .hop i:nth-child(2) { animation-delay: .1s; }
   .hop i:nth-child(3) { animation-delay: .2s; }
-  @keyframes hop { 0%, 40%, 100% { transform: translateY(0); } 12% { transform: translateY(-8px); } 24% { transform: translateY(0); } 31% { transform: translateY(-3px); } }
+  @keyframes hop { 0%, 100% { transform: translateY(0); } 25% { transform: translateY(-10px); } 50% { transform: translateY(0); } 68% { transform: translateY(-4px); } 85% { transform: translateY(0); } }
   @media (prefers-reduced-motion: reduce) { .hop i { animation: none; } }
   .st4-two { display: flex; align-items: stretch; gap: 4px; margin-top: 22px; }
   .st4-c { flex: 1; min-width: 0; border: 2px solid var(--bk); border-radius: 10px; padding: 22px 4px 12px; position: relative; }
@@ -1580,14 +1581,14 @@ document.querySelectorAll('.lens-tabs:not(.hs-tabs) button').forEach(b=>{
 if('scrollRestoration' in history){history.scrollRestoration='manual';}
 if(!location.hash){window.scrollTo(0,0);}
 
-// ===== ブラックフライデー限定バッジ：画面に入るたびにハンコのようにペタッ =====
+// ===== ブラックフライデー限定バッジ（ペタッ）と「さらに」（ぴょん）：画面に入ったら1回だけ =====
 (function(){
-  const b=document.querySelector('.st4-badge'); if(!b) return;
-  if(!('IntersectionObserver' in window)){b.classList.add('on');return;}
-  new IntersectionObserver(es=>es.forEach(e=>{
-    if(e.intersectionRatio>=0.6){b.classList.add("on");}
-    else if(e.intersectionRatio===0){b.classList.remove('on');}
-  }),{threshold:[0,0.6]}).observe(b);
+  const els=document.querySelectorAll('.st4-badge, .hop'); if(!els.length) return;
+  if(!('IntersectionObserver' in window)){els.forEach(e=>e.classList.add('on'));return;}
+  const io=new IntersectionObserver(es=>es.forEach(e=>{
+    if(e.intersectionRatio>=0.6){e.target.classList.add('on');io.unobserve(e.target);}
+  }),{threshold:[0.6]});
+  els.forEach(e=>io.observe(e));
 })();
 
 // ===== CTAの上の吹き出し：見えたらぴょこっと出す =====
