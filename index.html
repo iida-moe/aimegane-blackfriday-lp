@@ -455,7 +455,11 @@
   .talk-bub::before { content: ""; position: absolute; top: 50%; margin-top: -7px; left: -8px; border: 7px solid transparent; border-left: 0; border-right: 9px solid var(--bg2); }
   .talk-staff .talk-bub::before { left: auto; right: -8px; border-right: 0; border-left: 9px solid #fff8c4; }
   .talk-row { align-items: center; }
-  @media (max-width: 359px) { .reason .talk-bub { font-size: 12.5px; padding: 8px 10px; } .talk-face { width: 38px; height: 38px; } .talk { margin-left: -6px; margin-right: -6px; } }
+  /* 吹き出しは3つとも同じ幅で、お客さま左・スタッフ右に少しずらす（吹き出し_比較 A） */
+  .talk-row .talk-bub { flex: 1; }
+  .talk-row:not(.talk-staff) { margin-right: 20px; }
+  .talk-staff .talk-bub { margin-left: 20px; }
+  @media (max-width: 359px) { .reason .talk-bub { font-size: 12.5px; padding: 8px 10px; } .talk-face { width: 38px; height: 38px; } .talk { margin-left: -6px; margin-right: -6px; } .talk-row:not(.talk-staff) { margin-right: 0; } .talk-staff .talk-bub { margin-left: 0; } .talk-row { gap: 6px; } }
   .talk + .worry-n { margin-top: 14px; }
   .worry-link { text-align: center; margin-top: 10px; }
   .worry-link a { font-size: 15px; font-weight: 900; color: var(--tx); text-decoration: underline; text-decoration-color: var(--ac); text-decoration-thickness: 3px; text-underline-offset: 4px; }
