@@ -879,6 +879,8 @@
     .float-cta { left: auto; right: 24px; bottom: 24px; width: 360px; padding: 0; margin: 0; transform: translateY(calc(100% + 48px)); }
     .float-cta.show { transform: none; }
   }
+  /* 小さいスマホでFVのボタン文字が2行にならないように */
+  @media (max-width: 359px) { .fv .fv-cta .btn-arw { font-size: 15px; padding-left: 12px; padding-right: 56px; } }
 </style><style>
   .preview-gate { position: fixed; inset: 0; z-index: 9999; background: #000; display: flex; align-items: center; justify-content: center; padding: 20px; }
   .preview-gate-box { background: #fff; border: 2px solid #f4e030; border-radius: 12px; padding: clamp(24px, 5vw, 40px); width: 100%; max-width: 340px; text-align: center; }
@@ -934,7 +936,7 @@
         <a href="#shop-search" class="hd-cta" data-cta-location="header">来店予約</a>
       </nav>      <button class="hd-menu" id="menuBtn" aria-label="メニューを開く" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
     </div>
-    <h1 class="fv-img"><img class="fv-sp" src="images/blackfriday_fv_1290_2193.jpg?v=1024a" alt="ブラックフライデー BLACK FRIDAY 11/13(金)〜11/29(日) 対象のメガネ一式 8,800円〜(税込)※割引条件あり 遠近両用も追加料金0円" width="1290" height="2193"><img class="fv-pc-text" src="images/blackfriday_fv-pc-text.png?v=1020a" alt="ブラックフライデー BLACK FRIDAY 11/13(金)〜11/29(日) 対象のメガネ一式 8,800円〜(税込)※割引条件あり 遠近両用も追加料金0円" width="813" height="478"></h1>
+    <h1 class="fv-img"><img class="fv-sp" src="images/blackfriday_fv_1290_2193.jpg?v=1024b" alt="ブラックフライデー BLACK FRIDAY 11/13(金)〜11/29(日) 対象のメガネ一式 8,800円〜(税込)※割引条件あり 遠近両用も追加料金0円" width="1290" height="2193"><img class="fv-pc-text" src="images/blackfriday_fv-pc-text.png?v=1020a" alt="ブラックフライデー BLACK FRIDAY 11/13(金)〜11/29(日) 対象のメガネ一式 8,800円〜(税込)※割引条件あり 遠近両用も追加料金0円" width="813" height="478"></h1>
     <div class="fv-cta">
       <a href="#shop-search" class="btn btn-arw" data-cta-location="fv"><span>近くのお店で予約する</span><span class="arw" aria-hidden="true">▶</span></a>
     </div>
