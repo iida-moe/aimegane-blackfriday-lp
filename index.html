@@ -444,6 +444,7 @@
   @media (max-width: 359px) {
     .lens-zero-l { font-size: 13px; } .lens-zero-r { font-size: 20px; } .lens-zero b { font-size: 60px; }
     .lens-tabs button { font-size: 12px; white-space: nowrap; }
+    .reason p.lens-hint { font-size: 13px; }
     .rh { gap: 10px; } .rh-ico { width: 60px; height: 60px; } .reason .rh h3 { font-size: 15px; letter-spacing: 0; } .rh h3 em { font-size: 19px; } .rh h3 em:has(b) { font-size: 22px; }
     .rh h3 .rh-zl > span { font-size: 14px; } .rh h3 .rh-zl em { font-size: 23px; } .rh-zero > b { font-size: 58px; } .rh-zero .rh-yen { font-size: 20px; }
     .reason .rh-to { font-size: 12px; } .rh-to::before, .rh-to::after { width: 8px; margin: 0 5px; } .rh-also { font-size: 11px; white-space: nowrap; }
@@ -453,7 +454,7 @@
   .lens-tabs button { flex: 1; font-size: 14px; font-weight: 700; padding: 10px 0; border-radius: 20px; border: 1.5px solid var(--bk); background: #fff; color: var(--tx); cursor: pointer; }
   .lens-tabs button[aria-selected="true"] { background: var(--bk); color: var(--ac); }
   .lens-rec { margin-top: 8px; text-align: left; }
-  .reason .lens-hint { font-size: 12px; font-weight: 700; color: var(--sub); text-align: center; margin-top: 16px; }
+  .reason .lens-hint { font-size: 15px; font-weight: 900; color: var(--tx); white-space: nowrap; text-align: center; margin-top: 16px; }
   .reason .lens-hint + .lens-tabs { margin-top: 6px; }
   .lens-rec .lens-chk { margin-top: 4px; }
   .lens-chk + .lens-rec-t { margin-top: 16px !important; }
@@ -1039,7 +1040,7 @@
           <p class="rh-zn">※対象のメガネ一式・標準レンズの場合</p>
         </div>
       </div>
-      <p class="lens-hint">＼ タップで切りかわります ／</p>
+      <p class="lens-hint sl"><span>あなたに合うレンズを見つけよう</span></p>
       <div class="lens-tabs" role="tablist">
         <button role="tab" aria-selected="true" data-lens="enkin">遠近両用</button>
         <button role="tab" aria-selected="false" data-lens="chukin">中近</button>
