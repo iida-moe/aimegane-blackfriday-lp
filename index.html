@@ -416,6 +416,15 @@
   .rh-zero .rh-yen { font-size: 24px; font-weight: 900; }
   .reason .rh-d { text-align: left; font-size: 15px; font-weight: 500; color: var(--tx); line-height: 2; letter-spacing: .03em; margin-top: 14px; word-break: auto-phrase; }
   .nw { white-space: nowrap; display: inline-block; }
+  /* 理由2：お悩みの吹き出し→▼→ご提案 */
+  .worry { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 16px; }
+  .worry li { position: relative; background: var(--bg2); border-radius: 12px; padding: 12px 4px; font-size: 13px; font-weight: 700; line-height: 1.4; text-align: center; }
+  .worry li::after { content: ""; position: absolute; bottom: -9px; left: 50%; margin-left: -8px; border: 8px solid transparent; border-bottom: 0; border-top-color: var(--bg2); }
+  @media (max-width: 359px) { .worry li { font-size: 11px; padding: 10px 2px; } }
+  .reason .worry-arw { color: #e8352a; font-size: 14px; text-align: center; margin-top: 14px; }
+  .worry-ans { text-align: center; font-size: 15px; font-weight: 700; line-height: 1.5; margin-top: 4px; }
+  .worry-ans span { font-size: 19px; font-weight: 900; background: linear-gradient(transparent 62%, var(--ac) 62%, var(--ac) 92%, transparent 92%); }
+  .worry-ans + .rh-d { margin-top: 10px; }
   .rh-d small { display: block; font-size: 11px; color: var(--sub); line-height: 1.6; margin-top: 4px; }
   .rh-d + .lens-tabs { margin-top: 16px; }
   .reason .reason-note { font-size: 11px; color: var(--sub); text-align: left; line-height: 1.6; margin-top: 8px; word-break: auto-phrase; }
@@ -1050,7 +1059,16 @@
         <svg class="rh-ico" viewBox="0 0 64 64" aria-hidden="true"><ellipse cx="32" cy="58" rx="26" ry="4" fill="#ecebe4"/><path d="M8,58 Q8,36 27,35 Q46,36 46,58 Z" fill="#3a3a3a"/><path d="M21,36 L27,46 L33,36 Z" fill="#fff"/><circle cx="27" cy="20" r="12" fill="#f3e2cf"/><path d="M15,18 Q16,7 27,7 Q38,7 39,18 Q33,12 27,13 Q20,13 15,18 Z" fill="#3a3a3a"/><circle cx="22.5" cy="21" r="4" fill="none" stroke="#222" stroke-width="1.8"/><circle cx="31.5" cy="21" r="4" fill="none" stroke="#222" stroke-width="1.8"/><path d="M26.5,21 H27.5" stroke="#222" stroke-width="1.8"/><circle cx="50" cy="42" r="11" fill="#f4e030"/><path d="M45,42 L49,46 L55,38" fill="none" stroke="#222" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <h3>眼鏡作製技能士が<em>全店に在籍</em></h3>
       </div>
-      <p class="rh-d">国家資格をもつスタッフが、<span class="nw">「手元が見えにくい」</span><span class="nw">「遠近両用ははじめて」</span>などのお悩みを聞いて、ぴったりの度数を測ります。<small>※技能士が不在の日もあるため、ご来店前のご予約がおすすめです</small></p>
+      <!-- 10/24 お悩みを吹き出しに（文字だけのカードにしない） -->
+      <p class="rh-d">国家資格をもつスタッフが、お悩みをじっくり聞きます。</p>
+      <ul class="worry">
+        <li>手元が<br>見えにくい</li>
+        <li>遠近両用は<br>はじめて</li>
+        <li>今のメガネが<br>合わない</li>
+      </ul>
+      <p class="worry-arw" aria-hidden="true">▼</p>
+      <p class="worry-ans">あなたにぴったりの<br><span>度数・レンズをご提案</span></p>
+      <p class="rh-d"><small>※技能士が不在の日もあるため、ご来店前のご予約がおすすめです</small></p>
     </div>
 
     <div class="reason">
