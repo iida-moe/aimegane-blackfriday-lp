@@ -33,7 +33,8 @@
   .sec-head { text-align: center; margin-bottom: 28px; }
   .sec-en { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 40px; letter-spacing: .08em; line-height: 1; }
   .sec-en::after { content: ""; display: block; width: 40px; height: 4px; background: var(--ac); margin: 12px auto 0; }
-  .sec-ja { font-size: 20px; font-weight: 900; line-height: 1.5; margin-top: 12px; }  .sec-title { font-size: 24px; font-weight: 900; text-align: center; line-height: 1.4; }
+  .sec-ja { font-size: 22px; font-weight: 900; line-height: 1.5; }
+  .sec-ja::after { content: ""; display: block; width: 40px; height: 4px; background: var(--ac); margin: 14px auto 0; } /* 10/24 英語タイトルをやめ、黄の線を日本語の下に */  .sec-title { font-size: 24px; font-weight: 900; text-align: center; line-height: 1.4; }
   .sec-lead { font-size: 14px; color: var(--sub); text-align: center; margin-top: 8px; }
   .note { font-size: 11px; color: var(--sub); line-height: 1.6; }
   .cm { font-size: .6em; margin: 0 .02em; }
@@ -662,7 +663,7 @@
     .lp { max-width: none; }
     .sec { padding: 96px var(--side); }
     .sec-en { font-size: 52px; }
-    .sec-ja { font-size: 24px; }
+    .sec-ja { font-size: 28px; }
 
     /* ヘッダー */
     .fv .hd { position: absolute; padding: 28px 48px 0; }
@@ -864,7 +865,7 @@
 
   <!-- 2 お得な内容 -->
   <section class="sec otoku" id="otoku">
-    <div class="sec-head"><p class="sec-en">PRICE</p><h2 class="sec-ja">お得な内容</h2></div>
+    <div class="sec-head"><h2 class="sec-ja">お得な内容</h2></div>
     <div class="otoku-row">
     <!-- 10/22 ストーリー順：①2,200円OFF → ②商品例 13,200→11,000 → ③さらにLINE・処方箋 → ④すべて使って8,800円。変更前 _保存/index.before-1022-story.html -->
     <div class="ba st4">
@@ -942,7 +943,7 @@
 
   <!-- 3 PICK UP 対象フレーム -->
   <section class="sec pick" id="pickup">
-    <div class="sec-head"><p class="sec-en">PICK UP</p><h2 class="sec-ja">対象ブランド例</h2></div>
+    <div class="sec-head"><h2 class="sec-ja">対象ブランド例</h2></div>
     <p class="pick-lead">写真はデザイン例です。<br>各ブランドのほかのデザインも対象です</p>
     <div class="pick-wrap">
       <div class="pick-track" id="pickTrack">
@@ -1005,7 +1006,7 @@
 
   <!-- 4 選ばれる理由 -->
   <section class="sec" id="reason">
-    <div class="sec-head"><p class="sec-en">REASON</p><h2 class="sec-ja">アイメガネが選ばれる<br>3つの理由</h2></div>
+    <div class="sec-head"><h2 class="sec-ja">アイメガネが選ばれる<br>3つの理由</h2></div>
 
     <div class="reasons">
     <div class="reason">
@@ -1081,7 +1082,7 @@
 
   <!-- 5 店舗を選んで予約 -->
   <section class="sec" id="shop-search">
-    <div class="sec-head"><p class="sec-en">SHOP</p><h2 class="sec-ja">お近くのお店を探す</h2></div>
+    <div class="sec-head"><h2 class="sec-ja">お近くのお店を探す</h2></div>
 
     <div class="shop-search-box">
       <p class="wait sl"><b>ご予約ならスムーズにご案内</b></p>
