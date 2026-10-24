@@ -291,6 +291,12 @@
   .st4-ex-b small, .st4-ex-a small { font-size: .5em; }
   .st4-arw { color: #e8352a; font-size: 12px; padding-bottom: 10px; }
   .st4-more { font-size: 16px; font-weight: 900; margin-top: 22px; }
+  /* さらに：1文字ずつぴょんぴょん弾む */
+  .hop i { display: inline-block; font-style: normal; animation: hop 2.2s ease-in-out infinite; }
+  .hop i:nth-child(2) { animation-delay: .1s; }
+  .hop i:nth-child(3) { animation-delay: .2s; }
+  @keyframes hop { 0%, 40%, 100% { transform: translateY(0); } 12% { transform: translateY(-8px); } 24% { transform: translateY(0); } 31% { transform: translateY(-3px); } }
+  @media (prefers-reduced-motion: reduce) { .hop i { animation: none; } }
   .st4-two { display: flex; align-items: stretch; gap: 4px; margin-top: 22px; }
   .st4-c { flex: 1; min-width: 0; border: 2px solid var(--bk); border-radius: 10px; padding: 22px 4px 12px; position: relative; }
   .st4-lbl { position: absolute; top: -13px; left: 50%; transform: translateX(-50%); white-space: nowrap; background: var(--ac); border: 2px solid var(--bk); border-radius: 20px; padding: 2px 10px; font-size: 12px; font-weight: 900; }
@@ -1011,7 +1017,7 @@
         </div>
       </div>
 
-      <p class="st4-more sl"><span>さらに</span></p>
+      <p class="st4-more sl"><span class="hop" aria-label="さらに"><i aria-hidden="true">さ</i><i aria-hidden="true">ら</i><i aria-hidden="true">に</i></span></p>
       <div class="st4-two">
         <!-- 10/23 B案：だれ向けかを黄ラベルで先に・白カード＋黒枠・円／OFF縦2段。比較 さらに_比較.html -->
         <div class="st4-c"><span class="st4-lbl">はじめての方</span><svg class="ico ico-line" viewBox="0 0 40 40"><path fill="#06c755" stroke="none" d="M20,5 C29.5,5 37,11 37,18.5 C37,26 29.5,32 20,32 C18.6,32 17.2,31.9 15.9,31.6 L9,36 L10.3,29.3 C5.8,26.9 3,23 3,18.5 C3,11 10.5,5 20,5 Z"/><circle fill="#fff" stroke="none" cx="13" cy="18.5" r="2"/><circle fill="#fff" stroke="none" cx="20" cy="18.5" r="2"/><circle fill="#fff" stroke="none" cx="27" cy="18.5" r="2"/></svg><p class="st4-c-t">LINEお友だち<br><em>新規登録</em>で</p><p class="st4-c-y"><span class="num">1<span class="cm">,</span>100</span><span class="st4-c-st"><span>円</span><span>OFF</span></span></p><p class="st4-c-sub">当日使える<br>クーポンを<wbr>ゲット！</p></div>
