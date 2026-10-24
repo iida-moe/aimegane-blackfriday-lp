@@ -438,6 +438,10 @@
   .talk { display: flex; flex-direction: column; gap: 10px; margin-top: 14px; text-align: left; }
   .talk-row { display: flex; align-items: flex-end; gap: 8px; }
   .talk-staff { flex-direction: row-reverse; }
+  /* 理由2のアイコン：会話と同じスタッフの顔＋黄のチェック丸 */
+  .rh-ico-face { position: relative; display: block; }
+  .rh-ico-face img { display: block; width: 100%; height: 100%; }
+  .rh-ico-face svg { position: absolute; right: -2px; bottom: 0; width: 28px; height: 28px; }
   .talk-face { flex: none; width: 46px; height: 46px; display: block; }
   .talk-who { flex: none; display: flex; flex-direction: column; align-items: center; }
   .talk-who small { font-size: 10px; font-weight: 700; color: var(--sub); margin-top: 2px; }
@@ -1080,7 +1084,7 @@
 
     <div class="reason">
       <div class="rh">
-        <svg class="rh-ico" viewBox="0 0 64 64" aria-hidden="true"><ellipse cx="32" cy="58" rx="26" ry="4" fill="#ecebe4"/><path d="M8,58 Q8,36 27,35 Q46,36 46,58 Z" fill="#3a3a3a"/><path d="M21,36 L27,46 L33,36 Z" fill="#fff"/><circle cx="27" cy="20" r="12" fill="#f3e2cf"/><path d="M15,18 Q16,7 27,7 Q38,7 39,18 Q33,12 27,13 Q20,13 15,18 Z" fill="#3a3a3a"/><circle cx="22.5" cy="21" r="4" fill="none" stroke="#222" stroke-width="1.8"/><circle cx="31.5" cy="21" r="4" fill="none" stroke="#222" stroke-width="1.8"/><path d="M26.5,21 H27.5" stroke="#222" stroke-width="1.8"/><circle cx="50" cy="42" r="11" fill="#f4e030"/><path d="M45,42 L49,46 L55,38" fill="none" stroke="#222" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="rh-ico rh-ico-face" aria-hidden="true"><img src="images/blackfriday_face-staff_135_135.png" alt="" width="135" height="135"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#f4e030" stroke="#fff" stroke-width="2"/><path d="M7,12 L10.5,15.5 L17,8.5" fill="none" stroke="#222" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         <h3>眼鏡作製技能士が<em>全店に在籍</em></h3>
       </div>
       <!-- 10/24 お悩みを吹き出しに（文字だけのカードにしない） -->
