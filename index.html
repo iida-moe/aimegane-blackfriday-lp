@@ -320,6 +320,14 @@
   .st4-fin-y small { font-size: 28px; font-weight: 900; }
   .st4-fin-ok { display: inline-block; margin-top: 8px; background: #e8352a; color: #fff; font-size: 14px; font-weight: 900; border-radius: 20px; padding: 3px 14px; }
   .st4-fin-ok b { color: var(--ac); font-size: 1.3em; margin-left: 2px; } /* FVと同じく0円は黄 */
+  /* 10/24 合計：見出しは枠の上に黄色ラベル（さらにのカードとそろえる）・通常価格を消し線・おトク丸（合計見出し_比較 2） */
+  .st4-fin { position: relative; overflow: visible; margin-top: 22px; padding-top: 24px; }
+  .st4-fin-t { position: absolute; top: -17px; left: 50%; transform: translateX(-50%); white-space: nowrap; background: var(--ac); color: var(--bk); border: 2px solid var(--bk); border-radius: 20px; padding: 4px 18px; margin: 0; }
+  .st4-fin-from { font-size: 14px; font-weight: 700; color: var(--sub); margin-bottom: 2px; }
+  .st4-fin-from s { text-decoration-color: #e8352a; text-decoration-thickness: 2px; }
+  .st4-fin-save { position: absolute; right: -10px; top: 14px; width: 74px; height: 74px; border-radius: 50%; background: var(--ac); color: var(--bk); font-size: 12px; font-weight: 900; line-height: 1.2; display: flex; flex-direction: column; align-items: center; justify-content: center; transform: rotate(10deg); box-shadow: 0 2px 6px rgba(0,0,0,.15); }
+  .st4-fin-save span { font-size: 15px; }
+  .st4-fin-ok { background: var(--bk); color: #fff; }
   .st4-note { text-align: left; margin-top: 14px !important; line-height: 1.7; }
   .ba-off { margin-top: 28px; padding-top: 24px; border-top: 1px dashed var(--line); }
   .ba-off .off3-t { margin-top: 0; }
@@ -926,6 +934,8 @@
   }
   /* 小さいスマホでFVのボタン文字が2行にならないように */
   @media (max-width: 359px) { .fv .fv-cta .btn-arw, .float-cta .btn-arw { font-size: 15px; padding-left: 12px; padding-right: 56px; } }
+  /* 合計の黄色ラベル：PCは文字が大きいぶん位置と余白を調整 */
+  @media (min-width: 1024px) { .st4-fin { margin-top: 30px; padding-top: 40px; } .st4-fin-t { top: -24px; padding: 6px 26px; margin: 0; } .st4-fin-from { font-size: 16px; } .st4-fin-save { width: 92px; height: 92px; font-size: 14px; top: 22px; right: -18px; } .st4-fin-save span { font-size: 19px; } }
 </style><style>
   .preview-gate { position: fixed; inset: 0; z-index: 9999; background: #000; display: flex; align-items: center; justify-content: center; padding: 20px; }
   .preview-gate-box { background: #fff; border: 2px solid #f4e030; border-radius: 12px; padding: clamp(24px, 5vw, 40px); width: 100%; max-width: 340px; text-align: center; }
@@ -1045,7 +1055,9 @@
       <p class="st4-down" aria-hidden="true">▼</p>
       <div class="st4-fin">
         <p class="st4-fin-t">割引をぜんぶ使うと</p>
+        <p class="st4-fin-from">通常価格 <s>13<span class="cm">,</span>200円</s></p>
         <p class="st4-fin-y"><span class="num">8<span class="cm">,</span>800</span><small>円〜</small></p>
+        <p class="st4-fin-save"><span>4<span class="cm">,</span>400円</span>おトク</p>
         <p class="st4-fin-ok">遠近両用も追加料金<b>0円</b></p>
       </div>
       <p class="note st4-note">※価格はすべて税込<br>※標準レンズの場合<br>※本庄南大通り店を除く</p>
