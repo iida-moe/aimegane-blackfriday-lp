@@ -586,6 +586,21 @@
   .pick-wrap { margin: 24px 0 0; }
   /* 10/23 スマホは2列×2段・説明1行（比較 PICKUP_比較.html のB） */
   .pick-track { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  /* 10/24 スマホ：横スクロールで1枚ずつ大きく（次のカードが少し見える） */
+  @media (max-width: 1023px) {
+    .pick-track { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; margin: 0 calc(var(--side) * -1); padding: 0 var(--side) 4px; scroll-padding: 0 var(--side); scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+    .pick-track::-webkit-scrollbar { display: none; }
+    .pick-card { flex: 0 0 80%; scroll-snap-align: start; }
+    .pick-img { padding: 22px 16px; }
+    .pick-body { padding: 14px 16px 16px; }
+    .pick-br { font-size: 20px; }
+    .pick-tx { font-size: 14px; }
+    .pick-pr { font-size: 15px; }
+    .pick-dots { display: flex; justify-content: center; gap: 8px; margin-top: 14px; }
+    .pick-dots button { width: 8px; height: 8px; padding: 0; border: 0; border-radius: 4px; background: #ccc; cursor: pointer; transition: width .2s, background .2s; }
+    .pick-dots button[aria-current="true"] { width: 22px; background: var(--bk); }
+  }
+  @media (min-width: 1024px) { .pick-dots { display: none; } }
   .pick-card { display: flex; flex-direction: column; background: #fff; border: 1px solid var(--line); }
   .pick-img { background: var(--bg2); padding: 14px 10px; }
   .pick-img img { display: block; width: 100%; height: auto; aspect-ratio: 800 / 381; object-fit: contain; }
@@ -1101,6 +1116,7 @@
         </div>
       </div>
     </div>
+    <div class="pick-dots" id="pickDots" aria-label="スライドの位置"></div>
     <p class="pick-store">このほかにも、お店ごとに<br>対象のフレームをご用意しています</p>
     <p class="note">※お取り扱いのデザインは店舗によって異なります</p>
     <p class="cta-pop sl"><span>標準レンズで遠近両用も追加料金<b>0円</b></span></p>
@@ -1589,6 +1605,15 @@ if(!location.hash){window.scrollTo(0,0);}
     if(e.intersectionRatio>=0.6){e.target.classList.add('on');io.unobserve(e.target);}
   }),{threshold:[0.6]});
   els.forEach(e=>io.observe(e));
+})();
+
+// ===== 対象ブランド例：スマホの横スクロールに今どのカードかの点 =====
+(function(){
+  const t=document.getElementById('pickTrack'), d=document.getElementById('pickDots'); if(!t||!d) return;
+  const cards=[...t.children];
+  cards.forEach((c,i)=>{const b=document.createElement('button');b.type='button';b.setAttribute('aria-label',(i+1)+'枚目');b.onclick=()=>t.scrollTo({left:c.offsetLeft-t.offsetLeft-parseFloat(getComputedStyle(t).paddingLeft),behavior:'smooth'});d.appendChild(b);});
+  const upd=()=>{const w=cards[0].offsetWidth+12;const i=Math.min(cards.length-1,Math.round(t.scrollLeft/w));[...d.children].forEach((b,k)=>b.setAttribute('aria-current',k===i?'true':'false'));};
+  t.addEventListener('scroll',upd,{passive:true}); upd();
 })();
 
 // ===== CTAの上の吹き出し：見えたらぴょこっと出す =====
