@@ -421,11 +421,14 @@
   .nw { white-space: nowrap; display: inline-block; }
   /* 理由2：お悩みの吹き出し→▼→ご提案 */
   .worry { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 16px; }
-  .worry li { position: relative; background: var(--bg2); border-radius: 12px; padding: 12px 4px; font-size: 13px; font-weight: 700; line-height: 1.4; text-align: center; }
-  .worry li::after { content: ""; position: absolute; bottom: -9px; left: 50%; margin-left: -8px; border: 8px solid transparent; border-bottom: 0; border-top-color: var(--bg2); }
+  .worry li { position: relative; background: #fff; border: 1.5px solid #bbb; border-radius: 12px; padding: 12px 4px; font-size: 13px; font-weight: 700; line-height: 1.4; text-align: center; }
+  /* 吹き出しのしっぽ（ふちどり＋白） */
+  .worry li::before { content: ""; position: absolute; bottom: -10px; left: 50%; margin-left: -8px; border: 9px solid transparent; border-bottom: 0; border-top-color: #bbb; }
+  .worry li::after { content: ""; position: absolute; bottom: -7px; left: 50%; margin-left: -7px; border: 8px solid transparent; border-bottom: 0; border-top-color: #fff; }
+  .reason .rh-d + .worry { margin-top: 14px; }
   @media (max-width: 359px) { .worry li { font-size: 11px; padding: 10px 2px; } }
   .reason .worry-arw { color: #e8352a; font-size: 14px; text-align: center; margin-top: 14px; }
-  .worry-ans { text-align: center; font-size: 15px; font-weight: 700; line-height: 1.5; margin-top: 4px; }
+  .reason .worry-ans { text-align: center; font-size: 16px; font-weight: 900; color: var(--tx); line-height: 1.5; margin-top: 4px; }
   .worry-ans span { font-size: 19px; font-weight: 900; background: linear-gradient(transparent 62%, var(--ac) 62%, var(--ac) 92%, transparent 92%); }
   .worry-ans + .rh-d { margin-top: 10px; }
   .rh-d small { display: block; font-size: 11px; color: var(--sub); line-height: 1.6; margin-top: 4px; }
@@ -1064,11 +1067,11 @@
         <h3>眼鏡作製技能士が<em>全店に在籍</em></h3>
       </div>
       <!-- 10/24 お悩みを吹き出しに（文字だけのカードにしない） -->
-      <p class="rh-d">国家資格をもつスタッフが、お悩みをじっくり聞きます。</p>
+      <p class="rh-d">国家資格のスタッフが、じっくりお聞きします</p>
       <ul class="worry">
         <li>手元が<br>見えにくい</li>
         <li>遠近両用は<br>はじめて</li>
-        <li>今のメガネが<br>合わない</li>
+        <li>メガネが<br>合わない</li>
       </ul>
       <p class="worry-arw" aria-hidden="true">▼</p>
       <p class="worry-ans">あなたにぴったりの<br><span>度数・レンズをご提案</span></p>
@@ -1444,9 +1447,9 @@ const LENS = {
   kinkin: { src:'images/illust/lens-kinkin.svg', alt:'近々レンズの見え方',     forText:'デスクまわりを広く、見やすく',
             chk:['パソコン作業が長い','デスクまわりを広く見たい','手元の細かい作業が多い'],
             scene:[['pc','パソコン'],['book','書類・読書'],['hand','手作業'],['phone','スマホ']] },
-  assist: { src:'images/illust/lens-assist.svg', alt:'アシストレンズの見え方', forText:'スマホを見るときの目の負担を軽く',
-            chk:['夕方になると目が疲れる','スマホの文字が見えにくいときがある','手元用のメガネはまだ早いかなと思う'],
-            scene:[['phone','スマホ'],['pc','パソコン'],['book','読書'],['tv','テレビ']] }
+  assist: { src:'images/illust/lens-assist.svg', alt:'アシストレンズの見え方', forText:'遠くもスマホも、ゆがみ少なく',
+            chk:['スマホをよく見る','手元が少し見えにくくなってきた','遠近両用はまだ早いかなと思う'],
+            scene:[['car','運転'],['tv','テレビ'],['phone','スマホ'],['book','読書']] }
 };
 function renderLensRec(d){
   document.getElementById('lensChk').innerHTML = d.chk.map(t=>'<li>'+t+'</li>').join('');
