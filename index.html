@@ -449,6 +449,12 @@
   .reason .talk-bub { background: var(--bg2); border-radius: 14px 14px 14px 4px; padding: 9px 12px; font-size: 14px; font-weight: 700; line-height: 1.5; color: var(--tx); word-break: auto-phrase; }
   .reason .talk-staff .talk-bub { background: #fff8c4; border-radius: 14px 14px 4px 14px; }
   .talk-bub b { font-weight: 900; }
+  /* 吹き出しのしっぽ（顔の方を向く） */
+  .reason .talk-bub { position: relative; border-radius: 14px; }
+  .reason .talk-staff .talk-bub { border-radius: 14px; }
+  .talk-bub::before { content: ""; position: absolute; top: 50%; margin-top: -7px; left: -8px; border: 7px solid transparent; border-left: 0; border-right: 9px solid var(--bg2); }
+  .talk-staff .talk-bub::before { left: auto; right: -8px; border-right: 0; border-left: 9px solid #fff8c4; }
+  .talk-row { align-items: center; }
   .talk + .worry-n { margin-top: 14px; }
   .worry-link { text-align: center; margin-top: 10px; }
   .worry-link a { font-size: 15px; font-weight: 900; color: var(--tx); text-decoration: underline; text-decoration-color: var(--ac); text-decoration-thickness: 3px; text-underline-offset: 4px; }
