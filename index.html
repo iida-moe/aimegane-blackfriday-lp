@@ -391,8 +391,9 @@
   .reason .rh h3 { margin: 0; font-size: 19px; font-weight: 900; line-height: 1.5; letter-spacing: .04em; }
   .rh h3 em { display: block; font-style: normal; font-size: 22px; color: #e8352a; }
   /* 0だけ大きく（鯖江LPの見せ方） */
-  .rh h3 em:has(b) { display: flex; align-items: baseline; line-height: 1; margin-top: -4px; }
-  .rh h3 em b { font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 800; font-size: 2em; line-height: 1; margin: 0 2px 0 3px; }
+  .rh h3 em:has(b) { display: flex; align-items: baseline; font-size: 27px; line-height: 1; margin-top: -2px; letter-spacing: 0; white-space: nowrap; }
+  .rh h3 em b { font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 800; font-size: 1.75em; line-height: 1; margin: 0 2px 0 3px; }
+  .rh h3 em:has(b) .rh-yen { font-size: .8em; }
   .reason .rh-d { text-align: left; font-size: 15px; font-weight: 500; color: var(--tx); line-height: 2; letter-spacing: .03em; margin-top: 14px; word-break: auto-phrase; }
   .rh-d small { display: block; font-size: 11px; color: var(--sub); line-height: 1.6; margin-top: 4px; }
   .rh-d + .lens-tabs { margin-top: 16px; }
@@ -410,7 +411,7 @@
   @media (max-width: 359px) {
     .lens-zero-l { font-size: 13px; } .lens-zero-r { font-size: 20px; } .lens-zero b { font-size: 60px; }
     .lens-tabs button { font-size: 12px; white-space: nowrap; }
-    .rh { gap: 10px; } .rh-ico { width: 60px; height: 60px; } .reason .rh h3 { font-size: 15px; letter-spacing: 0; } .rh h3 em { font-size: 19px; }
+    .rh { gap: 10px; } .rh-ico { width: 60px; height: 60px; } .reason .rh h3 { font-size: 15px; letter-spacing: 0; } .rh h3 em { font-size: 19px; } .rh h3 em:has(b) { font-size: 22px; }
   }
   .lens-q { font-size: 16px; font-weight: 700; text-align: center; margin-top: 16px; color: var(--tx) !important; }
   .lens-tabs { display: flex; gap: 6px; margin-top: 10px; }
@@ -992,7 +993,7 @@
       <!-- 10/24 入口を「アイコン左＋2行見出し（2行目赤）＋左ぞろえの短い説明」に（旬の駅の形）。変更前 _保存/index.before-1024-reasonhead.html -->
       <div class="rh">
         <svg class="rh-ico" viewBox="0 0 64 64" aria-hidden="true"><ellipse cx="32" cy="52" rx="26" ry="4" fill="#ecebe4"/><circle cx="18" cy="32" r="13" fill="#fff6b3" stroke="#222" stroke-width="4.5"/><circle cx="46" cy="32" r="13" fill="#fff6b3" stroke="#222" stroke-width="4.5"/><path d="M30,30 Q32,26 34,30" stroke="#222" stroke-width="4" fill="none"/><path d="M5,29 L1,24 M59,29 L63,24" stroke="#222" stroke-width="4" stroke-linecap="round"/><path d="M11,29 Q13,24 18,23" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M39,29 Q41,24 46,23" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>
-        <h3>遠近両用なども<em>追加料金<b>0</b>円</em></h3>
+        <h3>遠近両用なども<em>追加料金<b>0</b><span class="rh-yen">円</span></em></h3>
       </div>
       <p class="rh-d">細かい文字が見にくくなった方へ。見え方や過ごし方に合わせて、レンズを選べます。<small>※対象のメガネ一式・標準レンズの場合</small></p>
       <div class="lens-tabs" role="tablist">
