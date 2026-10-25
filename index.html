@@ -1075,6 +1075,10 @@
   @media (max-width: 359px) { .st4-r { gap: 8px; padding: 10px 12px; } .st4-r .ico { display: none; } .st4-r-t p { font-size: 13px; } .st4-r-y .num { font-size: 26px; } }
   @media (min-width: 1024px) { .st4-rows { max-width: 620px; margin: 20px auto 0; } .st4-r { padding: 16px 20px; gap: 16px; } .st4-r .ico { width: 44px; height: 44px; } .st4-r-t p { font-size: 18px; } .st4-r-t small { font-size: 14px; } .st4-r-y .num { font-size: 44px; } }
   @media (max-width: 359px) { .st4-badge { font-size: 17px !important; white-space: nowrap; } }
+  /* 10/25 商品例の順番：値段 → ついてくるもの → すべてまとめて、この価格！ */
+  .st4-ex .st4-ex-row { margin-top: 4px; padding-top: 0; border-top: 0; }
+  .st4-ex .ba-set { margin-top: 14px; padding-top: 12px; border-top: 1px dashed var(--line); }
+  .st4-ex .st4-ex-all { margin-top: 10px; }
 </style><style>
   .preview-gate { position: fixed; inset: 0; z-index: 9999; background: #000; display: flex; align-items: center; justify-content: center; padding: 20px; }
   .preview-gate-box { background: #fff; border: 2px solid #f4e030; border-radius: 12px; padding: clamp(24px, 5vw, 40px); width: 100%; max-width: 340px; text-align: center; }
@@ -1184,7 +1188,11 @@
         <p class="st4-ex-l">商品例</p>
         <!-- 10/25 GWLPのように本物のメガネ写真（対象ブランド LVR）。変更前 _保存/index.before-1025-exphoto.html -->
         <div class="st4-ex-img"><img src="images/frames/lvr-2.png" alt="LVR（エルブイアール）のメガネ" width="800" height="381" loading="lazy"><p>※写真はイメージです</p></div>
-        <p class="st4-ex-all sl"><span>すべてまとめて、<em>この価格！</em></span></p>
+        <div class="st4-ex-row">
+          <div><p class="st4-ex-k">通常価格</p><p class="st4-ex-b">13<span class="cm">,</span>200<small>円</small></p></div>
+          <span class="st4-arw" aria-hidden="true">▶</span>
+          <div><p class="st4-ex-k st4-k-red">2,200円OFFで</p><p class="st4-ex-a">11<span class="cm">,</span>000<small>円</small></p></div>
+        </div>
         <ul class="ba-set" aria-label="セットの中身">
         <li><svg class="ico" viewBox="0 0 48 32"><circle cx="14" cy="17" r="9"/><circle cx="34" cy="17" r="9"/><path d="M23,16 Q24,13 25,16 M5,15 L1,12 M43,15 L47,12"/></svg>フレーム</li>
         <li class="plus" aria-hidden="true">＋</li>
@@ -1196,11 +1204,7 @@
         <li class="plus" aria-hidden="true">＋</li>
         <li><svg class="ico" viewBox="0 0 48 32"><path d="M24,3 L36,7 Q36,22 24,29 Q12,22 12,7 Z"/><path d="M19,16 L23,20 L30,12"/></svg>保証</li>
       </ul>
-        <div class="st4-ex-row">
-          <div><p class="st4-ex-k">通常価格</p><p class="st4-ex-b">13<span class="cm">,</span>200<small>円</small></p></div>
-          <span class="st4-arw" aria-hidden="true">▶</span>
-          <div><p class="st4-ex-k st4-k-red">2,200円OFFで</p><p class="st4-ex-a">11<span class="cm">,</span>000<small>円</small></p></div>
-        </div>
+        <p class="st4-ex-all sl"><span>すべてまとめて、<em>この価格！</em></span></p>
       </div>
 
       <!-- 10/25 さらに2つの割引〜ぜんぶ使うと をグレーの枠でひとまとまりに。変更前 _保存/index.before-1025-plusbox.html -->
