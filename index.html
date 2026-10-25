@@ -1186,6 +1186,14 @@
   .hs-v b { font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 800; font-size: 34px; color: #e8352a; margin-right: 2px; }
   .hs-arw { text-align: center; color: #e8352a; font-size: 12px; line-height: 1; margin: 4px 0; }
   @media (min-width: 1024px) { .hs-k { font-size: 15px; } .hs-v { font-size: 22px; } .hs-v b { font-size: 42px; } }
+  /* 補聴器の強み2つ（タイル） */
+  .hear-pts { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 14px; padding-top: 14px; border-top: 1px dashed var(--line); }
+  .hear-pts li { background: var(--bg2); border-radius: 10px; padding: 12px 6px; text-align: center; display: flex; flex-direction: column; justify-content: center; }
+  .hp-k { font-size: 11px; font-weight: 500; color: var(--sub); }
+  .hp-v { font-size: 15px; font-weight: 900; line-height: 1.35; margin-top: 4px; }
+  .hp-v b { font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 800; font-size: 30px; color: #e8352a; line-height: 1; margin-right: 1px; }
+  .hear-top + .hear-feat { margin-top: 2px; }
+  @media (min-width: 1024px) { .hp-k { font-size: 13px; } .hp-v { font-size: 18px; } .hp-v b { font-size: 38px; } }
 </style><style>
   .preview-gate { position: fixed; inset: 0; z-index: 9999; background: #000; display: flex; align-items: center; justify-content: center; padding: 20px; }
   .preview-gate-box { background: #fff; border: 2px solid #f4e030; border-radius: 12px; padding: clamp(24px, 5vw, 40px); width: 100%; max-width: 340px; text-align: center; }
@@ -1413,18 +1421,14 @@
       <div class="hear-body">
       <!-- 10/24 名前（左）と値引き（右）を1行に・説明はチェックリスト・技能者の説明は開閉。変更前 _保存/index.before-1024-hear.html -->
       <!-- 10/25 主役を「2週間無料でお試し」に、2,200円OFFはおまけに・特徴を1行（スターキー公式 GシリーズAI）。変更前 _保存/index.before-1025-hearpro.html -->
-      <div class="hear-top"><div><p class="hear-jp">スターキー</p><p class="hear-br">Gシリーズ</p></div></div>
+      <!-- 10/25 まず値段（2,200円OFF）→ 強み2つ（認定補聴器技能者・2週間無料貸出）。変更前 _保存/index.before-1025-hearpts.html -->
+      <div class="hear-top"><div><p class="hear-jp">スターキー</p><p class="hear-br">Gシリーズ</p></div><p class="hear-y"><span class="num">2<span class="cm">,</span>200</span><span class="st"><span>円</span><span>OFF</span></span></p></div>
       <p class="hear-feat">耳かけ型｜AIがまわりの音に合わせて自動調整</p>
-      <!-- 10/25 試す→買う の2ステップで見せる。変更前 _保存/index.before-1025-hearsteps.html -->
-      <ol class="hear-steps">
-        <li><span class="hs-no">1</span><div><p class="hs-k">買う前に、おうちで</p><p class="hs-v"><b>2</b>週間 無料お試し</p></div></li>
-        <li class="hs-arw" aria-hidden="true">▼</li>
-        <li><span class="hs-no">2</span><div><p class="hs-k">気に入ったら、ご購入で</p><p class="hs-v"><b>2<span class="cm">,</span>200</b>円OFF</p></div></li>
-      </ol>      <ul class="lens-chk hear-chk">
-        <li>全店で補聴器を取り扱い</li>
-        <li><b class="hear-b">認定補聴器技能者</b>が在籍</li>
+      <ul class="hear-pts">
+        <li><p class="hp-k">選び方から調整まで</p><p class="hp-v">認定補聴器<br>技能者が在籍</p></li>
+        <li><p class="hp-k">おうちで試せる</p><p class="hp-v"><b>2</b>週間<br>無料貸出</p></li>
       </ul>
-      <p class="hearing-n">※技能者が不在の日もあるため、ご予約がおすすめです</p>
+      <p class="hearing-n">※技能者が不在の日もあるため、<br class="sp-br">ご予約がおすすめです</p>
       <details class="hear-q">
         <summary class="hear-q-t"><span class="hear-q-i" aria-hidden="true">?</span>認定補聴器技能者とは？</summary>
         <p class="hear-q-d">公益財団法人テクノエイド協会が認定する、補聴器の専門資格です。きこえを測り、お一人おひとりに合わせた補聴器選びから調整までサポートします。</p>
