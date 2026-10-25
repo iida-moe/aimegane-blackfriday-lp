@@ -1062,6 +1062,18 @@
   .st4-ex-img img { display: block; width: 100%; max-width: 260px; height: auto; margin: 0 auto; }
   .st4-ex-img p { font-size: 11px; color: var(--sub); text-align: right; }
   @media (min-width: 1024px) { .st4-ex-img img { max-width: 340px; } }
+  /* 2つの割引：横長カードを縦に2段 */
+  .st4-rows { margin-top: 14px; }
+  .st4-r { display: flex; align-items: center; gap: 8px; background: #fff; border: 2px solid var(--bk); border-radius: 10px; padding: 12px 10px; text-align: left; }
+  .st4-r .ico { width: 34px; height: 34px; flex: none; margin: 0; }
+  .st4-r-t { flex: 1; min-width: 0; }
+  .st4-r-t p { font-size: 13px; font-weight: 500; line-height: 1.4; word-break: auto-phrase; }
+  .st4-r-t small { display: block; font-size: 12px; color: var(--sub); line-height: 1.4; margin-top: 2px; word-break: auto-phrase; }
+  .st4-r-y { display: flex; align-items: flex-end; color: #e8352a; line-height: 1; flex: none; }
+  .st4-r-y .num { font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 800; font-size: 30px; }
+  .st4-r-plus { font-size: 20px; font-weight: 900; color: #e8352a; line-height: 1; margin: 4px 0; }
+  @media (max-width: 359px) { .st4-r { gap: 8px; padding: 10px 12px; } .st4-r .ico { display: none; } .st4-r-t p { font-size: 13px; } .st4-r-y .num { font-size: 26px; } }
+  @media (min-width: 1024px) { .st4-rows { max-width: 620px; margin: 20px auto 0; } .st4-r { padding: 16px 20px; gap: 16px; } .st4-r .ico { width: 44px; height: 44px; } .st4-r-t p { font-size: 18px; } .st4-r-t small { font-size: 14px; } .st4-r-y .num { font-size: 44px; } }
 </style><style>
   .preview-gate { position: fixed; inset: 0; z-index: 9999; background: #000; display: flex; align-items: center; justify-content: center; padding: 20px; }
   .preview-gate-box { background: #fff; border: 2px solid #f4e030; border-radius: 12px; padding: clamp(24px, 5vw, 40px); width: 100%; max-width: 340px; text-align: center; }
@@ -1193,13 +1205,12 @@
       <!-- 10/25 さらに2つの割引〜ぜんぶ使うと をグレーの枠でひとまとまりに。変更前 _保存/index.before-1025-plusbox.html -->
       <div class="st4-box">
       <p class="st4-more sl"><span>さらに<em>2つの割引</em>で</span></p>
-      <div class="st4-two">
-        <!-- 10/23 B案：だれ向けかを黄ラベルで先に・白カード＋黒枠・円／OFF縦2段。比較 さらに_比較.html -->
-        <div class="st4-c"><span class="st4-lbl">はじめての方</span><svg class="ico ico-line" viewBox="0 0 40 40"><path fill="#06c755" stroke="none" d="M20,5 C29.5,5 37,11 37,18.5 C37,26 29.5,32 20,32 C18.6,32 17.2,31.9 15.9,31.6 L9,36 L10.3,29.3 C5.8,26.9 3,23 3,18.5 C3,11 10.5,5 20,5 Z"/><circle fill="#fff" stroke="none" cx="13" cy="18.5" r="2"/><circle fill="#fff" stroke="none" cx="20" cy="18.5" r="2"/><circle fill="#fff" stroke="none" cx="27" cy="18.5" r="2"/></svg><p class="st4-c-t">LINE新規登録で</p><p class="st4-c-y"><span class="num">1<span class="cm">,</span>100</span><span class="st4-c-st"><span>円</span><span>OFF</span></span></p><p class="st4-c-sub">当日<span class="st4-sp-x">使える</span>クーポン</p></div>
-        <span class="st4-plus" aria-hidden="true">＋</span>
-        <div class="st4-c"><span class="st4-lbl">処方箋をお持ちの方</span><svg class="ico" viewBox="0 0 40 40"><path d="M10,6 H25 L31,12 V34 H10 Z"/><path d="M25,6 V12 H31"/><path d="M15,18 H26 M15,23 H26 M15,28 H22"/></svg><p class="st4-c-t">眼科の処方箋で</p><p class="st4-c-y"><span class="num">1<span class="cm">,</span>100</span><span class="st4-c-st"><span>円</span><span>OFF</span></span></p><p class="st4-c-sub">ご来店時に持参</p></div>
+      <!-- 10/25 ラベルをやめて、横長カードを縦に2段（LINE／処方箋）。変更前 _保存/index.before-1025-tworows.html -->
+      <div class="st4-rows">
+        <div class="st4-r"><svg class="ico ico-line" viewBox="0 0 40 40"><path fill="#06c755" stroke="none" d="M20,5 C29.5,5 37,11 37,18.5 C37,26 29.5,32 20,32 C18.6,32 17.2,31.9 15.9,31.6 L9,36 L10.3,29.3 C5.8,26.9 3,23 3,18.5 C3,11 10.5,5 20,5 Z"/><circle fill="#fff" stroke="none" cx="13" cy="18.5" r="2"/><circle fill="#fff" stroke="none" cx="20" cy="18.5" r="2"/><circle fill="#fff" stroke="none" cx="27" cy="18.5" r="2"/></svg><div class="st4-r-t"><p>LINEお友だち登録で</p><small>その場で使えるクーポンプレゼント</small></div><p class="st4-r-y"><span class="num">1<span class="cm">,</span>100</span><span class="st4-c-st"><span>円</span><span>OFF</span></span></p></div>
+        <p class="st4-r-plus" aria-hidden="true">＋</p>
+        <div class="st4-r"><svg class="ico" viewBox="0 0 40 40"><path d="M10,6 H25 L31,12 V34 H10 Z"/><path d="M25,6 V12 H31"/><path d="M15,18 H26 M15,23 H26 M15,28 H22"/></svg><div class="st4-r-t"><p>眼科の処方箋ご持参で</p></div><p class="st4-r-y"><span class="num">1<span class="cm">,</span>100</span><span class="st4-c-st"><span>円</span><span>OFF</span></span></p></div>
       </div>
-
       <p class="st4-down" aria-hidden="true">▼</p>
       <div class="st4-fin">
         <p class="st4-fin-t">割引をぜんぶ使うと</p>
