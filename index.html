@@ -1155,6 +1155,9 @@
   .two .two-rn { line-height: .8; }
   .pick-store { font-size: 14px; }
   @media (min-width: 1024px) { .pick-store { font-size: 16px; } }
+  /* 補聴器のチェック：黒い枠＋赤いチェック（シンプルに） */
+  .hear-chk li::before { background: #fff; border: 1.5px solid var(--bk); box-sizing: border-box; }
+  .hear-chk li::after { border-color: #e8352a; }
 </style><style>
   .preview-gate { position: fixed; inset: 0; z-index: 9999; background: #000; display: flex; align-items: center; justify-content: center; padding: 20px; }
   .preview-gate-box { background: #fff; border: 2px solid #f4e030; border-radius: 12px; padding: clamp(24px, 5vw, 40px); width: 100%; max-width: 340px; text-align: center; }
