@@ -1005,6 +1005,17 @@
   .lens-tabs button { padding: 9px 4px; white-space: nowrap; }
   .lens-tabs button small { font-size: 11px; font-weight: 500; margin-left: 5px; }
   @media (max-width: 359px) { .lens-tabs button { font-size: 13px; } .lens-tabs button small { margin-left: 3px; } }
+  /* 10/25 さらに2つの割引で〜合計 をひとかたまりに（グレーの枠） */
+  .st4-box { background: var(--bg2); border-radius: 14px; padding: 18px 8px; margin: 24px -8px 0; }
+  .st4-box .st4-more { margin-top: 0; }
+  .st4-more em { font-style: normal; color: #e8352a; }
+  .st4-box .st4-c { background: #fff; }
+  .st4-box .st4-fin { background: #fff; }
+  .st4-fin-total { font-size: 14px; font-weight: 500; margin-top: 6px; }
+  .st4-fin-total b { font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 800; font-size: 20px; color: #e8352a; }
+  .st4-fin-ok { margin: 12px 16px 0; padding-top: 10px; border-top: 1px dashed var(--line); border-radius: 0; }
+  @media (max-width: 359px) { .st4-box { margin-left: -10px; margin-right: -10px; padding-left: 6px; padding-right: 6px; } .st4-box .st4-fin-y .num { font-size: 50px; } .st4-box .st4-c-t { font-size: 11px; } }
+  @media (min-width: 1024px) { .st4-box { padding: 28px 32px; margin-left: 0; margin-right: 0; } .st4-fin-total { font-size: 17px; } .st4-fin-total b { font-size: 26px; } }
 </style><style>
   .preview-gate { position: fixed; inset: 0; z-index: 9999; background: #000; display: flex; align-items: center; justify-content: center; padding: 20px; }
   .preview-gate-box { background: #fff; border: 2px solid #f4e030; border-radius: 12px; padding: clamp(24px, 5vw, 40px); width: 100%; max-width: 340px; text-align: center; }
@@ -1131,7 +1142,9 @@
         </div>
       </div>
 
-      <p class="st4-more sl"><span>さらに</span></p>
+      <!-- 10/25 さらに2つの割引〜ぜんぶ使うと をグレーの枠でひとまとまりに。変更前 _保存/index.before-1025-plusbox.html -->
+      <div class="st4-box">
+      <p class="st4-more sl"><span>さらに<em>2つの割引</em>で</span></p>
       <div class="st4-two">
         <!-- 10/23 B案：だれ向けかを黄ラベルで先に・白カード＋黒枠・円／OFF縦2段。比較 さらに_比較.html -->
         <div class="st4-c"><span class="st4-lbl">はじめての方</span><svg class="ico ico-line" viewBox="0 0 40 40"><path fill="#06c755" stroke="none" d="M20,5 C29.5,5 37,11 37,18.5 C37,26 29.5,32 20,32 C18.6,32 17.2,31.9 15.9,31.6 L9,36 L10.3,29.3 C5.8,26.9 3,23 3,18.5 C3,11 10.5,5 20,5 Z"/><circle fill="#fff" stroke="none" cx="13" cy="18.5" r="2"/><circle fill="#fff" stroke="none" cx="20" cy="18.5" r="2"/><circle fill="#fff" stroke="none" cx="27" cy="18.5" r="2"/></svg><p class="st4-c-t">LINE新規登録で</p><p class="st4-c-y"><span class="num">1<span class="cm">,</span>100</span><span class="st4-c-st"><span>円</span><span>OFF</span></span></p><p class="st4-c-sub">当日<span class="st4-sp-x">使える</span>クーポン</p></div>
@@ -1144,7 +1157,9 @@
         <p class="st4-fin-t">割引をぜんぶ使うと</p>
         <p class="st4-fin-from">通常価格 <s>13<span class="cm">,</span>200円</s></p>
         <p class="st4-fin-y"><span class="num">8<span class="cm">,</span>800</span><small>円〜</small></p>
+        <p class="st4-fin-total">合計 <b>4<span class="cm">,</span>400円</b> OFF</p>
         <p class="st4-fin-ok">遠近両用も追加料金<b>0円</b></p>
+      </div>
       </div>
       <p class="note st4-note">※価格はすべて税込<br>※標準レンズの場合<br>※本庄南大通り店を除く</p>
     </div>
