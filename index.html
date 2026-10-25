@@ -105,7 +105,7 @@
   .fv-confetti i { position: absolute; top: -40px; left: var(--l); width: var(--w); height: var(--h); background: var(--c); border-radius: 1px; opacity: var(--o);
     animation: fv-fall var(--d) linear var(--dl) infinite, fv-flip var(--f) ease-in-out var(--dl) infinite alternate; }
   .fv-confetti i.far { filter: blur(.4px); }
-  @keyframes fv-fall { 0% { translate: 0 0; rotate: 0deg; } 50% { translate: var(--sw) 55vh; rotate: 120deg; } 100% { translate: 0 110vh; rotate: 240deg; } }
+  @keyframes fv-fall { 0% { translate: 0 0; rotate: 0deg; } 50% { translate: var(--sw) calc(var(--fall, 110vh) / 2); rotate: 120deg; } 100% { translate: 0 var(--fall, 110vh); rotate: 240deg; } }
   @keyframes fv-flip { 0% { transform: rotateX(0) rotateY(0); } 100% { transform: rotateX(160deg) rotateY(40deg); } }
   .fv-img { position: relative; z-index: 2; }
   .fv .hd { z-index: 5; }
@@ -968,6 +968,11 @@
     .reasons .reason .talk, .reasons .reason .lens-rec, .reasons .reason .hs-acc { max-width: 520px; margin-left: auto; margin-right: auto; }
     .reasons .reason .reason-ill { max-width: 520px; margin-left: auto; margin-right: auto; display: block; }
   }
+  /* 紙吹雪はFVの下の黒い部分も降って、白いカード（ブラックフライデー限定）のうしろに消える。高さはJSで決める */
+  .fv { overflow: visible; }
+  .fv-confetti.is-long { bottom: auto; height: var(--cf-h); overflow: hidden; -webkit-mask-image: linear-gradient(#000 calc(100% - 60px), transparent); mask-image: linear-gradient(#000 calc(100% - 60px), transparent); }
+  .otoku .ba { position: relative; z-index: 4; }
+  .otoku .sec-head { position: relative; z-index: 4; }
 </style><style>
   .preview-gate { position: fixed; inset: 0; z-index: 9999; background: #000; display: flex; align-items: center; justify-content: center; padding: 20px; }
   .preview-gate-box { background: #fff; border: 2px solid #f4e030; border-radius: 12px; padding: clamp(24px, 5vw, 40px); width: 100%; max-width: 340px; text-align: center; }
@@ -1679,6 +1684,14 @@ if(!location.hash){window.scrollTo(0,0);}
   cards.forEach((c,i)=>{const b=document.createElement('button');b.type='button';b.setAttribute('aria-label',(i+1)+'枚目');b.onclick=()=>t.scrollTo({left:c.offsetLeft-t.offsetLeft-parseFloat(getComputedStyle(t).paddingLeft),behavior:'smooth'});d.appendChild(b);});
   const upd=()=>{const w=cards[0].offsetWidth+12;const i=Math.min(cards.length-1,Math.round(t.scrollLeft/w));[...d.children].forEach((b,k)=>b.setAttribute('aria-current',k===i?'true':'false'));};
   t.addEventListener('scroll',upd,{passive:true}); upd();
+})();
+
+// ===== 紙吹雪をFVの下、白いカードの上のところまで降らせる =====
+(function(){
+  const c=document.querySelector('.fv-confetti'), fv=document.getElementById('fv'), card=document.querySelector('.otoku .ba');
+  if(!c||!fv||!card) return;
+  const set=()=>{const h=Math.round(card.getBoundingClientRect().top-fv.getBoundingClientRect().top+60);c.style.setProperty('--cf-h',h+'px');c.style.setProperty('--fall',(h+60)+'px');c.classList.add('is-long');};
+  set(); window.addEventListener('load',set); window.addEventListener('resize',set);
 })();
 
 // ===== CTAの上の吹き出し：見えたらぴょこっと出す =====
