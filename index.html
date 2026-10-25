@@ -1121,6 +1121,9 @@
   .st4-z-set .st4-z2 { font-size: 25px; }
   .st4-z-set .st4-z2 b { font-size: 54px; }
   @media (min-width: 1024px) { .st4-z-set .st4-z2 { font-size: 32px; } .st4-z-set .st4-z2 b { font-size: 68px; } }
+  /* 2本同時：「さらに」は帯なしの文字だけ */
+  .two .two-label { background: none; color: var(--tx); padding: 0; border-radius: 0; font-size: 15px; font-weight: 900; }
+  @media (min-width: 1024px) { .two .two-label { font-size: 18px; } }
 </style><style>
   .preview-gate { position: fixed; inset: 0; z-index: 9999; background: #000; display: flex; align-items: center; justify-content: center; padding: 20px; }
   .preview-gate-box { background: #fff; border: 2px solid #f4e030; border-radius: 12px; padding: clamp(24px, 5vw, 40px); width: 100%; max-width: 340px; text-align: center; }
