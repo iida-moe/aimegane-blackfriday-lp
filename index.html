@@ -1000,6 +1000,11 @@
   .talk-who small { font-size: 11px; }
   .st4-c-sub { font-size: 12px; }
   @media (min-width: 1024px) { .two .two-rows + .two-who3 { margin-top: 0; padding-top: 0; border-top: 0; } }
+  /* 10/25 レンズのタブは2列×2段にして、名前の横に用途を小さく（中近＝室内用など） */
+  .lens-tabs { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .lens-tabs button { padding: 9px 4px; white-space: nowrap; }
+  .lens-tabs button small { font-size: 11px; font-weight: 500; margin-left: 5px; }
+  @media (max-width: 359px) { .lens-tabs button { font-size: 13px; } .lens-tabs button small { margin-left: 3px; } }
 </style><style>
   .preview-gate { position: fixed; inset: 0; z-index: 9999; background: #000; display: flex; align-items: center; justify-content: center; padding: 20px; }
   .preview-gate-box { background: #fff; border: 2px solid #f4e030; border-radius: 12px; padding: clamp(24px, 5vw, 40px); width: 100%; max-width: 340px; text-align: center; }
@@ -1258,10 +1263,10 @@
       </div>
       <p class="lens-hint sl"><span>あなたに合うレンズを見つけよう</span></p>
       <div class="lens-tabs" role="tablist">
-        <button role="tab" aria-selected="true" data-lens="enkin">遠近両用</button>
-        <button role="tab" aria-selected="false" data-lens="chukin">中近</button>
-        <button role="tab" aria-selected="false" data-lens="kinkin">近々</button>
-        <button role="tab" aria-selected="false" data-lens="assist">アシスト</button>
+        <button role="tab" aria-selected="true" data-lens="enkin">遠近両用<small>遠く〜手元</small></button>
+        <button role="tab" aria-selected="false" data-lens="chukin">中近<small>室内用</small></button>
+        <button role="tab" aria-selected="false" data-lens="kinkin">近々<small>デスクワーク用</small></button>
+        <button role="tab" aria-selected="false" data-lens="assist">アシスト<small>手元サポート</small></button>
       </div>
       <img class="reason-ill" id="lensImg" src="images/illust/lens-enkin.svg" alt="遠近両用レンズの見え方" width="640" height="360">
       <p class="lens-for" id="lensFor">遠くも手元も、これ1本で</p>
