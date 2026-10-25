@@ -1016,6 +1016,37 @@
   .st4-fin-ok { margin: 12px 16px 0; padding-top: 10px; border-top: 1px dashed var(--line); border-radius: 0; }
   @media (max-width: 359px) { .st4-box { margin-left: -10px; margin-right: -10px; padding-left: 6px; padding-right: 6px; } .st4-box .st4-fin-y .num { font-size: 50px; } .st4-box .st4-c-t { font-size: 11px; } }
   @media (min-width: 1024px) { .st4-box { padding: 28px 32px; margin-left: 0; margin-right: 0; } .st4-fin-total { font-size: 17px; } .st4-fin-total b { font-size: 26px; } }
+  /* 10/25 GWLPを参考に：お得な内容は2枚のカード（1ブロック1メッセージ） */
+  .st4-b2 { margin-top: 28px; padding-top: 24px; }
+  .st4-b2 .st4-box { background: none; padding: 0; margin: 0; }
+  .st4-fin-what { font-size: 12px; color: var(--sub); margin-top: 4px; }
+  @media (min-width: 1024px) { .otoku-row .ba.st4.st4-b2 { padding-top: 40px; } .st4-fin-what { font-size: 14px; } }
+  /* キャンペーン概要 */
+  .outline { background: #fff; padding-bottom: 24px; }
+  .ol-box { border: 1px solid var(--line); border-radius: 12px; padding: 4px 16px; }
+  .ol-row { display: grid; grid-template-columns: 52px 1fr; gap: 10px; padding: 14px 0; border-bottom: 1px dashed var(--line); }
+  .ol-row:last-child { border-bottom: 0; }
+  .ol-row dt { font-size: 13px; font-weight: 900; background: var(--bk); color: var(--ac); border-radius: 4px; text-align: center; align-self: start; padding: 2px 0; }
+  .ol-row dd { font-size: 14px; line-height: 1.7; word-break: auto-phrase; }
+  .ol-row dd small { display: block; font-size: 12px; color: var(--sub); }
+  .ol-list { list-style: none; }
+  .ol-list li { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; padding: 2px 0; }
+  .ol-list li span { font-weight: 900; color: #e8352a; text-align: right; white-space: nowrap; }
+  .ol-note { margin-top: 12px; }
+  @media (min-width: 1024px) { .ol-box, .ol-note { max-width: 720px; margin-left: auto; margin-right: auto; } .ol-box { padding: 8px 28px; } .ol-row { grid-template-columns: 72px 1fr; } .ol-row dd { font-size: 15px; } }
+  .ol-y { display: block; font-size: 12px; color: var(--sub); line-height: 1.3; }
+  .ol-row dd small { display: block; }
+  .ol-sp { margin-top: 8px; }
+  .ol-list li.ol-two { display: block; }
+  .ol-list li.ol-two span { display: block; text-align: left; white-space: normal; }
+  /* 概要：スマホはラベルを上、中身を下（横幅いっぱい使う） */
+  @media (max-width: 1023px) {
+    .ol-row { grid-template-columns: 1fr; gap: 6px; }
+    .ol-row dt { justify-self: start; padding: 2px 10px; font-size: 12px; }
+    .ol-list li { flex-wrap: wrap; column-gap: 8px; }
+    .ol-list li span { margin-left: auto; }
+    .ol-list li.ol-two span { margin-left: 0; }
+  }
 </style><style>
   .preview-gate { position: fixed; inset: 0; z-index: 9999; background: #000; display: flex; align-items: center; justify-content: center; padding: 20px; }
   .preview-gate-box { background: #fff; border: 2px solid #f4e030; border-radius: 12px; padding: clamp(24px, 5vw, 40px); width: 100%; max-width: 340px; text-align: center; }
@@ -1067,7 +1098,7 @@
         <a href="#otoku">お得な内容</a>
         <a href="#pickup">対象ブランド</a>
         <a href="#reason">選ばれる理由</a>
-        <a href="#closing">注意事項</a>
+        <a href="#outline">キャンペーン概要</a>
         <a href="#shop-search" class="hd-cta" data-cta-location="header">来店予約</a>
       </nav>      <button class="hd-menu" id="menuBtn" aria-label="メニューを開く" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
     </div>
@@ -1102,7 +1133,7 @@
       <li><a href="#pickup">対象ブランド</a></li>
       <li><a href="#reason">選ばれる3つの理由</a></li>
       <li><a href="#shop-search">店舗一覧</a></li>
-      <li><a href="#closing">注意事項</a></li>
+      <li><a href="#outline">キャンペーン概要</a></li>
     </ul>
     <a href="#shop-search" class="btn" data-cta-location="menu">来店予約</a>
   </nav>
@@ -1142,6 +1173,9 @@
         </div>
       </div>
 
+    </div>
+    <!-- 10/25 1ブロック1メッセージ：さらに2つの割引〜8,800円 を別のカードに（GWLPを参考） -->
+    <div class="ba st4 st4-b2">
       <!-- 10/25 さらに2つの割引〜ぜんぶ使うと をグレーの枠でひとまとまりに。変更前 _保存/index.before-1025-plusbox.html -->
       <div class="st4-box">
       <p class="st4-more sl"><span>さらに<em>2つの割引</em>で</span></p>
@@ -1159,6 +1193,7 @@
         <p class="st4-fin-y"><span class="num">8<span class="cm">,</span>800</span><small>円〜</small></p>
         <p class="st4-fin-total">合計 <b>4<span class="cm">,</span>400円</b> OFF</p>
         <p class="st4-fin-ok">遠近両用も追加料金<b>0円</b></p>
+        <p class="st4-fin-what"><span class="st4-sp-x">遠近両用＝</span>遠くも手元も1本で見えるレンズ</p>
       </div>
       </div>
       <p class="note st4-note">※価格はすべて税込<br>※標準レンズの場合<br>※本庄南大通り店を除く</p>
@@ -1354,6 +1389,25 @@
   </section>
 
   <!-- 5 店舗を選んで予約 -->
+  <!-- 10/25 キャンペーン概要（GWLPを参考に、期間・店舗・対象・割引・注意を1つの枠に） -->
+  <section class="sec outline" id="outline">
+    <div class="sec-head"><h2 class="sec-ja">キャンペーン概要</h2></div>
+    <dl class="ol-box">
+      <div class="ol-row"><dt>期間</dt><dd><small class="ol-y">2026年</small><b>11月13日(金)〜11月29日(日)</b></dd></div>
+      <div class="ol-row"><dt>店舗</dt><dd>本庄南大通り店を除く全店</dd></div>
+      <div class="ol-row"><dt>対象</dt><dd><p>対象のメガネ一式<small>フレーム・標準レンズ・ケース・クロス・保証</small></p><p class="ol-sp">補聴器<small>スターキー Gシリーズ</small></p></dd></div>
+      <div class="ol-row"><dt>割引</dt><dd>
+        <ul class="ol-list">
+          <li>ブラックフライデー限定<span>2,200円OFF</span></li>
+          <li>LINEお友だち新規登録<span>1,100円OFF</span></li>
+          <li>眼科の処方箋ご持参<span>1,100円OFF</span></li>
+          <li class="ol-two">メガネ2本同時購入<span>1本目10%OFF<br>2本目以降（安い方）20%OFF</span></li>
+        </ul></dd></div>
+      <div class="ol-row"><dt>レンズ</dt><dd>標準レンズなら、遠近両用・中近・近々・アシストも追加料金0円<small>超薄型・コーティング・レンズのグレード変更等は別途料金</small></dd></div>
+    </dl>
+    <p class="note ol-note">※8,800円は、13,200円の対象のメガネ一式に、ブラックフライデー限定割引2,200円・LINEお友だち登録の当日クーポン1,100円・眼科の処方箋持参1,100円の割引をすべて使った場合の価格です<br>※対象ブランドのお取り扱いデザインは店舗によって異なります<br>※価格はすべて税込</p>
+  </section>
+
   <section class="sec" id="shop-search">
     <div class="sec-head"><h2 class="sec-ja">お近くのお店を探す</h2></div>
 
@@ -1430,15 +1484,6 @@
     </div>
     <a href="#shop-search" class="btn" data-cta-location="closing">期間中に来店予約する</a>
     <p class="btn-sub">ご予約ならスムーズにご案内</p>
-    <div class="terms">
-      <p class="note">【注意事項】<br>
-      ※期間：2026年11月13日(金)〜11月29日(日)<br>
-      ※本庄南大通り店を除く全店で実施<br>
-      ※8,800円は、13,200円の対象のメガネ一式に、ブラックフライデー限定割引2,200円・LINEお友だち登録の当日クーポン1,100円・眼科の処方箋持参1,100円の割引をすべて使った場合の価格です<br>
-      ※標準レンズの場合。超薄型・コーティング・レンズのグレード変更等は別途料金<br>
-      ※対象ブランドのお取り扱いデザインは店舗によって異なります<br>
-      ※価格はすべて税込</p>
-    </div>
   </section>
 
   <footer class="footer">
