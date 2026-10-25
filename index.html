@@ -1158,6 +1158,10 @@
   /* 補聴器のチェック：黒い枠＋赤いチェック（シンプルに） */
   .hear-chk li::before { background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 6.2 L5 9 L10 3' fill='none' stroke='%23e8352a' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 12px 12px no-repeat; border: 1.5px solid var(--bk); box-sizing: border-box; }
   .hear-chk li::after { display: none; }
+  /* 補聴器のチェック項目：読みやすく（少し太く・行間を空ける） */
+  .hear-chk li { font-size: 14px; font-weight: 500; color: var(--tx); padding-top: 6px; padding-bottom: 6px; }
+  .hear-chk li::before { top: 8px; }
+  @media (max-width: 359px) { .hear .hear-chk li { font-size: 12px; letter-spacing: -.02em; padding-left: 24px; } .hear-chk li::before { width: 17px; height: 17px; } }
 </style><style>
   .preview-gate { position: fixed; inset: 0; z-index: 9999; background: #000; display: flex; align-items: center; justify-content: center; padding: 20px; }
   .preview-gate-box { background: #fff; border: 2px solid #f4e030; border-radius: 12px; padding: clamp(24px, 5vw, 40px); width: 100%; max-width: 340px; text-align: center; }
@@ -1386,14 +1390,14 @@
       <!-- 10/24 名前（左）と値引き（右）を1行に・説明はチェックリスト・技能者の説明は開閉。変更前 _保存/index.before-1024-hear.html -->
       <div class="hear-top"><div><p class="hear-jp">スターキー</p><p class="hear-br">Gシリーズ</p></div><p class="hear-y"><span class="num">2<span class="cm">,</span>200</span><span class="st"><span>円</span><span>OFF</span></span></p></div>
       <ul class="lens-chk hear-chk">
-        <li>全店で補聴器を取り扱っています</li>
-        <li><b class="hear-b">認定補聴器技能者</b>が在籍し、きこえに合わせた補聴器選びから調整までサポートします</li>
-        <li><span class="hearing-mk">2週間の無料貸出</span>で、おうちで試せます</li>
+        <li>全店で補聴器を取り扱い</li>
+        <li><b class="hear-b">認定補聴器技能者</b>が在籍</li>
+        <li><span class="hearing-mk">2週間の無料貸出</span>で、おうちでお試し</li>
       </ul>
-      <p class="hearing-n">※技能者が不在の日もあるため、ご相談はご予約がおすすめです</p>
+      <p class="hearing-n">※技能者が不在の日もあるため、ご予約がおすすめです</p>
       <details class="hear-q">
         <summary class="hear-q-t"><span class="hear-q-i" aria-hidden="true">?</span>認定補聴器技能者とは？</summary>
-        <p class="hear-q-d">公益財団法人テクノエイド協会が認定する、補聴器の専門資格です。きこえを測り、お一人おひとりに合わせて補聴器を調整する知識と技術を持っています。</p>
+        <p class="hear-q-d">公益財団法人テクノエイド協会が認定する、補聴器の専門資格です。きこえを測り、お一人おひとりに合わせた補聴器選びから調整までサポートします。</p>
       </details>
       </div>
       </div>
