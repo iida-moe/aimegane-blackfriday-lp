@@ -1177,6 +1177,15 @@
   .hear-link { margin-top: 16px; }
   @media (min-width: 1024px) { .hear-trial-y { font-size: 26px; } .hear-trial-y b { font-size: 56px; } .hear-bf { font-size: 15px; } .hear-bf b { font-size: 26px; } .hear-feat { font-size: 14px; } }
   @media (max-width: 359px) { .hear-feat { font-size: 11px; white-space: nowrap; } .hear-bf { font-size: 12px; white-space: nowrap; } .hear-bf b { font-size: 19px; margin-left: 4px; } }
+  /* 補聴器：試す → 買う の2ステップ */
+  .hear-steps { list-style: none; margin-top: 14px; }
+  .hear-steps li:not(.hs-arw) { display: flex; align-items: center; gap: 12px; background: var(--bg2); border-radius: 10px; padding: 10px 14px; text-align: left; }
+  .hs-no { flex: none; width: 26px; height: 26px; border-radius: 50%; background: var(--bk); color: var(--ac); font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 800; font-size: 16px; line-height: 26px; text-align: center; }
+  .hs-k { font-size: 13px; font-weight: 500; color: var(--tx); }
+  .hs-v { font-size: 18px; font-weight: 900; line-height: 1.1; }
+  .hs-v b { font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 800; font-size: 34px; color: #e8352a; margin-right: 2px; }
+  .hs-arw { text-align: center; color: #e8352a; font-size: 12px; line-height: 1; margin: 4px 0; }
+  @media (min-width: 1024px) { .hs-k { font-size: 15px; } .hs-v { font-size: 22px; } .hs-v b { font-size: 42px; } }
 </style><style>
   .preview-gate { position: fixed; inset: 0; z-index: 9999; background: #000; display: flex; align-items: center; justify-content: center; padding: 20px; }
   .preview-gate-box { background: #fff; border: 2px solid #f4e030; border-radius: 12px; padding: clamp(24px, 5vw, 40px); width: 100%; max-width: 340px; text-align: center; }
@@ -1406,9 +1415,12 @@
       <!-- 10/25 主役を「2週間無料でお試し」に、2,200円OFFはおまけに・特徴を1行（スターキー公式 GシリーズAI）。変更前 _保存/index.before-1025-hearpro.html -->
       <div class="hear-top"><div><p class="hear-jp">スターキー</p><p class="hear-br">Gシリーズ</p></div></div>
       <p class="hear-feat">耳かけ型｜AIがまわりの音に合わせて自動調整</p>
-      <div class="hear-trial"><p class="hear-trial-t">おうちで試せる</p><p class="hear-trial-y"><b>2</b>週間 無料お試し</p></div>
-      <p class="hear-bf">ブラックフライデー期間は<b>2<span class="cm">,</span>200円OFF</b></p>
-      <ul class="lens-chk hear-chk">
+      <!-- 10/25 試す→買う の2ステップで見せる。変更前 _保存/index.before-1025-hearsteps.html -->
+      <ol class="hear-steps">
+        <li><span class="hs-no">1</span><div><p class="hs-k">買う前に、おうちで</p><p class="hs-v"><b>2</b>週間 無料お試し</p></div></li>
+        <li class="hs-arw" aria-hidden="true">▼</li>
+        <li><span class="hs-no">2</span><div><p class="hs-k">気に入ったら、ご購入で</p><p class="hs-v"><b>2<span class="cm">,</span>200</b>円OFF</p></div></li>
+      </ol>      <ul class="lens-chk hear-chk">
         <li>全店で補聴器を取り扱い</li>
         <li><b class="hear-b">認定補聴器技能者</b>が在籍</li>
       </ul>
