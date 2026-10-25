@@ -704,6 +704,7 @@
   .shop-divider::before, .shop-divider::after { content: ""; flex: 1; height: 1px; background: var(--line); }
   .shop-search-form { display: flex; align-items: center; gap: 6px; }
   .shop-zip-label { font-size: 16px; font-weight: 700; }
+  .shop-zip-input::placeholder { color: #ccc; } /* お手本が入力済みに見えないよう薄く */
   .shop-zip-input { flex: 1; min-width: 0; width: 64px; font-size: 16px; padding: 10px 8px; border: 1.5px solid #bbb; border-radius: 8px; text-align: center; }
   .shop-zip-input-lg { flex: 1.3; }
   .shop-search-btn { flex: none; width: 84px; margin-left: 4px; font-size: 15px; font-weight: 700; padding: 10px 0; background: var(--ac); border: 0; border-radius: 8px; cursor: pointer; }
@@ -750,12 +751,23 @@
 
   /* ===== 6 最終CTA ===== */
   .closing { background: #000; color: #fff; text-align: center; }
-  .closing-date { font-family: 'Barlow Condensed', 'Noto Sans JP', sans-serif; font-size: 24px; font-weight: 700; }
-  .closing-date small { font-family: 'Noto Sans JP', sans-serif; font-size: 13px; }
-  .closing-title { font-size: 48px; font-weight: 900; color: var(--ac); line-height: 1.1; }
-  .closing-copy { font-size: 16px; margin-top: 8px; }
-  .closing-copy b { font-size: 32px; color: var(--ac); }
-  .closing-zero { font-style: normal; font-weight: 900; font-size: 22px; color: #ff4a3d; margin-left: 2px; }
+  .closing-date { font-family: 'Roboto', sans-serif; font-size: 24px; font-weight: 900; }
+  .closing-date small { font-family: 'Noto Sans JP', sans-serif; font-size: 12px; font-weight: 700; }
+  .closing-kana { font-size: 12px; font-weight: 700; margin-top: 14px; }
+  .closing-title { font-family: 'Roboto Condensed', 'Roboto', sans-serif; font-size: clamp(34px, 11vw, 48px); font-weight: 900; color: var(--ac); line-height: 1; margin-top: 4px; }
+  .closing-row { display: flex; flex-direction: column; align-items: center; gap: 18px; margin-top: 22px; }
+  .closing-price { text-align: left; }
+  .closing-lead { font-size: 17px; font-weight: 700; }
+  .closing-y { display: flex; align-items: flex-end; gap: 6px; line-height: .8; margin-top: 8px; }
+  .closing-y b { font-family: 'Roboto', sans-serif; font-weight: 900; font-size: clamp(64px, 21vw, 92px); color: #f0352b; letter-spacing: -.02em; }
+  .closing-y > span { display: flex; flex-direction: column; font-size: clamp(22px, 7vw, 30px); font-weight: 700; line-height: 1.1; padding-bottom: 2px; }
+  .closing-y > span small { font-size: .55em; }
+  .closing-badge { display: flex; align-items: center; justify-content: center; gap: 12px; width: 100%; border: 1px solid rgba(255,255,255,.55); border-radius: 12px; padding: 14px 12px; }
+  .closing-badge svg { width: 68px; flex: none; }
+  .closing-badge-t { font-size: 19px; font-weight: 700; line-height: 1.3; text-align: left; white-space: nowrap; }
+  .closing-zero { display: flex; align-items: flex-end; color: var(--ac); font-size: 22px; font-weight: 900; line-height: .8; }
+  .closing-zero b { font-family: 'Roboto', sans-serif; font-size: 62px; line-height: .76; margin-right: 2px; }
+  @media (min-width: 1024px) { .closing-row { flex-direction: row; justify-content: center; gap: 48px; } .closing-badge { width: auto; padding: 18px 28px; } .closing-title { font-size: 64px; } }
   .closing .btn { margin-top: 20px; }
   .terms { text-align: left; margin-top: 28px; padding-top: 14px; border-top: 1px solid #444; }
   .terms .note { color: #aaa; }
@@ -1361,9 +1373,21 @@
 
   <!-- 6 最終CTA -->
   <section class="sec closing" id="closing">
-    <p class="closing-date">11/13<small>(金)</small> 〜 11/29<small>(日)</small></p>
+    <!-- 10/25 FVと同じ見せ方に（日付→BLACK FRIDAY→8,800円赤→遠近0円の枠）。変更前 _保存/index.before-1025-closing.html -->
+    <p class="closing-date">11/13<small>(金)</small>〜11/29<small>(日)</small></p>
+    <p class="closing-kana">ブラックフライデー</p>
     <p class="closing-title">BLACK FRIDAY</p>
-    <p class="closing-copy">遠近両用も追加料金<em class="closing-zero">0円</em><br>対象のメガネ一式 <b>8<span class="cm">,</span>800円〜</b></p>
+    <div class="closing-row">
+      <div class="closing-price">
+        <p class="closing-lead">対象のメガネ一式</p>
+        <p class="closing-y"><b>8<span class="cm">,</span>800</b><span>円〜<small>(税込)</small></span></p>
+      </div>
+      <div class="closing-badge">
+        <svg viewBox="0 0 80 32" aria-hidden="true"><g fill="none" stroke="#fff" stroke-width="4.4" stroke-linejoin="round" stroke-linecap="round"><path d="M3,6 Q3,4 6,4 H33 Q36,4 35.5,7 L33,20 Q31.5,28 24,28 H15 Q7.5,28 5.5,20 Z"/><path d="M77,6 Q77,4 74,4 H47 Q44,4 44.5,7 L47,20 Q48.5,28 56,28 H65 Q72.5,28 74.5,20 Z"/><path d="M35.5,8 Q40,5.5 44.5,8"/></g></svg>
+        <p class="closing-badge-t">遠近両用<br>追加料金</p>
+        <p class="closing-zero"><b>0</b>円</p>
+      </div>
+    </div>
     <a href="#shop-search" class="btn" data-cta-location="closing">期間中に来店予約する</a>
     <p class="btn-sub">ご予約ならスムーズにご案内</p>
     <div class="terms">
