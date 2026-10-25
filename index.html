@@ -1088,6 +1088,15 @@
   .st4-r-t p { font-size: 14px; font-weight: 700; color: var(--tx); white-space: nowrap; letter-spacing: -.02em; }
   @media (max-width: 400px) { .st4-r { gap: 8px; padding-left: 10px; padding-right: 10px; } .st4-r .ico { width: 30px; height: 30px; } }
   @media (max-width: 359px) { .st4-r-t p { font-size: 13px; } }
+  /* 2本同時：イラストを小さくして文字と横並び */
+  .two-fam { display: flex; align-items: center; justify-content: center; gap: 14px; }
+  .two-fam img { width: 130px; max-width: none; margin: 0; flex: none; }
+  .two-fam-t { text-align: left; }
+  .two-fam .two-who2 { margin: 0; line-height: 1.5; }
+  .two-fam .two-who2 span { font-size: 20px; }
+  .two-fam .two-one { margin-top: 8px; text-align: left; }
+  @media (min-width: 1024px) { .two-fam img { width: 180px; } }
+  @media (max-width: 359px) { .two-fam { gap: 10px; } .two-fam img { width: 100px; } .two-fam .two-who2 span { font-size: 17px; white-space: nowrap; } .two-fam .two-one { font-size: 12px; white-space: nowrap; } }
 </style><style>
   .preview-gate { position: fixed; inset: 0; z-index: 9999; background: #000; display: flex; align-items: center; justify-content: center; padding: 20px; }
   .preview-gate-box { background: #fff; border: 2px solid #f4e030; border-radius: 12px; padding: clamp(24px, 5vw, 40px); width: 100%; max-width: 340px; text-align: center; }
@@ -1252,10 +1261,9 @@
       </div>
       <!-- 10/25 イラストを家族の1枚に（2人ともメガネ）。変更前 _保存/index.before-1025-family.html -->
       <div class="two-fam">
-        <p class="two-who2"><span>ご家族・ご友人</span>とでも</p>
         <img src="images/blackfriday_family_720_626.jpg" alt="メガネをかけた家族のイラスト" width="720" height="626" loading="lazy">
+        <div class="two-fam-t"><p class="two-who2"><span>ご家族・ご友人</span><br>とでも</p><p class="two-one">お一人で2本でもOK</p></div>
       </div>
-      <p class="two-one">お一人で2本でもOK</p>
     </div>
   </section>
 
