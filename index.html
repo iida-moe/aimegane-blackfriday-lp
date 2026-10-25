@@ -1097,6 +1097,16 @@
   .two-fam .two-one { margin-top: 8px; text-align: left; }
   @media (min-width: 1024px) { .two-fam img { width: 180px; } }
   @media (max-width: 359px) { .two-fam { gap: 10px; } .two-fam img { width: 100px; } .two-fam .two-who2 span { font-size: 17px; white-space: nowrap; } .two-fam .two-one { font-size: 12px; white-space: nowrap; } }
+  /* 合計の下：遠近両用レンズにしても追加料金0円（GWLPの見せ方）＋レンズ選びへ */
+  .st4-fin-zero { margin: 14px 16px 0; padding-top: 12px; border-top: 1px dashed var(--line); }
+  .st4-z1 { font-size: 13px; font-weight: 700; }
+  .st4-z1 b { font-size: 17px; font-weight: 900; }
+  .st4-z2 { font-size: 22px; font-weight: 900; line-height: 1; margin-top: 4px; }
+  .st4-z2 b { font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 800; font-size: 46px; color: #e8352a; margin: 0 4px 0 8px; vertical-align: -4px; }
+  .st4-z-link { display: inline-flex; align-items: center; gap: 4px; margin-top: 10px; font-size: 13px; font-weight: 700; color: var(--tx); text-decoration: underline; text-underline-offset: 3px; }
+  .st4-z-link span { font-size: 18px; line-height: 1; text-decoration: none; }
+  #lens-find { scroll-margin-top: 80px; }
+  @media (min-width: 1024px) { .st4-z1 { font-size: 16px; } .st4-z1 b { font-size: 22px; } .st4-z2 { font-size: 28px; } .st4-z2 b { font-size: 60px; } .st4-z-link { font-size: 15px; } }
 </style><style>
   .preview-gate { position: fixed; inset: 0; z-index: 9999; background: #000; display: flex; align-items: center; justify-content: center; padding: 20px; }
   .preview-gate-box { background: #fff; border: 2px solid #f4e030; border-radius: 12px; padding: clamp(24px, 5vw, 40px); width: 100%; max-width: 340px; text-align: center; }
@@ -1240,8 +1250,12 @@
         <p class="st4-fin-from">通常価格 <s>16<span class="cm">,</span>500円</s></p>
         <p class="st4-fin-y"><span class="num">12<span class="cm">,</span>100</span><small>円〜</small></p>
         <p class="st4-fin-total">合計 <b>4<span class="cm">,</span>400円</b> OFF</p>
-        <p class="st4-fin-ok">遠近両用も追加料金<b>0円</b></p>
-        <p class="st4-fin-what"><span class="st4-sp-x">遠近両用＝</span>遠くも手元も1本で見えるレンズ</p>
+        <!-- 10/25 GWLPの見せ方：遠近両用レンズにしても 追加料金0円 ＋ レンズ選びへのリンク -->
+        <div class="st4-fin-zero">
+          <p class="st4-z1"><b>遠近両用レンズ</b>にしても</p>
+          <p class="st4-z2">追加料金<b>0</b>円</p>
+          <a class="st4-z-link" href="#lens-find">あなたに合うレンズは？<span aria-hidden="true">›</span></a>
+        </div>
       </div>
       </div>
       <p class="note st4-note">※価格はすべて税込<br>※標準レンズの場合<br>※本庄南大通り店を除く</p>
@@ -1352,7 +1366,7 @@
           <p class="rh-zn">※対象のメガネ一式・標準レンズの場合</p>
         </div>
       </div>
-      <p class="lens-hint sl"><span>あなたに合うレンズを見つけよう</span></p>
+      <p class="lens-hint sl" id="lens-find"><span>あなたに合うレンズを見つけよう</span></p>
       <div class="lens-tabs" role="tablist">
         <button role="tab" aria-selected="true" data-lens="enkin">遠近両用<small>遠く〜手元</small></button>
         <button role="tab" aria-selected="false" data-lens="chukin">中近<small>室内用</small></button>
