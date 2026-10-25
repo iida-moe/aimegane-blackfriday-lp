@@ -976,6 +976,22 @@
   .st4-fin-ok { display: block; background: none; color: var(--tx); padding: 0; margin-top: 10px; font-size: 14px; font-weight: 900; }
   .st4-fin-ok b { color: #e8352a; font-size: 1.3em; margin-left: 3px; }
   @media (min-width: 1024px) { .st4-fin { padding: 38px 24px 26px; } .st4-fin-ok { font-size: 17px; margin-top: 18px; } }
+  /* 10/25 説明文は短く1行・価格より弱く（太さ・色を落とす） */
+  .st4-c-t { font-weight: 500; white-space: nowrap; }
+  .st4-c-sub { font-size: 11px; font-weight: 400; color: var(--sub); white-space: nowrap; }
+  .st4-fin-ok { font-weight: 500; }
+  .st4-fin-ok b { font-weight: 900; }
+  /* 小さいスマホ：カードの文字と合計の数字が折り返さないように */
+  @media (max-width: 359px) {
+    .st4-sp-x { display: none; }
+    .st4-c-t { font-size: 12px; }
+    .st4-fin-y .num { font-size: 58px; }
+    .st4-fin-y small { font-size: 24px; }
+    .st4-ex-b, .st4-ex-a { white-space: nowrap; }
+    .st4-ex-b { font-size: 22px; }
+    .st4-ex-a { font-size: 30px; }
+    .st4-ex-k { white-space: nowrap; font-size: 11px; letter-spacing: -.02em; }
+  }
 </style><style>
   .preview-gate { position: fixed; inset: 0; z-index: 9999; background: #000; display: flex; align-items: center; justify-content: center; padding: 20px; }
   .preview-gate-box { background: #fff; border: 2px solid #f4e030; border-radius: 12px; padding: clamp(24px, 5vw, 40px); width: 100%; max-width: 340px; text-align: center; }
@@ -1105,9 +1121,9 @@
       <p class="st4-more sl"><span>さらに</span></p>
       <div class="st4-two">
         <!-- 10/23 B案：だれ向けかを黄ラベルで先に・白カード＋黒枠・円／OFF縦2段。比較 さらに_比較.html -->
-        <div class="st4-c"><span class="st4-lbl">はじめての方</span><svg class="ico ico-line" viewBox="0 0 40 40"><path fill="#06c755" stroke="none" d="M20,5 C29.5,5 37,11 37,18.5 C37,26 29.5,32 20,32 C18.6,32 17.2,31.9 15.9,31.6 L9,36 L10.3,29.3 C5.8,26.9 3,23 3,18.5 C3,11 10.5,5 20,5 Z"/><circle fill="#fff" stroke="none" cx="13" cy="18.5" r="2"/><circle fill="#fff" stroke="none" cx="20" cy="18.5" r="2"/><circle fill="#fff" stroke="none" cx="27" cy="18.5" r="2"/></svg><p class="st4-c-t">LINEお友だち<br><em>新規登録</em>で</p><p class="st4-c-y"><span class="num">1<span class="cm">,</span>100</span><span class="st4-c-st"><span>円</span><span>OFF</span></span></p><p class="st4-c-sub">当日使える<br>クーポンを<wbr>ゲット！</p></div>
+        <div class="st4-c"><span class="st4-lbl">はじめての方</span><svg class="ico ico-line" viewBox="0 0 40 40"><path fill="#06c755" stroke="none" d="M20,5 C29.5,5 37,11 37,18.5 C37,26 29.5,32 20,32 C18.6,32 17.2,31.9 15.9,31.6 L9,36 L10.3,29.3 C5.8,26.9 3,23 3,18.5 C3,11 10.5,5 20,5 Z"/><circle fill="#fff" stroke="none" cx="13" cy="18.5" r="2"/><circle fill="#fff" stroke="none" cx="20" cy="18.5" r="2"/><circle fill="#fff" stroke="none" cx="27" cy="18.5" r="2"/></svg><p class="st4-c-t">LINE新規登録で</p><p class="st4-c-y"><span class="num">1<span class="cm">,</span>100</span><span class="st4-c-st"><span>円</span><span>OFF</span></span></p><p class="st4-c-sub">当日<span class="st4-sp-x">使える</span>クーポン</p></div>
         <span class="st4-plus" aria-hidden="true">＋</span>
-        <div class="st4-c"><span class="st4-lbl">処方箋をお持ちの方</span><svg class="ico" viewBox="0 0 40 40"><path d="M10,6 H25 L31,12 V34 H10 Z"/><path d="M25,6 V12 H31"/><path d="M15,18 H26 M15,23 H26 M15,28 H22"/></svg><p class="st4-c-t">眼科の処方箋<br><em>ご持参</em>で</p><p class="st4-c-y"><span class="num">1<span class="cm">,</span>100</span><span class="st4-c-st"><span>円</span><span>OFF</span></span></p><p class="st4-c-sub">お持ちの方は<br>お忘れなく！</p></div>
+        <div class="st4-c"><span class="st4-lbl">処方箋をお持ちの方</span><svg class="ico" viewBox="0 0 40 40"><path d="M10,6 H25 L31,12 V34 H10 Z"/><path d="M25,6 V12 H31"/><path d="M15,18 H26 M15,23 H26 M15,28 H22"/></svg><p class="st4-c-t">眼科の処方箋で</p><p class="st4-c-y"><span class="num">1<span class="cm">,</span>100</span><span class="st4-c-st"><span>円</span><span>OFF</span></span></p><p class="st4-c-sub">ご来店時に持参</p></div>
       </div>
 
       <p class="st4-down" aria-hidden="true">▼</p>
