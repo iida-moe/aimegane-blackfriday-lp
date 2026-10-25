@@ -992,6 +992,14 @@
     .st4-ex-a { font-size: 30px; }
     .st4-ex-k { white-space: nowrap; font-size: 11px; letter-spacing: -.02em; }
   }
+  /* 10/25 全体見直し：2本同時は割引が先、だれとでもOKは後ろ（点線で区切る） */
+  .two .two-rows + .two-who3 { margin-top: 18px; padding-top: 16px; border-top: 1px dashed var(--line); }
+  .two .two-one { font-size: 14px; color: var(--tx); }
+  /* 40代以上でも読めるよう、小さすぎる文字を少し大きく */
+  .reason .rh-zn { font-size: 11px; }
+  .talk-who small { font-size: 11px; }
+  .st4-c-sub { font-size: 12px; }
+  @media (min-width: 1024px) { .two .two-rows + .two-who3 { margin-top: 0; padding-top: 0; border-top: 0; } }
 </style><style>
   .preview-gate { position: fixed; inset: 0; z-index: 9999; background: #000; display: flex; align-items: center; justify-content: center; padding: 20px; }
   .preview-gate-box { background: #fff; border: 2px solid #f4e030; border-radius: 12px; padding: clamp(24px, 5vw, 40px); width: 100%; max-width: 340px; text-align: center; }
@@ -1139,6 +1147,15 @@
 
     <div class="two">
       <p class="two-label">さらに</p>
+      <!-- 10/25 まず割引（2本同時で10%・20%OFF）→ だれと買ってもOK の順に。変更前 _保存/index.before-1025-review.html -->
+      <p class="two-t"><span class="sl">メガネ2本同時購入で</span></p>
+      <!-- 10/23 1本目10%・2本目以降20%の2行に（数字の左をそろえる）。変更前 _保存/index.before-1023-two.html -->
+      <div class="two-rows">
+        <p class="two-rl">1本目</p>
+        <p class="two-rn two-rn-s"><span class="num">10</span><small>%OFF</small></p>
+        <p class="two-rl">2本目<small>以降<br><span class="two-kakko">（安い方）</span></small></p>
+        <p class="two-rn"><span class="num">20</span><small>%OFF</small></p>
+      </div>
       <div class="two-who3">
         <div>
           <p class="two-who2"><span>ご家族</span>でも</p>
@@ -1150,15 +1167,7 @@
         </div>
       </div>
       <p class="two-ill-note">※イラストは差し替え予定</p>
-      <p class="two-one">もちろん、お一人で2本でもOK</p>
-      <p class="two-t"><span class="sl">メガネ2本同時購入で</span></p>
-      <!-- 10/23 1本目10%・2本目以降20%の2行に（数字の左をそろえる）。変更前 _保存/index.before-1023-two.html -->
-      <div class="two-rows">
-        <p class="two-rl">1本目</p>
-        <p class="two-rn two-rn-s"><span class="num">10</span><small>%OFF</small></p>
-        <p class="two-rl">2本目<small>以降<br><span class="two-kakko">（安い方）</span></small></p>
-        <p class="two-rn"><span class="num">20</span><small>%OFF</small></p>
-      </div>
+      <p class="two-one">お一人で2本でもOK</p>
     </div>
   </section>
 
