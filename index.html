@@ -1113,6 +1113,14 @@
   .st4-z-link { margin-top: 8px; }
   /* 「あなたに合うレンズは？」は右ぞろえ */
   .st4-fin-zero .st4-z-link { display: flex; width: max-content; margin: 12px 0 0 auto; }
+  /* 遠近0円の2行：下の行を上の行と同じ長さに広げる・0は文字の下にそろえる */
+  .st4-z-set { display: inline-block; }
+  .st4-z-set .st4-z2 { display: flex; justify-content: space-between; align-items: flex-end; margin-top: 4px; }
+  .st4-z-set .st4-z2 span { line-height: 1; }
+  .st4-z-set .st4-z2 b { line-height: .74; margin: 0; }
+  .st4-z-set .st4-z2 { font-size: 25px; }
+  .st4-z-set .st4-z2 b { font-size: 54px; }
+  @media (min-width: 1024px) { .st4-z-set .st4-z2 { font-size: 32px; } .st4-z-set .st4-z2 b { font-size: 68px; } }
 </style><style>
   .preview-gate { position: fixed; inset: 0; z-index: 9999; background: #000; display: flex; align-items: center; justify-content: center; padding: 20px; }
   .preview-gate-box { background: #fff; border: 2px solid #f4e030; border-radius: 12px; padding: clamp(24px, 5vw, 40px); width: 100%; max-width: 340px; text-align: center; }
@@ -1258,8 +1266,10 @@
         <p class="st4-fin-total">合計 <b>4<span class="cm">,</span>400円</b> OFF</p>
         <!-- 10/25 GWLPの見せ方：遠近両用レンズにしても 追加料金0円 ＋ レンズ選びへのリンク -->
         <div class="st4-fin-zero">
-          <p class="st4-z1"><b>遠近両用レンズ</b>にしても</p>
-          <p class="st4-z2">追加料金<b>0</b>円</p>
+          <div class="st4-z-set">
+            <p class="st4-z1"><b>遠近両用レンズ</b>にしても</p>
+            <p class="st4-z2"><span>追加料金</span><b>0</b><span>円</span></p>
+          </div>
           <a class="st4-z-link" href="#lens-find">あなたに合うレンズは？<span aria-hidden="true">›</span></a>
         </div>
       </div>
