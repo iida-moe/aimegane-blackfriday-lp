@@ -1081,6 +1081,9 @@
   .st4-ex .st4-ex-all { margin-top: 10px; }
   /* 商品例：「通常価格」「2,200円OFFで」は数字の左はしにそろえる */
   .st4-ex-row > div { text-align: left; }
+  /* 商品例：ラベルと数字のすき間を左右で同じに（数字の上の余白をなくしてからそろえる） */
+  .st4-ex-row .st4-ex-b, .st4-ex-row .st4-ex-a { line-height: .8; }
+  .st4-ex-row .st4-ex-k { margin-bottom: 7px; line-height: 1.2; }
 </style><style>
   .preview-gate { position: fixed; inset: 0; z-index: 9999; background: #000; display: flex; align-items: center; justify-content: center; padding: 20px; }
   .preview-gate-box { background: #fff; border: 2px solid #f4e030; border-radius: 12px; padding: clamp(24px, 5vw, 40px); width: 100%; max-width: 340px; text-align: center; }
