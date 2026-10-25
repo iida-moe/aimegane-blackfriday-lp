@@ -1162,6 +1162,21 @@
   .hear-chk li { font-size: 14px; font-weight: 500; color: var(--tx); padding-top: 6px; padding-bottom: 6px; }
   .hear-chk li::before { top: 8px; }
   @media (max-width: 359px) { .hear .hear-chk li { font-size: 12px; letter-spacing: -.02em; padding-left: 24px; } .hear-chk li::before { width: 17px; height: 17px; } }
+  /* 補聴器カード（プロ目線の見直し） */
+  .hear-feat { font-size: 12px; color: var(--sub); margin-top: 6px; }
+  .hear-trial { margin-top: 14px; padding: 12px 10px; border-radius: 10px; background: var(--bg2); text-align: center; }
+  .hear-trial-t { font-size: 13px; font-weight: 700; }
+  .hear-trial-y { font-size: 20px; font-weight: 900; line-height: 1.1; margin-top: 2px; }
+  .hear-trial-y b { font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 800; font-size: 44px; color: #e8352a; margin-right: 2px; }
+  .hear-bf { text-align: center; font-size: 13px; font-weight: 500; margin-top: 10px; }
+  .hear-bf b { font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 800; font-size: 22px; color: #e8352a; margin-left: 6px; }
+  .hear .hear-chk { margin-top: 12px; }
+  details.hear-q { background: #fff; border: 1px solid var(--line); }
+  .hear-q .hear-q-i { background: var(--sub); color: #fff; }
+  .hear-q summary::after { background: #fff; color: var(--tx); border: 1px solid var(--line); line-height: 20px; }
+  .hear-link { margin-top: 16px; }
+  @media (min-width: 1024px) { .hear-trial-y { font-size: 26px; } .hear-trial-y b { font-size: 56px; } .hear-bf { font-size: 15px; } .hear-bf b { font-size: 26px; } .hear-feat { font-size: 14px; } }
+  @media (max-width: 359px) { .hear-feat { font-size: 11px; white-space: nowrap; } .hear-bf { font-size: 12px; white-space: nowrap; } .hear-bf b { font-size: 19px; margin-left: 4px; } }
 </style><style>
   .preview-gate { position: fixed; inset: 0; z-index: 9999; background: #000; display: flex; align-items: center; justify-content: center; padding: 20px; }
   .preview-gate-box { background: #fff; border: 2px solid #f4e030; border-radius: 12px; padding: clamp(24px, 5vw, 40px); width: 100%; max-width: 340px; text-align: center; }
@@ -1388,17 +1403,21 @@
       <div class="hear-img"><img class="hear-prod" src="images/blackfriday_hochouki_400_313.png" alt="スターキーの補聴器 Gシリーズ" width="400" height="313" loading="lazy"><img class="hear-logo" src="images/blackfriday_starkey-logo_830_476.webp" alt="Starkey（スターキー）" width="830" height="476" loading="lazy"></div>
       <div class="hear-body">
       <!-- 10/24 名前（左）と値引き（右）を1行に・説明はチェックリスト・技能者の説明は開閉。変更前 _保存/index.before-1024-hear.html -->
-      <div class="hear-top"><div><p class="hear-jp">スターキー</p><p class="hear-br">Gシリーズ</p></div><p class="hear-y"><span class="num">2<span class="cm">,</span>200</span><span class="st"><span>円</span><span>OFF</span></span></p></div>
+      <!-- 10/25 主役を「2週間無料でお試し」に、2,200円OFFはおまけに・特徴を1行（スターキー公式 GシリーズAI）。変更前 _保存/index.before-1025-hearpro.html -->
+      <div class="hear-top"><div><p class="hear-jp">スターキー</p><p class="hear-br">Gシリーズ</p></div></div>
+      <p class="hear-feat">耳かけ型｜AIがまわりの音に合わせて自動調整</p>
+      <div class="hear-trial"><p class="hear-trial-t">おうちで試せる</p><p class="hear-trial-y"><b>2</b>週間 無料お試し</p></div>
+      <p class="hear-bf">ブラックフライデー期間は<b>2<span class="cm">,</span>200円OFF</b></p>
       <ul class="lens-chk hear-chk">
         <li>全店で補聴器を取り扱い</li>
         <li><b class="hear-b">認定補聴器技能者</b>が在籍</li>
-        <li><span class="hearing-mk">2週間の無料貸出</span>で、おうちでお試し</li>
       </ul>
       <p class="hearing-n">※技能者が不在の日もあるため、ご予約がおすすめです</p>
       <details class="hear-q">
         <summary class="hear-q-t"><span class="hear-q-i" aria-hidden="true">?</span>認定補聴器技能者とは？</summary>
         <p class="hear-q-d">公益財団法人テクノエイド協会が認定する、補聴器の専門資格です。きこえを測り、お一人おひとりに合わせた補聴器選びから調整までサポートします。</p>
       </details>
+      <p class="worry-link hear-link"><a href="#shop-search" data-cta-location="hearing">▶ 補聴器の相談を予約する</a></p>
       </div>
       </div>
     </div>
