@@ -1047,6 +1047,18 @@
     .ol-list li span { margin-left: auto; }
     .ol-list li.ol-two span { margin-left: 0; }
   }
+  /* 2本同時：家族のイラスト1枚 */
+  .two .two-rows + .two-fam { margin-top: 18px; padding-top: 16px; border-top: 1px dashed var(--line); }
+  .two-fam img { display: block; width: 100%; max-width: 260px; height: auto; margin: 12px auto 0; }
+  .two-fam .two-who2 span { font-size: 22px; }
+  @media (min-width: 1024px) { .two .two-fam { grid-column: 1; grid-row: 1 / 4; } .two .two-rows + .two-fam { margin-top: 0; padding-top: 0; border-top: 0; } .two .two-one { grid-column: 1; } }
+  @media (min-width: 1024px) {
+    .two .two-fam { grid-column: 1; grid-row: 1 / 4; }
+    .two .two-one { grid-column: 1; grid-row: 4; }
+    .two .two-label { grid-column: 2; grid-row: 1; align-self: end; justify-self: center; }
+    .two .two-t { grid-column: 2; grid-row: 2; align-self: auto; }
+    .two .two-rows { grid-column: 2; grid-row: 3; align-self: start; }
+  }
 </style><style>
   .preview-gate { position: fixed; inset: 0; z-index: 9999; background: #000; display: flex; align-items: center; justify-content: center; padding: 20px; }
   .preview-gate-box { background: #fff; border: 2px solid #f4e030; border-radius: 12px; padding: clamp(24px, 5vw, 40px); width: 100%; max-width: 340px; text-align: center; }
@@ -1211,17 +1223,11 @@
         <p class="two-rl">2本目<small>以降<br><span class="two-kakko">（安い方）</span></small></p>
         <p class="two-rn"><span class="num">20</span><small>%OFF</small></p>
       </div>
-      <div class="two-who3">
-        <div>
-          <p class="two-who2"><span>ご家族</span>でも</p>
-          <svg class="ico" viewBox="0 0 64 60"><circle cx="16" cy="16" r="8"/><circle cx="48" cy="16" r="8"/><circle cx="32" cy="32" r="6"/><path d="M3,58 Q3,30 16,30 M61,58 Q61,30 48,30 M21,58 Q21,42 32,42 Q43,42 43,58"/></svg>
-        </div>
-        <div>
-          <p class="two-who2"><span>ご友人</span>でも</p>
-          <svg class="ico" viewBox="0 0 64 60"><circle cx="20" cy="16" r="8"/><circle cx="44" cy="16" r="8"/><path d="M5,58 Q5,30 20,30 Q35,30 35,58 M29,58 Q29,30 44,30 Q59,30 59,58"/></svg>
-        </div>
+      <!-- 10/25 イラストを家族の1枚に（2人ともメガネ）。変更前 _保存/index.before-1025-family.html -->
+      <div class="two-fam">
+        <p class="two-who2"><span>ご家族・ご友人</span>とでも</p>
+        <img src="images/blackfriday_family_720_626.jpg" alt="メガネをかけた家族のイラスト" width="720" height="626" loading="lazy">
       </div>
-      <p class="two-ill-note">※イラストは差し替え予定</p>
       <p class="two-one">お一人で2本でもOK</p>
     </div>
   </section>
