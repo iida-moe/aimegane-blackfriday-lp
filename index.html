@@ -467,7 +467,7 @@
   .talk-staff .talk-bub { margin-left: 20px; }
   @media (max-width: 359px) { .reason .talk-bub { font-size: 12.5px; padding: 8px 10px; } .talk-face { width: 38px; height: 38px; } .talk { margin-left: -6px; margin-right: -6px; } .talk-row:not(.talk-staff) { margin-right: 0; } .talk-staff .talk-bub { margin-left: 0; } .talk-row { gap: 6px; } }
   .talk + .worry-n { margin-top: 14px; }
-  .worry-link { text-align: center; margin-top: 10px; }
+  .worry-link { text-align: center; margin-top: 14px; }
   .worry-link a { font-size: 15px; font-weight: 900; color: var(--tx); text-decoration: underline; text-decoration-color: var(--ac); text-decoration-thickness: 3px; text-underline-offset: 4px; }
   .rh-d small { display: block; font-size: 11px; color: var(--sub); line-height: 1.6; margin-top: 4px; }
   .rh-d + .lens-tabs { margin-top: 16px; }
@@ -1174,7 +1174,7 @@
   details.hear-q { background: #fff; border: 1px solid var(--line); }
   .hear-q .hear-q-i { background: var(--sub); color: #fff; }
   .hear-q summary::after { background: #fff; color: var(--tx); border: 1px solid var(--line); line-height: 20px; }
-  .hear-link { margin-top: 16px; }
+  .hear-link { margin-top: 14px; }
   @media (min-width: 1024px) { .hear-trial-y { font-size: 26px; } .hear-trial-y b { font-size: 56px; } .hear-bf { font-size: 15px; } .hear-bf b { font-size: 26px; } .hear-feat { font-size: 14px; } }
   @media (max-width: 359px) { .hear-feat { font-size: 11px; white-space: nowrap; } .hear-bf { font-size: 12px; white-space: nowrap; } .hear-bf b { font-size: 19px; margin-left: 4px; } }
   /* 補聴器：試す → 買う の2ステップ */
@@ -1194,6 +1194,8 @@
   .hp-v b { font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 800; font-size: 30px; color: #e8352a; line-height: 1; margin-right: 1px; }
   .hear-top + .hear-feat { margin-top: 2px; }
   @media (min-width: 1024px) { .hp-k { font-size: 13px; } .hp-v { font-size: 18px; } .hp-v b { font-size: 38px; } }
+  .hp-nw { white-space: nowrap; }
+  @media (max-width: 359px) { .hear-pts li { padding-left: 4px; padding-right: 4px; } .hp-v { font-size: 13px; } }
 </style><style>
   .preview-gate { position: fixed; inset: 0; z-index: 9999; background: #000; display: flex; align-items: center; justify-content: center; padding: 20px; }
   .preview-gate-box { background: #fff; border: 2px solid #f4e030; border-radius: 12px; padding: clamp(24px, 5vw, 40px); width: 100%; max-width: 340px; text-align: center; }
@@ -1425,7 +1427,7 @@
       <div class="hear-top"><div><p class="hear-jp">スターキー</p><p class="hear-br">Gシリーズ</p></div><p class="hear-y"><span class="num">2<span class="cm">,</span>200</span><span class="st"><span>円</span><span>OFF</span></span></p></div>
       <p class="hear-feat">耳かけ型｜AIがまわりの音に合わせて自動調整</p>
       <ul class="hear-pts">
-        <li><p class="hp-k">選び方から調整まで</p><p class="hp-v">認定補聴器<br>技能者が在籍</p></li>
+        <li><p class="hp-k">選び方から調整まで</p><p class="hp-v"><span class="hp-nw">認定補聴器技能者</span><br>が在籍</p></li>
         <li><p class="hp-k">おうちで試せる</p><p class="hp-v"><b>2</b>週間<br>無料貸出</p></li>
       </ul>
       <p class="hearing-n">※技能者が不在の日もあるため、<br class="sp-br">ご予約がおすすめです</p>
