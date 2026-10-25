@@ -1058,10 +1058,10 @@
     .two .two-rows { grid-column: 2; grid-row: 3; align-self: start; }
   }
   /* 商品例のメガネ写真（メーカー画像なので切らずに全体を表示） */
-  .st4-ex-img { padding: 0 16px; margin: 0 0 10px; }
-  .st4-ex-img img { display: block; width: 100%; max-width: 260px; height: auto; margin: 0 auto; }
-  .st4-ex-img p { font-size: 11px; color: var(--sub); text-align: right; }
-  @media (min-width: 1024px) { .st4-ex-img img { max-width: 340px; } }
+  .st4-ex-img { padding: 0 16px; margin: -4px 0 8px; }
+  .st4-ex-img img { display: block; width: 100%; max-width: 200px; height: auto; margin: 0 auto; }
+  .st4-ex-img p { font-size: 11px; color: var(--sub); text-align: center; margin-top: -2px; }
+  @media (min-width: 1024px) { .st4-ex-img img { max-width: 280px; } }
   /* 2つの割引：横長カードを縦に2段 */
   .st4-rows { margin-top: 14px; }
   .st4-r { display: flex; align-items: center; gap: 8px; background: #fff; border: 2px solid var(--bk); border-radius: 10px; padding: 12px 10px; text-align: left; }
@@ -1074,6 +1074,7 @@
   .st4-r-plus { font-size: 20px; font-weight: 900; color: #e8352a; line-height: 1; margin: 4px 0; }
   @media (max-width: 359px) { .st4-r { gap: 8px; padding: 10px 12px; } .st4-r .ico { display: none; } .st4-r-t p { font-size: 13px; } .st4-r-y .num { font-size: 26px; } }
   @media (min-width: 1024px) { .st4-rows { max-width: 620px; margin: 20px auto 0; } .st4-r { padding: 16px 20px; gap: 16px; } .st4-r .ico { width: 44px; height: 44px; } .st4-r-t p { font-size: 18px; } .st4-r-t small { font-size: 14px; } .st4-r-y .num { font-size: 44px; } }
+  @media (max-width: 359px) { .st4-badge { font-size: 17px !important; white-space: nowrap; } }
 </style><style>
   .preview-gate { position: fixed; inset: 0; z-index: 9999; background: #000; display: flex; align-items: center; justify-content: center; padding: 20px; }
   .preview-gate-box { background: #fff; border: 2px solid #f4e030; border-radius: 12px; padding: clamp(24px, 5vw, 40px); width: 100%; max-width: 340px; text-align: center; }
@@ -1198,7 +1199,7 @@
         <div class="st4-ex-row">
           <div><p class="st4-ex-k">通常価格</p><p class="st4-ex-b">13<span class="cm">,</span>200<small>円</small></p></div>
           <span class="st4-arw" aria-hidden="true">▶</span>
-          <div><p class="st4-ex-k st4-k-red">ブラックフライデー限定</p><p class="st4-ex-a">11<span class="cm">,</span>000<small>円</small></p></div>
+          <div><p class="st4-ex-k st4-k-red">2,200円OFFで</p><p class="st4-ex-a">11<span class="cm">,</span>000<small>円</small></p></div>
         </div>
       </div>
 
