@@ -1196,6 +1196,12 @@
   @media (min-width: 1024px) { .hp-k { font-size: 13px; } .hp-v { font-size: 18px; } .hp-v b { font-size: 38px; } }
   .hp-nw { white-space: nowrap; }
   @media (max-width: 359px) { .hear-pts li { padding-left: 4px; padding-right: 4px; } .hp-v { font-size: 13px; } }
+  /* 補聴器カード：線と囲みを減らす（点線なし・技能者とは？は枠なし） */
+  .hear-pts { padding-top: 0; border-top: 0; }
+  details.hear-q { border: 0; background: none; margin-top: 10px; }
+  .hear-q summary { padding: 6px 30px 6px 0; display: inline-flex; }
+  .hear-q summary::after { right: 0; border: 0; background: none; font-size: 18px; color: var(--sub); }
+  .hear-q .hear-q-d { padding: 0 0 8px; }
 </style><style>
   .preview-gate { position: fixed; inset: 0; z-index: 9999; background: #000; display: flex; align-items: center; justify-content: center; padding: 20px; }
   .preview-gate-box { background: #fff; border: 2px solid #f4e030; border-radius: 12px; padding: clamp(24px, 5vw, 40px); width: 100%; max-width: 340px; text-align: center; }
