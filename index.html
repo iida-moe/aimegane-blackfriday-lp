@@ -1057,6 +1057,11 @@
     .two .two-t { grid-column: 2; grid-row: 2; align-self: auto; }
     .two .two-rows { grid-column: 2; grid-row: 3; align-self: start; }
   }
+  /* 商品例のメガネ写真（メーカー画像なので切らずに全体を表示） */
+  .st4-ex-img { background: var(--bg2); border-radius: 8px; padding: 10px 16px 6px; margin: 4px 0 12px; }
+  .st4-ex-img img { display: block; width: 100%; max-width: 260px; height: auto; margin: 0 auto; }
+  .st4-ex-img p { font-size: 11px; color: var(--sub); text-align: right; }
+  @media (min-width: 1024px) { .st4-ex-img img { max-width: 340px; } }
 </style><style>
   .preview-gate { position: fixed; inset: 0; z-index: 9999; background: #000; display: flex; align-items: center; justify-content: center; padding: 20px; }
   .preview-gate-box { background: #fff; border: 2px solid #f4e030; border-radius: 12px; padding: clamp(24px, 5vw, 40px); width: 100%; max-width: 340px; text-align: center; }
@@ -1164,6 +1169,8 @@
 
       <div class="st4-ex">
         <p class="st4-ex-l">商品例</p>
+        <!-- 10/25 GWLPのように本物のメガネ写真（対象ブランド LVR）。変更前 _保存/index.before-1025-exphoto.html -->
+        <div class="st4-ex-img"><img src="images/frames/lvr-2.png" alt="LVR（エルブイアール）のメガネ" width="800" height="381" loading="lazy"><p>※写真はイメージです</p></div>
         <p class="st4-ex-all sl"><span>すべてまとめて、<em>この価格！</em></span></p>
         <ul class="ba-set" aria-label="セットの中身">
         <li><svg class="ico" viewBox="0 0 48 32"><circle cx="14" cy="17" r="9"/><circle cx="34" cy="17" r="9"/><path d="M23,16 Q24,13 25,16 M5,15 L1,12 M43,15 L47,12"/></svg>フレーム</li>
