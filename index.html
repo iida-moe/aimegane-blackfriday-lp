@@ -1202,6 +1202,16 @@
   .hear-q summary { padding: 6px 30px 6px 0; display: inline-flex; }
   .hear-q summary::after { right: 0; border: 0; background: none; font-size: 18px; color: var(--sub); }
   .hear-q .hear-q-d { padding: 0 0 8px; }
+  /* 対象ブランド例：1行で 通常価格（消し線）▶ ブラックフライデー価格・写真のベージュなし */
+  .pick-img { background: #fff; }
+  .pv-a { display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; margin-top: auto; padding-top: 10px; }
+  .pv-a s { font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 800; font-size: 16px; color: #999; text-decoration-color: #e8352a; text-decoration-thickness: 2px; }
+  .pv-arw { color: #e8352a; font-size: 10px; }
+  .pv-a b { font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 800; font-size: 28px; color: #e8352a; line-height: 1; }
+  .pv-a b small { font-family: 'Noto Sans JP', sans-serif; font-size: 13px; font-weight: 900; }
+  .pv-tax { font-size: 11px; color: var(--sub); margin-top: 2px; }
+  .pick-tx { margin-bottom: 0; }
+  @media (min-width: 1024px) { .pv-a s { font-size: 18px; } .pv-a b { font-size: 32px; } .pv-tax { font-size: 12px; } }
 </style><style>
   .preview-gate { position: fixed; inset: 0; z-index: 9999; background: #000; display: flex; align-items: center; justify-content: center; padding: 20px; }
   .preview-gate-box { background: #fff; border: 2px solid #f4e030; border-radius: 12px; padding: clamp(24px, 5vw, 40px); width: 100%; max-width: 340px; text-align: center; }
@@ -1386,7 +1396,7 @@
           <div class="pick-body">
             <div class="pick-head"><p class="pick-jp">エルブイアール</p><p class="pick-br">LVR</p></div>
             <p class="pick-tx">クラシカルなボストン型</p>
-            <p class="pick-pr"><span class="pick-pr-l">セット通常価格</span><s>16,500円</s><span class="pick-pr-bf">ブラックフライデー価格</span><b>14,300<small>円〜</small></b><small class="pick-tax">（税込）</small></p>
+            <p class="pv-a"><s>16,500円</s><span class="pv-arw">▶</span><b>14,300<small>円〜</small></b></p><p class="pv-tax">セット価格（税込）</p>
           </div>
         </div>
         <div class="pick-card">
@@ -1394,7 +1404,7 @@
           <div class="pick-body">
             <div class="pick-head"><p class="pick-jp">ニクス</p><p class="pick-br">NYX</p></div>
             <p class="pick-tx">オールブラックの定番形</p>
-            <p class="pick-pr"><span class="pick-pr-l">セット通常価格</span><s>23,650円</s><span class="pick-pr-bf">ブラックフライデー価格</span><b>21,450<small>円〜</small></b><small class="pick-tax">（税込）</small></p>
+            <p class="pv-a"><s>23,650円</s><span class="pv-arw">▶</span><b>21,450<small>円〜</small></b></p><p class="pv-tax">セット価格（税込）</p>
           </div>
         </div>
         <div class="pick-card">
@@ -1402,7 +1412,7 @@
           <div class="pick-body">
             <div class="pick-head"><p class="pick-jp">ブランシック</p><p class="pick-br">Blancchic</p></div>
             <p class="pick-tx">大きめレンズで小顔効果</p>
-            <p class="pick-pr"><span class="pick-pr-l">セット通常価格</span><s>◯◯,◯◯◯円</s><span class="pick-pr-bf">ブラックフライデー価格</span><b>◯◯,◯◯◯<small>円〜</small></b><small class="pick-tax">（税込）</small></p>
+            <p class="pv-a"><s>◯◯,◯◯◯円</s><span class="pv-arw">▶</span><b>◯◯,◯◯◯<small>円〜</small></b></p><p class="pv-tax">セット価格（税込）</p>
           </div>
         </div>
         <div class="pick-card">
@@ -1410,7 +1420,7 @@
           <div class="pick-body">
             <div class="pick-head"><p class="pick-jp">ユーピーレノマ</p><p class="pick-br">U.P renoma</p></div>
             <p class="pick-tx">知的な印象のスクエア</p>
-            <p class="pick-pr"><span class="pick-pr-l">セット通常価格</span><s>◯◯,◯◯◯円</s><span class="pick-pr-bf">ブラックフライデー価格</span><b>◯◯,◯◯◯<small>円〜</small></b><small class="pick-tax">（税込）</small></p>
+            <p class="pv-a"><s>◯◯,◯◯◯円</s><span class="pv-arw">▶</span><b>◯◯,◯◯◯<small>円〜</small></b></p><p class="pv-tax">セット価格（税込）</p>
           </div>
         </div>
       </div>
