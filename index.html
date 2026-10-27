@@ -1386,6 +1386,20 @@
   .ol-big small { display: inline !important; font-family: 'Noto Sans JP', sans-serif; font-size: 12px !important; font-weight: 700; color: var(--tx) !important; }
   .ol-big2 { font-size: 17px; font-weight: 700; line-height: 1.4; }
   .ol-row dd, .ol-dc-k { min-width: 0; }
+  /* 10/27 最終CTA：落ち着いた締め */
+  .cl-en { font-family: 'Barlow', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: .3em; color: var(--ac); }
+  .cl-copy { font-size: 22px; font-weight: 700; line-height: 1.6; margin-top: 12px; color: #fff; }
+  .cl-date { font-family: 'Barlow', sans-serif; font-weight: 800; font-size: 18px; margin-top: 14px; color: #fff; }
+  .cl-date small { font-family: 'Noto Sans JP', sans-serif; font-size: 11px; font-weight: 700; }
+  .cl-sum { margin: 22px auto 0; max-width: 360px; border-top: 1px solid rgba(255,255,255,.25); border-bottom: 1px solid rgba(255,255,255,.25); padding: 16px 0 14px; }
+  .cl-y { font-size: 14px; font-weight: 700; color: #fff; }
+  .cl-y b { font-family: 'Barlow', sans-serif; font-weight: 800; font-size: 32px; color: var(--ac); margin: 0 2px 0 8px; letter-spacing: .01em; }
+  .cl-y small { font-size: 11px; }
+  .cl-z { font-size: 13px; color: #ddd; margin-top: 2px; }
+  .cl-k { font-size: 12px; color: #ccc; }
+  .cl-n { display: inline-block; text-align: left; font-size: 11px; color: #999; line-height: 1.6; margin-top: 8px; }
+  .closing .btn { margin-top: 24px; }
+  @media (min-width: 1024px) { .cl-copy { font-size: 28px; } .cl-en { font-size: 15px; } .cl-y b { font-size: 38px; } }
   .wait b { background: none; padding: 0; } /* 10/27 お店さがしの「ご予約ならスムーズにご案内」はマーカーなし（Iさん） */
   @media (max-width: 359px) { .ol-dc li { grid-template-columns: 1fr; gap: 0; } .ol-dc-v { justify-self: end; } }
   @media (max-width: 1023px) { .ol-dc li { font-size: 13px; gap: 8px; } .ol-dc-v { font-size: 13px; } }
@@ -1840,20 +1854,15 @@
 
   <!-- 6 最終CTA -->
   <section class="sec closing" id="closing">
-    <!-- 10/25 FVと同じ見せ方に（日付→BLACK FRIDAY→8,800円赤→遠近0円の枠）。変更前 _保存/index.before-1025-closing.html -->
-    <p class="closing-date">11/13<small>(金)</small>〜11/29<small>(日)</small></p>
-    <p class="closing-kana">ブラックフライデー</p>
-    <p class="closing-title">BLACK FRIDAY</p>
-    <div class="closing-row">
-      <div class="closing-price">
-        <p class="closing-lead">対象のメガネ一式</p>
-        <p class="closing-y"><b>8<span class="cm">,</span>800</b><span>円〜<small>(税込)</small></span></p>
-      </div>
-      <div class="closing-badge">
-        <svg viewBox="0 0 80 32" aria-hidden="true"><g fill="none" stroke="#fff" stroke-width="4.4" stroke-linejoin="round" stroke-linecap="round"><path d="M3,6 Q3,4 6,4 H33 Q36,4 35.5,7 L33,20 Q31.5,28 24,28 H15 Q7.5,28 5.5,20 Z"/><path d="M77,6 Q77,4 74,4 H47 Q44,4 44.5,7 L47,20 Q48.5,28 56,28 H65 Q72.5,28 74.5,20 Z"/><path d="M35.5,8 Q40,5.5 44.5,8"/></g></svg>
-        <p class="closing-badge-t">遠近両用<br>追加料金</p>
-        <p class="closing-zero"><b>0</b>円</p>
-      </div>
+    <!-- 10/27 FVのくり返しをやめて落ち着いた締めに（ひとこと→期間→値段は1行→ボタン）（Iさん「FVと一緒」）。変更前は FVと同じ形（日付→BLACK FRIDAY→8,800円→遠近0円の枠） -->
+    <p class="cl-en">BLACK FRIDAY</p>
+    <h2 class="cl-copy">あなたに合うメガネを、<br>この機会に。</h2>
+    <p class="cl-date">11/13<small>(金)</small>〜11/29<small>(日)</small></p>
+    <div class="cl-sum">
+      <p class="cl-k">割引をぜんぶ使うと</p>
+      <p class="cl-y">対象のメガネ一式<b>8<span class="cm">,</span>800</b>円〜<small>(税込)</small></p>
+      <p class="cl-z">遠近両用も追加料金0円</p>
+      <p class="cl-n">※価格はすべて税込<br>※標準レンズの場合<br>※本庄南大通り店を除く</p>
     </div>
     <a href="#shop-search" class="btn" data-cta-location="closing">近くのお店で予約する</a>
     <p class="btn-sub">ご予約ならスムーズにご案内</p>
