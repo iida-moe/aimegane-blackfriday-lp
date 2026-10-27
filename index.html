@@ -464,6 +464,15 @@
   .talk-face { flex: none; width: 46px; height: 46px; display: block; }
   .talk-face { border-radius: 50%; border: 1.5px solid #e3e3de; box-sizing: border-box; } /* 10/27 丸の中に顔だけ（肩の切れ目を見せない） */
   .talk-staff .talk-face { border-color: var(--ac); }
+  /* 10/27 B案：お客さまの声は顔なし（左に灰色の線）・スタッフは丸なしで少し大きく */
+  .talk-lbl { font-size: 12px; font-weight: 900; color: var(--sub); margin: 0 0 -2px 2px; }
+  .talk-voice { margin-right: 0 !important; }
+  .reason .talk-voice .talk-bub { border-left: 4px solid #ddd; border-radius: 4px 14px 14px 4px; }
+  .talk-voice .talk-bub::before { display: none; }
+  .reason .talk-staff .talk-face { width: 60px; height: 60px; border: 0; border-radius: 0; }
+  .reason .talk-staff .talk-bub { padding-left: 12px; padding-right: 10px; margin-left: 0 !important; }
+  .reason .talk-staff { margin-left: 0 !important; }
+  @media (max-width: 359px) { .reason .talk-staff .talk-face { width: 50px; height: 50px; } }
   .talk-who { flex: none; display: flex; flex-direction: column; align-items: center; }
   .talk-who small { font-size: 10px; font-weight: 700; color: var(--sub); margin-top: 2px; }
   .talk-staff { margin-top: 4px; }
@@ -1594,9 +1603,11 @@
       <!-- 10/24 C案：お客さま⇔スタッフの会話（お悩み_比較.html） -->
       <div class="talk">
         <!-- 10/27 顔を理由1の女性と同じ黄色×黒のシリーズに（Iさん持ちこみ 2660923/23192530/23050866 を頭と肩で切りぬき） -->
-        <div class="talk-row"><img class="talk-face" src="images/blackfriday_face4-customer1_240_240.png" alt="" width="240" height="240"><p class="talk-bub">最近、手元が見えにくくて…</p></div>
-        <div class="talk-row"><img class="talk-face" src="images/blackfriday_face4-customer2_240_240.png" alt="" width="240" height="240"><p class="talk-bub">遠近両用ははじめてで不安</p></div>
-        <div class="talk-row talk-staff"><span class="talk-who"><img class="talk-face" src="images/blackfriday_face4-staff_240_240.png" alt="" width="240" height="240"><small>スタッフ</small></span><p class="talk-bub">見え方をしっかり測って、<br><b>ぴったりのレンズをご提案！</b></p></div>
+        <!-- 10/27 B案：お客さまは顔なし（「よくあるお悩み」）・顔はスタッフだけ・丸なし（比較/会話の見せ方_比較.png） -->
+        <p class="talk-lbl">よくあるお悩み</p>
+        <div class="talk-row talk-voice"><p class="talk-bub">最近、手元が見えにくくて…</p></div>
+        <div class="talk-row talk-voice"><p class="talk-bub">遠近両用ははじめてで不安</p></div>
+        <div class="talk-row talk-staff"><span class="talk-who"><img class="talk-face" src="images/blackfriday_face2-staff_270_270.png" alt="スタッフ" width="270" height="270"><small>スタッフ</small></span><p class="talk-bub">見え方をしっかり測って、<br><b>ぴったりのレンズをご提案！</b></p></div>
       </div>
       <p class="rh-d worry-n"><small>※不在の日もあるため、ご予約がおすすめです</small></p>
       <p class="worry-link"><a href="#shop-search" data-cta-location="reason_staff">▶ 来店予約はこちら</a></p>
