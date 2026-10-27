@@ -1222,11 +1222,13 @@
   .pv-a { display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; margin-top: auto; padding-top: 10px; }
   .pv-a s { font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 800; font-size: 16px; color: #999; text-decoration-color: #e8352a; text-decoration-thickness: 2px; }
   .pv-arw { color: #e8352a; font-size: 10px; }
-  .pv-a b { font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 800; font-size: 28px; color: #e8352a; line-height: 1; }
+  .pv-a b { font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 800; font-size: 34px; color: #e8352a; line-height: 1; } /* 10/27 28→34px（商品例の11,000円とそろえる） */
+  @media (max-width: 359px) { .pv-a b { font-size: 31px; } }
+  @media (min-width: 1024px) and (max-width: 1199px) { .pv-a s { font-size: 14px !important; } .pv-a b { font-size: 26px !important; } .pv-a b small { font-size: 12px; } } /* 4列でカードが細い幅 */
   .pv-a b small { font-family: 'Noto Sans JP', sans-serif; font-size: 13px; font-weight: 900; }
   .pv-tax { font-size: 11px; color: var(--sub); margin-top: 2px; }
   .pick-tx { margin-bottom: 0; }
-  @media (min-width: 1024px) { .pv-a s { font-size: 18px; } .pv-a b { font-size: 32px; } .pv-tax { font-size: 12px; } }
+  @media (min-width: 1024px) { .pv-a s { font-size: 18px; } .pv-a { gap: 4px; flex-wrap: nowrap; } .pv-a s, .pv-a b { white-space: nowrap; } .pv-a b { font-size: 32px; } .pv-tax { font-size: 12px; } }
 </style><style>
   .preview-gate { position: fixed; inset: 0; z-index: 9999; background: #000; display: flex; align-items: center; justify-content: center; padding: 20px; }
   .preview-gate-box { background: #fff; border: 2px solid #f4e030; border-radius: 12px; padding: clamp(24px, 5vw, 40px); width: 100%; max-width: 340px; text-align: center; }
