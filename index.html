@@ -407,6 +407,10 @@
   .reason:has(.rh)::before { content: counter(reason); position: absolute; top: -14px; left: -6px; width: 40px; height: 40px; border-radius: 50%; background: var(--bk); color: var(--ac); font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 800; font-size: 24px; line-height: 40px; text-align: center; box-shadow: 0 2px 6px rgba(0,0,0,.2); }
   .rh { display: flex; align-items: center; justify-content: center; gap: 16px; text-align: left; }
   .rh-ico { flex: none; width: 72px; height: 72px; }
+  .rh-ill { flex: none; width: 96px; height: auto; } /* 10/27 理由1のイラスト */
+  .reason .rh-zn { word-break: auto-phrase; text-wrap: balance; } /* 「場合」が1文字だけ落ちないように */
+  @media (max-width: 359px) { .rh-ill { width: 80px; } }
+  @media (min-width: 1024px) { .rh-ill { width: 130px; } }
   .reason .rh h3 { margin: 0; font-size: 19px; font-weight: 900; line-height: 1.5; letter-spacing: .04em; }
   .rh h3 em { display: block; font-style: normal; font-size: 22px; color: #e8352a; }
   /* 0だけ大きく（鯖江LPの見せ方） */
@@ -1547,7 +1551,8 @@
       <!-- 10/24 入口を「アイコン左＋2行見出し（2行目赤）＋左ぞろえの短い説明」に（旬の駅の形）。変更前 _保存/index.before-1024-reasonhead.html -->
       <p class="rh-to">小さい文字が見にくくなった方へ</p>
       <div class="rh">
-        <svg class="rh-ico" viewBox="0 0 64 64" aria-hidden="true"><circle cx="19" cy="30" r="11" fill="#e3f2f9" stroke="#222" stroke-width="3.4"/><circle cx="45" cy="30" r="11" fill="#e3f2f9" stroke="#222" stroke-width="3.4"/><path d="M30,29 Q32,25.5 34,29" fill="none" stroke="#222" stroke-width="3" stroke-linecap="round"/><path d="M8,28 L3,23 M56,28 L61,23" stroke="#222" stroke-width="3" stroke-linecap="round"/><path d="M13,26 L17,24 M39,26 L43,24" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg>
+        <!-- 10/27 A案：メガネのアイコン→スマホの文字が見えにくい女性のイラスト（比較/理由1イラスト_比較.png） -->
+        <img class="rh-ill" src="images/blackfriday_temoto-woman_637_885.jpg" alt="スマホの文字が見えにくそうな女性のイラスト" width="637" height="885" loading="lazy">
         <div class="rh-txt">
           <h3 class="rh-zero"><span class="rh-zl"><span>遠近両用</span><em>追加料金</em></span><b>0</b><span class="rh-yen">円</span></h3>
           <p class="rh-also">中近や近々レンズも！</p>
