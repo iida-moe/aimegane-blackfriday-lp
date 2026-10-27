@@ -477,6 +477,19 @@
   .reason .rh h3.rh-gino em { font-size: 27px; letter-spacing: .02em; margin-top: 2px; white-space: nowrap; }
   .reason .rh-gino-d { font-size: 13px; font-weight: 700; color: var(--tx); line-height: 1.6; margin-top: 6px; text-align: left; }
   .rh-gino-d .nw { display: inline-block; }
+  /* 10/27 理由2の会話（マンガ風）：上半身のイラスト＋白地に色のふちの吹き出し、お客さま右・スタッフ左 */
+  .manga { margin-top: 18px; display: flex; flex-direction: column; gap: 4px; }
+  .mg-row { display: flex; align-items: flex-end; gap: 4px; }
+  .mg-row img { flex: none; width: 82px; height: auto; display: block; }
+  .mg-staff img { width: 84px; }
+  .reason .mg-bub { position: relative; flex: 1; background: #fff; border: 2px solid #bdbdb6; border-radius: 14px; padding: 12px; font-size: 14px; font-weight: 700; line-height: 1.6; color: var(--tx); margin-bottom: 26px; text-align: left; word-break: auto-phrase; }
+  .reason .mg-staff .mg-bub { border-color: #f4c400; background: #fffbe0; margin-bottom: 20px; }
+  .mg-bub .nw { display: inline-block; }
+  .mg-bub::after { content: ""; position: absolute; top: 50%; width: 12px; height: 12px; background: inherit; border: inherit; border-width: 0 2px 2px 0; }
+  .mg-cust .mg-bub::after { right: -8px; transform: translateY(-50%) rotate(-45deg); }
+  .mg-staff .mg-bub::after { left: -8px; transform: translateY(-50%) rotate(135deg); }
+  @media (max-width: 359px) { .mg-row img { width: 66px; } .mg-staff img { width: 68px; } .reason .mg-bub { font-size: 12.5px; padding: 10px; } }
+  @media (min-width: 1024px) { .manga { max-width: 560px; margin-left: auto; margin-right: auto; } .mg-row img { width: 110px; } .mg-staff img { width: 116px; } .reason .mg-bub { font-size: 16px; padding: 14px 18px; } }
   /* 10/27 鯖江LPの会話の形：顔は大きい丸（色つき）・吹き出しはセリフの長さだけ */
   .reason .talk-row .talk-face { width: 64px !important; height: 64px !important; border: 0 !important; border-radius: 50% !important; background: #eeece6; }
   .reason .talk-staff .talk-face { background: #fff1a8; }
@@ -1622,12 +1635,10 @@
         </div>
       </div>
       <!-- 10/24 C案：お客さま⇔スタッフの会話（お悩み_比較.html） -->
-      <div class="talk">
-        <!-- 10/27 顔を理由1の女性と同じ黄色×黒のシリーズに（Iさん持ちこみ 2660923/23192530/23050866 を頭と肩で切りぬき） -->
-        <!-- 10/27 B案：お客さまは顔なし（「よくあるお悩み」）・顔はスタッフだけ・丸なし（比較/会話の見せ方_比較.png） -->
-        <div class="talk-row talk-cust"><img class="talk-face" src="images/blackfriday_face5-customer1_240_240.png" alt="" width="240" height="240"><p class="talk-bub">最近、手元が見えにくくて…</p></div>
-        <div class="talk-row talk-cust"><img class="talk-face" src="images/blackfriday_face5-customer2_240_240.png" alt="" width="240" height="240"><p class="talk-bub">遠近両用ははじめてで不安</p></div>
-        <div class="talk-row talk-staff"><span class="talk-who"><img class="talk-face" src="images/blackfriday_face5-staff_240_240.png" alt="スタッフ" width="240" height="240"><small>スタッフ</small></span><p class="talk-bub">見え方をしっかり測って、<br><b>ぴったりのレンズをご提案！</b></p></div>
+      <!-- 10/27 理由2の会話を見本（関西みらい銀行NISA LP）の形に：上半身のイラスト・白地に色のふちの吹き出し・質問1つと答え1つ。旧の丸い顔の会話（.talk）はCSSを残置 -->
+      <div class="manga">
+        <div class="mg-row mg-cust"><p class="mg-bub">最近、手元が見えにくくて…<br>遠近両用は<span class="nw">はじめてで不安</span></p><img src="images/blackfriday_bust-customer_400_577.png" alt="なやむお客さまのイラスト" width="400" height="577" loading="lazy"></div>
+        <div class="mg-row mg-staff"><img src="images/blackfriday_bust-staff_400_453.png" alt="スタッフのイラスト" width="400" height="453" loading="lazy"><p class="mg-bub"><span class="nw">見え方をしっかり測って、</span><br>ぴったりのレンズを<br>ご提案します！</p></div>
       </div>
       <p class="rh-d worry-n"><small>※不在の日もあるため、ご予約がおすすめです</small></p>
       <p class="worry-link"><a href="#shop-search" data-cta-location="reason_staff">▶ 来店予約はこちら</a></p>
