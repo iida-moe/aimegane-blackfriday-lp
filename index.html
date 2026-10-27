@@ -92,7 +92,9 @@
   .fv .hd { position: absolute; top: 0; left: 0; right: 0; z-index: 2; background: none; }
   .fv-img img { width: 100%; }
   .fv-img .fv-pc-text { display: none; }
-  .fv-cta { position: absolute; left: var(--side); right: var(--side); bottom: 9%; text-align: center; }
+  /* 10/27 A案：ボタンを0円の枠のすぐ下へ・画像の下の黒い部分を短く（FVボタン_OFF_比較.png）。旧 bottom: 9%・高さ切りなし */
+  .fv-img { aspect-ratio: 375 / 590; overflow: hidden; }
+  .fv-cta { position: absolute; left: var(--side); right: var(--side); bottom: 6.8%; text-align: center; }
   .fv-cta .btn { margin: 0; }
   .btn-white { background: #fff; color: var(--bk); }
   .btn-arw { position: relative; display: flex; align-items: center; justify-content: center; min-height: 60px; padding: 10px 56px; }
@@ -268,6 +270,7 @@
   /* 円／OFF！を縦2段にして、2,200の高さにそろえる（右上の空白をなくす） */
   .st4-hero-y { display: flex; align-items: flex-end; }
   .st4-off { display: flex; flex-direction: column; font-size: 26px; font-weight: 900; line-height: 1; margin: 0 0 7px 4px; }
+  .st4-off .ex { font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 800; margin-left: 1px; } /* 10/27 半角の!をOFFにくっつける（全角！だと離れて見える） */
   .st4-ex { margin-top: 22px; border: 1.5px solid var(--line); border-radius: 12px; padding: 16px 10px 14px; position: relative; }
   .st4-ex-l { position: absolute; top: -11px; left: 50%; transform: translateX(-50%); background: #fff; padding: 0 10px; font-size: 12px; font-weight: 700; color: var(--sub); }
   .st4-ex-name { font-size: 15px; font-weight: 900; }
@@ -818,6 +821,7 @@
     /* FV（PC）：背景（紙吹雪）は画面いっぱい、文字のかたまりは中央に上限つきで置く */
     .fv { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: min(clamp(600px, 50vw, 900px), 100svh); padding: clamp(120px, 9vw, 170px) 48px 48px !important; background: #000 url(images/blackfriday_fv-pc-bg_2880_1400.jpg?v=1020a) center / cover no-repeat; }
     .fv-img .fv-sp { display: none; }
+    .fv-img { aspect-ratio: auto; overflow: visible; }
     .fv-confetti { z-index: 1; }
     .fv-img .fv-pc-text { display: block; width: min(clamp(640px, 62vw, 1100px), calc((100svh - 260px) * 1.7)); }
     .fv-cta { position: relative; left: auto; right: auto; bottom: auto; width: clamp(380px, 32vw, 560px); margin-top: clamp(20px, 1.8vw, 32px); transform: none; }
@@ -1313,7 +1317,7 @@
         <p><span class="ba-badge st4-badge">ブラックフライデー限定</span></p>
         <div class="st4-hero-in">
         <p class="st4-hero-t">メガネ一式 対象商品が</p>
-        <p class="st4-hero-y"><span class="num">2<span class="cm">,</span>200</span><span class="st4-off"><span>円</span><span>OFF！</span></span></p>
+        <p class="st4-hero-y"><span class="num">2<span class="cm">,</span>200</span><span class="st4-off"><span>円</span><span>OFF<span class="ex">!</span></span></span></p>
         </div>
       </div>
 
