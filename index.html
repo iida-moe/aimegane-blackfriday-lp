@@ -1142,6 +1142,16 @@
   .st4-z-set .st4-z2 { font-size: 25px; }
   .st4-z-set .st4-z2 b { font-size: 54px; }
   @media (min-width: 1024px) { .st4-z-set .st4-z2 { font-size: 32px; } .st4-z-set .st4-z2 b { font-size: 68px; } }
+  /* 10/27 遠近両用0円：左に2段（遠近両用は追加料金と同じ幅に字間を広げる）＋右に2段ぶんの高さの0円 */
+  .st4-zs { display: flex; align-items: flex-end; justify-content: center; gap: 4px; line-height: 1; }
+  .st4-zs-l { display: flex; flex-direction: column; gap: 6px; }
+  .st4-zs-l span { font-size: 18px; font-weight: 900; color: var(--tx); white-space: nowrap; text-align: justify; text-align-last: justify; }
+  .st4-zs-l em { font-style: normal; font-size: 28px; font-weight: 900; color: #e8352a; white-space: nowrap; text-align: justify; text-align-last: justify; }
+  .st4-zs-y { display: flex; align-items: flex-end; color: #e8352a; }
+  .st4-zs-y b { font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 800; font-size: 68px; line-height: .74; margin-left: 4px; }
+  .st4-zs-y span { font-size: 24px; font-weight: 900; }
+  @media (max-width: 359px) { .st4-zs-l span { font-size: 15px; } .st4-zs-l em { font-size: 24px; } .st4-zs-y b { font-size: 58px; } .st4-zs-y span { font-size: 20px; } }
+  @media (min-width: 1024px) { .st4-zs-l span { font-size: 22px; } .st4-zs-l em { font-size: 34px; } .st4-zs-y b { font-size: 82px; } .st4-zs-y span { font-size: 28px; } }
   /* 2本同時：「さらに」は帯なしの文字だけ */
   .two .two-label { background: none; color: var(--tx); padding: 0; border-radius: 0; font-size: 15px; font-weight: 900; }
   @media (min-width: 1024px) { .two .two-label { font-size: 18px; } }
@@ -1391,9 +1401,9 @@
       </div>
       <!-- 10/25 枠の外へ（値段の答えと分ける）。GWLPの見せ方：遠近両用レンズにしても 追加料金0円 ＋ レンズ選びへのリンク -->
         <div class="st4-fin-zero">
-          <div class="st4-z-set">
-            <p class="st4-z1"><b>遠近両用レンズ</b>にしても</p>
-            <p class="st4-z2"><span>追加料金</span><b>0</b><span>円</span></p>
+          <!-- 10/27 鯖江LP・理由1と同じ形：左に2段（遠近両用／追加料金）＋右に大きい0円（Iさん）。変更前 _保存/変更前/1027/index.before-1027-zeroset.html -->
+          <div class="st4-zs">
+            <p class="st4-zs-l"><span>遠近両用</span><em>追加料金</em></p><p class="st4-zs-y"><b>0</b><span>円</span></p>
           </div>
           <a class="st4-z-link" href="#lens-find"><u>あなたに合うレンズは？</u><span aria-hidden="true">›</span></a>
         </div>
