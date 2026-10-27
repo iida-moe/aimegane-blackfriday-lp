@@ -1360,6 +1360,18 @@
   @media (max-width: 359px) { .pv-k { font-size: 10px; margin-right: -2px; } }
   .pick-tx { margin-bottom: 0; }
   @media (min-width: 1024px) { .pv-a s { font-size: 18px; } .pv-a { gap: 4px; flex-wrap: nowrap; } .pv-a s, .pv-a b { white-space: nowrap; } .pv-a b { font-size: 32px; } .pv-tax { font-size: 12px; } }
+  /* 10/27 全体の文字を軽く：数字・値段・大見出し・ボタンは900のまま、ラベルや小見出しは700に */
+  .off3-n, .st4-ex-name, .st4-ex-all, .st4-more, .st4-c-st, .off-more-t, .two-rl, .two .two-label, .two-who2 span,
+  .reason .rh-also, .talk-lbl, .worry-link a, .reason .lens-hint, .lens-rec-t, .hear-t, .hear-q-t, .hearing-t,
+  .hp-v, .hp2-t, .wait, .st4-hero-t, .ba-bubble-t, .off3-t, .reason .worry-ans, .hear-y .st { font-weight: 700; }
+  .two-one { font-weight: 400; }
+  /* 10/27 白どうしが続くところ（概要→店舗さがし）はすき間をつめる */
+  .outline + #shop-search { padding-top: 24px; }
+  /* 10/27 1024〜1199px：追従バーの文字を左に寄せてボタンと重ならないように・ヘッダーのメニューを1行に */
+  @media (min-width: 1024px) and (max-width: 1199px) {
+    .float-cta { justify-content: flex-start; }
+    .hd-nav { gap: 20px; } .hd-nav a { font-size: 15px; white-space: nowrap; } .hd-nav .hd-cta { padding: 12px 22px; font-size: 16px; }
+  }
 </style><style>
   .preview-gate { position: fixed; inset: 0; z-index: 9999; background: #000; display: flex; align-items: center; justify-content: center; padding: 20px; }
   .preview-gate-box { background: #fff; border: 2px solid #f4e030; border-radius: 12px; padding: clamp(24px, 5vw, 40px); width: 100%; max-width: 340px; text-align: center; }
@@ -1577,7 +1589,7 @@
     <p class="pick-store">ほかにも、対象のフレームを<br class="sp-br">多数ご用意しています<br>ぜひ店頭でお試しください</p>
     <p class="note">※お取り扱いのデザインは店舗によって異なります</p>
     <p class="cta-pop sl"><span>標準レンズで遠近両用も追加料金<b>0円</b></span></p>
-    <a href="#shop-search" class="btn" data-cta-location="pickup">近くのお店で実物を見る</a>
+    <a href="#shop-search" class="btn" data-cta-location="pickup">近くのお店で予約する</a>
     <!-- 10/23 補聴器：白カード・中央に縦積み（補聴器_比較.html のC）。変更前 _保存/index.before-1023-starkey.html -->
     <!-- 10/23 E案：対象ブランド例のカードと同じ形（補聴器_比較2.html） -->
     <div class="hear">
@@ -1601,7 +1613,7 @@
             <p class="hp2-d">選び方から調整までおまかせ</p>
             <p class="hearing-n">※不在の日もあるため、ご予約がおすすめです</p>
             <details class="hear-q">
-              <summary class="hear-q-t"><span class="hear-q-i" aria-hidden="true">?</span><u>認定補聴器技能者とは？</u></summary>
+              <summary class="hear-q-t"><span class="hear-q-i" aria-hidden="true">?</span><u>認定補聴器技能者<span class="nw">とは？</span></u></summary>
               <p class="hear-q-d">公益財団法人テクノエイド協会が認定する、補聴器の専門資格です。きこえを測り、お一人おひとりに合わせた補聴器選びから調整までサポートします。</p>
             </details>
           </div>
@@ -1627,7 +1639,7 @@
     <div class="reasons">
     <div class="reason">
       <!-- 10/24 入口を「アイコン左＋2行見出し（2行目赤）＋左ぞろえの短い説明」に（旬の駅の形）。変更前 _保存/index.before-1024-reasonhead.html -->
-      <p class="rh-to">小さい文字が見にくくなった方へ</p>
+      <p class="rh-to">手元が見えにくくなった方へ</p>
       <div class="rh">
         <!-- 10/27 A案：メガネのアイコン→スマホの文字が見えにくい女性のイラスト（比較/理由1イラスト_比較.png） -->
         <img class="rh-ill" src="images/blackfriday_temoto-woman_637_885.jpg" alt="スマホの文字が見えにくそうな女性のイラスト" width="637" height="885" loading="lazy">
@@ -1669,8 +1681,7 @@
         <div class="mg-row mg-cust"><p class="mg-bub">最近、手元が見えにくくて…<br>遠近両用は<span class="nw">はじめてで不安</span></p><img src="images/blackfriday_bust-customer_400_577.png" alt="なやむお客さまのイラスト" width="400" height="577" loading="lazy"></div>
         <div class="mg-row mg-staff"><img src="images/blackfriday_bust-staff_400_453.png" alt="スタッフのイラスト" width="400" height="453" loading="lazy"><p class="mg-bub"><span class="nw">見え方をしっかり測って、</span><br>ぴったりのレンズを<br>ご提案します！</p></div>
       </div>
-      <p class="rh-d worry-n"><small>※不在の日もあるため、ご予約がおすすめです</small></p>
-      <p class="worry-link"><a href="#shop-search" data-cta-location="reason_staff">▶ 来店予約はこちら</a></p>
+      <p class="worry-link"><a href="#shop-search" data-cta-location="reason_staff">▶ 近くのお店で予約する</a></p>
     </div>
 
     <div class="reason">
@@ -1808,7 +1819,7 @@
         <p class="closing-zero"><b>0</b>円</p>
       </div>
     </div>
-    <a href="#shop-search" class="btn" data-cta-location="closing">期間中に来店予約する</a>
+    <a href="#shop-search" class="btn" data-cta-location="closing">近くのお店で予約する</a>
     <p class="btn-sub">ご予約ならスムーズにご案内</p>
   </section>
 
@@ -1825,10 +1836,10 @@
 
 <!-- 追従CTA -->
 <div class="float-cta" id="floatCta">
-  <a href="#shop-search" class="btn btn-arw" data-cta-location="floating"><span>スムーズにご案内｜Web予約</span><span class="arw" aria-hidden="true">▶</span></a>
+  <a href="#shop-search" class="btn btn-arw" data-cta-location="floating"><span>近くのお店で予約する</span><span class="arw" aria-hidden="true">▶</span></a>
   <!-- 10/27 PCだけ：GWLPと同じ帯（まん中に期間と価格・右にボタン） -->
   <p class="fc-pc"><span class="fc-date">11/13<small>(金)</small>〜11/29<small>(日)</small></span><span>対象のメガネ一式<span class="fc-y">8,800</span>円〜(税込)</span><span class="fc-note">※割引をすべて使った場合</span></p>
-  <a href="#shop-search" class="fc-btn" data-cta-location="floating">今すぐ予約</a>
+  <a href="#shop-search" class="fc-btn" data-cta-location="floating">近くのお店で予約する</a>
 </div>
 
 <script>
