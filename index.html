@@ -1367,6 +1367,9 @@
   .two-one { font-weight: 400; }
   /* 10/27 白どうしが続くところ（概要→店舗さがし）はすき間をつめる */
   .outline + #shop-search { padding-top: 24px; }
+  .reason .rh-also .rh-also-r { color: #e8352a; }
+  .hear-sec { border-top: 1px solid var(--line); }
+  .hear-sec .hear { margin-top: 0; max-width: 520px; margin-left: auto; margin-right: auto; }
   /* 10/27 1024〜1199px：追従バーの文字を左に寄せてボタンと重ならないように・ヘッダーのメニューを1行に */
   @media (min-width: 1024px) and (max-width: 1199px) {
     .float-cta { justify-content: flex-start; }
@@ -1588,12 +1591,15 @@
     <div class="pick-dots" id="pickDots" aria-label="スライドの位置"></div>
     <p class="pick-store">ほかにも、対象のフレームを<br class="sp-br">多数ご用意しています<br>ぜひ店頭でお試しください</p>
     <p class="note">※お取り扱いのデザインは店舗によって異なります</p>
-    <p class="cta-pop sl"><span>標準レンズで遠近両用も追加料金<b>0円</b></span></p>
     <a href="#shop-search" class="btn" data-cta-location="pickup">近くのお店で予約する</a>
+  </section>
+
+  <!-- 10/27 A案（比較/補聴器の置き場所_比較.png）：補聴器はメガネのブランドと分けて別のセクションに -->
+  <section class="sec hear-sec" id="hearing-aid">
+    <div class="sec-head"><h2 class="sec-ja">補聴器も<br>ブラックフライデー対象</h2></div>
     <!-- 10/23 補聴器：白カード・中央に縦積み（補聴器_比較.html のC）。変更前 _保存/index.before-1023-starkey.html -->
     <!-- 10/23 E案：対象ブランド例のカードと同じ形（補聴器_比較2.html） -->
     <div class="hear">
-      <p class="hear-t">補聴器もブラックフライデー対象</p>
       <div class="hear-card">
       <div class="hear-img"><img class="hear-prod" src="images/blackfriday_hochouki_400_313.png" alt="スターキーの補聴器 Gシリーズ" width="400" height="313" loading="lazy"><img class="hear-logo" src="images/blackfriday_starkey-logo_830_476.webp" alt="Starkey（スターキー）" width="830" height="476" loading="lazy"></div>
       <div class="hear-body">
@@ -1644,8 +1650,9 @@
         <!-- 10/27 A案：メガネのアイコン→スマホの文字が見えにくい女性のイラスト（比較/理由1イラスト_比較.png） -->
         <img class="rh-ill" src="images/blackfriday_temoto-woman_637_885.jpg" alt="スマホの文字が見えにくそうな女性のイラスト" width="637" height="885" loading="lazy">
         <div class="rh-txt">
-          <h3 class="rh-zero"><span class="rh-zl"><span>遠近両用</span><em>追加料金</em></span><b>0</b><span class="rh-yen">円</span></h3>
-          <p class="rh-also">中近や近々レンズも！</p>
+          <!-- 10/27 A案（比較/遠近0円の回数_比較.png）：0円は合計の下にまかせて、理由1は「選べるレンズ」に -->
+          <h3 class="rh-gino">見え方に合わせて<em>選べるレンズ</em></h3>
+          <p class="rh-also"><span class="nw">遠近・中近・近々も</span><span class="nw rh-also-r">追加料金0円</span></p>
           <p class="rh-zn">※対象のメガネ一式・標準レンズの場合</p>
         </div>
       </div>
