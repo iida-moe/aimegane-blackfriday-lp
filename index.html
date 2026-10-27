@@ -1368,6 +1368,10 @@
   /* 10/27 白どうしが続くところ（概要→店舗さがし）はすき間をつめる */
   .outline + #shop-search { padding-top: 24px; }
   .reason .rh-also .rh-also-r { color: #e8352a; }
+  /* 10/27 2本同時：家族の絵が下の枠にくっついて見えるので、上下にすき間を足す */
+  .two { padding-bottom: 28px; }
+  .two .two-rows + .two-fam { padding-top: 22px; }
+  @media (min-width: 1024px) { .two { padding-bottom: 40px; } .two .two-rows + .two-fam { padding-top: 0; } }
   .hear-sec { border-top: 1px solid var(--line); }
   .hear-sec .hear { margin-top: 0; max-width: 520px; margin-left: auto; margin-right: auto; }
   /* 10/27 1024〜1199px：追従バーの文字を左に寄せてボタンと重ならないように・ヘッダーのメニューを1行に */
