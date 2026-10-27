@@ -791,6 +791,7 @@
   .float-cta.show { transform: none; pointer-events: auto; }
   .float-cta .btn { box-shadow: 0 4px 16px rgba(0,0,0,.35); border: 2px solid var(--bk); }
   .float-cta .btn span:first-child { white-space: nowrap; font-size: 16px; }
+  .fc-pc, .fc-btn { display: none; }
 
   /* 数字はFV（イラレ）に近い書体に */
   .ba-after, .ba-before, .off3-y .num, .two-main-n, .two-rn .num, .closing-copy b, .hc-n, .total b { font-family: 'Barlow Semi Condensed', 'Noto Sans JP', sans-serif; font-weight: 800; letter-spacing: 0; }
@@ -928,10 +929,20 @@
     .terms { max-width: 720px; margin-left: auto; margin-right: auto; }
     .closing-title { font-size: 72px; }
 
-    /* 追従CTA：右下に小さく */
+    /* 10/27 追従CTA：GWLPと同じ形＝下いっぱいの黒い帯・まん中にひとこと・右にボタン。旧＝右下に小さいボタン（_保存\変更前\1027\index.before-1027-floatpc.html） */
     .shop-bar { max-width: 560px; padding-bottom: 24px; }
-    .float-cta { left: auto; right: 24px; bottom: 24px; width: 360px; padding: 0; margin: 0; transform: translateY(calc(100% + 48px)); }
+    .float-cta { left: 0; right: 0; bottom: 0; width: auto; max-width: none; margin: 0; padding: 12px clamp(24px, 3vw, 48px); background: rgba(17,17,17,.97); border-top: 1px solid rgba(244,224,48,.35); box-shadow: 0 -2px 12px rgba(0,0,0,.25); transform: translateY(100%); display: flex; align-items: center; justify-content: center; min-height: 72px; }
     .float-cta.show { transform: none; }
+    .float-cta .btn { display: none; }
+    .fc-pc { display: flex; align-items: baseline; gap: 14px; color: #fff; font-size: 15px; font-weight: 700; line-height: 1; white-space: nowrap; }
+    .fc-pc .fc-date { font-family: 'Barlow', sans-serif; font-weight: 800; font-size: 18px; color: var(--ac); }
+    .fc-pc .fc-date small { font-family: 'Noto Sans JP', sans-serif; font-size: 11px; }
+    .fc-pc .fc-y { font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 800; font-size: 30px; color: var(--ac); margin: 0 2px 0 4px; }
+    .fc-pc .fc-note { font-size: 11px; font-weight: 400; color: #bbb; }
+    .fc-btn { position: absolute; right: clamp(24px, 3vw, 48px); top: 50%; transform: translateY(-50%); display: inline-flex; align-items: center; gap: 10px; background: var(--ac); color: var(--bk); font-weight: 900; font-size: 16px; padding: 13px 34px; border-radius: 40px; text-decoration: none; letter-spacing: .04em; transition: opacity .2s; }
+    .fc-btn::after { content: ''; width: 7px; height: 7px; border-right: 2.5px solid currentColor; border-top: 2.5px solid currentColor; transform: rotate(45deg) translateX(-1px); }
+    .fc-btn:hover { opacity: .85; }
+    .footer { padding-bottom: 96px; }
   }
   /* 小さいスマホでFVのボタン文字が2行にならないように */
   @media (max-width: 359px) { .fv .fv-cta .btn-arw, .float-cta .btn-arw { font-size: 15px; padding-left: 12px; padding-right: 56px; } }
@@ -1666,6 +1677,9 @@
 <!-- 追従CTA -->
 <div class="float-cta" id="floatCta">
   <a href="#shop-search" class="btn btn-arw" data-cta-location="floating"><span>スムーズにご案内｜Web予約</span><span class="arw" aria-hidden="true">▶</span></a>
+  <!-- 10/27 PCだけ：GWLPと同じ帯（まん中に期間と価格・右にボタン） -->
+  <p class="fc-pc"><span class="fc-date">11/13<small>(金)</small>〜11/29<small>(日)</small></span><span>対象のメガネ一式<span class="fc-y">8,800</span>円〜(税込)</span><span class="fc-note">※割引をすべて使った場合</span></p>
+  <a href="#shop-search" class="fc-btn" data-cta-location="floating">今すぐ予約</a>
 </div>
 
 <script>
