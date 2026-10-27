@@ -626,6 +626,16 @@
   .hc3 .hc-n { grid-area: n; font-size: 48px !important; }
   .hc3 .hc-n small { font-size: 16px; }
   @media (max-width: 359px) { .hc3 li { grid-template-columns: 74px 1fr; column-gap: 8px; padding: 12px 12px; } .hc3 .hc-n { font-size: 40px !important; } .hc3 .hc-n small { font-size: 13px; } .hc3 .hc-d { font-size: 12px !important; } }
+  /* 10/27 保証：開いた帯を黒ぬりから白＋左に黄色の線へ（下の黒いボタンと分ける）・数字と単位を近づける・カードのすき間をつめる */
+  .hs-item[open] summary { background: #fff; color: var(--tx); border-left: 6px solid var(--ac); }
+  .hs-item[open] summary small { color: var(--sub); }
+  .hs-item[open] summary::after { background: var(--bk); color: var(--ac); }
+  .hc3 .hc-n .marker { padding: 0; }
+  .hc3 .hc-n small { margin-left: 3px; }
+  .hc3 li { padding: 10px 18px; }
+  .hc3 .hc-n { line-height: 1; }
+  .hs-item .hc3 { gap: 6px; }
+  @media (max-width: 359px) { .hc3 li { padding: 9px 12px; } }
   .hs-note { font-size: 11px !important; color: var(--sub) !important; margin-top: 6px; text-align: center; }  .reason .note { font-size: 11px; color: var(--sub); }
   .hosho { border-top: 1px solid var(--line); padding-top: 10px; margin-top: 10px; }
   .hosho b { display: block; font-size: 14px; }
@@ -1654,7 +1664,6 @@
       <!-- 10/24 タブ→アコーディオン（＋で開く・通常保証だけ最初から開く） -->
       <div class="hs-acc">
         <details class="hs-item" open><summary><span>通常保証<small>どなたでも</small></span></summary>
-      <p class="hs-catch">買ったあとも、<span class="hearing-mk">しっかり安心</span></p>
       <ul class="hc3">
         <li><p class="hc-t">視え方保証</p><p class="hc-n"><span class="marker">6</span><small>か月</small></p><p class="hc-d">度数交換が<br><span class="hc-u">何度でも無料</span></p></li>
         <li><p class="hc-t">品質保証</p><p class="hc-n"><span class="marker">1</span><small>年</small></p><p class="hc-d">不具合は<br>無料で交換</p></li>
