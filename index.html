@@ -441,7 +441,12 @@
   .reason .rh-d + .worry { margin-top: 14px; }
   .reason .rh-one { white-space: nowrap; letter-spacing: 0; text-align: center; }
   @media (max-width: 359px) { .reason .rh-one { font-size: 13px; } }
-  @media (min-width: 1024px) { .rh-br { display: none; } } /* 10/27 スマホは「、」で2行 */
+  @media (min-width: 1024px) { .rh-br { display: none; } }
+  /* 10/27 「遠 近 両 用」の字間が広すぎる→文字を大きくして詰める（幅は追加料金とそろえたまま） */
+  .reason .rh h3 .rh-zl > span { font-size: 22px; }
+  .st4-fin-zero .st4-zs .st4-zs-l span { font-size: 21px; }
+  @media (max-width: 359px) { .reason .rh h3 .rh-zl > span { font-size: 17px; } .st4-fin-zero .st4-zs .st4-zs-l span { font-size: 18px; } }
+  @media (min-width: 1024px) { .st4-fin-zero .st4-zs .st4-zs-l span { font-size: 26px; } } /* 10/27 スマホは「、」で2行 */
   @media (max-width: 359px) { .worry li { font-size: 11px; padding: 10px 2px; } }
   .reason .worry-arw { color: #e8352a; font-size: 14px; text-align: center; margin-top: 14px; }
   .reason .worry-ans { text-align: center; font-size: 16px; font-weight: 900; color: var(--tx); line-height: 1.5; margin-top: 4px; }
@@ -457,6 +462,8 @@
   .rh-ico-face img { display: block; width: 66%; height: auto; }
   .rh-ico-face svg { position: absolute; right: -2px; bottom: -2px; width: 26px; height: 26px; }
   .talk-face { flex: none; width: 46px; height: 46px; display: block; }
+  .talk-face { border-radius: 50%; border: 1.5px solid #e3e3de; box-sizing: border-box; } /* 10/27 丸の中に顔だけ（肩の切れ目を見せない） */
+  .talk-staff .talk-face { border-color: var(--ac); }
   .talk-who { flex: none; display: flex; flex-direction: column; align-items: center; }
   .talk-who small { font-size: 10px; font-weight: 700; color: var(--sub); margin-top: 2px; }
   .talk-staff { margin-top: 4px; }
@@ -1451,7 +1458,7 @@
       </div>
       <!-- 10/25 イラストを家族の1枚に（2人ともメガネ）。変更前 _保存/index.before-1025-family.html -->
       <div class="two-fam">
-        <img src="images/blackfriday_family_540_469.png" alt="メガネをかけた家族のイラスト" width="540" height="469" loading="lazy">
+        <img src="images/blackfriday_family-thick_540_469.png" alt="メガネをかけた家族のイラスト" width="540" height="469" loading="lazy">
         <div class="two-fam-t"><p class="two-who2"><span>ご家族・ご友人</span>とでも</p><p class="two-one">お一人で2本でもOK</p></div>
       </div>
     </div>
@@ -1587,9 +1594,9 @@
       <!-- 10/24 C案：お客さま⇔スタッフの会話（お悩み_比較.html） -->
       <div class="talk">
         <!-- 10/27 顔を理由1の女性と同じ黄色×黒のシリーズに（Iさん持ちこみ 2660923/23192530/23050866 を頭と肩で切りぬき） -->
-        <div class="talk-row"><img class="talk-face" src="images/blackfriday_face2-customer1_270_270.png" alt="" width="270" height="270"><p class="talk-bub">最近、手元が見えにくくて…</p></div>
-        <div class="talk-row"><img class="talk-face" src="images/blackfriday_face2-customer2_270_270.png" alt="" width="270" height="270"><p class="talk-bub">遠近両用ははじめてで不安</p></div>
-        <div class="talk-row talk-staff"><span class="talk-who"><img class="talk-face" src="images/blackfriday_face2-staff_270_270.png" alt="" width="270" height="270"><small>スタッフ</small></span><p class="talk-bub">見え方をしっかり測って、<br><b>ぴったりのレンズをご提案！</b></p></div>
+        <div class="talk-row"><img class="talk-face" src="images/blackfriday_face3-customer1_240_240.png" alt="" width="240" height="240"><p class="talk-bub">最近、手元が見えにくくて…</p></div>
+        <div class="talk-row"><img class="talk-face" src="images/blackfriday_face3-customer2_240_240.png" alt="" width="240" height="240"><p class="talk-bub">遠近両用ははじめてで不安</p></div>
+        <div class="talk-row talk-staff"><span class="talk-who"><img class="talk-face" src="images/blackfriday_face3-staff_240_240.png" alt="" width="240" height="240"><small>スタッフ</small></span><p class="talk-bub">見え方をしっかり測って、<br><b>ぴったりのレンズをご提案！</b></p></div>
       </div>
       <p class="rh-d worry-n"><small>※不在の日もあるため、ご予約がおすすめです</small></p>
       <p class="worry-link"><a href="#shop-search" data-cta-location="reason_staff">▶ 来店予約はこちら</a></p>
