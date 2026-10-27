@@ -1232,7 +1232,8 @@
   @media (min-width: 1024px) { .hp-k { font-size: 13px; } .hp-v { font-size: 18px; } .hp-v b { font-size: 38px; } }
   .hp-nw { white-space: nowrap; }
   /* 10/27 強み：1行ずつ横長（A案） */
-  .hear-pt2 { list-style: none; margin-top: 18px; border-top: 1px solid var(--line); }
+  .hear-pt2 { list-style: none; margin-top: 10px; } /* 10/27 価格の下の線はなし（すき間で区切る）・線は強み2つのあいだだけ */
+  .hear-pt2 > li:last-child { border-bottom: 0; padding-bottom: 4px; }
   .hear-pt2 > li { display: grid; grid-template-columns: 44px 1fr; gap: 12px; align-items: start; padding: 14px 0; border-bottom: 1px solid var(--line); }
   .hp2-ico { width: 44px; height: 44px; border-radius: 50%; background: var(--ac-pale); display: flex; align-items: center; justify-content: center; }
   .hp2-ico svg { width: 26px; height: 26px; fill: none; stroke: var(--bk); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
