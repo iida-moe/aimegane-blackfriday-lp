@@ -477,6 +477,7 @@
   .reason .rh h3.rh-gino em { font-size: 27px; letter-spacing: .02em; margin-top: 2px; white-space: nowrap; }
   .reason .rh-gino-d { font-size: 13px; font-weight: 700; color: var(--tx); line-height: 1.6; margin-top: 6px; text-align: left; }
   .rh-gino-d .nw { display: inline-block; }
+  .reason .rh h3.rh-gino-top em { margin: 0 0 2px; } /* 眼鏡作製技能士が1行目 */
   .reason .rh-gino-d + .talk, .reason .rh + .talk { margin-top: 18px; }
   @media (max-width: 359px) { .reason .rh h3.rh-gino { font-size: 14px; } .reason .rh h3.rh-gino em { font-size: 21px; } .reason .rh-gino-d { font-size: 12px; } }
   @media (min-width: 1024px) { .reason .rh h3.rh-gino { font-size: 19px; } .reason .rh h3.rh-gino em { font-size: 34px; } .reason .rh-gino-d { font-size: 15px; } }
@@ -1606,8 +1607,8 @@
         <svg class="rh-ico" viewBox="0 0 64 64" aria-hidden="true"><g transform="translate(32 32) scale(1.1) translate(-32 -32)"><path d="M22,34 L14,56 L21,52 L24,59 L31,40 Z" fill="#e8352a"/><path d="M42,34 L50,56 L43,52 L40,59 L33,40 Z" fill="#e8352a"/><circle cx="32" cy="25" r="19" fill="#f4e030"/><circle cx="32" cy="25" r="13" fill="none" stroke="#fff" stroke-width="2" opacity=".8"/><path d="M24,25 L30,31 L41,19" fill="none" stroke="#222" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></g></svg>
         <!-- 10/27 理由1と同じ形：アイコンの右に見出し＋補足（左ぞろえ）。いちばん目立たせるのは「眼鏡作製技能士」（Iさん） -->
         <div class="rh-txt">
-          <h3 class="rh-gino">全店に在籍の<em>眼鏡作製技能士</em></h3>
-          <p class="rh-gino-d">国家検定資格をもつ<span class="nw">スタッフが、</span><br>お悩みをお聞きします</p>
+          <h3 class="rh-gino rh-gino-top"><em>眼鏡作製技能士</em>が全店に在籍</h3><!-- 10/27 Iさん指定の文言・順番 -->
+          <p class="rh-gino-d">国家検定資格をもつ<span class="nw">スタッフが、</span><br>お悩みをお聞きします。</p>
         </div>
       </div>
       <!-- 10/24 C案：お客さま⇔スタッフの会話（お悩み_比較.html） -->
