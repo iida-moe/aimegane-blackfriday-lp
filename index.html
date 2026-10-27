@@ -636,6 +636,14 @@
   .hc3 .hc-n { line-height: 1; }
   .hs-item .hc3 { gap: 6px; }
   @media (max-width: 359px) { .hc3 li { padding: 9px 12px; } }
+  /* 10/27 開いたときは帯と中身を1つの枠でかこむ（どの保証の中身か分かるように）・説明は14pxに */
+  .hs-item[open] { border: 1.5px solid var(--bk); border-radius: 10px; padding: 0 8px 8px; overflow: hidden; }
+  .hs-item[open] summary { border: 0; border-radius: 0; margin: 0 -8px; box-shadow: inset 6px 0 var(--ac); }
+  .hs-item[open] .hc3 { margin-top: 0; }
+  .hc3 .hc-d { font-size: 14px !important; }
+  .hc3 li { grid-template-columns: 78px 1fr; padding: 10px 12px; }
+  .hc3 .hc-d .nw { display: inline-block; }
+  @media (max-width: 359px) { .hc3 .hc-d { font-size: 13px !important; } .hc3 li { grid-template-columns: 62px 1fr; padding: 9px 10px; } }
   .hs-note { font-size: 11px !important; color: var(--sub) !important; margin-top: 6px; text-align: center; }  .reason .note { font-size: 11px; color: var(--sub); }
   .hosho { border-top: 1px solid var(--line); padding-top: 10px; margin-top: 10px; }
   .hosho b { display: block; font-size: 14px; }
@@ -1666,8 +1674,8 @@
         <details class="hs-item" open><summary><span>通常保証<small>どなたでも</small></span></summary>
       <ul class="hc3">
         <li><p class="hc-t">視え方保証</p><p class="hc-n"><span class="marker">6</span><small>か月</small></p><p class="hc-d">度数交換が<br><span class="hc-u">何度でも無料</span></p></li>
-        <li><p class="hc-t">品質保証</p><p class="hc-n"><span class="marker">1</span><small>年</small></p><p class="hc-d">不具合は<br>無料で交換</p></li>
-        <li><p class="hc-t">アイ情補償</p><p class="hc-n"><span class="marker">1</span><small>年</small></p><p class="hc-d">うっかり破損<br>50%引き</p></li>
+        <li><p class="hc-t">品質保証</p><p class="hc-n"><span class="marker">1</span><small>年</small></p><p class="hc-d">不具合は<br><span class="nw">無料で交換</span></p></li>
+        <li><p class="hc-t">アイ情補償</p><p class="hc-n"><span class="marker">1</span><small>年</small></p><p class="hc-d">うっかり破損<br><span class="nw">50%引き</span></p></li>
       </ul>
         </details>
         <details class="hs-item"><summary><span>キッズ＆ジュニア保証<small>中学生以下</small></span></summary>
