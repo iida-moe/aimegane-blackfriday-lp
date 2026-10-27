@@ -441,6 +441,7 @@
   .reason .rh-d + .worry { margin-top: 14px; }
   .reason .rh-one { white-space: nowrap; letter-spacing: 0; text-align: center; }
   @media (max-width: 359px) { .reason .rh-one { font-size: 13px; } }
+  @media (min-width: 1024px) { .rh-br { display: none; } } /* 10/27 スマホは「、」で2行 */
   @media (max-width: 359px) { .worry li { font-size: 11px; padding: 10px 2px; } }
   .reason .worry-arw { color: #e8352a; font-size: 14px; text-align: center; margin-top: 14px; }
   .reason .worry-ans { text-align: center; font-size: 16px; font-weight: 900; color: var(--tx); line-height: 1.5; margin-top: 4px; }
@@ -1582,7 +1583,7 @@
         <h3>眼鏡作製技能士が<em>全店に在籍</em></h3>
       </div>
       <!-- 10/24 お悩みを吹き出しに（文字だけのカードにしない） -->
-      <p class="rh-d rh-one">国家検定資格のスタッフがお聞きします</p>
+      <p class="rh-d rh-one">国家検定資格をもつスタッフが、<br class="rh-br">お悩みをお聞きします</p><!-- 10/27 何を聞くかを足した（旧：国家検定資格のスタッフがお聞きします） -->
       <!-- 10/24 C案：お客さま⇔スタッフの会話（お悩み_比較.html） -->
       <div class="talk">
         <div class="talk-row"><img class="talk-face" src="images/blackfriday_face-customer1_132_132.png" alt="" width="132" height="132"><p class="talk-bub">最近、手元が見えにくくて…</p></div>
