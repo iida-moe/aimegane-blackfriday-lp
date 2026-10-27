@@ -650,6 +650,9 @@
   .reason .hs-acc .hg-t, .hs-acc .hc-t { font-weight: 700; }
   .reason .hs-acc .hg-d, .hs-acc .hc-d { font-weight: 400; color: #555 !important; }
   .hs-acc .hc-u { font-weight: 700; color: var(--tx); }
+  /* 10/27 2本同時はほかの割引と一緒に使える（Iさん確認済） */
+  .two .two-t .two-also { display: block; font-size: 13px; font-weight: 700; margin-top: 4px; }
+  .ol-list li.ol-two .ol-two-n { display: block; font-size: 12px; color: var(--sub); margin-top: 2px; }
   .hs-note { font-size: 11px !important; color: var(--sub) !important; margin-top: 6px; text-align: center; }  .reason .note { font-size: 11px; color: var(--sub); }
   .hosho { border-top: 1px solid var(--line); padding-top: 10px; margin-top: 10px; }
   .hosho b { display: block; font-size: 14px; }
@@ -1515,7 +1518,7 @@
 
     <div class="two">
             <!-- 10/25 まず割引（2本同時で10%・20%OFF）→ だれと買ってもOK の順に。変更前 _保存/index.before-1025-review.html -->
-      <p class="two-t"><span class="sl">メガネ2本同時購入で、<br class="sp-br">もっとおトク</span></p>
+      <p class="two-t"><span class="sl">メガネ2本同時購入で、<br class="sp-br">もっとおトク</span><small class="two-also">上の割引と<span class="marker">一緒に使えます</span></small></p>
       <!-- 10/23 1本目10%・2本目以降20%の2行に（数字の左をそろえる）。変更前 _保存/index.before-1023-two.html -->
       <div class="two-rows">
         <p class="two-rl">1本目</p>
@@ -1673,7 +1676,7 @@
     <div class="reason">
       <div class="rh">
         <svg class="rh-ico" viewBox="0 0 64 64" aria-hidden="true"><path d="M32,4 L55,12 Q55,43 32,57 Q9,43 9,12 Z" fill="#f4e030"/><path d="M32,4 L55,12 Q55,43 32,57 Z" fill="#e6cf1c"/><path d="M21,30 L29,38 L43,23" fill="none" stroke="#222" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <h3 class="rh-gino">ご購入でついてくる<em>充実の保証</em></h3><!-- 10/27 理由2と同じ文字の大きさに -->
+        <h3 class="rh-gino"><span class="nw">セール価格でも、</span><span class="nw">すべて付く</span><em>充実の保証</em></h3><!-- 10/27 理由2と同じ文字の大きさに・セール価格でも保証はすべて付く（Iさん確認済） -->
       </div>
       <!-- 10/24 タブ→アコーディオン（＋で開く・通常保証だけ最初から開く） -->
       <div class="hs-acc">
@@ -1681,7 +1684,7 @@
       <ul class="hc3">
         <li><p class="hc-t">視え方保証</p><p class="hc-n"><span class="marker">6</span><small>か月</small></p><p class="hc-d">度数交換が<br><span class="hc-u">何度でも無料</span></p></li>
         <li><p class="hc-t">品質保証</p><p class="hc-n"><span class="marker">1</span><small>年</small></p><p class="hc-d">不具合は<br><span class="nw">無料で交換</span></p></li>
-        <li><p class="hc-t">アイ情補償</p><p class="hc-n"><span class="marker">1</span><small>年</small></p><p class="hc-d">うっかり破損<br><span class="nw">50%引き</span></p></li>
+        <li><p class="hc-t">アイ情補償</p><p class="hc-n"><span class="marker">1</span><small>年</small></p><p class="hc-d">壊したら、<br><span class="nw">同じメガネを</span><span class="hc-u">半額で</span></p></li>
       </ul>
         </details>
         <details class="hs-item"><summary><span>キッズ＆ジュニア保証<small>中学生以下</small></span></summary>
@@ -1706,7 +1709,7 @@
         </details>
       </div>
       <p class="hs-svc"><svg class="hs-svc-ic" viewBox="0 0 64 44" aria-hidden="true"><circle cx="19" cy="26" r="10" fill="#e3f2f9" stroke="#222" stroke-width="3.2"/><circle cx="43" cy="26" r="10" fill="#e3f2f9" stroke="#222" stroke-width="3.2"/><path d="M29,25 Q31,21.5 33,25" fill="none" stroke="#222" stroke-width="2.8" stroke-linecap="round"/><path d="M9,24 L4,19 M53,24 L58,19" stroke="#222" stroke-width="2.8" stroke-linecap="round"/><path d="M14,22 L17,20.5 M38,22 L41,20.5" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/><path d="M50 3l2 5 5 2-5 2-2 5-2-5-5-2 5-2z" fill="#f4e030" stroke="#222" stroke-width="1.4" stroke-linejoin="round"/><path d="M59 1l1 2.5 2.5 1-2.5 1-1 2.5-1-2.5-2.5-1 2.5-1z" fill="#222"/></svg>メガネの点検・クリーニングは<br><span class="marker">いつでも無料</span>です<small>ご家族のメガネや、<br>他店で買ったメガネもお気軽にどうぞ</small></p>
-      <p class="note" style="margin-top:10px;">※品質保証は、通常のお取り扱いで生じた損傷が対象です（現品と交換のため、ご持参ください）。<br>※アイ情補償の50%引きは、ほかの割引と併用できません。<br>※くわしい条件は店頭でご確認ください。</p>
+      <p class="note" style="margin-top:10px;">※品質保証は、通常のお取り扱いで生じた損傷が対象です（現品と交換のため、ご持参ください）。<br>※アイ情補償は、お客さまご自身で壊した場合に、同じメガネを半額でご用意します。ほかの割引とは併用できません。<br>※くわしい条件は店頭でご確認ください。</p>
     </div>
     </div>
   </section>
@@ -1724,7 +1727,7 @@
           <li>ブラックフライデー限定<span>2,200円OFF</span></li>
           <li>LINEお友だち新規登録<span>1,100円OFF</span></li>
           <li>眼科の処方箋ご持参<span>1,100円OFF</span></li>
-          <li class="ol-two">メガネ2本同時購入<span>1本目10%OFF<br>2本目以降（安い方）20%OFF</span></li>
+          <li class="ol-two">メガネ2本同時購入<span>1本目10%OFF<br>2本目以降（安い方）20%OFF</span><small class="ol-two-n">ほかの割引と一緒に使えます</small></li>
         </ul></dd></div>
       <div class="ol-row"><dt>レンズ</dt><dd>標準レンズなら、遠近両用・中近・近々・アシストも追加料金0円<small>超薄型・コーティング・レンズのグレード変更等は別途料金</small></dd></div>
     </dl>
