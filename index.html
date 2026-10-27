@@ -655,10 +655,11 @@
   .hear-img .hear-logo { position: absolute; top: 10px; left: 10px; width: 76px; margin: 0; border-radius: 6px; }
   .hear-top { align-items: flex-end; }
   /* 10/27 写真の背景を白に（メガネの商品カードとそろえる）・ロゴと補聴器の写真を離す（Iさん） */
-  .hear-img { background: #fff; padding: 24px 40px 18px; }
+  .hear-img { background: #fff; padding: 36px 40px 6px; } /* 10/27 写真を少し下へ（上が詰まって見えたため） */
   .hear-prod { max-width: 176px; }
-  .hear-img .hear-logo { top: 6px; left: 6px; width: 84px; }
-  @media (max-width: 359px) { .hear-img .hear-logo { width: 68px; top: 4px; left: 4px; } .hear-img { padding-left: 48px; padding-right: 32px; } }
+  .hear-img .hear-logo { top: 8px; left: 8px; width: 100px; } /* 10/27 84→100px */
+  @media (max-width: 1023px) { .hear-img { padding-left: 60px; padding-right: 20px; } } /* ロゴのぶん写真を少し右へ */
+  @media (max-width: 359px) { .hear-img .hear-logo { width: 80px; top: 4px; left: 4px; } .hear-img { padding-left: 64px; padding-right: 12px; } }
   .hear-top .hear-y { margin: 0; }
   .hear-chk { margin-top: 12px; padding-top: 10px; border-top: 1px dashed var(--line); }
   .hear-chk li { font-size: 14px; word-break: auto-phrase; }
