@@ -477,6 +477,16 @@
   .reason .rh h3.rh-gino em { font-size: 27px; letter-spacing: .02em; margin-top: 2px; white-space: nowrap; }
   .reason .rh-gino-d { font-size: 13px; font-weight: 700; color: var(--tx); line-height: 1.6; margin-top: 6px; text-align: left; }
   .rh-gino-d .nw { display: inline-block; }
+  /* 10/27 鯖江LPの会話の形：顔は大きい丸（色つき）・吹き出しはセリフの長さだけ */
+  .reason .talk-row .talk-face { width: 64px !important; height: 64px !important; border: 0 !important; border-radius: 50% !important; background: #eeece6; }
+  .reason .talk-staff .talk-face { background: #fff1a8; }
+  .reason .talk-cust .talk-bub { flex: 0 1 auto; }
+  .reason .talk-row { gap: 10px; margin-left: 0 !important; margin-right: 0 !important; }
+  .reason .talk-staff { justify-content: flex-end; }
+  .reason .talk-staff .talk-bub { flex: 0 1 auto; }
+  .reason .talk-bub { font-size: 14px; }
+  @media (max-width: 359px) { .reason .talk-row .talk-face { width: 52px !important; height: 52px !important; } .reason .talk-bub { font-size: 12.5px; } .reason .talk-row { gap: 8px; } .reason .talk-staff .talk-face { width: 44px !important; height: 44px !important; } .reason .talk-staff .talk-bub { padding-left: 10px; padding-right: 8px; } }
+  @media (min-width: 1024px) { .reason .talk-row .talk-face { width: 76px !important; height: 76px !important; } .reason .talk-bub { font-size: 16px; } }
   .reason .rh h3.rh-gino-top em { margin: 0 0 2px; } /* 眼鏡作製技能士が1行目 */
   .reason .rh-gino-d + .talk, .reason .rh + .talk { margin-top: 18px; }
   @media (max-width: 359px) { .reason .rh h3.rh-gino { font-size: 14px; } .reason .rh h3.rh-gino em { font-size: 21px; } .reason .rh-gino-d { font-size: 12px; } }
@@ -1615,10 +1625,9 @@
       <div class="talk">
         <!-- 10/27 顔を理由1の女性と同じ黄色×黒のシリーズに（Iさん持ちこみ 2660923/23192530/23050866 を頭と肩で切りぬき） -->
         <!-- 10/27 B案：お客さまは顔なし（「よくあるお悩み」）・顔はスタッフだけ・丸なし（比較/会話の見せ方_比較.png） -->
-        <p class="talk-lbl">よくあるお悩み</p>
-        <div class="talk-row talk-voice"><p class="talk-bub">最近、手元が見えにくくて…</p></div>
-        <div class="talk-row talk-voice"><p class="talk-bub">遠近両用ははじめてで不安</p></div>
-        <div class="talk-row talk-staff"><span class="talk-who"><img class="talk-face" src="images/blackfriday_face2-staff_270_270.png" alt="スタッフ" width="270" height="270"><small>スタッフ</small></span><p class="talk-bub">見え方をしっかり測って、<br><b>ぴったりのレンズをご提案！</b></p></div>
+        <div class="talk-row talk-cust"><img class="talk-face" src="images/blackfriday_face5-customer1_240_240.png" alt="" width="240" height="240"><p class="talk-bub">最近、手元が見えにくくて…</p></div>
+        <div class="talk-row talk-cust"><img class="talk-face" src="images/blackfriday_face5-customer2_240_240.png" alt="" width="240" height="240"><p class="talk-bub">遠近両用ははじめてで不安</p></div>
+        <div class="talk-row talk-staff"><span class="talk-who"><img class="talk-face" src="images/blackfriday_face5-staff_240_240.png" alt="スタッフ" width="240" height="240"><small>スタッフ</small></span><p class="talk-bub">見え方をしっかり測って、<br><b>ぴったりのレンズをご提案！</b></p></div>
       </div>
       <p class="rh-d worry-n"><small>※不在の日もあるため、ご予約がおすすめです</small></p>
       <p class="worry-link"><a href="#shop-search" data-cta-location="reason_staff">▶ 来店予約はこちら</a></p>
