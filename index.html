@@ -1370,6 +1370,17 @@
   .reason .rh-also .rh-also-r { color: #e8352a; }
   /* 10/27 2本同時：家族の絵が下の枠にくっついて見えるので、上下にすき間を足す */
   .two { padding-bottom: 28px; }
+  /* 10/27 概要の割引：表のように左右にそろえる */
+  .ol-dc { list-style: none; }
+  .ol-dc li { display: grid; grid-template-columns: 1fr auto; align-items: start; gap: 12px; padding: 7px 0; border-bottom: 1px solid #f0f0f0; }
+  .ol-dc li:last-child { border-bottom: 0; }
+  .ol-dc-k { line-height: 1.5; }
+  .ol-row dd .ol-dc-k small { font-size: 11px; color: var(--sub); line-height: 1.4; }
+  .ol-dc-v { font-weight: 700; color: #e8352a; text-align: right; white-space: nowrap; line-height: 1.5; }
+  .ol-dc-all { margin-top: 8px; font-size: 13px; font-weight: 700; }
+  @media (min-width: 1024px) { .ol-dc { max-width: 460px; } }
+  .ol-red { color: #e8352a; font-weight: 700; margin-left: 4px; }
+  .ol-row dd small.ol-lens { color: var(--tx); font-size: 13px; margin-top: 2px; }
   .two .two-rows + .two-fam { padding-top: 22px; }
   @media (min-width: 1024px) { .two { padding-bottom: 40px; } .two .two-rows + .two-fam { padding-top: 0; } }
   .hear-sec { border-top: 1px solid var(--line); }
@@ -1745,13 +1756,15 @@
       <div class="ol-row"><dt>店舗</dt><dd>本庄南大通り店を除く全店</dd></div>
       <div class="ol-row"><dt>対象</dt><dd><p>対象のメガネ一式<small>フレーム・標準レンズ・ケース・クロス・保証</small></p><p class="ol-sp">補聴器<small>スターキー Gシリーズ</small></p></dd></div>
       <div class="ol-row"><dt>割引</dt><dd>
-        <ul class="ol-list">
-          <li>ブラックフライデー限定<span>2,200円OFF</span></li>
-          <li>LINEお友だち新規登録<span>1,100円OFF</span></li>
-          <li>眼科の処方箋ご持参<span>1,100円OFF</span></li>
-          <li class="ol-two">メガネ2本同時購入<span>1本目10%OFF<br>2本目以降（安い方）20%OFF</span><small class="ol-two-n">ほかの割引と一緒に使えます</small></li>
-        </ul></dd></div>
-      <div class="ol-row"><dt>レンズ</dt><dd>標準レンズなら、遠近両用・中近・近々・アシストも追加料金0円<small>超薄型・コーティング・レンズのグレード変更等は別途料金</small></dd></div>
+        <!-- 10/27 見やすく：名前は左・値段は右にそろえる（2本同時も同じ形）・「一緒に使える」は最後に1回だけ -->
+        <ul class="ol-dc">
+          <li><span class="ol-dc-k">ブラックフライデー限定</span><span class="ol-dc-v">2,200円OFF</span></li>
+          <li><span class="ol-dc-k">LINEお友だち新規登録</span><span class="ol-dc-v">1,100円OFF</span></li>
+          <li><span class="ol-dc-k">眼科の処方箋ご持参</span><span class="ol-dc-v">1,100円OFF</span></li>
+          <li><span class="ol-dc-k">メガネ2本同時購入<small>2本目以降は安い方</small></span><span class="ol-dc-v">1本目 10%OFF<br>2本目 20%OFF</span></li>
+        </ul>
+        <p class="ol-dc-all">すべての割引を<span class="marker">一緒に使えます</span></p></dd></div>
+      <div class="ol-row"><dt>レンズ</dt><dd>標準レンズなら<b class="ol-red">追加料金0円</b><small class="ol-lens">遠近両用・中近・近々・アシストもOK</small><small>※超薄型・コーティング・レンズのグレード変更等は別途料金</small></dd></div>
     </dl>
     <p class="note ol-note">※8,800円は、13,200円の対象のメガネ一式に、ブラックフライデー限定割引2,200円・LINEお友だち登録の当日クーポン1,100円・眼科の処方箋持参1,100円の割引をすべて使った場合の価格です<br>※対象ブランドのお取り扱いデザインは店舗によって異なります<br>※価格はすべて税込</p>
   </section>
