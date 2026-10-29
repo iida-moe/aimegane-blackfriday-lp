@@ -1190,7 +1190,12 @@
   @media (min-width: 1024px) { .st4-ex-l { font-size: 16px; top: -14px; } .st4-ex-a .st4-tax { font-size: 14px; } .st4-fin-y .st4-tax { font-size: 16px; } }
   /* 10/29 さらに2つの割引（パソコン）：文字を大きく。1280px以上は左に2つの割引・▶・右に8,800円の横並び */
   @media (min-width: 1024px) { .st4-rows .st4-r-t p { font-size: 17px; } }
-  @media (min-width: 1280px) {
+  @media (min-width: 1024px) and (max-width: 1279px) { /* 横並びでせまいぶん小さめに */
+    .st4-box { padding-left: 20px !important; padding-right: 20px !important; }
+    .st4-box .st4-rows .st4-r-t p { font-size: 15px; } .st4-box .st4-r-y .num { font-size: 36px; } .st4-box .st4-r { padding: 14px 12px !important; gap: 10px !important; } .st4-box .st4-r .ico { width: 30px !important; height: 30px !important; }
+    .st4-box .st4-fin-y .num { font-size: 76px !important; }
+  }
+  @media (min-width: 1024px) {
     .st4-box { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; column-gap: 20px; }
     .st4-box > * { grid-column: 1 / -1; }
     .st4-box > .st4-rows { grid-column: 1; margin: 20px 0 0; max-width: none; }
