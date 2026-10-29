@@ -1079,8 +1079,13 @@
     .st4 > .st4-hero { grid-column: 1; margin: 0; max-width: none; justify-self: center; display: flex; flex-direction: column; align-items: flex-start; } /* バッジも2,200の左はしにそろえる（かたまりは列のまん中） */
     .st4 > .st4-ex { grid-column: 2; margin: 0; max-width: none; }
     .st4 > .st4-box { margin-top: 48px; width: 100%; }
+    /* 10/29 ヘッダーを大きく（ロゴ240→280px・メニュー18→20px・来店予約19→21px） */
+    .hd-logo img { width: 280px; }
+    .hd-nav { gap: 40px; }
+    .hd-nav a { font-size: 20px; }
+    .hd-nav .hd-cta { font-size: 21px; padding: 16px 36px; }
     /* 1024〜1279px：メニューが2行に折れないように */
-    @media (max-width: 1279px) { .fv .hd { padding: 22px 32px 0; } .hd-logo img { width: 180px; } .hd-nav { gap: 20px; } .hd-nav a { font-size: 15px; white-space: nowrap; } .hd-nav .hd-cta { padding: 10px 22px; font-size: 16px; } .fv .fv-cta .btn-arw { font-size: 19px; padding: 10px 60px 10px 20px; white-space: nowrap; } }
+    @media (max-width: 1279px) { .fv .hd { padding: 22px 32px 0; } .hd-logo img { width: 200px; } .hd-nav { gap: 22px; } .hd-nav a { font-size: 16px; white-space: nowrap; } .hd-nav .hd-cta { padding: 12px 24px; font-size: 17px; } .fv .fv-cta .btn-arw { font-size: 19px; padding: 10px 60px 10px 20px; white-space: nowrap; } }
     /* 選ばれる理由：横3列をやめて縦に1枚ずつ（長さがそろわない・幅がせまいため） */
     .reasons { display: block; max-width: 720px; margin: 0 auto; }
     .reasons .reason { margin-top: 48px; padding: 40px 48px; }
