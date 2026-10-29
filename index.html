@@ -1076,7 +1076,7 @@
     /* 10/29 お得な内容：左に「2,200円OFF」・右に商品例の2列。下のさらに2つの割引〜注意書きは今までどおり中央 */
     .otoku-row .ba.st4 { display: grid; grid-template-columns: repeat(2, minmax(0, 540px)); justify-content: center; column-gap: clamp(40px, 4vw, 72px); align-items: center; width: 100%; box-sizing: border-box; }
     .st4 > * { grid-column: 1 / -1; }
-    .st4 > .st4-hero { grid-column: 1; margin: 0; max-width: none; }
+    .st4 > .st4-hero { grid-column: 1; margin: 0; max-width: none; justify-self: center; display: flex; flex-direction: column; align-items: flex-start; } /* バッジも2,200の左はしにそろえる（かたまりは列のまん中） */
     .st4 > .st4-ex { grid-column: 2; margin: 0; max-width: none; }
     .st4 > .st4-box { margin-top: 48px; width: 100%; }
     /* 1024〜1279px：メニューが2行に折れないように */
