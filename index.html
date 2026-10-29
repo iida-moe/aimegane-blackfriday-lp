@@ -1183,6 +1183,10 @@
   /* 商品例のメガネ写真（メーカー画像なので切らずに全体を表示） */
   .st4-ex-img { padding: 0 16px; margin: -4px 0 8px; }
   .st4-ex-img img { display: block; width: 100%; max-width: 200px; height: auto; margin: 0 auto; }
+  /* 10/29 商品例：ラベルにブランド名・黒く大きく／11,000円に(税込) */
+  .st4-ex-l { font-size: 13px; color: var(--tx); top: -12px; white-space: nowrap; }
+  .st4-ex-a .st4-tax { font-family: 'Noto Sans JP', sans-serif; font-size: 11px; font-weight: 700; margin-left: 2px; }
+  @media (min-width: 1024px) { .st4-ex-l { font-size: 16px; top: -14px; } .st4-ex-a .st4-tax { font-size: 14px; } }
   .st4-ex-img p { font-size: 11px; color: var(--sub); text-align: center; margin-top: -2px; }
   @media (min-width: 1024px) { .st4-ex-img img { max-width: 280px; } }
   /* 2つの割引：横長カードを縦に2段 */
@@ -1543,13 +1547,13 @@
       </div>
 
       <div class="st4-ex">
-        <p class="st4-ex-l">商品例</p>
+        <p class="st4-ex-l">商品例：ブランシック</p>
         <!-- 10/25 GWLPのように本物のメガネ写真（対象ブランド ブランシック・10/27に13,200円のセットへ）。変更前 _保存/index.before-1025-exphoto.html -->
         <div class="st4-ex-img"><img src="images/frames/blancchic-1.png" alt="ブランシックのメガネ" width="800" height="381" loading="lazy"></div>
         <div class="st4-ex-row">
           <div><p class="st4-ex-k">通常価格</p><p class="st4-ex-b">13<span class="cm">,</span>200<small>円</small></p></div>
           <span class="st4-arw" aria-hidden="true">▶</span>
-          <div><p class="st4-ex-k st4-k-red">2,200円OFFで</p><p class="st4-ex-a">11<span class="cm">,</span>000<small>円</small></p></div>
+          <div><p class="st4-ex-k st4-k-red">2,200円OFFで</p><p class="st4-ex-a">11<span class="cm">,</span>000<small>円</small><small class="st4-tax">(税込)</small></p></div>
         </div>
         <ul class="ba-set" aria-label="セットの中身">
         <li><svg class="ico" viewBox="0 0 48 32"><circle cx="14" cy="17" r="9"/><circle cx="34" cy="17" r="9"/><path d="M23,16 Q24,13 25,16 M5,15 L1,12 M43,15 L47,12"/></svg>フレーム</li>
