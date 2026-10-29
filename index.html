@@ -1079,6 +1079,7 @@
     .st4 > .st4-hero { grid-column: 1; margin: 0; max-width: none; justify-self: center; display: flex; flex-direction: column; align-items: flex-start; } /* バッジも2,200の左はしにそろえる（かたまりは列のまん中） */
     .st4 > .st4-ex { grid-column: 2; margin: 0; max-width: none; }
     .st4 > .st4-box { margin-top: 48px; width: 100%; }
+    .st4 > .st4-note { max-width: none; width: 100%; margin-left: 0; margin-right: 0; } /* 注意書きはベージュの枠の左はしにそろえる（Iさん） */
     /* 10/29 ヘッダーを大きく（ロゴ240→280px・メニュー18→20px・来店予約19→21px） */
     .hd-logo img { width: 280px; }
     .hd-nav { gap: 40px; }
@@ -1195,6 +1196,65 @@
   @media (min-width: 1024px) { .st4-ex-l { font-size: 16px; top: -14px; } .st4-ex-a .st4-tax { font-size: 14px; } .st4-fin-y .st4-tax { font-size: 16px; } }
   /* 10/29 さらに2つの割引（パソコン）：文字を大きく。1280px以上は左に2つの割引・▶・右に8,800円の横並び */
   @media (min-width: 1024px) { .st4-rows .st4-r-t p { font-size: 17px; } }
+  /* 10/29 1,100と円OFFの下をそろえる（数字の下の余白をなくし、円OFFの下の余白を0に） */
+  .st4-r-y { align-items: flex-end; }
+  .st4-r-y .num { line-height: .74; }
+  .st4-r-y .st4-c-st { margin: 0 0 0 2px !important; line-height: .9; }
+  /* 10/29 8,800円：(税込)は「円〜」の下に（FVと同じ形） */
+  .st4-fin-y { display: flex; align-items: flex-end; justify-content: center; }
+  .st4-fin-y .num { line-height: .76; }
+  /* FVと同じバランス：円〜は数字の約3割の大きさ・(税込)は円〜と同じ色で少し小さく・数字とのあいだを少しあける */
+  .st4-fin-u { display: flex; flex-direction: column; align-items: flex-start; margin-left: 8px; line-height: 1; }
+  .st4-fin-y .st4-fin-u small { font-size: 24px; }
+  .st4-fin-y .st4-fin-u .st4-tax { font-size: 16px; color: var(--tx); margin: 4px 0 0 -2px; } /* (税込)は黒（Iさん） */
+  .st4-fin-y .st4-fin-u small { color: var(--tx); } /* 円〜も黒（Iさん） */
+  .st4 > .st4-fin-zero { margin-top: 28px; } /* ベージュの枠の外に出したぶんのすき間 */
+  .st4-fin-zero .st4-z-link { margin-top: 18px; }
+  .st4-fin-en { font-size: 14px; font-weight: 700; color: var(--tx); margin-top: 10px; } /* 赤が多すぎるので黒＋黄のマーカー（Iさん） */
+  .st4-fin-en .mk { background: var(--ac); padding: 1px 4px; } /* 10/29 下半分だけ→文字の上まで黄色（Iさん） */
+  @media (min-width: 1024px) { .st4-fin-en { font-size: 17px; margin-top: 12px; } }
+  /* 10/29 しかも… 遠近両用レンズにしても 追加料金0円（見本の形） */
+  .st4-z3-k { font-size: 14px; font-weight: 700; color: #e8352a; letter-spacing: .08em; }
+  .st4-z3-t { font-size: 15px; font-weight: 700; margin-top: 6px; }
+  .st4-z3-t b { font-size: 22px; font-weight: 700; }
+  .st4-z3-y { display: flex; align-items: baseline; justify-content: center; font-size: 30px; font-weight: 700; line-height: 1; margin-top: 4px; }
+  .st4-z3-y b { font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 800; font-size: 76px; color: #e8352a; line-height: .9; margin: 0 6px 0 10px; }
+  .st4-z3-d { font-size: 12px; font-weight: 400; color: var(--sub); margin-top: 10px; line-height: 1.6; }
+  .st4-z3-d b { font-weight: 700; color: var(--tx); }
+  @media (max-width: 1023px) { .st4-z3-d b { display: block; } .st4-z3-d { white-space: nowrap; } } /* スマホは「遠近両用レンズとは：」と説明で2行に（変なところで折れないように） */
+  @media (max-width: 359px) { .st4-z3-t b { font-size: 19px; } .st4-z3-y { font-size: 26px; } .st4-z3-y b { font-size: 64px; } .st4-z3-d { font-size: 11px; } }
+  /* 10/29 見本と同じ縦1列：小（しかも…）→中（遠近両用レンズにしても）→大（追加料金0円）の階段。
+     「しかも…」の左はしは「追加料金」の左はしにそろえる・0は行の中に収めて左右のすき間を同じに */
+  .st4-z3-row { display: inline-flex; flex-direction: column; align-items: center; }
+  .st4-z3-l { display: contents; }
+  .st4-z3-k { align-self: flex-start; }
+  .st4-z3-y { align-items: baseline; }
+  /* 0は文字の約2倍・行の高さを広げないよう line-height を小さく（「全部デカすぎ・行間をつめて」Iさん） */
+  .st4-z3-y b { font-size: 58px; line-height: .7; margin: 0 .1em; position: relative; top: .07em; } /* .7＝0の字の高さとほぼ同じ→上に余白が出ない。漢字は少し下まで出るぶん0を下げて下はしをそろえる */
+  .st4-z3-t { margin-top: 2px; }
+  .st4-z3-y { margin-top: 6px; }
+  @media (max-width: 359px) { .st4-z3-y b { font-size: 50px; } }
+  @media (min-width: 1024px) {
+    .st4 > .st4-fin-zero { max-width: none; width: 100%; }
+    .st4-z3-k { font-size: 17px; }
+    .st4-z3-t { font-size: 20px; margin-top: 4px; white-space: nowrap; }
+    .st4-z3-t b { font-size: 32px; }
+    .st4-z3-y { font-size: 50px; margin-top: 4px; white-space: nowrap; }
+    .st4-z3-y b { font-size: 100px; }
+    .st4-z3-d { font-size: 16px; margin-top: 24px; }
+  }
+  @media (max-width: 1023px) { .st4-z3-d { margin-top: 16px; } }
+  @media (max-width: 359px) { .st4-fin-y .st4-fin-u small { font-size: 20px; } .st4-fin-y .st4-fin-u .st4-tax { font-size: 13px; } }
+  @media (min-width: 1024px) { .st4-fin-u { margin-left: 10px; } .st4-fin-y .st4-fin-u small { font-size: 28px; } /* 円〜は下の「0円」の円と同じ大きさ（スマホ24・320px 20・パソコン28） */ .st4-fin-y .st4-fin-u .st4-tax { font-size: 20px; } }
+  /* 10/29 割引をぜんぶ使うと：「13,200円から〜」と「8,800円」の左はしをそろえる（かたまりは枠のまん中） */
+  .st4-fin { display: grid; justify-content: center; justify-items: start; }
+  /* 10/29 「13,200円 から 4,400円OFF」を同じ書体・同じ太さに（4,400だけ太い英字書体だった） */
+  .st4-fin-from, .st4-fin-from s, .st4-fin-from .st4-off2 { font-family: 'Noto Sans JP', sans-serif; font-weight: 700; }
+  .st4-fin-from { white-space: nowrap; }
+  @media (max-width: 359px) { .st4-fin-from { font-size: 12px; letter-spacing: -.02em; } .st4-fin-from .st4-off2 { font-size: 15px; } }
+  .st4-fin-t { font-weight: 700; } /* ラベル類は700のルールに（900で太すぎた） */
+  /* 10/29 パソコン：左の枠は余裕があるので「円OFF」を横1行に */
+  @media (min-width: 1024px) { .st4-box .st4-r-y .st4-c-st { flex-direction: row; font-size: 22px; line-height: 1; margin-left: 1px !important; } }
   @media (min-width: 1024px) and (max-width: 1279px) { /* 横並びでせまいぶん小さめに */
     .st4-box { padding-left: 20px !important; padding-right: 20px !important; }
     .st4-box .st4-rows .st4-r-t p { font-size: 15px; } .st4-box .st4-r-y .num { font-size: 36px; } .st4-box .st4-r { padding: 14px 12px !important; gap: 10px !important; } .st4-box .st4-r .ico { width: 30px !important; height: 30px !important; }
@@ -1202,16 +1262,16 @@
   }
   @media (min-width: 1024px) {
     /* 左の列は中身の長さ（文字と金額を近づける）・「さらに2つの割引で」は左の列の上（Iさん） */
-    .st4-box { display: grid; grid-template-columns: auto auto minmax(0, 480px); grid-template-rows: auto auto auto; justify-content: center; align-items: center; column-gap: 28px; }
+    .st4-box { display: grid; grid-template-columns: auto auto minmax(0, 1fr); grid-template-rows: auto auto auto; align-items: center; column-gap: 20px; }
     .st4-box > * { grid-column: 1 / -1; }
     .st4-box > .st4-more { grid-column: 1; grid-row: 1; margin: 0; }
-    .st4-box > .st4-rows { grid-column: 1; grid-row: 2; margin: 14px 0 0; max-width: none; }
-    .st4-box > .st4-down { grid-column: 2; grid-row: 1 / 3; margin: 0; font-size: 22px; transform: rotate(-90deg); }
-    .st4-box > .st4-fin { grid-column: 3; grid-row: 1 / 3; margin: 24px 0 0; max-width: none; }
+    .st4-box > .st4-rows { grid-column: 1; grid-row: 2; margin: 14px 0 0; max-width: none; align-self: stretch; display: flex; flex-direction: column; }
+    .st4-box > .st4-rows .st4-r { flex: 1; } /* 右の8,800円の枠と上下のはしがそろうように、2つのカードをのばす */
+    .st4-box > .st4-down { grid-column: 2; grid-row: 2; margin: 14px 0 0; font-size: 22px; transform: rotate(-90deg); } /* ＋と同じ高さ（2つの割引のまん中） */
+    .st4-box > .st4-fin { grid-column: 3; grid-row: 2; align-self: stretch; align-content: center; margin: 14px 0 0; max-width: none; } /* 上下のはしを左の2つのカードとそろえる（Iさん） */
     .st4-box > .st4-fin-zero { grid-row: 3; }
     .st4-box .st4-r .st4-r-t { margin-right: 20px; }
     .st4-box .st4-fin-y { white-space: nowrap; }
-    @media (min-width: 1280px) { .st4-box > .st4-fin { min-width: 400px; } }
     .st4-box > .st4-fin-zero { margin-top: 28px; }
     .st4-box .st4-fin-y .num { font-size: 96px; }
     .st4-box .st4-r { padding: 16px 18px; gap: 12px; } .st4-box .st4-r .ico { width: 36px; height: 36px; } /* 横並びで枠がせまいぶん、文字と金額のすき間をとる */
@@ -1463,6 +1523,93 @@
   .ol-row dd small.ol-lens { color: var(--tx); font-size: 13px; margin-top: 2px; }
   .two .two-rows + .two-fam { padding-top: 22px; }
   @media (min-width: 1024px) { .two { padding-bottom: 40px; } .two .two-rows + .two-fam { padding-top: 0; } }
+  /* 10/29 2本同時（パソコン）：見出しを上にまん中で1行 → 下の左に10%・20%、右にイラストとだれとでも。イラストはカードの下のはしにつける（Iさん） */
+  @media (min-width: 1024px) {
+    .two { grid-template-columns: auto auto; justify-content: center; grid-template-rows: auto auto; column-gap: clamp(56px, 6vw, 110px); row-gap: 0; padding: 30px 40px 40px; } /* 左右のかたまりをまん中に寄せる（余白が多い・Iさん） */
+    /* 見出しは上にまん中で1行 → 下の左に10%・20%、右にイラスト。余白が多いので中身をひとまわり大きく（Iさん） */
+    /* 10/29 左右それぞれ「見出し→中身」：左＝2本同時の見出し→10%・20%、右＝ご家族・ご友人とでも→イラスト（Iさん） */
+    .two .two-t { grid-column: 1; grid-row: 1; align-self: start; text-align: center; margin-bottom: 10px; font-size: 24px; }
+    .two .two-t .sl { text-align: center; }
+    /* 10/29 見出しは＼／をやめて枠で囲む（「上の割引と〜」は囲まない・Iさん） */
+    .two .two-t .sl { display: inline-flex; border: 2px solid var(--bk); border-radius: 8px; padding: 4px 16px 6px; font-size: 20px; } /* 大きすぎたので24→20px */
+    .two { grid-template-columns: 1fr 1fr !important; justify-content: stretch !important; } /* 左右を同じ幅に（Iさん） */
+    .two .two-t, .two .two-rows { justify-self: center; }
+    .two .two-fam { justify-self: stretch !important; border-left: 0 !important; padding-left: 0 !important; margin-left: 0 !important; } /* 点線は外す（左右は同じ1つの割引の話なので区切らない） */
+    .two .two-t .sl::before, .two .two-t .sl::after { display: none; }
+    .two .two-t .two-also { margin-top: 12px; }
+    .two .two-t .two-also { font-size: 16px; }
+    /* カードの下の余白は0にして、イラストは下はしにつける。割引は上下に同じくらいのすき間をとって、まん中に置く */
+    .two { padding-bottom: 0 !important; }
+    .two .two-rows { grid-column: 1; grid-row: 2; align-self: center; justify-self: center; margin: 0 0 28px; row-gap: 18px; } /* 見出しとのあいだを約20pxつめる */
+    .two .two-fam { grid-column: 2; grid-row: 1 / 3; align-self: stretch; justify-self: center; margin-bottom: 0; flex-direction: column-reverse; justify-content: flex-start; align-items: center; gap: 14px; } /* 「ご家族・ご友人とでも」はイラストのすぐ上に（Iさん） */
+    .two .two-fam .two-fam-t { align-self: center; text-align: center; }
+    .two .two-fam .two-one { text-align: center; }
+    /* 10/29 整える：左右の見出しを同じ大きさ・同じ高さに／説明の行も同じ大きさに／イラストを大きくして右の空きをうめる／まん中に細い点線 */
+    .two .two-fam .two-who2 { font-size: 16px; line-height: 1.5; }
+    .two .two-fam .two-who2 span { font-size: 24px; border-bottom-width: 3px; }
+    .two .two-fam .two-one { font-size: 16px; margin-top: 8px; }
+    .two .two-t .two-also { margin-top: 8px; }
+    .two .two-fam img { width: 240px; }
+    .two .two-fam { position: relative; padding-left: calc(clamp(40px, 5vw, 72px) / 2); border-left: 1px dashed var(--line); margin-left: calc(clamp(40px, 5vw, 72px) / -2); } /* 点線は左右のまん中（すき間の半分の位置） */
+    .two { column-gap: clamp(40px, 5vw, 72px); }
+    .two .two-rl { font-size: 22px; white-space: nowrap; }
+    .two .two-rn-s .num { font-size: 72px; } .two .two-rn-s small { font-size: 28px; }
+    .two .two-rn .num { font-size: 100px; } .two .two-rn small { font-size: 36px; }
+    .two-fam img { width: 200px; }
+    .two-fam .two-who2 { font-size: 17px; } .two-fam .two-who2 span { font-size: 28px; }
+    .two .two-one { font-size: 16px; }
+    .two .two-fam-t { align-self: center; }
+    .two-rl small { font-size: 14px; color: var(--tx); }
+  }
+  .two-fam picture { display: block; flex: none; line-height: 0; }
+  /* 10/29 お店を探すボタン：左にピン・右に ›（追従のボタンと同じ形） */
+  .btn-pin { position: relative; display: flex; align-items: center; justify-content: center; gap: 8px; padding-left: 48px; padding-right: 48px; }
+  .btn-pin svg { width: 20px; height: 20px; flex: none; }
+  .btn-pin::after { content: ''; position: absolute; right: 24px; top: 50%; width: 8px; height: 8px; margin-top: -5px; border-right: 2.5px solid currentColor; border-top: 2.5px solid currentColor; transform: rotate(45deg); }
+  /* 10/29 補聴器（パソコン）：左に写真・右に名前／値段／強みの2列。幅はほかのカードと同じ1000px（縦に長いので・Iさん） */
+  @media (min-width: 1024px) {
+    .hear { max-width: 1000px !important; }
+    /* 10/29 左＝写真の下にGシリーズの説明と値段、右＝アイメガネの強み（Iさん）。HTMLはスマホと同じ順のまま、パソコンだけ置き場所を変える */
+    .hear-card { display: grid !important; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto auto auto 1fr; column-gap: 48px; padding: 32px 40px 36px; }
+    .hear-card .hear-body { display: contents; }
+    .hear-card .hear-img { grid-column: 1; grid-row: 1; display: flex; align-items: center; justify-content: center; padding: 24px 0 8px !important; }
+    .hear-card .hear-top { grid-column: 1; grid-row: 2; margin-top: 8px; }
+    .hear-card .hear-feat { grid-column: 1; grid-row: 3; }
+    .hear-card .hear-pr { grid-column: 1; grid-row: 4; }
+    .hear-card .hear-side { grid-column: 2; grid-row: 1 / -1; align-self: center; }
+    .hear-card .hear-why { display: block; font-size: 18px; font-weight: 700; padding-bottom: 12px; border-bottom: 2px solid var(--ac); margin-bottom: 4px; }
+    .hear-card .hear-pt2 { margin-top: 0; }
+    .hear-card .hear-prod { width: 280px !important; max-width: 70% !important; height: auto; } /* 写真は切らずに全体のまま。380pxは大きすぎたので280pxに（Iさん） */
+    .hear-card .hear-logo { width: 120px !important; }
+    /* 10/29 整える：ロゴは写真に重ねず上に分けて置く・写真と文字は左はしをそろえる・予約リンクも左ぞろえ（どれもメーカー画像は加工しない） */
+    .hear-card .hear-img { flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 12px; padding: 8px 0 4px !important; }
+    .hear-card .hear-img .hear-logo { position: static !important; order: -1; }
+    .hear-card .hear-img .hear-prod { align-self: flex-start; margin-left: 12px; }
+    .hear-card .hear-link { text-align: left; margin-left: 56px; } /* 強みの文字（アイコンの右）の左はしにそろえる */
+  }
+  @media (min-width: 1024px) { .pc-hide { display: none; } } /* パソコンでは改行しない */
+  @media (max-width: 400px) { .st4-rows .st4-r-t p { font-size: 13px; letter-spacing: -.03em; } .st4-rows .st4-r .st4-r-t { margin-right: 6px; } } /* 「新規」が入って長くなったぶん */
+  @media (min-width: 1024px) { .st4-more.sl::before, .st4-more.sl::after { display: none; } } /* 10/29 「さらに2つの割引で」の＼／を外す（枠は2本同時の見出しだけ・Iさん A案） */
+  .hear-why { display: none; }
+  .hear-side { display: contents; }
+  @media (min-width: 1024px) { .hear-card .hear-side { display: block; } }
+  .otoku .two { margin-top: 20px; } /* 10/29 上のカードとのすき間を少しせまく（別のカードだけど続きの話に見えるように） */
+  @media (min-width: 1024px) { .otoku .two { margin-top: 28px; } }
+  /* 10/29 追従（パソコン）：左にお店のアイコン＋ひとこと、右にピンつきのボタン（Iさんの見本） */
+  @media (min-width: 1024px) {
+    .float-cta { gap: clamp(40px, 6vw, 96px); min-height: 84px; padding-top: 14px; padding-bottom: 14px; }
+    .fc-pc { display: flex; align-items: center; gap: 16px; line-height: 1.4; white-space: nowrap; }
+    .fc-ico { width: 44px; height: 44px; color: var(--ac); flex: none; }
+    .fc-t { font-size: 17px; font-weight: 700; color: #fff; }
+    .fc-s { font-size: 13px; font-weight: 400; color: #ccc; margin-top: 2px; }
+    .fc-btn { position: relative; top: auto; right: auto; transform: none; min-width: 360px; justify-content: center; padding: 16px 60px 16px 48px; font-size: 18px; font-weight: 700; }
+    .fc-btn::after { position: absolute; right: 26px; top: 50%; margin-top: -4px; transform: rotate(45deg); }
+    .fc-pin { width: 20px; height: 20px; flex: none; }
+    .fc-date2 { font-family: 'Barlow', sans-serif; font-weight: 800; font-size: 26px; color: var(--ac); line-height: 1.1; }
+    .fc-date2 small { font-family: 'Noto Sans JP', sans-serif; font-size: 13px; font-weight: 700; color: #fff; margin: 0 2px; }    .float-cta { background: #111; } /* 下の文字が透けないように */
+    .fc-date2 { display: flex; align-items: baseline; }
+    .fc-dash { display: inline-block; width: 26px; height: 2px; background: #fff; margin: 0 10px; align-self: center; } /* 〜は分かりにくいのでFVと同じ線に（Iさん） */
+  }
   .hear-sec { border-top: 1px solid var(--line); }
   .hear-sec .hear { margin-top: 0; max-width: 520px; margin-left: auto; margin-right: auto; }
   /* 10/27 1024〜1199px：追従バーの文字を左に寄せてボタンと重ならないように・ヘッダーのメニューを1行に */
@@ -1603,24 +1750,18 @@
       <p class="st4-more sl"><span>さらに<em>2つの割引</em>で</span></p>
       <!-- 10/25 ラベルをやめて、横長カードを縦に2段（LINE／処方箋）。変更前 _保存/index.before-1025-tworows.html -->
       <div class="st4-rows">
-        <div class="st4-r"><svg class="ico ico-line" viewBox="0 0 40 40"><path fill="#06c755" stroke="none" d="M20,5 C29.5,5 37,11 37,18.5 C37,26 29.5,32 20,32 C18.6,32 17.2,31.9 15.9,31.6 L9,36 L10.3,29.3 C5.8,26.9 3,23 3,18.5 C3,11 10.5,5 20,5 Z"/><circle fill="#fff" stroke="none" cx="13" cy="18.5" r="2"/><circle fill="#fff" stroke="none" cx="20" cy="18.5" r="2"/><circle fill="#fff" stroke="none" cx="27" cy="18.5" r="2"/></svg><div class="st4-r-t"><p>LINEお友だち登録で</p></div><p class="st4-r-y"><span class="num">1<span class="cm">,</span>100</span><span class="st4-c-st"><span>円</span><span>OFF</span></span></p></div>
+        <div class="st4-r"><svg class="ico ico-line" viewBox="0 0 40 40"><path fill="#06c755" stroke="none" d="M20,5 C29.5,5 37,11 37,18.5 C37,26 29.5,32 20,32 C18.6,32 17.2,31.9 15.9,31.6 L9,36 L10.3,29.3 C5.8,26.9 3,23 3,18.5 C3,11 10.5,5 20,5 Z"/><circle fill="#fff" stroke="none" cx="13" cy="18.5" r="2"/><circle fill="#fff" stroke="none" cx="20" cy="18.5" r="2"/><circle fill="#fff" stroke="none" cx="27" cy="18.5" r="2"/></svg><div class="st4-r-t"><p>LINE新規お友だち登録で</p></div><p class="st4-r-y"><span class="num">1<span class="cm">,</span>100</span><span class="st4-c-st"><span>円</span><span>OFF</span></span></p></div>
         <p class="st4-r-plus" aria-hidden="true">＋</p>
         <div class="st4-r"><svg class="ico" viewBox="0 0 40 40"><path d="M10,6 H25 L31,12 V34 H10 Z"/><path d="M25,6 V12 H31"/><path d="M15,18 H26 M15,23 H26 M15,28 H22"/></svg><div class="st4-r-t"><p>眼科の処方箋ご持参で</p></div><p class="st4-r-y"><span class="num">1<span class="cm">,</span>100</span><span class="st4-c-st"><span>円</span><span>OFF</span></span></p></div>
       </div>
       <p class="st4-down" aria-hidden="true">▼</p>
       <div class="st4-fin">
         <p class="st4-fin-t">割引をぜんぶ使うと</p>
-        <p class="st4-fin-from"><s>13<span class="cm">,</span>200円</s> から <b class="st4-off2">4<span class="cm">,</span>400円OFF</b></p>
-        <p class="st4-fin-y"><span class="num">8<span class="cm">,</span>800</span><small>円〜</small><small class="st4-tax">(税込)</small></p>
+        <p class="st4-fin-from"><s>11<span class="cm">,</span>000円</s> から さらに <b class="st4-off2">2<span class="cm">,</span>200円OFF</b></p><!-- 10/29 直前の商品例の11,000円から続ける（13,200円から4,400円OFFだと足し算が必要でわかりにくい・Iさん A案） -->
+        <p class="st4-fin-y"><span class="num">8<span class="cm">,</span>800</span><span class="st4-fin-u"><small>円〜</small><small class="st4-tax">(税込)</small></span></p>
+        <!-- 10/29 大きい「追加料金0円」のかたまりは消して（理由1と重なる・主役が2つになる）、値段とセットで一言（Iさん A案）。変更前 _保存/変更前/1029/index.before-1029-box2col.html -->
+        <p class="st4-fin-en"><span class="mk">遠近両用レンズ</span>でも、この価格</p>
       </div>
-      <!-- 10/25 枠の外へ（値段の答えと分ける）。GWLPの見せ方：遠近両用レンズにしても 追加料金0円 ＋ レンズ選びへのリンク -->
-        <div class="st4-fin-zero">
-          <!-- 10/27 鯖江LP・理由1と同じ形：左に2段（遠近両用／追加料金）＋右に大きい0円（Iさん）。変更前 _保存/変更前/1027/index.before-1027-zeroset.html -->
-          <div class="st4-zs">
-            <p class="st4-zs-l"><span>遠近両用</span><em>追加料金</em></p><p class="st4-zs-y"><b>0</b><span>円</span></p>
-          </div>
-          <a class="st4-z-link" href="#lens-find"><u>あなたに合うレンズは？</u><span aria-hidden="true">›</span></a>
-        </div>
       </div>
       <p class="note st4-note">※価格はすべて税込<br>※標準レンズの場合<br>※本庄南大通り店を除く</p>
     </div>
@@ -1628,7 +1769,7 @@
 
     <div class="two">
             <!-- 10/25 まず割引（2本同時で10%・20%OFF）→ だれと買ってもOK の順に。変更前 _保存/index.before-1025-review.html -->
-      <p class="two-t"><span class="sl">メガネ2本同時購入で、<br class="sp-br">もっとおトク</span><small class="two-also">上の割引と<span class="marker">一緒に使えます</span></small></p>
+      <p class="two-t"><span class="sl">メガネ2本同時購入で、<br class="sp-br">もっとおトク</span><small class="two-also">上記の割引と<span class="marker">併用できます</span></small></p>
       <!-- 10/23 1本目10%・2本目以降20%の2行に（数字の左をそろえる）。変更前 _保存/index.before-1023-two.html -->
       <div class="two-rows">
         <p class="two-rl">1本目</p>
@@ -1638,7 +1779,8 @@
       </div>
       <!-- 10/25 イラストを家族の1枚に（2人ともメガネ）。変更前 _保存/index.before-1025-family.html -->
       <div class="two-fam">
-        <img src="images/blackfriday_family-thick_540_469.png" alt="メガネをかけた家族のイラスト" width="540" height="469" loading="lazy">
+        <!-- 10/29 パソコンは大きく表示されて線がバキバキに見えるので、線を少し細く・黒をやわらかく・黄色をLPの黄にした版（スマホは小さいので太い版のまま） -->
+        <picture><source media="(min-width: 1024px)" srcset="images/blackfriday_family-mid_540_469.png"><img src="images/blackfriday_family-thick_540_469.png" alt="メガネをかけた家族のイラスト" width="540" height="469" loading="lazy"></picture>
         <div class="two-fam-t"><p class="two-who2"><span>ご家族・ご友人</span>とでも</p><p class="two-one">お一人で2本でもOK</p></div>
       </div>
     </div>
@@ -1686,12 +1828,12 @@
     <div class="pick-dots" id="pickDots" aria-label="スライドの位置"></div>
     <p class="pick-store">ほかにも、対象のフレームを<br class="sp-br">多数ご用意しています<br>ぜひ店頭でお試しください</p>
     <p class="note">※お取り扱いのデザインは店舗によって異なります</p>
-    <a href="#shop-search" class="btn" data-cta-location="pickup">近くのお店で予約する</a>
+    <a href="#shop-search" class="btn btn-pin" data-cta-location="pickup"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12,2 C7.6,2 4,5.5 4,9.9 C4,15.6 12,22 12,22 C12,22 20,15.6 20,9.9 C20,5.5 16.4,2 12,2 Z M12,13 A3.2,3.2 0 1 1 12,6.6 A3.2,3.2 0 0 1 12,13 Z"/></svg>お近くのお店を探す</a><!-- 10/29 すぐ上の「ぜひ店頭でお試しください」につながる言葉に（Iさん） -->
   </section>
 
   <!-- 10/27 A案（比較/補聴器の置き場所_比較.png）：補聴器はメガネのブランドと分けて別のセクションに -->
   <section class="sec hear-sec" id="hearing-aid">
-    <div class="sec-head"><h2 class="sec-ja">補聴器も<br>ブラックフライデー対象</h2></div>
+    <div class="sec-head"><h2 class="sec-ja">補聴器も<br class="pc-hide">ブラックフライデー対象</h2></div>
     <!-- 10/23 補聴器：白カード・中央に縦積み（補聴器_比較.html のC）。変更前 _保存/index.before-1023-starkey.html -->
     <!-- 10/23 E案：対象ブランド例のカードと同じ形（補聴器_比較2.html） -->
     <div class="hear">
@@ -1706,6 +1848,8 @@
       <p class="hear-feat">耳かけ型｜AIがまわりの音に合わせて自動調整</p>
       <div class="hear-pr"><p class="hear-pl">ブラックフライデー限定</p><p class="hear-y"><span class="num">2<span class="cm">,</span>200</span><span class="st"><span>円</span><span>OFF</span></span></p></div>
       <!-- 10/27 A案（補聴器強み_比較.png）：1行ずつ横長に・アイコン＋見出し＋ひとこと、※と「技能者とは？」は技能者の行の中へ。変更前 _保存/変更前/1027/index.before-1027-hearptsA.html -->
+      <div class="hear-side"><!-- 10/29 パソコンだけ右の列にまとめる（スマホは何もしない入れもの） -->
+      <p class="hear-why">アイメガネの補聴器サポート</p><!-- 10/29 パソコンだけ：右の列（強み）の見出し -->
       <ul class="hear-pt2">
         <li>
           <span class="hp2-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10" cy="8" r="4"/><path d="M3 21c0-4.4 3.1-7 7-7 1.6 0 3 .4 4.2 1.1"/><circle cx="18" cy="17.5" r="4.6" fill="#e8352a" stroke="none"/><path d="M15.9 17.6l1.5 1.5 2.8-3" stroke="#fff" stroke-width="1.8"/></svg></span>
@@ -1728,6 +1872,7 @@
         </li>
       </ul>
       <p class="worry-link hear-link"><a href="#shop-search" data-cta-location="hearing">▶ 補聴器の相談を予約する</a></p>
+      </div>
       </div>
       </div>
     </div>
@@ -1839,14 +1984,14 @@
         <!-- 10/27 見やすく：名前は左・値段は右にそろえる（2本同時も同じ形）・「一緒に使える」は最後に1回だけ -->
         <ul class="ol-dc">
           <li><span class="ol-dc-k">ブラックフライデー限定</span><span class="ol-dc-v">2,200円OFF</span></li>
-          <li><span class="ol-dc-k">LINEお友だち新規登録</span><span class="ol-dc-v">1,100円OFF</span></li>
+          <li><span class="ol-dc-k">LINE新規お友だち登録</span><span class="ol-dc-v">1,100円OFF</span></li>
           <li><span class="ol-dc-k">眼科の処方箋ご持参</span><span class="ol-dc-v">1,100円OFF</span></li>
           <li><span class="ol-dc-k">メガネ2本同時購入<small>2本目以降は安い方</small></span><span class="ol-dc-v">1本目 10%OFF<br>2本目 20%OFF</span></li>
         </ul>
-        <p class="ol-dc-all">すべての割引を<span class="marker">一緒に使えます</span></p></dd></div>
+        <p class="ol-dc-all">すべての割引を<span class="marker">併用できます</span></p></dd></div>
       <div class="ol-row"><dt>レンズ</dt><dd>標準レンズなら<b class="ol-red">追加料金0円</b><small class="ol-lens">遠近両用・中近・近々・アシストもOK</small><small>※超薄型・コーティング・<span class="nw">レンズのグレード変更等は</span><span class="nw">別途料金</span></small></dd></div>
     </dl>
-    <p class="note ol-note">※8,800円は、13,200円の対象のメガネ一式に、ブラックフライデー限定割引2,200円・LINEお友だち登録の当日クーポン1,100円・眼科の処方箋持参1,100円の割引をすべて使った場合の価格です<br>※対象ブランドのお取り扱いデザインは店舗によって異なります<br>※価格はすべて税込</p>
+    <p class="note ol-note">※8,800円は、13,200円の対象のメガネ一式に、ブラックフライデー限定割引2,200円・LINE新規お友だち登録の当日クーポン1,100円・眼科の処方箋持参1,100円の割引をすべて使った場合の価格です<br>※対象ブランドのお取り扱いデザインは店舗によって異なります<br>※価格はすべて税込</p>
   </section>
 
   <section class="sec" id="shop-search">
@@ -1936,9 +2081,12 @@
 <!-- 追従CTA -->
 <div class="float-cta" id="floatCta">
   <a href="#shop-search" class="btn btn-arw" data-cta-location="floating"><span>近くのお店で予約する</span><span class="arw" aria-hidden="true">▶</span></a>
-  <!-- 10/27 PCだけ：GWLPと同じ帯（まん中に期間と価格・右にボタン） -->
-  <p class="fc-pc"><span class="fc-date">11/13<small>(金)</small>〜11/29<small>(日)</small></span><span>対象のメガネ一式<span class="fc-y">8,800</span>円〜(税込)</span><span class="fc-note">※割引をすべて使った場合</span></p>
-  <a href="#shop-search" class="fc-btn" data-cta-location="floating">近くのお店で予約する</a>
+  <!-- 10/29 PCだけ：左にお店のアイコン＋ひとこと、右にピンつきの黄色いボタン（Iさんの見本の形）。旧＝期間と8,800円の帯 _保存\変更前\1029\index.before-1029-box2col.html -->
+  <div class="fc-pc">
+    <svg class="fc-ico" viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><rect x="6" y="9" width="36" height="33" rx="4"/><path d="M6,19 H42"/><path d="M15,5 V13 M33,5 V13"/><path d="M14,27 H18 M22,27 H26 M30,27 H34 M14,34 H18 M22,34 H26"/></g></svg>
+    <div><p class="fc-t fc-date2">11/13<small>(金)</small><span class="fc-dash" aria-label="から"></span>11/29<small>(日)</small></p><p class="fc-s">アイメガネ各店で開催　※本庄南大通り店を除く</p></div><!-- 10/29 お店の文言→期間に（Iさん） -->
+  </div>
+  <a href="#shop-search" class="fc-btn" data-cta-location="floating"><svg class="fc-pin" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12,2 C7.6,2 4,5.5 4,9.9 C4,15.6 12,22 12,22 C12,22 20,15.6 20,9.9 C20,5.5 16.4,2 12,2 Z M12,13 A3.2,3.2 0 1 1 12,6.6 A3.2,3.2 0 0 1 12,13 Z"/></svg>近くのお店で予約する</a>
 </div>
 
 <script>
