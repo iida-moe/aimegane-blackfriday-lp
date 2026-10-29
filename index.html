@@ -1063,10 +1063,11 @@
     .fv .fv-cta { margin-top: clamp(28px, 2.6vw, 48px); }
     /* 10/29 FVはイラレの画像（2:1）に。予約ボタンは価格の下（画像の左から51%・上から70%）に重ねる */
     .fvp { display: none !important; }
-    .fv { display: block; aspect-ratio: 2 / 1; min-height: 0; padding: 0 !important; }
-    .fv-img { position: absolute; inset: 0; z-index: 0; margin: 0; }
+    /* 画像は3vw下げる（ヘッダーとのすき間を広げる）→FVの高さも 50vw＋3vw */
+    .fv { display: block; aspect-ratio: auto; height: 53vw; min-height: 0; padding: 0 !important; }
+    .fv-img { position: absolute; left: 0; right: 0; top: 3vw; height: 50vw; z-index: 0; margin: 0; }
     .fv-img .fv-pc { display: block; width: 100%; height: 100%; }
-    .fv .fv-cta { position: absolute; left: 50.75%; top: 70%; width: 28vw; min-width: 300px; margin: 0; }
+    .fv .fv-cta { position: absolute; left: 50.75%; top: 38vw; width: 28vw; min-width: 300px; margin: 0; }
     .fv .fv-cta .btn { width: 100%; }
     /* 1024〜1279px：メニューが2行に折れないように */
     @media (max-width: 1279px) { .fv .hd { padding: 22px 32px 0; } .hd-logo img { width: 180px; } .hd-nav { gap: 20px; } .hd-nav a { font-size: 15px; white-space: nowrap; } .hd-nav .hd-cta { padding: 10px 22px; font-size: 16px; } .fv .fv-cta .btn-arw { font-size: 17px; padding: 10px 60px 10px 20px; white-space: nowrap; } }
