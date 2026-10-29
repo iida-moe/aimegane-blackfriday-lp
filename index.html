@@ -91,10 +91,11 @@
   .fv { position: relative; background: #000; color: #fff; padding: 0 !important; }
   .fv .hd { position: absolute; top: 0; left: 0; right: 0; z-index: 2; background: none; }
   .fv-img img { width: 100%; }
-  .fv-img .fv-pc-text { display: none; }
+  .fv-img .fv-pc-text, .fv-img .fv-pc { display: none; }
   /* 10/27 A案：ボタンを0円の枠のすぐ下へ・画像の下の黒い部分を短く（FVボタン_OFF_比較.png）。旧 bottom: 9%・高さ切りなし */
-  .fv-img { aspect-ratio: 375 / 590; overflow: hidden; }
-  .fv-cta { position: absolute; left: var(--side); right: var(--side); bottom: 6.8%; text-align: center; }
+  /* 10/29 斜めタイトルの新画像：文字は画像の上から1692pxまで→ボタンは1765pxから（画像は下を切って2110pxまで） */
+  .fv-img { aspect-ratio: 1290 / 2110; overflow: hidden; }
+  .fv-cta { position: absolute; left: var(--side); right: var(--side); top: 83.6%; text-align: center; }
   .fv-cta .btn { margin: 0; }
   .btn-white { background: #fff; color: var(--bk); }
   .btn-arw { position: relative; display: flex; align-items: center; justify-content: center; min-height: 60px; padding: 10px 56px; }
@@ -1060,6 +1061,15 @@
     .fvp-zero { display: flex; align-items: flex-end; color: var(--ac); font-size: clamp(26px, 2.2vw, 38px); font-weight: 900; line-height: .8; }
     .fvp-zero b { font-family: 'Barlow', sans-serif; font-weight: 800; font-size: clamp(76px, 7vw, 120px); line-height: .76; margin-right: 2px; }
     .fv .fv-cta { margin-top: clamp(28px, 2.6vw, 48px); }
+    /* 10/29 FVはイラレの画像（2:1）に。予約ボタンは価格の下（画像の左から51%・上から70%）に重ねる */
+    .fvp { display: none !important; }
+    .fv { display: block; aspect-ratio: 2 / 1; min-height: 0; padding: 0 !important; }
+    .fv-img { position: absolute; inset: 0; z-index: 0; margin: 0; }
+    .fv-img .fv-pc { display: block; width: 100%; height: 100%; }
+    .fv .fv-cta { position: absolute; left: 50.75%; top: 70%; width: 28vw; min-width: 300px; margin: 0; }
+    .fv .fv-cta .btn { width: 100%; }
+    /* 1024〜1279px：メニューが2行に折れないように */
+    @media (max-width: 1279px) { .fv .hd { padding: 22px 32px 0; } .hd-logo img { width: 180px; } .hd-nav { gap: 20px; } .hd-nav a { font-size: 15px; white-space: nowrap; } .hd-nav .hd-cta { padding: 10px 22px; font-size: 16px; } .fv .fv-cta .btn-arw { font-size: 17px; padding: 10px 60px 10px 20px; white-space: nowrap; } }
     /* 選ばれる理由：横3列をやめて縦に1枚ずつ（長さがそろわない・幅がせまいため） */
     .reasons { display: block; max-width: 720px; margin: 0 auto; }
     .reasons .reason { margin-top: 48px; padding: 40px 48px; }
@@ -1471,7 +1481,7 @@
         <a href="#shop-search" class="hd-cta" data-cta-location="header">来店予約</a>
       </nav>      <button class="hd-menu" id="menuBtn" aria-label="メニューを開く" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
     </div>
-    <h1 class="fv-img"><img class="fv-sp" src="images/blackfriday_fv_1290_2193.jpg?v=1029b" alt="ブラックフライデー BLACK FRIDAY 11/13(金)〜11/29(日) 対象のメガネ一式 遠近両用レンズもOK 8,800円〜(税込) ※条件あり" width="1290" height="2193"><img class="fv-pc-text" src="images/blackfriday_fv-pc-text.png?v=1020a" alt="ブラックフライデー BLACK FRIDAY 11/13(金)〜11/29(日) 対象のメガネ一式 8,800円〜(税込)※割引条件あり 遠近両用も追加料金0円" width="813" height="478"></h1>
+    <h1 class="fv-img"><img class="fv-sp" src="images/blackfriday_fv_1290_2193.jpg?v=1029c" alt="ブラックフライデー BLACK FRIDAY 11/13(金)〜11/29(日) 対象のメガネ一式 遠近両用レンズもOK 8,800円〜(税込) ※条件あり" width="1290" height="2193"><img class="fv-pc" src="images/blackfriday_fv-pc_2880_1440.jpg?v=1029a" alt="ブラックフライデー BLACK FRIDAY 11/13(金)〜11/29(日) 対象のメガネ一式 遠近両用レンズもOK 8,800円〜(税込) ※条件あり" width="2880" height="1440"></h1>
     <!-- 10/24 PCのFVは文字で組む（SPの画像と同じ並び：日付→BLACK FRIDAY→8,800円→遠近0円） -->
     <div class="fvp" aria-hidden="true">
       <p class="fvp-date">11/13<small>(金)</small>〜11/29<small>(日)</small></p>
