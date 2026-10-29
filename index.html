@@ -1185,8 +1185,21 @@
   .st4-ex-img img { display: block; width: 100%; max-width: 200px; height: auto; margin: 0 auto; }
   /* 10/29 商品例：ラベルを黒く大きく（ブランド名は入れない・Iさん）／11,000円に(税込) */
   .st4-ex-l { font-size: 13px; color: var(--tx); top: -12px; white-space: nowrap; }
-  .st4-ex-a .st4-tax { font-family: 'Noto Sans JP', sans-serif; font-size: 11px; font-weight: 700; margin-left: 2px; }
-  @media (min-width: 1024px) { .st4-ex-l { font-size: 16px; top: -14px; } .st4-ex-a .st4-tax { font-size: 14px; } }
+  .st4-ex-a .st4-tax, .st4-fin-y .st4-tax { font-family: 'Noto Sans JP', sans-serif; font-size: 11px; font-weight: 700; margin-left: 2px; }
+  .st4-fin-y .st4-tax { font-size: 13px; color: var(--tx); }
+  @media (min-width: 1024px) { .st4-ex-l { font-size: 16px; top: -14px; } .st4-ex-a .st4-tax { font-size: 14px; } .st4-fin-y .st4-tax { font-size: 16px; } }
+  /* 10/29 さらに2つの割引（パソコン）：文字を大きく。1280px以上は左に2つの割引・▶・右に8,800円の横並び */
+  @media (min-width: 1024px) { .st4-rows .st4-r-t p { font-size: 17px; } }
+  @media (min-width: 1280px) {
+    .st4-box { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; column-gap: 20px; }
+    .st4-box > * { grid-column: 1 / -1; }
+    .st4-box > .st4-rows { grid-column: 1; margin: 20px 0 0; max-width: none; }
+    .st4-box > .st4-down { grid-column: 2; margin: 20px 0 0; font-size: 22px; transform: rotate(-90deg); }
+    .st4-box > .st4-fin { grid-column: 3; margin: 44px 0 0; max-width: none; }
+    .st4-box > .st4-fin-zero { margin-top: 28px; }
+    .st4-box .st4-fin-y .num { font-size: 96px; }
+    .st4-box .st4-r { padding: 16px 18px; gap: 12px; } .st4-box .st4-r .ico { width: 36px; height: 36px; } /* 横並びで枠がせまいぶん、文字と金額のすき間をとる */
+  }
   .st4-ex-img p { font-size: 11px; color: var(--sub); text-align: center; margin-top: -2px; }
   @media (min-width: 1024px) { .st4-ex-img img { max-width: 280px; } }
   /* 2つの割引：横長カードを縦に2段 */
@@ -1582,7 +1595,7 @@
       <div class="st4-fin">
         <p class="st4-fin-t">割引をぜんぶ使うと</p>
         <p class="st4-fin-from"><s>13<span class="cm">,</span>200円</s> から <b class="st4-off2">4<span class="cm">,</span>400円OFF</b></p>
-        <p class="st4-fin-y"><span class="num">8<span class="cm">,</span>800</span><small>円〜</small></p>
+        <p class="st4-fin-y"><span class="num">8<span class="cm">,</span>800</span><small>円〜</small><small class="st4-tax">(税込)</small></p>
       </div>
       <!-- 10/25 枠の外へ（値段の答えと分ける）。GWLPの見せ方：遠近両用レンズにしても 追加料金0円 ＋ レンズ選びへのリンク -->
         <div class="st4-fin-zero">
