@@ -1625,6 +1625,58 @@
   .exc-list + .exc-n2 { margin-top: 10px; }
   @media (max-width: 359px) { .exc-list li { font-size: 12px; gap: 10px; } .exc-list b { font-size: 17px; } }
   @media (min-width: 1024px) { .exc-list li { font-size: 15px; gap: 28px; padding: 8px 0; } .exc-list b { font-size: 22px; } .exc-list b small { font-size: 13px; } }
+  /* 10/30 商品例の囲みを太く（わかりやすく・Iさん） */
+  .st4 .st4-ex { border: 2px solid var(--tx); }
+  .st4 .st4-ex .st4-ex-l { color: var(--tx); top: -12px; }
+  .pc-only { display: none; }
+  /* 10/30 PCのお得な内容：上の段＝8,800｜追加料金0円、中の段＝横長の商品例（左にメガネ・右に13,200▶8,800）、下の段＝吹き出し（セット＋割引の内訳） */
+  @media (min-width: 1024px) {
+    .pc-only { display: block; }
+    .otoku-row .ba.st4 { display: block; }
+    .st4 > .st4-hero { display: grid !important; grid-template-columns: auto auto; justify-content: center; align-items: center; column-gap: 56px; margin: 0 auto !important; width: auto; }
+    .st4-hero > p:first-child { grid-column: 1; grid-row: 1; justify-self: start; }
+    .st4-hero > .st4-hero-in { grid-column: 1; grid-row: 2; }
+    .st4-zero { grid-column: 2; grid-row: 1 / 3; align-self: stretch; border-left: 1px solid var(--line); padding: 40px 0 0 56px; display: flex; flex-direction: column; justify-content: center; text-align: left; }
+    .st4-zero-t { font-size: 22px; font-weight: 700; }
+    .st4-zero-t span { font-size: 26px; font-weight: 900; background: linear-gradient(transparent 70%, var(--ac) 70%); padding: 0 2px; }
+    .st4-zero-y { display: flex; align-items: flex-end; margin-top: 14px; font-weight: 900; line-height: 1; }
+    .st4-zero-y .k, .st4-zero-y .en { font-size: 40px; }
+    .st4-zero-y .z { font-family: 'Barlow', sans-serif; font-weight: 800; font-size: 96px; line-height: .76; margin: 0 4px 0 12px; }
+    .st4-zero-n { font-size: 13px; color: var(--sub); margin-top: 14px; }
+
+    .st4 > .st4-ex { margin: 56px auto 0 !important; max-width: 872px; display: grid; grid-template-columns: 300px 1fr 44px 1fr; border: 0; padding: 0; position: relative; }
+    .st4 > .st4-ex::before { content: ""; grid-column: 1 / -1; grid-row: 1 / 3; border: 2px solid var(--tx); border-radius: 14px; }
+    .st4 > .st4-ex::after { content: ""; grid-column: 1 / -1; grid-row: 4 / 8; background: var(--bg2); border-radius: 20px; }
+    .st4 > .st4-ex > *, .st4-ex-col > * { position: relative; z-index: 1; }
+    .st4 .st4-ex .st4-ex-l { position: absolute; top: -13px; left: 18px; transform: none; font-size: 16px; }
+    .st4-ex .st4-ex-img { grid-column: 1; grid-row: 1 / 3; margin: 0; padding: 24px; border-right: 1px solid var(--line); display: flex; align-items: center; justify-content: center; }
+    .st4-ex .st4-ex-img img { max-width: 260px; }
+    .st4-ex-col { display: contents; }
+    .st4-ex-col .exc-k { grid-column: 2; grid-row: 1; align-self: end; margin-top: 40px; }
+    .st4-ex-col .exc-k-red { grid-column: 4; }
+    .st4-ex-col .exc-b { grid-column: 2; grid-row: 2; margin-bottom: 36px; }
+    .st4-ex-col .exc-dn { grid-column: 3; grid-row: 2; align-self: center; margin: 0 0 36px; border: 0; border-top: 24px solid transparent; border-bottom: 24px solid transparent; border-left: 28px solid var(--ac); justify-self: center; }
+    .st4-ex-col .exc-a { grid-column: 4; grid-row: 2; margin-bottom: 36px; }
+    .st4-ex-col .exc-b .exc-n { font-size: 52px; }
+    .st4-ex-col .exc-a .exc-n { font-size: 72px; }
+    .st4-ex-col .exc-u small { font-size: 24px; } .st4-ex-col .exc-a .exc-u small { font-size: 30px; }
+    .st4-ex-col .exc-u .exc-tax, .st4-ex-col .exc-a .exc-u .exc-tax { font-size: 12px; }
+    .st4-ex-tri { grid-column: 4; grid-row: 3; justify-self: center; align-self: end; width: 0; height: 0; margin-top: 14px; border-left: 18px solid transparent; border-right: 18px solid transparent; border-bottom: 18px solid var(--bg2); }
+    .st4 .st4-ex .ba-set { grid-column: 1 / -1; grid-row: 4; margin: 32px auto 0 !important; padding: 0 !important; border: 0 !important; gap: 18px; }
+    .st4 .st4-ex .ba-set .ico { width: 64px; height: 44px; }
+    .st4 .st4-ex .ba-set li { font-size: 16px; }
+    .st4 .st4-ex .st4-ex-all { grid-column: 1 / -1; grid-row: 5; margin-top: 14px; font-size: 22px; }
+    .st4-ex-col .exc-list { grid-column: 1 / -1; grid-row: 6; display: flex; justify-content: center; align-items: center; gap: 10px; width: auto; margin: 22px 40px 0; padding-top: 22px; border-top: 1px dashed #ccc; }
+    .st4-ex-col .exc-list li { white-space: nowrap; background: #fff; border: 1.5px solid var(--tx); border-radius: 8px; padding: 9px 12px; gap: 10px; font-size: 14px; }
+    .st4-ex-col .exc-list li + li::before { content: "＋"; color: #e8352a; font-weight: 900; font-size: 20px; position: absolute; left: -19px; }
+    .st4-ex-col .exc-list li { position: relative; }
+    .st4-ex-col .exc-list li + li { margin-left: 22px; }
+    .st4-ex-col .exc-list li:first-child { background: var(--bk); border-color: var(--bk); }
+    .st4-ex-col .exc-list li:first-child .exc-bf { padding: 0; }
+    .st4-ex-col .exc-list li:first-child b { color: var(--ac); }
+    .st4-ex-col .exc-n2 { grid-column: 1 / -1; grid-row: 7; margin: 12px 0 30px; text-align: center; }
+    .st4 > .st4-note { max-width: 872px; margin: 16px auto 0 !important; }
+  }
   .st4-ex .st4-ex-l { left: 14px; transform: none; } /* 「商品例」は左寄せ（Iさん） */
   .st4-ex .st4-ex-img img { max-width: 280px; } /* メガネを大きく 200→280px（Iさん） */
   @media (min-width: 1024px) { .st4-ex .st4-ex-l { left: 18px; } .st4-ex .st4-ex-img img { max-width: 360px; } }
@@ -1786,9 +1838,16 @@
         <p><span class="ba-badge st4-badge">ブラックフライデー限定</span></p>
         <div class="st4-hero-in">
         <!-- 10/30 Iさんのイラレ案：「遠近両用レンズ（黄の下線）も込みで」→ 8,800（Barlow ExtraBold）→ ※1行 -->
-        <p class="st4-hero-t"><span class="st4-hero-pre">対象のメガネなら、</span><span class="st4-hero-ul">遠近両用レンズ</span>も込みで</p><!-- 10/30 どんなメガネでも8,800円に見えないように「対象のメガネなら、」を足す（Iさん A案） -->
+        <p class="st4-hero-t pc-hide"><span class="st4-hero-pre">対象のメガネなら、</span><span class="st4-hero-ul">遠近両用レンズ</span>も込みで</p><!-- 10/30 どんなメガネでも8,800円に見えないように「対象のメガネなら、」を足す（Iさん A案） -->
+        <p class="st4-hero-t pc-only">標準レンズ付き対象商品が</p><!-- 10/30 PCは右に「遠近・中近・近々も追加料金0円」を並べるので、こちらの言い方（Iさんのイラレ案） -->
         <p class="st4-hero-y"><span class="num">8<span class="cm">,</span>800</span><span class="st4-hero-u"><small>円〜</small><small class="st4-tax">税込</small></span></p>
         <p class="st4-hero-n">※対象フレーム・標準レンズ・<span>割引をすべて併用した場合</span></p>
+        </div>
+        <!-- 10/30 PCだけ：右に「遠近・中近・近々も 追加料金0円」（比較/PCお得な内容_横並び見本.png） -->
+        <div class="st4-zero pc-only">
+          <p class="st4-zero-t"><span>遠近両用レンズ</span>なども</p><!-- 10/30 スマホ・FVの「遠近両用レンズ」とそろえる（案：遠近・中近・近々レンズなども） -->
+          <p class="st4-zero-y"><span class="k">追加料金</span><span class="z">0</span><span class="en">円</span></p>
+          <p class="st4-zero-n">※標準レンズの場合</p>
         </div>
       </div>
 
@@ -1829,6 +1888,7 @@
         <li><svg class="ico" viewBox="0 0 48 32"><path d="M24,3 L36,7 Q36,22 24,29 Q12,22 12,7 Z"/><path d="M19,16 L23,20 L30,12"/></svg>保証</li>
       </ul>
         <p class="st4-ex-all"><span>すべてまとめて、<em>この価格！</em></span></p>
+        <span class="st4-ex-tri pc-only" aria-hidden="true"></span>
       </div>
 
       <!-- 10/25 さらに2つの割引〜ぜんぶ使うと をグレーの枠でひとまとまりに。変更前 _保存/index.before-1025-plusbox.html -->
