@@ -1606,6 +1606,8 @@
   /* 10/30 Iさんのイラレ案2：バッジまっすぐ・遠近両用レンズは全面マーカー・「税込」を円の上に（円〜は数字の下にそろえる） */
   .st4-hero .st4-badge { transform: none; border-radius: 0; padding: 6px 18px !important; }
   .st4-hero-t { margin-top: 16px; }
+  .st4-hero-pre { display: block; font-size: 14px; margin-bottom: 2px; } /* 「対象のメガネなら、」は上の行に */
+  @media (min-width: 1024px) { .st4-hero-pre { font-size: 18px; margin-bottom: 4px; } }
   .st4-hero-ul { background: linear-gradient(transparent 70%, var(--ac) 70%); padding: 0 1px; } /* 10/30 黒い帯と黄の帯が続いて見づらい→黄は下線に（Iさん A案） */
   .st4-hero-u { flex-direction: column-reverse; margin-left: 4px; }
   .st4-hero-u small { font-size: 28px; }
@@ -1784,7 +1786,7 @@
         <p><span class="ba-badge st4-badge">ブラックフライデー限定</span></p>
         <div class="st4-hero-in">
         <!-- 10/30 Iさんのイラレ案：「遠近両用レンズ（黄の下線）も込みで」→ 8,800（Barlow ExtraBold）→ ※1行 -->
-        <p class="st4-hero-t"><span class="st4-hero-ul">遠近両用レンズ</span>も込みで</p>
+        <p class="st4-hero-t"><span class="st4-hero-pre">対象のメガネなら、</span><span class="st4-hero-ul">遠近両用レンズ</span>も込みで</p><!-- 10/30 どんなメガネでも8,800円に見えないように「対象のメガネなら、」を足す（Iさん A案） -->
         <p class="st4-hero-y"><span class="num">8<span class="cm">,</span>800</span><span class="st4-hero-u"><small>円〜</small><small class="st4-tax">税込</small></span></p>
         <p class="st4-hero-n">※対象フレーム・標準レンズ・<span>割引をすべて併用した場合</span></p>
         </div>
