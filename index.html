@@ -1586,7 +1586,12 @@
     .hear-card .hear-img .hear-logo { position: static !important; order: -1; }
     .hear-card .hear-img .hear-prod { align-self: flex-start; margin-left: 12px; }
     .hear-card .hear-link { text-align: left; margin-left: 56px; } /* 強みの文字（アイコンの右）の左はしにそろえる */
+    .hear-card .hear-btn { margin: 0; }
   }
+  /* 10/29 補聴器の予約をテキストリンク→ボタンに */
+  .hear-btn { width: 100%; max-width: 360px; margin: 0 auto; }
+  @media (max-width: 1023px) { .hear-btn { font-size: 16px; padding-left: 20px; padding-right: 40px; white-space: nowrap; } } /* 10/30 スマホで「る」だけ折れていた */
+  @media (max-width: 359px) { .hear-btn { font-size: 15px; padding-left: 12px; padding-right: 34px; } .hear-btn::after { right: 16px; } }
   @media (min-width: 1024px) { .pc-hide { display: none; } } /* パソコンでは改行しない */
   @media (max-width: 400px) { .st4-rows .st4-r-t p { font-size: 13px; letter-spacing: -.03em; } .st4-rows .st4-r .st4-r-t { margin-right: 6px; } } /* 「新規」が入って長くなったぶん */
   @media (min-width: 1024px) { .st4-more.sl::before, .st4-more.sl::after { display: none; } } /* 10/29 「さらに2つの割引で」の＼／を外す（枠は2本同時の見出しだけ・Iさん A案） */
@@ -1871,7 +1876,7 @@
           </div>
         </li>
       </ul>
-      <p class="worry-link hear-link"><a href="#shop-search" data-cta-location="hearing">▶ 補聴器の相談を予約する</a></p>
+      <div class="hear-link"><a href="#shop-search" class="btn btn-pin hear-btn" data-cta-location="hearing">補聴器の相談を予約する</a></div>
       </div>
       </div>
       </div>
