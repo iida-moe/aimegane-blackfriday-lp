@@ -1612,6 +1612,13 @@
   .st4-hero-u .st4-tax { font-size: 12px; font-weight: 700; margin: 0 0 4px 1px; }
   @media (max-width: 359px) { .st4-hero-u small { font-size: 24px; } .st4-hero-u .st4-tax { font-size: 11px; } }
   @media (min-width: 1024px) { .st4-hero-t { margin-top: 20px; } }
+  @media (max-width: 1023px) { .fv-confetti.is-long { -webkit-mask-image: linear-gradient(#000 calc(var(--cf-a, 0px) - 20px), transparent var(--cf-a, 0px), transparent var(--cf-b, 0px), #000 calc(var(--cf-b, 0px) + 20px), #000 calc(100% - 60px), transparent); mask-image: linear-gradient(#000 calc(var(--cf-a, 0px) - 20px), transparent var(--cf-a, 0px), transparent var(--cf-b, 0px), #000 calc(var(--cf-b, 0px) + 20px), #000 calc(100% - 60px), transparent); } } /* 10/30 スマホFVの価格の上は紙吹雪を消す（価格を目立たせる・Iさん） */
+  /* 10/30 合計枠の8,800も先頭とそろえる：「税込」を円の上・円〜は数字の下ぞろえ（Iさん） */
+  .st4-fin-u { flex-direction: column-reverse; margin-left: 4px; }
+  .st4-fin-y .st4-fin-u small { font-size: 26px; }
+  .st4-fin-y .st4-fin-u .st4-tax { font-size: 12px; font-weight: 700; margin: 0 0 4px 1px; }
+  @media (max-width: 359px) { .st4-fin-y .st4-fin-u small { font-size: 22px; } .st4-fin-y .st4-fin-u .st4-tax { font-size: 11px; } }
+  @media (min-width: 1024px) { .st4-fin-u { margin-left: 6px; } .st4-fin-y .st4-fin-u small { font-size: 36px; } .st4-fin-y .st4-fin-u .st4-tax { font-size: 15px; margin-bottom: 5px; } }
   .st4-hero-n { font-size: 11px; font-weight: 700; color: var(--tx); margin-top: 10px; letter-spacing: -.03em; white-space: nowrap; } /* 1行に収める（Iさんのイラレ案どおり） */
   @media (max-width: 359px) { .st4-hero-y .num { font-size: 62px; } .st4-hero-ul { font-size: 18px; } .st4-hero-t { font-size: 14px; } .st4-hero-n { font-size: 11px; white-space: normal; letter-spacing: 0; } .st4-hero-n span { display: inline-block; } } /* 320pxは9.5pxだと小さすぎるので11pxで2行に（「割引を〜場合」は2行目にまとめる） */
   .st4-fin-y .num { font-family: 'Barlow', 'Noto Sans JP', sans-serif; } /* 10/30 合計枠の8,800も先頭と同じ形に */
@@ -1700,7 +1707,7 @@
         <a href="#shop-search" class="hd-cta" data-cta-location="header">来店予約</a>
       </nav>      <button class="hd-menu" id="menuBtn" aria-label="メニューを開く" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
     </div>
-    <h1 class="fv-img"><img class="fv-sp" src="images/blackfriday_fv_1290_2193.jpg?v=1029c" alt="ブラックフライデー BLACK FRIDAY 11/13(金)〜11/29(日) 対象のメガネ一式 遠近両用レンズもOK 8,800円〜(税込) ※条件あり" width="1290" height="2193"><img class="fv-pc" src="images/blackfriday_fv-pc_2880_1440.jpg?v=1029a" alt="ブラックフライデー BLACK FRIDAY 11/13(金)〜11/29(日) 対象のメガネ一式 遠近両用レンズもOK 8,800円〜(税込) ※条件あり" width="2880" height="1440"></h1>
+    <h1 class="fv-img"><img class="fv-sp" src="images/blackfriday_fv_1290_2193.jpg?v=1030a" alt="ブラックフライデー BLACK FRIDAY 11/13(金)〜11/29(日) 対象のメガネ一式 遠近両用レンズもOK 8,800円〜(税込) ※条件あり" width="1290" height="2193"><img class="fv-pc" src="images/blackfriday_fv-pc_2880_1440.jpg?v=1030a" alt="ブラックフライデー BLACK FRIDAY 11/13(金)〜11/29(日) 対象のメガネ一式 遠近両用レンズもOK 8,800円〜(税込) ※条件あり" width="2880" height="1440"></h1>
     <!-- 10/24 PCのFVは文字で組む（SPの画像と同じ並び：日付→BLACK FRIDAY→8,800円→遠近0円） -->
     <div class="fvp" aria-hidden="true">
       <p class="fvp-date">11/13<small>(金)</small>〜11/29<small>(日)</small></p>
@@ -1789,7 +1796,7 @@
       <div class="st4-fin">
         <p class="st4-fin-t">割引をぜんぶ使うと</p>
         <p class="st4-fin-from"><s>11<span class="cm">,</span>000円</s> から さらに <b class="st4-off2">2<span class="cm">,</span>200円OFF</b></p><!-- 10/29 直前の商品例の11,000円から続ける（13,200円から4,400円OFFだと足し算が必要でわかりにくい・Iさん A案） -->
-        <p class="st4-fin-y"><span class="num">8<span class="cm">,</span>800</span><span class="st4-fin-u"><small>円〜</small><small class="st4-tax">(税込)</small></span></p>
+        <p class="st4-fin-y"><span class="num">8<span class="cm">,</span>800</span><span class="st4-fin-u"><small>円〜</small><small class="st4-tax">税込</small></span></p>
         <!-- 10/29 大きい「追加料金0円」のかたまりは消して（理由1と重なる・主役が2つになる）、値段とセットで一言（Iさん A案）。変更前 _保存/変更前/1029/index.before-1029-box2col.html -->
         <!-- 10/30 「遠近両用レンズでも、この価格」は先頭の8,800円の下へ移動 -->
       </div>
@@ -2399,7 +2406,10 @@ if(!location.hash){window.scrollTo(0,0);}
 (function(){
   const c=document.querySelector('.fv-confetti'), fv=document.getElementById('fv'), card=document.querySelector('.otoku .ba');
   if(!c||!fv||!card) return;
-  const set=()=>{const h=Math.round(card.getBoundingClientRect().top-fv.getBoundingClientRect().top+60);c.style.setProperty('--cf-h',h+'px');c.style.setProperty('--fall',(h+60)+'px');c.classList.add('is-long');};
+  const im=fv.querySelector('.fv-sp');
+  const set=()=>{const top=fv.getBoundingClientRect().top, h=Math.round(card.getBoundingClientRect().top-top+60);c.style.setProperty('--cf-h',h+'px');c.style.setProperty('--fall',(h+60)+'px');c.classList.add('is-long');
+    // 10/30 スマホは価格（対象のメガネ一式〜※条件あり＝画像の高さの48〜76%）の上に紙吹雪を通さない
+    if(im&&im.offsetWidth){const r=im.getBoundingClientRect();c.style.setProperty('--cf-a',Math.round(r.top-top+r.height*.48)+'px');c.style.setProperty('--cf-b',Math.round(r.top-top+r.height*.76)+'px');}};
   set(); window.addEventListener('load',set); window.addEventListener('resize',set);
 })();
 
