@@ -1593,6 +1593,19 @@
   @media (max-width: 1023px) { .hear-btn { font-size: 16px; padding-left: 20px; padding-right: 40px; white-space: nowrap; } } /* 10/30 スマホで「る」だけ折れていた */
   @media (max-width: 359px) { .hear-btn { font-size: 15px; padding-left: 12px; padding-right: 34px; } .hear-btn::after { right: 16px; } }
   @media (min-width: 1024px) { .pc-hide { display: none; } } /* パソコンでは改行しない */
+  /* 10/30 お得な内容の先頭を8,800円〜に（円〜・(税込)は合計枠と同じく黒） */
+  .st4-hero-y .num { font-family: 'Barlow', 'Noto Sans JP', sans-serif; font-weight: 800; line-height: .76; } /* FVと同じ横に広い形（Iさんのイラレ案） */
+  .st4-hero-y { margin-top: 8px; } /* 「遠近両用レンズも込みで」と8,800が離れて見えないように */
+  .st4-hero-t { font-size: 16px; font-weight: 700; }
+  .st4-hero-ul { font-size: 21px; font-weight: 900; background: linear-gradient(transparent 78%, var(--ac) 78%); padding: 0 1px; }
+  .st4-hero-u { display: flex; flex-direction: column; align-items: flex-start; margin-left: 6px; line-height: 1; color: var(--tx); }
+  .st4-hero-u small { font-size: 24px; font-weight: 900; }
+  .st4-hero-u .st4-tax { font-family: 'Noto Sans JP', sans-serif; font-size: 15px; font-weight: 900; margin: 4px 0 0 -2px; }
+  @media (max-width: 1023px) { .st4 > .st4-hero { width: fit-content; margin-left: auto; margin-right: auto; display: flex; flex-direction: column; align-items: flex-start; } } /* スマホもバッジを「遠近両用レンズ」の左はしにそろえる（かたまりは真ん中・Iさん） */
+  .st4-hero-n { font-size: 11px; font-weight: 700; color: var(--tx); margin-top: 10px; letter-spacing: -.03em; white-space: nowrap; } /* 1行に収める（Iさんのイラレ案どおり） */
+  @media (max-width: 359px) { .st4-hero-y .num { font-size: 62px; } .st4-hero-ul { font-size: 18px; } .st4-hero-t { font-size: 14px; } .st4-hero-n { font-size: 11px; white-space: normal; letter-spacing: 0; } .st4-hero-n span { display: inline-block; } } /* 320pxは9.5pxだと小さすぎるので11pxで2行に（「割引を〜場合」は2行目にまとめる） */
+  .st4-fin-y .num { font-family: 'Barlow', 'Noto Sans JP', sans-serif; } /* 10/30 合計枠の8,800も先頭と同じ形に */
+  @media (min-width: 1024px) { .st4-hero-y { margin-top: 12px; } .st4-hero-t { font-size: 22px; } .st4-hero-ul { font-size: 30px; } .st4-hero-u { margin-left: 10px; } .st4-hero-u small { font-size: 40px; } .st4-hero-u .st4-tax { font-size: 22px; } .st4-hero-n { font-size: 15px; margin-top: 16px; } }
   @media (max-width: 400px) { .st4-rows .st4-r-t p { font-size: 13px; letter-spacing: -.03em; } .st4-rows .st4-r .st4-r-t { margin-right: 6px; } } /* 「新規」が入って長くなったぶん */
   @media (min-width: 1024px) { .st4-more.sl::before, .st4-more.sl::after { display: none; } } /* 10/29 「さらに2つの割引で」の＼／を外す（枠は2本同時の見出しだけ・Iさん A案） */
   .hear-why { display: none; }
@@ -1718,12 +1731,15 @@
     <div class="sec-head"><h2 class="sec-ja">お得な内容</h2></div>
     <div class="otoku-row">
     <!-- 10/22 ストーリー順：①2,200円OFF → ②商品例 13,200→11,000 → ③さらにLINE・処方箋 → ④すべて使って8,800円。変更前 _保存/index.before-1022-story.html -->
+    <!-- 10/30 先頭を2,200円OFF→8,800円〜に（2,200円OFFからだと弱い・Iさん）。下は8,800円になる内訳。変更前 _保存/変更前/1030/index.before-1030-hero8800.html -->
     <div class="ba st4">
       <div class="st4-hero">
         <p><span class="ba-badge st4-badge">ブラックフライデー限定</span></p>
         <div class="st4-hero-in">
-        <p class="st4-hero-t">メガネ一式 対象商品が</p>
-        <p class="st4-hero-y"><span class="num">2<span class="cm">,</span>200</span><span class="st4-off"><span>円</span><span>OFF<span class="ex">!</span></span></span></p>
+        <!-- 10/30 Iさんのイラレ案：「遠近両用レンズ（黄の下線）も込みで」→ 8,800（Barlow ExtraBold）→ ※1行 -->
+        <p class="st4-hero-t"><span class="st4-hero-ul">遠近両用レンズ</span>も込みで</p>
+        <p class="st4-hero-y"><span class="num">8<span class="cm">,</span>800</span><span class="st4-hero-u"><small>円〜</small><small class="st4-tax">(税込)</small></span></p>
+        <p class="st4-hero-n">※対象フレーム・標準レンズ・<span>割引をすべて併用した場合</span></p>
         </div>
       </div>
 
@@ -1765,7 +1781,7 @@
         <p class="st4-fin-from"><s>11<span class="cm">,</span>000円</s> から さらに <b class="st4-off2">2<span class="cm">,</span>200円OFF</b></p><!-- 10/29 直前の商品例の11,000円から続ける（13,200円から4,400円OFFだと足し算が必要でわかりにくい・Iさん A案） -->
         <p class="st4-fin-y"><span class="num">8<span class="cm">,</span>800</span><span class="st4-fin-u"><small>円〜</small><small class="st4-tax">(税込)</small></span></p>
         <!-- 10/29 大きい「追加料金0円」のかたまりは消して（理由1と重なる・主役が2つになる）、値段とセットで一言（Iさん A案）。変更前 _保存/変更前/1029/index.before-1029-box2col.html -->
-        <p class="st4-fin-en"><span class="mk">遠近両用レンズ</span>でも、この価格</p>
+        <!-- 10/30 「遠近両用レンズでも、この価格」は先頭の8,800円の下へ移動 -->
       </div>
       </div>
       <p class="note st4-note">※価格はすべて税込<br>※標準レンズの場合<br>※本庄南大通り店を除く</p>
