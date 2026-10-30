@@ -1614,7 +1614,15 @@
   @media (min-width: 1024px) { .st4-hero-t { margin-top: 20px; } }
   @media (max-width: 1023px) { .fv-confetti.is-long { -webkit-mask-image: linear-gradient(#000 calc(var(--cf-a, 0px) - 20px), transparent var(--cf-a, 0px), transparent var(--cf-b, 0px), #000 calc(var(--cf-b, 0px) + 20px), #000 calc(100% - 60px), transparent); mask-image: linear-gradient(#000 calc(var(--cf-a, 0px) - 20px), transparent var(--cf-a, 0px), transparent var(--cf-b, 0px), #000 calc(var(--cf-b, 0px) + 20px), #000 calc(100% - 60px), transparent); } } /* 10/30 スマホFVの価格の上は紙吹雪を消す（価格を目立たせる・Iさん） */
   /* 10/30 商品例：縦に「標準レンズ付きセット価格 13,200 ▼ 割引をぜんぶ使うと 8,800」（Iさん案）。8,800は先頭より小さくして先頭を主役に */
-  .st4-ex-row[hidden] { display: none !important; }
+  .st4-ex-row[hidden], .st4-box[hidden] { display: none !important; }
+  .exc-list { list-style: none; padding: 0; margin: 14px auto 0; width: fit-content; text-align: left; }
+  .exc-list li { display: flex; align-items: center; justify-content: space-between; gap: 18px; font-size: 13px; font-weight: 700; padding: 6px 0; border-bottom: 1px dotted #ccc; }
+  .exc-list b { font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 800; font-size: 19px; color: #e8352a; line-height: 1; white-space: nowrap; }
+  .exc-list b small { font-family: 'Noto Sans JP', sans-serif; font-size: 11px; font-weight: 700; margin-left: 1px; }
+  .exc-bf { background: var(--bk); color: var(--ac); padding: 1px 6px; }
+  .exc-list + .exc-n2 { margin-top: 10px; }
+  @media (max-width: 359px) { .exc-list li { font-size: 12px; gap: 10px; } .exc-list b { font-size: 17px; } }
+  @media (min-width: 1024px) { .exc-list li { font-size: 15px; gap: 28px; padding: 8px 0; } .exc-list b { font-size: 22px; } .exc-list b small { font-size: 13px; } }
   .st4-ex .st4-ex-l { left: 14px; transform: none; } /* 「商品例」は左寄せ（Iさん） */
   .st4-ex .st4-ex-img img { max-width: 280px; } /* メガネを大きく 200→280px（Iさん） */
   @media (min-width: 1024px) { .st4-ex .st4-ex-l { left: 18px; } .st4-ex .st4-ex-img img { max-width: 360px; } }
@@ -1793,6 +1801,12 @@
           <p class="exc-dn" aria-hidden="true"></p>
           <p class="exc-k exc-k-red">割引をぜんぶ使うと</p>
           <p class="exc-a"><span class="exc-n">8<span class="cm">,</span>800</span><span class="exc-u"><small>円〜</small><small class="exc-tax">税込</small></span></p>
+          <!-- 10/30 割引の内訳を3行のリストで（グレーの枠と合計枠の代わり・Iさん C案）。比較 比較/商品例と割引の内訳_比較2.png -->
+          <ul class="exc-list">
+            <li><span class="exc-bf">ブラックフライデー限定</span><b>−2<span class="cm">,</span>200<small>円</small></b></li>
+            <li><span>LINE新規お友だち登録</span><b>−1<span class="cm">,</span>100<small>円</small></b></li>
+            <li><span>眼科の処方箋ご持参</span><b>−1<span class="cm">,</span>100<small>円</small></b></li>
+          </ul>
           <p class="exc-n2">※割引をすべて併用した場合</p>
         </div>
         <div class="st4-ex-row" hidden>
@@ -1816,7 +1830,8 @@
       </div>
 
       <!-- 10/25 さらに2つの割引〜ぜんぶ使うと をグレーの枠でひとまとまりに。変更前 _保存/index.before-1025-plusbox.html -->
-      <div class="st4-box">
+      <!-- 10/30 商品例の中に内訳リストを入れたので、グレーの枠（さらに2つの割引で〜合計枠）は非表示（Iさん C案） -->
+      <div class="st4-box" hidden>
       <p class="st4-more sl"><span>さらに<em>2つの割引</em>で</span></p>
       <!-- 10/25 ラベルをやめて、横長カードを縦に2段（LINE／処方箋）。変更前 _保存/index.before-1025-tworows.html -->
       <div class="st4-rows">
