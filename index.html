@@ -1660,7 +1660,9 @@
     .st4-ex-col .exc-b .exc-n { font-size: 52px; }
     .st4-ex-col .exc-a .exc-n { font-size: 72px; }
     .st4-ex-col .exc-u small { font-size: 24px; } .st4-ex-col .exc-a .exc-u small { font-size: 30px; }
-    .st4-ex-col .exc-u .exc-tax, .st4-ex-col .exc-a .exc-u .exc-tax { font-size: 12px; }
+    .st4-ex-col .exc-u .exc-tax { font-size: 12px; margin: 0 0 1px; } .st4-ex-col .exc-a .exc-u .exc-tax { font-size: 15px; margin: 0 0 1px; } /* 税込＝円と同じ幅 */
+    .st4-ex-col .exc-b::after { bottom: 17px; } /* 消し線を数字の真ん中に */
+    .st4-ex-col .exc-k { margin-top: 28px; } .st4-ex-col .exc-b, .st4-ex-col .exc-a, .st4-ex-col .exc-dn { margin-bottom: 40px; } /* 文字が下に寄って見えた→上を詰める */
     .st4-ex-tri { grid-column: 4; grid-row: 3; justify-self: center; align-self: end; width: 0; height: 0; margin-top: 14px; border-left: 18px solid transparent; border-right: 18px solid transparent; border-bottom: 18px solid var(--bg2); }
     .st4 .st4-ex .ba-set { grid-column: 1 / -1; grid-row: 4; margin: 32px auto 0 !important; padding: 0 !important; border: 0 !important; gap: 18px; }
     .st4 .st4-ex .ba-set .ico { width: 64px; height: 44px; }
@@ -1696,6 +1698,11 @@
   .exc-dn { width: 0; height: 0; margin: 12px auto 10px; border-left: 16px solid transparent; border-right: 16px solid transparent; border-top: 16px solid var(--ac); }
   .exc-n2 { font-size: 11px; color: var(--sub); margin-top: 8px; }
   .st4-ex-col + .ba-set { margin-top: 16px; }
+  /* 10/30 消し線は数字の高さの真ん中に（上に寄っていた）・「税込」は「円」と同じ幅（文字の大きさ＝円の半分）で行間も詰める（Iさん） */
+  .exc-b::after { top: auto; bottom: 13px; }
+  .exc-u .exc-tax, .exc-a .exc-u .exc-tax { font-size: 10px; margin: 0 0 1px; letter-spacing: 0; }
+  .exc-a .exc-u .exc-tax { font-size: 12px; }
+  @media (max-width: 359px) { .exc-b::after { bottom: 13px; } }
   @media (min-width: 1024px) { .exc-k { font-size: 16px; } .exc-b .exc-n { font-size: 48px; } .exc-a .exc-n { font-size: 68px; } .exc-u small { font-size: 24px; } .exc-a .exc-u small { font-size: 28px; } .exc-u .exc-tax, .exc-a .exc-u .exc-tax { font-size: 12px; } .exc-n2 { font-size: 13px; } }
   /* 10/30 合計枠の8,800も先頭とそろえる：「税込」を円の上・円〜は数字の下ぞろえ（Iさん） */
   .st4-fin-u { flex-direction: column-reverse; margin-left: 4px; }
