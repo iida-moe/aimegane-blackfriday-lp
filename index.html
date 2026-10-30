@@ -1615,6 +1615,9 @@
   @media (max-width: 1023px) { .fv-confetti.is-long { -webkit-mask-image: linear-gradient(#000 calc(var(--cf-a, 0px) - 20px), transparent var(--cf-a, 0px), transparent var(--cf-b, 0px), #000 calc(var(--cf-b, 0px) + 20px), #000 calc(100% - 60px), transparent); mask-image: linear-gradient(#000 calc(var(--cf-a, 0px) - 20px), transparent var(--cf-a, 0px), transparent var(--cf-b, 0px), #000 calc(var(--cf-b, 0px) + 20px), #000 calc(100% - 60px), transparent); } } /* 10/30 スマホFVの価格の上は紙吹雪を消す（価格を目立たせる・Iさん） */
   /* 10/30 商品例：縦に「標準レンズ付きセット価格 13,200 ▼ 割引をぜんぶ使うと 8,800」（Iさん案）。8,800は先頭より小さくして先頭を主役に */
   .st4-ex-row[hidden] { display: none !important; }
+  .st4-ex .st4-ex-l { left: 14px; transform: none; } /* 「商品例」は左寄せ（Iさん） */
+  .st4-ex .st4-ex-img img { max-width: 280px; } /* メガネを大きく 200→280px（Iさん） */
+  @media (min-width: 1024px) { .st4-ex .st4-ex-l { left: 18px; } .st4-ex .st4-ex-img img { max-width: 360px; } }
   .st4-ex-col { border-top: 1px solid var(--line); margin-top: 6px; padding-top: 14px; text-align: center; }
   .exc-k { font-size: 14px; font-weight: 700; }
   .exc-k-red { color: #e8352a; }
