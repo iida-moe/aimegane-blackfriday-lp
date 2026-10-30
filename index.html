@@ -1602,7 +1602,9 @@
   .st4-hero-u small { font-size: 24px; font-weight: 900; }
   .st4-hero-u .st4-tax { font-family: 'Noto Sans JP', sans-serif; font-size: 15px; font-weight: 900; margin: 4px 0 0 -2px; }
   @media (max-width: 1023px) { .st4 > .st4-hero { width: fit-content; margin-left: auto; margin-right: auto; display: flex; flex-direction: column; align-items: flex-start; } } /* スマホもバッジを「遠近両用レンズ」の左はしにそろえる（かたまりは真ん中・Iさん） */
-  @media (max-width: 1023px) { .st4 > .st4-hero + .st4-ex { margin-top: 52px; } } /* ※と商品例が窮屈（Iさん）22→36→52px（10/30 まだ近い） */
+  @media (max-width: 1023px) { .st4 > .st4-hero + .st4-ex { margin-top: 32px; } } /* 10/30 バッジだけになったので52→32px */
+  .st4 .st4-hero-in[hidden], .st4 .st4-zero[hidden] { display: none !important; }
+  .st4 > .st4-hero { display: block !important; width: auto !important; text-align: center; } /* 10/30 バッジだけ→まん中に */ /* ※と商品例が窮屈（Iさん）22→36→52px（10/30 まだ近い） */
   /* 10/30 Iさんのイラレ案2：バッジまっすぐ・遠近両用レンズは全面マーカー・「税込」を円の上に（円〜は数字の下にそろえる） */
   .st4-hero .st4-badge { transform: none; border-radius: 0; padding: 6px 18px !important; }
   .st4-hero-t { margin-top: 16px; }
@@ -1633,7 +1635,7 @@
   @media (min-width: 1024px) {
     .pc-only { display: block; }
     .otoku-row .ba.st4 { display: block; }
-    .st4 > .st4-hero { display: grid !important; grid-template-columns: auto auto; justify-content: center; align-items: center; column-gap: 56px; margin: 0 auto !important; width: auto; }
+    .st4 > .st4-hero { display: block !important; text-align: center; margin: 0 auto !important; width: auto; } /* 10/30 バッジだけになったので2列グリッドをやめてまん中に（Iさん） */
     .st4-hero > p:first-child { grid-column: 1; grid-row: 1; justify-self: start; }
     .st4-hero > .st4-hero-in { grid-column: 1; grid-row: 2; }
     .st4-zero { grid-column: 2; grid-row: 1 / 3; align-self: stretch; border-left: 1px solid var(--line); padding: 40px 0 0 56px; display: flex; flex-direction: column; justify-content: center; text-align: left; }
@@ -1644,7 +1646,7 @@
     .st4-zero-y .z { font-family: 'Barlow', sans-serif; font-weight: 800; font-size: 96px; line-height: .76; margin: 0 4px -2px 12px; } /* 10/30 丸い0は少し下にはみ出させたほうがそろって見える（Iさん「まだ上がって見える」2→-2px）。0の下はしを「円」の下にそろえる（Iさん） */
     .st4-zero-n { font-size: 13px; color: var(--sub); margin-top: 8px; } /* 10/30 行間を詰める（Iさん）見出し→0円 14→6px・0円→※ 14→8px */
 
-    .st4 > .st4-ex { margin: 56px auto 0 !important; max-width: 872px; display: grid; grid-template-columns: 300px 1fr 44px 1fr; border: 0; padding: 0; position: relative; }
+    .st4 > .st4-ex { margin: 40px auto 0 !important; max-width: 872px; display: grid; grid-template-columns: 300px 1fr 44px 1fr; border: 0; padding: 0; position: relative; }
     .st4 > .st4-ex::before { content: ""; grid-column: 1 / -1; grid-row: 1 / 3; border: 2px solid var(--tx); border-radius: 14px; }
     .st4 > .st4-ex::after { content: ""; grid-column: 1 / -1; grid-row: 4 / 8; background: var(--bg2); border-radius: 20px; }
     .st4 > .st4-ex > *, .st4-ex-col > * { position: relative; z-index: 1; }
@@ -1844,7 +1846,8 @@
     <div class="ba st4">
       <div class="st4-hero">
         <p><span class="ba-badge st4-badge">ブラックフライデー限定</span></p>
-        <div class="st4-hero-in">
+        <!-- 10/30 8,800円が何度も出てくるので、ここの8,800円と遠近0円は消してバッジ→すぐ商品例に（Iさん）。中身はhiddenで残す -->
+        <div class="st4-hero-in" hidden>
         <!-- 10/30 Iさんのイラレ案：「遠近両用レンズ（黄の下線）も込みで」→ 8,800（Barlow ExtraBold）→ ※1行 -->
         <p class="st4-hero-t pc-hide"><span class="st4-hero-pre">対象のメガネなら、</span><span class="st4-hero-ul">遠近両用レンズ</span>も込みで</p><!-- 10/30 どんなメガネでも8,800円に見えないように「対象のメガネなら、」を足す（Iさん A案） -->
         <p class="st4-hero-t pc-only">標準レンズ付き対象商品が</p><!-- 10/30 PCは右に「遠近・中近・近々も追加料金0円」を並べるので、こちらの言い方（Iさんのイラレ案） -->
@@ -1852,7 +1855,7 @@
         <p class="st4-hero-n">※対象フレーム・標準レンズ・<span>割引をすべて併用した場合</span></p>
         </div>
         <!-- 10/30 PCだけ：右に「遠近・中近・近々も 追加料金0円」（比較/PCお得な内容_横並び見本.png） -->
-        <div class="st4-zero pc-only">
+        <div class="st4-zero pc-only" hidden>
           <p class="st4-zero-t"><span>遠近両用レンズ</span>なども</p><!-- 10/30 スマホ・FVの「遠近両用レンズ」とそろえる（案：遠近・中近・近々レンズなども） -->
           <p class="st4-zero-y"><span class="k">追加料金</span><span class="z">0</span><span class="en">円</span></p>
           <p class="st4-zero-n">※標準レンズの場合</p>
