@@ -1603,10 +1603,19 @@
   .st4-hero-u .st4-tax { font-family: 'Noto Sans JP', sans-serif; font-size: 15px; font-weight: 900; margin: 4px 0 0 -2px; }
   @media (max-width: 1023px) { .st4 > .st4-hero { width: fit-content; margin-left: auto; margin-right: auto; display: flex; flex-direction: column; align-items: flex-start; } } /* スマホもバッジを「遠近両用レンズ」の左はしにそろえる（かたまりは真ん中・Iさん） */
   @media (max-width: 1023px) { .st4 > .st4-hero + .st4-ex { margin-top: 36px; } } /* ※と商品例が窮屈（Iさん）22→36px */
+  /* 10/30 Iさんのイラレ案2：バッジまっすぐ・遠近両用レンズは全面マーカー・「税込」を円の上に（円〜は数字の下にそろえる） */
+  .st4-hero .st4-badge { transform: none; border-radius: 0; padding: 6px 18px !important; }
+  .st4-hero-t { margin-top: 16px; }
+  .st4-hero-ul { background: var(--ac); padding: 1px 4px; }
+  .st4-hero-u { flex-direction: column-reverse; margin-left: 4px; }
+  .st4-hero-u small { font-size: 28px; }
+  .st4-hero-u .st4-tax { font-size: 12px; font-weight: 700; margin: 0 0 4px 1px; }
+  @media (max-width: 359px) { .st4-hero-u small { font-size: 24px; } .st4-hero-u .st4-tax { font-size: 11px; } }
+  @media (min-width: 1024px) { .st4-hero-t { margin-top: 20px; } }
   .st4-hero-n { font-size: 11px; font-weight: 700; color: var(--tx); margin-top: 10px; letter-spacing: -.03em; white-space: nowrap; } /* 1行に収める（Iさんのイラレ案どおり） */
   @media (max-width: 359px) { .st4-hero-y .num { font-size: 62px; } .st4-hero-ul { font-size: 18px; } .st4-hero-t { font-size: 14px; } .st4-hero-n { font-size: 11px; white-space: normal; letter-spacing: 0; } .st4-hero-n span { display: inline-block; } } /* 320pxは9.5pxだと小さすぎるので11pxで2行に（「割引を〜場合」は2行目にまとめる） */
   .st4-fin-y .num { font-family: 'Barlow', 'Noto Sans JP', sans-serif; } /* 10/30 合計枠の8,800も先頭と同じ形に */
-  @media (min-width: 1024px) { .st4-hero-y { margin-top: 12px; } .st4-hero-t { font-size: 22px; } .st4-hero-ul { font-size: 30px; } .st4-hero-u { margin-left: 10px; } .st4-hero-u small { font-size: 40px; } .st4-hero-u .st4-tax { font-size: 22px; } .st4-hero-n { font-size: 15px; margin-top: 16px; } }
+  @media (min-width: 1024px) { .st4-hero-y { margin-top: 12px; } .st4-hero-t { font-size: 22px; } .st4-hero-ul { font-size: 30px; } .st4-hero-u { margin-left: 8px; } .st4-hero-u small { font-size: 46px; } .st4-hero-u .st4-tax { font-size: 18px; margin-bottom: 6px; } .st4-hero-n { font-size: 15px; margin-top: 16px; } }
   @media (max-width: 400px) { .st4-rows .st4-r-t p { font-size: 13px; letter-spacing: -.03em; } .st4-rows .st4-r .st4-r-t { margin-right: 6px; } } /* 「新規」が入って長くなったぶん */
   @media (min-width: 1024px) { .st4-more.sl::before, .st4-more.sl::after { display: none; } } /* 10/29 「さらに2つの割引で」の＼／を外す（枠は2本同時の見出しだけ・Iさん A案） */
   .hear-why { display: none; }
@@ -1739,7 +1748,7 @@
         <div class="st4-hero-in">
         <!-- 10/30 Iさんのイラレ案：「遠近両用レンズ（黄の下線）も込みで」→ 8,800（Barlow ExtraBold）→ ※1行 -->
         <p class="st4-hero-t"><span class="st4-hero-ul">遠近両用レンズ</span>も込みで</p>
-        <p class="st4-hero-y"><span class="num">8<span class="cm">,</span>800</span><span class="st4-hero-u"><small>円〜</small><small class="st4-tax">(税込)</small></span></p>
+        <p class="st4-hero-y"><span class="num">8<span class="cm">,</span>800</span><span class="st4-hero-u"><small>円〜</small><small class="st4-tax">税込</small></span></p>
         <p class="st4-hero-n">※対象フレーム・標準レンズ・<span>割引をすべて併用した場合</span></p>
         </div>
       </div>
