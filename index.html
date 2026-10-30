@@ -1732,7 +1732,8 @@
     .fc-btn::after { position: absolute; right: 26px; top: 50%; margin-top: -4px; transform: rotate(45deg); }
     .fc-pin { width: 20px; height: 20px; flex: none; }
     .fc-date2 { font-family: 'Barlow', sans-serif; font-weight: 800; font-size: 26px; color: var(--ac); line-height: 1.1; }
-    .fc-date2 small { font-family: 'Noto Sans JP', sans-serif; font-size: 13px; font-weight: 700; color: #fff; margin: 0 2px; }    .float-cta { background: #111; } /* 下の文字が透けないように */
+    .fc-date2 small { font-family: 'Noto Sans JP', sans-serif; font-size: 13px; font-weight: 700; color: #111; background: var(--ac); width: 22px; height: 22px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; align-self: center; margin: 2px 0 0 5px; line-height: 1; } /* 曜日はFVと同じ黄色の丸に（Iさん） */
+    .float-cta { background: #111; } /* 下の文字が透けないように */
     .fc-date2 { display: flex; align-items: baseline; }
     .fc-dash { display: inline-block; width: 26px; height: 2px; background: #fff; margin: 0 10px; align-self: center; } /* 〜は分かりにくいのでFVと同じ線に（Iさん） */
   }
@@ -2238,7 +2239,7 @@
   <!-- 10/29 PCだけ：左にお店のアイコン＋ひとこと、右にピンつきの黄色いボタン（Iさんの見本の形）。旧＝期間と8,800円の帯 _保存\変更前\1029\index.before-1029-box2col.html -->
   <div class="fc-pc">
     <svg class="fc-ico" viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><rect x="6" y="9" width="36" height="33" rx="4"/><path d="M6,19 H42"/><path d="M15,5 V13 M33,5 V13"/><path d="M14,27 H18 M22,27 H26 M30,27 H34 M14,34 H18 M22,34 H26"/></g></svg>
-    <div><p class="fc-t fc-date2">11/13<small>(金)</small><span class="fc-dash" aria-label="から"></span>11/29<small>(日)</small></p><p class="fc-s">アイメガネ各店で開催　※本庄南大通り店を除く</p></div><!-- 10/29 お店の文言→期間に（Iさん） -->
+    <div><p class="fc-t fc-date2">11/13<small>金</small><span class="fc-dash" aria-label="から"></span>11/29<small>日</small></p><p class="fc-s">アイメガネ各店で開催　※本庄南大通り店を除く</p></div><!-- 10/29 お店の文言→期間に（Iさん） -->
   </div>
   <a href="#shop-search" class="fc-btn" data-cta-location="floating"><svg class="fc-pin" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12,2 C7.6,2 4,5.5 4,9.9 C4,15.6 12,22 12,22 C12,22 20,15.6 20,9.9 C20,5.5 16.4,2 12,2 Z M12,13 A3.2,3.2 0 1 1 12,6.6 A3.2,3.2 0 0 1 12,13 Z"/></svg>近くのお店で予約する</a>
 </div>
