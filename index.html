@@ -1613,6 +1613,25 @@
   @media (max-width: 359px) { .st4-hero-u small { font-size: 24px; } .st4-hero-u .st4-tax { font-size: 11px; } }
   @media (min-width: 1024px) { .st4-hero-t { margin-top: 20px; } }
   @media (max-width: 1023px) { .fv-confetti.is-long { -webkit-mask-image: linear-gradient(#000 calc(var(--cf-a, 0px) - 20px), transparent var(--cf-a, 0px), transparent var(--cf-b, 0px), #000 calc(var(--cf-b, 0px) + 20px), #000 calc(100% - 60px), transparent); mask-image: linear-gradient(#000 calc(var(--cf-a, 0px) - 20px), transparent var(--cf-a, 0px), transparent var(--cf-b, 0px), #000 calc(var(--cf-b, 0px) + 20px), #000 calc(100% - 60px), transparent); } } /* 10/30 スマホFVの価格の上は紙吹雪を消す（価格を目立たせる・Iさん） */
+  /* 10/30 商品例：縦に「標準レンズ付きセット価格 13,200 ▼ 割引をぜんぶ使うと 8,800」（Iさん案）。8,800は先頭より小さくして先頭を主役に */
+  .st4-ex-row[hidden] { display: none !important; }
+  .st4-ex-col { border-top: 1px solid var(--line); margin-top: 6px; padding-top: 14px; text-align: center; }
+  .exc-k { font-size: 14px; font-weight: 700; }
+  .exc-k-red { color: #e8352a; }
+  .exc-b, .exc-a { display: flex; align-items: flex-end; justify-content: center; margin-top: 6px; }
+  .exc-n { font-family: 'Barlow', 'Noto Sans JP', sans-serif; font-weight: 800; line-height: .76; }
+  .exc-b .exc-n { font-size: 40px; position: relative; }
+  .exc-b { position: relative; width: fit-content; margin-left: auto; margin-right: auto; }
+  .exc-b::after { content: ""; position: absolute; left: -4px; right: -4px; top: 52%; height: 2px; background: #888; } /* 消し線は数字と円〜の上まで */
+  .exc-a .exc-n { font-size: 56px; color: #e8352a; }
+  .exc-u { display: flex; flex-direction: column-reverse; align-items: flex-start; margin-left: 4px; line-height: 1; }
+  .exc-u small { font-size: 20px; font-weight: 900; }
+  .exc-a .exc-u small { font-size: 24px; }
+  .exc-u .exc-tax, .exc-a .exc-u .exc-tax { font-size: 10px; font-weight: 700; margin: 0 0 3px 1px; }
+  .exc-dn { width: 0; height: 0; margin: 12px auto 10px; border-left: 16px solid transparent; border-right: 16px solid transparent; border-top: 16px solid var(--ac); }
+  .exc-n2 { font-size: 11px; color: var(--sub); margin-top: 8px; }
+  .st4-ex-col + .ba-set { margin-top: 16px; }
+  @media (min-width: 1024px) { .exc-k { font-size: 16px; } .exc-b .exc-n { font-size: 48px; } .exc-a .exc-n { font-size: 68px; } .exc-u small { font-size: 24px; } .exc-a .exc-u small { font-size: 28px; } .exc-u .exc-tax, .exc-a .exc-u .exc-tax { font-size: 12px; } .exc-n2 { font-size: 13px; } }
   /* 10/30 合計枠の8,800も先頭とそろえる：「税込」を円の上・円〜は数字の下ぞろえ（Iさん） */
   .st4-fin-u { flex-direction: column-reverse; margin-left: 4px; }
   .st4-fin-y .st4-fin-u small { font-size: 26px; }
@@ -1764,10 +1783,20 @@
         <p class="st4-ex-l">商品例</p>
         <!-- 10/25 GWLPのように本物のメガネ写真（対象ブランド ブランシック・10/27に13,200円のセットへ）。変更前 _保存/index.before-1025-exphoto.html -->
         <div class="st4-ex-img"><img src="images/frames/blancchic-1.png" alt="ブランシックのメガネ" width="800" height="381" loading="lazy"></div>
-        <div class="st4-ex-row">
+        <!-- 10/30 Iさん案：縦に セット価格13,200 ▼ 8,800。ラベルは「割引をぜんぶ使うと」（ブラックフライデー価格だとだれでもこの値段に見えるため） -->
+        <div class="st4-ex-col">
+          <p class="exc-k">標準レンズ付きセット価格</p>
+          <p class="exc-b"><span class="exc-n">13<span class="cm">,</span>200</span><span class="exc-u"><small>円〜</small><small class="exc-tax">税込</small></span></p>
+          <p class="exc-dn" aria-hidden="true"></p>
+          <p class="exc-k exc-k-red">割引をぜんぶ使うと</p>
+          <p class="exc-a"><span class="exc-n">8<span class="cm">,</span>800</span><span class="exc-u"><small>円〜</small><small class="exc-tax">税込</small></span></p>
+          <p class="exc-n2">※割引をすべて併用した場合</p>
+        </div>
+        <div class="st4-ex-row" hidden>
           <div><p class="st4-ex-k">通常価格</p><p class="st4-ex-b">13<span class="cm">,</span>200<small>円</small></p></div>
           <span class="st4-arw" aria-hidden="true">▶</span>
-          <div><p class="st4-ex-k st4-k-red">2,200円OFFで</p><p class="st4-ex-a">11<span class="cm">,</span>000<small>円</small><small class="st4-tax">(税込)</small></p></div>
+          <!-- 10/30 11,000円（2,200円OFF）→ 割引をぜんぶ使った8,800円に（Iさん）。変更前 _保存/変更前/1030/index.before-1030-hero8800.html -->
+          <div><p class="st4-ex-k st4-k-red">最大4,400円OFFで</p><p class="st4-ex-a">8<span class="cm">,</span>800<small>円</small><small class="st4-tax">(税込)</small></p></div>
         </div>
         <ul class="ba-set" aria-label="セットの中身">
         <li><svg class="ico" viewBox="0 0 48 32"><circle cx="14" cy="17" r="9"/><circle cx="34" cy="17" r="9"/><path d="M23,16 Q24,13 25,16 M5,15 L1,12 M43,15 L47,12"/></svg>フレーム</li>
