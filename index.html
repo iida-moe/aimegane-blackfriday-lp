@@ -1789,9 +1789,22 @@
   }
   @media (min-width: 1280px) { .st4 > .st4-ex { grid-template-columns: 340px auto 1fr auto 32px !important; } }
   /* 11/2 「標準レンズ付きセット価格」と13,200の行間が広い（Iさん）→8,800との高さの差だけ下げる */
-  @media (min-width: 1024px) { .st4-ex-col .exc-k:not(.exc-k-red) { position: relative; top: 22px; } }
-  @media (min-width: 1280px) { .st4-ex-col .exc-k:not(.exc-k-red) { top: 24px; } }
   @media (min-width: 1024px) { .st4-ex-col .exc-dn { align-self: end !important; margin-bottom: 40px !important; } }
+
+  /* 11/2 PC評価の改善（Iさん「1,2はやって・3は試して・4も」）。変更前 _保存/変更前/1102/index.before-1102.html */
+  @media (min-width: 1024px) {
+    /* ①▶の左右は36pxずつで固定、余った幅はメガネの列へ ②メガネを大きく */
+    .st4 > .st4-ex { grid-template-columns: 1fr auto 100px auto 32px !important; }
+    .st4-ex .st4-ex-img { padding: 0 16px !important; }
+    .st4-ex .st4-ex-img img { max-width: 100% !important; width: 100%; }
+    /* ③13,200をグレーにして8,800を前に（だめなら この2行を消す） */
+    .st4-ex-col .exc-b .exc-n, .st4-ex-col .exc-b .exc-u { color: #8a8a8a; }
+    .st4-ex-col .exc-b::after { background: #8a8a8a; }
+    /* ④ラベルの高さをそろえる：数字は上ぞろえ（ラベル→数字の間が左右同じ）、▶は13,200の高さのまん中 */
+    .st4-ex-col .exc-b, .st4-ex-col .exc-a { align-self: start !important; margin-top: 10px !important; }
+    .st4-ex-col .exc-dn { align-self: start !important; margin-top: 8px !important; }
+  }
+  @media (min-width: 1024px) and (max-width: 1279px) { .st4 > .st4-ex { grid-template-columns: 1fr auto 80px auto 24px !important; } .st4-ex-col .exc-k:not(.exc-k-red), .st4-ex-col .exc-b { margin-left: 24px !important; } }
 
   /* 11/2 ③ 曜日を固定バー・FVと同じ黄色の丸に（キャンペーン概要・最後のまとめ） */
   .ol-big small.dw, .cl-date small.dw { display: inline-flex !important; align-items: center; justify-content: center; width: 1.6em; height: 1.6em; border-radius: 50%; background: var(--ac); color: #111 !important; font-family: 'Noto Sans JP', sans-serif; font-weight: 700; line-height: 1; vertical-align: .2em; margin: 0 4px 0 3px; }
