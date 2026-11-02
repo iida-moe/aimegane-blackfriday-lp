@@ -1971,6 +1971,17 @@
   .exc-list .exc-lb .exc-bf { background: none !important; color: inherit !important; padding: 0 !important; font-size: inherit !important; }
   .exc-ic { box-sizing: content-box; width: 16px !important; height: 16px !important; padding: 6px; background: #fff; border-radius: 50%; }
   @media (min-width: 1024px) { .exc-ic { width: 20px !important; height: 20px !important; padding: 8px; } }
+  @media (max-width: 1023px) {
+    .exc-ic { width: 14px !important; height: 14px !important; padding: 5px; } .exc-lb { gap: 7px; }
+    html[data-simple="1"] .st4-ex-col .exc-list li { font-size: 13.5px; }
+    html[data-simple="1"] .st4-ex-col .exc-list li:not(.exc-tot) b { font-size: 20px; }
+    .st4-ex-col .exc-list li:not(.exc-start):not(.exc-tot), .st4-ex-col .exc-list li.exc-start, .st4-ex-col .exc-list li.exc-tot { padding-left: 8px !important; padding-right: 8px !important; }
+  }
+
+  /* 11/2 数字の右はしをそろえる（Iさん）→13,200円とお支払いの行にも帯の中と同じ左右の余白 */
+  .st4-ex-col .exc-list li.exc-start, .st4-ex-col .exc-list li.exc-tot { padding-left: 8px !important; padding-right: 8px !important; }
+  @media (max-width: 359px) { .st4-ex-col .exc-list li.exc-start, .st4-ex-col .exc-list li.exc-tot { padding-left: 8px !important; padding-right: 8px !important; } }
+  @media (min-width: 1024px) { .st4-ex-col .exc-list li.exc-start, .st4-ex-col .exc-list li.exc-tot { padding-left: 18px !important; padding-right: 18px !important; } }
 
   /* ===== 11/2 シンプル版の見比べ（html[data-simple="1"]）★本番前に決めた方だけ残して削除 ===== */
   html[data-simple="1"] .st4-hero { display: none !important; }
