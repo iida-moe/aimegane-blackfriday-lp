@@ -1779,6 +1779,11 @@
   /* 11/2 PC：バッジと商品例を近づける（Iさん）40→28px */
   @media (min-width: 1024px) { .otoku-row .st4 > .st4-ex { margin-top: 28px !important; } }
   /* 11/2 PC：▶を数字の下のラインにそろえる（13,200の高さの真ん中に来る・Iさん） */
+  /* 11/2 PC：上のラベルを数字の左はしにそろえる（Iさん） */
+  @media (min-width: 1024px) {
+    .st4-ex-col .exc-k, .st4-ex-col .exc-b, .st4-ex-col .exc-a { justify-self: start !important; text-align: left !important; }
+    .st4-ex-col .exc-k:not(.exc-k-red), .st4-ex-col .exc-b { margin-left: 24px !important; }
+  }
   @media (min-width: 1024px) { .st4-ex-col .exc-dn { align-self: end !important; margin-bottom: 40px !important; } }
 
   /* 11/2 ③ 曜日を固定バー・FVと同じ黄色の丸に（キャンペーン概要・最後のまとめ） */
