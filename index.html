@@ -1992,6 +1992,14 @@
     html[data-simple="1"] .st4-ex-col .exc-list li.exc-tot b { font-size: 42px; }
     html[data-simple="1"] .ba.st4 .st4-note { width: 620px; margin-top: 24px !important; }
   }
+  /* 11/2 パリミキ niko and… のページを参考に、シンプル版はページ全体の余白も広げる */
+  html[data-simple="1"] .sec { padding-top: 104px; padding-bottom: 104px; }
+  html[data-simple="1"] .sec-head { margin-bottom: 44px; }
+  html[data-simple="1"] body { line-height: 1.85; }
+  @media (min-width: 1024px) {
+    html[data-simple="1"] .sec { padding-top: 150px; padding-bottom: 150px; }
+    html[data-simple="1"] .sec-head { margin-bottom: 64px; }
+  }
   .smp-sw { position: fixed; left: 12px; bottom: 140px; z-index: 9000; display: flex; gap: 4px; align-items: center; background: #fff; border: 2px solid #111; border-radius: 10px; padding: 6px 8px; font-size: 12px; font-weight: 700; box-shadow: 0 4px 12px rgba(0,0,0,.25); }
   @media (max-width: 1023px) { .smp-sw { bottom: 96px; } }
   .smp-sw button { height: 32px; padding: 0 10px; border: 1.5px solid #111; border-radius: 6px; background: #fff; font-weight: 900; font-size: 13px; cursor: pointer; font-family: inherit; }
@@ -2838,7 +2846,7 @@ if(!location.hash){window.scrollTo(0,0);}
 })();
 </script>
 <!-- 11/2 シンプル版の見比べボタン（★本番前に削除） -->
-<div class="smp-sw" id="smp-sw">お得な内容 <button data-v="0">今</button><button data-v="1">シンプル</button></div>
+<div class="smp-sw" id="smp-sw">表示 <button data-v="0">今</button><button data-v="1">シンプル</button></div>
 <script>
 (function () {
   var sw = document.getElementById('smp-sw'), v = '0';
