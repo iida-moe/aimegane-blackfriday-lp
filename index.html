@@ -1865,6 +1865,8 @@
   /* 11/2 対象ブランドの▶が下に寄っていた（Iさん）→消し線（数字のまん中）の高さにそろえる */
   .pv-arw { position: relative; top: -2px; }
   @media (min-width: 1024px) { .pv-arw { top: -3px; font-size: 11px; } }
+  /* 11/2 PC：通常価格の数字が大きい値段より少し下に出ていた→数字の下をそろえる（Iさん） */
+  @media (min-width: 1024px) { .pv-a .pv-k, .pv-a s { position: relative; top: -1px; } .pv-arw { top: -4px; } }
 
   /* 11/2 ③ 曜日を固定バー・FVと同じ黄色の丸に（キャンペーン概要・最後のまとめ） */
   .ol-big small.dw, .cl-date small.dw { display: inline-flex !important; align-items: center; justify-content: center; width: 1.6em; height: 1.6em; border-radius: 50%; background: var(--ac); color: #111 !important; font-family: 'Noto Sans JP', sans-serif; font-weight: 700; line-height: 1; vertical-align: .2em; margin: 0 4px 0 3px; }
