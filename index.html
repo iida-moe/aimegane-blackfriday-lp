@@ -2029,6 +2029,13 @@
     .pick-arw-next { right: -6px; } .pick-arw-prev { left: -6px; }
   }
 
+  /* 11/2 補聴器：スマホの見出しが「…対／象」と折れていた→この見出しだけ小さく2行に。PCの2,200円OFFをひと回り大きく */
+  @media (max-width: 1023px) { #hearing-aid .sec-ja { font-size: 26px; } }
+  @media (max-width: 359px) { #hearing-aid .sec-ja { font-size: 22px; } }
+  .hear-pr .hear-y .num { font-size: 52px; }
+  .hear-pr .hear-y .st { font-size: 16px; }
+  @media (min-width: 1024px) { .hear-pr .hear-y .num { font-size: 68px; } .hear-pr .hear-y .st { font-size: 20px; margin-bottom: 8px; } .hear-pr .hear-pl { font-size: 15px; } }
+
   /* ===== 11/2 シンプル版の見比べ（html[data-simple="1"]）★本番前に決めた方だけ残して削除 ===== */
   html[data-simple="1"] .st4-hero { display: none !important; }
   .st4-catch { display: none; }
