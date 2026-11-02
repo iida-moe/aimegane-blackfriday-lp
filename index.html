@@ -1816,6 +1816,31 @@
   @media (min-width: 1280px) { .st4-ex-col .exc-b { margin-top: 33px !important; } .st4-ex-col .exc-dn { margin-top: 31px !important; } } /* 差 23px */
   @media (min-width: 1024px) and (max-width: 1279px) { .st4 > .st4-ex { grid-template-columns: 1fr auto 80px auto 24px !important; } .st4-ex-col .exc-k:not(.exc-k-red), .st4-ex-col .exc-b { margin-left: 24px !important; } }
 
+  /* 11/2 割引の内訳の見出し＋合計（わかりやすさ・Iさん） */
+  .exc-sum { display: flex; align-items: baseline; justify-content: center; gap: 12px; margin: 26px auto 0; font-weight: 700; }
+  .exc-sum + .exc-list { margin-top: 8px; }
+  @media (max-width: 1023px) {
+    .exc-sum { display: none; }
+    .exc-sum + .exc-list { margin-top: 26px; }
+    .exc-list li.exc-tot { border-bottom: 0; border-top: 1.5px solid var(--tx); margin-top: 2px; padding-top: 8px; font-size: 14px; }
+    .exc-list li.exc-tot b { font-size: 24px; }
+  }
+  @media (max-width: 359px) { .exc-list li.exc-tot b { font-size: 21px; } }
+  @media (min-width: 1024px) { .exc-list li.exc-tot { display: none !important; } }
+  .exc-sum-t { font-size: 13px; background: var(--tx); color: #fff; padding: 3px 10px; border-radius: 4px; line-height: 1.4; }
+  .exc-sum-v { font-size: 14px; }
+  .exc-sum-v b { font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 800; font-size: 24px; color: #e8352a; line-height: 1; }
+  .exc-sum-v b small { font-family: 'Noto Sans JP', sans-serif; font-size: 13px; font-weight: 700; margin-left: 1px; }
+  @media (min-width: 1024px) {
+    .st4 > .st4-ex::after { grid-row: 4 / 9 !important; }
+    .st4-ex-col .exc-sum { grid-column: 1 / -1; grid-row: 6; margin: 22px 40px 0; padding-top: 22px; border-top: 1px dashed #ccc; }
+    .st4-ex-col .exc-list { grid-row: 7 !important; margin-top: 14px !important; padding-top: 0 !important; border-top: 0 !important; }
+    .st4-ex-col .exc-n2 { grid-row: 8 !important; }
+    .exc-sum-t { font-size: 15px; padding: 4px 12px; }
+    .exc-sum-v { font-size: 16px; }
+    .exc-sum-v b { font-size: 30px; } .exc-sum-v b small { font-size: 15px; }
+  }
+
   /* 11/2 ③ 曜日を固定バー・FVと同じ黄色の丸に（キャンペーン概要・最後のまとめ） */
   .ol-big small.dw, .cl-date small.dw { display: inline-flex !important; align-items: center; justify-content: center; width: 1.6em; height: 1.6em; border-radius: 50%; background: var(--ac); color: #111 !important; font-family: 'Noto Sans JP', sans-serif; font-weight: 700; line-height: 1; vertical-align: .2em; margin: 0 4px 0 3px; }
   .ol-big small.dw { font-size: 12px !important; }
@@ -1949,10 +1974,12 @@
           <p class="exc-k exc-k-red">割引をぜんぶ使うと</p>
           <p class="exc-a"><span class="exc-n">8<span class="cm">,</span>800</span><span class="exc-u"><small>円</small><small class="exc-tax">税込</small></span></p>
           <!-- 10/30 割引の内訳を3行のリストで（グレーの枠と合計枠の代わり・Iさん C案）。比較 比較/商品例と割引の内訳_比較2.png -->
+          <p class="exc-sum"><span class="exc-sum-t">割引の内訳</span><span class="exc-sum-v">合計 <b>−4<span class="cm">,</span>400<small>円</small></b></span></p><!-- 11/2 内訳の見出し＋合計（13,200→8,800の差とつなげる） -->
           <ul class="exc-list">
             <li><span class="exc-bf">ブラックフライデー限定</span><b>−2<span class="cm">,</span>200<small>円</small></b></li>
             <li><span>LINE新規お友だち登録</span><b>−1<span class="cm">,</span>100<small>円</small></b></li>
             <li><span>眼科の処方箋ご持参</span><b>−1<span class="cm">,</span>100<small>円</small></b></li>
+            <li class="exc-tot"><span>割引の合計</span><b>−4<span class="cm">,</span>400<small>円</small></b></li><!-- 11/2 スマホだけ：合計はリストの最後に -->
           </ul>
           <p class="exc-n2">※割引をすべて併用した場合</p>
         </div>
