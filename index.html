@@ -1746,6 +1746,39 @@
     .float-cta { justify-content: flex-start; }
     .hd-nav { gap: 20px; } .hd-nav a { font-size: 15px; white-space: nowrap; } .hd-nav .hd-cta { padding: 12px 22px; font-size: 16px; }
   }
+
+  /* 11/2 ① セットのレンズに「遠近両用もOK」の吹き出し（お得な内容から遠近の文字が消えたため） */
+  .st4 .st4-ex .ba-set { padding-top: 40px; }
+  .st4 .ba-set .ba-tag { font-size: 11px; padding: 3px 9px; }
+  @media (min-width: 1024px) {
+    .st4 .st4-ex .ba-set { margin-top: 30px !important; padding-top: 40px !important; }
+    .st4 .ba-set .ba-tag { font-size: 14px; padding: 5px 12px; }
+  }
+
+  /* 11/2 ② PCの商品例が横長で細い→メガネと8,800を大きく */
+  @media (min-width: 1024px) {
+    .st4 > .st4-ex { max-width: 960px; grid-template-columns: 320px 1fr 40px auto 28px; } /* 右はしに余白の列（8,800が枠にくっつかないように） */
+    .st4-ex .st4-ex-img img { max-width: 290px !important; }
+    .st4-ex-col .exc-b .exc-n { font-size: 52px; }
+    .st4-ex-col .exc-a .exc-n { font-size: 80px; }
+    .st4-ex-col .exc-a .exc-u small { font-size: 32px; }
+    .st4-ex-col .exc-a .exc-u .exc-tax { font-size: 15px; }
+    .st4-ex-col .exc-k { font-size: 16px; }
+  }
+  @media (min-width: 1280px) {
+    .st4 > .st4-ex { grid-template-columns: 360px 1fr 44px auto 32px; }
+    .st4-ex .st4-ex-img img { max-width: 320px !important; }
+    .st4-ex-col .exc-b .exc-n { font-size: 58px; }
+    .st4-ex-col .exc-a .exc-n { font-size: 88px; }
+    .st4-ex-col .exc-a .exc-u small { font-size: 34px; }
+    .st4-ex-col .exc-a .exc-u .exc-tax { font-size: 16px; }
+  }
+
+  /* 11/2 ③ 曜日を固定バー・FVと同じ黄色の丸に（キャンペーン概要・最後のまとめ） */
+  .ol-big small.dw, .cl-date small.dw { display: inline-flex !important; align-items: center; justify-content: center; width: 1.6em; height: 1.6em; border-radius: 50%; background: var(--ac); color: #111 !important; font-family: 'Noto Sans JP', sans-serif; font-weight: 700; line-height: 1; vertical-align: .2em; margin: 0 4px 0 3px; }
+  .ol-big small.dw { font-size: 12px !important; }
+  .cl-date small.dw { font-size: 11px; }
+  @media (min-width: 1024px) { .ol-big small.dw { font-size: 14px !important; } }
 </style><style>
   .preview-gate { position: fixed; inset: 0; z-index: 9999; background: #000; display: flex; align-items: center; justify-content: center; padding: 20px; }
   .preview-gate-box { background: #fff; border: 2px solid #f4e030; border-radius: 12px; padding: clamp(24px, 5vw, 40px); width: 100%; max-width: 340px; text-align: center; }
@@ -1890,7 +1923,7 @@
         <ul class="ba-set" aria-label="セットの中身">
         <li><svg class="ico" viewBox="0 0 48 32"><circle cx="13.5" cy="17" r="8.5"/><circle cx="34.5" cy="17" r="8.5"/><path d="M21.6,14 Q24,10.5 26.4,14"/><path d="M5,16.5 H1.5 M43,16.5 H46.5" stroke-width="3.2" stroke-linecap="butt"/></svg>フレーム<!-- 10/30 フレームのアイコンをIさんの画像（Downloads/1395469.png）の形で描きなおし（E案） --></li>
         <li class="plus" aria-hidden="true">＋</li>
-        <li><svg class="ico" viewBox="0 0 48 32"><circle cx="22" cy="17" r="12"/><path d="M15,13 Q17,9 21,8 M14,18 Q14,16 15,15"/><path d="M38,4 V10 M35,7 H41" stroke-width="2"/></svg>レンズ</li>
+        <li class="has-tag"><span class="ba-tag">遠近両用もOK</span><!-- 11/2 お得な内容から「遠近両用」が消えたのでレンズに吹き出し --><svg class="ico" viewBox="0 0 48 32"><circle cx="22" cy="17" r="12"/><path d="M15,13 Q17,9 21,8 M14,18 Q14,16 15,15"/><path d="M38,4 V10 M35,7 H41" stroke-width="2"/></svg>レンズ</li>
         <li class="plus" aria-hidden="true">＋</li>
         <li><svg class="ico" viewBox="0 0 48 32"><path d="M5,20 H43 V24 Q43,29 37,29 H11 Q5,29 5,24 Z"/><path d="M5,20 L9,7 Q10,4 14,4 H34 Q38,4 39,7 L43,20"/><path d="M12,20 Q24,15 36,20" stroke-width="2"/></svg>ケース</li>
         <li class="plus" aria-hidden="true">＋</li>
@@ -2135,7 +2168,7 @@
   <section class="sec outline" id="outline">
     <div class="sec-head"><h2 class="sec-ja">キャンペーン概要</h2></div>
     <dl class="ol-box">
-      <div class="ol-row"><dt>期間</dt><dd><b class="ol-big">11/13<small>(金)</small>〜11/29<small>(日)</small></b></dd></div>
+      <div class="ol-row"><dt>期間</dt><dd><b class="ol-big">11/13<small class="dw">金</small>〜11/29<small class="dw">日</small></b></dd></div>
       <div class="ol-row"><dt>店舗</dt><dd><b class="ol-big2">アイメガネ各店</b><small>※本庄南大通り店を除く</small></dd></div>
       <div class="ol-row"><dt>対象</dt><dd><p>対象のメガネ一式<small>フレーム・標準レンズ・<span class="nw">ケース・クロス・保証</span></small></p><p class="ol-sp">補聴器<small>スターキー Gシリーズ</small></p></dd></div>
       <div class="ol-row"><dt>割引</dt><dd>
@@ -2214,7 +2247,7 @@
     <!-- 10/27 FVのくり返しをやめて落ち着いた締めに（ひとこと→期間→値段は1行→ボタン）（Iさん「FVと一緒」）。変更前は FVと同じ形（日付→BLACK FRIDAY→8,800円→遠近0円の枠） -->
     <p class="cl-en">BLACK FRIDAY</p>
     <h2 class="cl-copy">あなたに合うメガネを、<br>この機会に。</h2>
-    <p class="cl-date">11/13<small>(金)</small>〜11/29<small>(日)</small></p>
+    <p class="cl-date">11/13<small class="dw">金</small>〜11/29<small class="dw">日</small></p>
     <div class="cl-sum">
       <p class="cl-k">割引をぜんぶ使うと</p>
       <p class="cl-y">対象のメガネ一式<b>8<span class="cm">,</span>800</b>円〜<small>(税込)</small></p>
