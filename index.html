@@ -2015,6 +2015,15 @@
   .two-t .two-big b { color: #e8352a; font-weight: 900; }
   .two-t .two-otoku { font-style: normal; color: #e8352a; }
 
+  /* 11/2 対象ブランドのスライドに左右の丸い矢印（スマホだけ） */
+  .pick-wrap { position: relative; }
+  .pick-arw { display: none; }
+  @media (max-width: 1023px) {
+    .pick-arw { display: flex; position: absolute; top: 90px; z-index: 3; width: 40px; height: 40px; border-radius: 50%; border: 2px solid var(--tx); background: #fff; color: var(--tx); align-items: center; justify-content: center; padding: 0 0 3px; font-size: 26px; font-weight: 700; line-height: 1; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,.18); }
+    .pick-arw[hidden] { display: none; }
+    .pick-arw-next { right: -6px; } .pick-arw-prev { left: -6px; }
+  }
+
   /* ===== 11/2 シンプル版の見比べ（html[data-simple="1"]）★本番前に決めた方だけ残して削除 ===== */
   html[data-simple="1"] .st4-hero { display: none !important; }
   .st4-catch { display: none; }
@@ -2854,6 +2863,12 @@ if(!location.hash){window.scrollTo(0,0);}
   cards.forEach((c,i)=>{const b=document.createElement('button');b.type='button';b.setAttribute('aria-label',(i+1)+'枚目');b.onclick=()=>t.scrollTo({left:c.offsetLeft-t.offsetLeft-parseFloat(getComputedStyle(t).paddingLeft),behavior:'smooth'});d.appendChild(b);});
   const upd=()=>{const w=cards[0].offsetWidth+12;const i=Math.min(cards.length-1,Math.round(t.scrollLeft/w));[...d.children].forEach((b,k)=>b.setAttribute('aria-current',k===i?'true':'false'));};
   t.addEventListener('scroll',upd,{passive:true}); upd();
+  // 11/2 左右の丸い矢印ボタン（押して1枚ずつ動く・Iさん）
+  const wrap=t.parentElement, step=()=>cards[0].offsetWidth+12;
+  const mk=(dir,label,ch)=>{const b=document.createElement('button');b.type='button';b.className='pick-arw pick-arw-'+dir;b.setAttribute('aria-label',label);b.innerHTML='<span aria-hidden="true">'+ch+'</span>';b.onclick=()=>t.scrollBy({left:(dir==='next'?1:-1)*step(),behavior:'smooth'});wrap.appendChild(b);return b;};
+  const prev=mk('prev','前のブランド','‹'), next=mk('next','次のブランド','›');
+  const arw=()=>{prev.hidden=t.scrollLeft<8; next.hidden=t.scrollLeft>t.scrollWidth-t.clientWidth-8;};
+  t.addEventListener('scroll',arw,{passive:true}); addEventListener('resize',arw); arw();
 })();
 
 // ===== 紙吹雪をFVの下、白いカードの上のところまで降らせる =====
