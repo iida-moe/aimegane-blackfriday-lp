@@ -2002,6 +2002,9 @@
     .st4-ex-col .exc-list li.exc-off b .mx { font-size: 16px; } .st4-ex-col .exc-list li.exc-off b small:last-child { font-size: 17px; }
   }
 
+  /* 11/2 「お支払い 8,800円」の行は外す（Iさん：上の商品例に8,800円があり、「13,200円から 最大4,400円OFF！」で伝わる） */
+  .st4-ex-col .exc-list li.exc-tot { display: none !important; }
+
   /* ===== 11/2 シンプル版の見比べ（html[data-simple="1"]）★本番前に決めた方だけ残して削除 ===== */
   html[data-simple="1"] .st4-hero { display: none !important; }
   .st4-catch { display: none; }
