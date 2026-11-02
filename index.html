@@ -1807,7 +1807,9 @@
     .st4-ex-col .exc-a { margin-top: 10px !important; }
     .st4-ex-col .exc-b { margin-top: 32px !important; }  /* 8,800と13,200の高さの差 22px */
     .st4-ex-col .exc-dn { margin-top: 28px !important; } /* 13,200の高さのまん中 */
-    .st4-ex-col .exc-k { align-self: end !important; }
+    .st4-ex-col .exc-k { align-self: end !important; margin-top: 34px !important; }
+    /* 11/2 価格のかたまりを枠の上下まん中に（上34px・下34px） */
+    .st4-ex-col .exc-a, .st4-ex-col .exc-b, .st4-ex-col .exc-dn { margin-bottom: 34px !important; }
   }
   /* 11/2 「標準レンズ付きセット価格」をもう少し13,200に近づける（Iさん）→12px下げる（右のラベルとは少しずれる） */
   @media (min-width: 1024px) { .st4-ex-col .exc-k:not(.exc-k-red) { position: relative; top: 12px; } }
