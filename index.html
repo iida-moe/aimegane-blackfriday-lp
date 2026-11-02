@@ -1952,6 +1952,17 @@
     .st4-ex-col .exc-list li.exc-tot { margin-top: 20px !important; padding-top: 22px !important; }
   }
 
+  /* 11/2 見出しの2行目を「＼もっとおトクに／」に（Iさん） */
+  .st4-catch .cslh { font-weight: 400; margin: 0 6px; }
+  @media (max-width: 1023px) { .st4-ex-col .exc-list li .exc-lb > span { white-space: nowrap; } html[data-simple="1"] .st4-ex-col .exc-list li { font-size: 14px; } }
+  /* 11/2 「割引の内訳」を黒い帯で囲んで、一覧に近づける（スマホもPCと同じ形に） */
+  @media (max-width: 1023px) {
+    .exc-sum-t { background: var(--tx); color: #fff; padding: 4px 14px; border-radius: 4px; font-size: 15px; line-height: 1.5; }
+    .st4-ex-col .exc-sum + .exc-list { margin-top: 10px !important; }
+    .st4-ex-col .exc-list li.exc-start { padding-top: 6px !important; }
+  }
+  @media (min-width: 1024px) { .st4-ex-col .exc-sum + .exc-list { margin-top: 8px !important; } .st4-ex-col .exc-list li.exc-start { padding-top: 8px !important; } }
+
   /* ===== 11/2 シンプル版の見比べ（html[data-simple="1"]）★本番前に決めた方だけ残して削除 ===== */
   html[data-simple="1"] .st4-hero { display: none !important; }
   .st4-catch { display: none; }
@@ -2109,7 +2120,7 @@
     <!-- 10/22 ストーリー順：①2,200円OFF → ②商品例 13,200→11,000 → ③さらにLINE・処方箋 → ④すべて使って8,800円。変更前 _保存/index.before-1022-story.html -->
     <!-- 10/30 先頭を2,200円OFF→8,800円〜に（2,200円OFFからだと弱い・Iさん）。下は8,800円になる内訳。変更前 _保存/変更前/1030/index.before-1030-hero8800.html -->
     <div class="ba st4">
-      <p class="st4-catch">お手頃なメガネが、<br class="pc-hide"><em>もっと<b>おトク</b>に！</em></p><!-- 11/2 バッジの代わりのひとこと（Iさん） -->
+      <p class="st4-catch">お手頃なメガネが、<br><em><span class="cslh">＼</span>もっと<b>おトク</b>に<span class="cslh">／</span></em></p><!-- 11/2 バッジの代わりのひとこと（Iさん） -->
       <div class="st4-hero">
         <p><span class="ba-badge st4-badge">ブラックフライデー限定</span></p>
         <!-- 10/30 8,800円が何度も出てくるので、ここの8,800円と遠近0円は消してバッジ→すぐ商品例に（Iさん）。中身はhiddenで残す -->
