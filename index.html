@@ -1855,12 +1855,15 @@
   @media (min-width: 1024px) {
     html { --fvw: 100vw; --fsc: 1; }
     html[data-fvp="2"], html[data-fvp="3"], html[data-fvp="4"] { --fvw: min(100vw, calc((100svh - 3vw - 24px) * 2)); }
-    html[data-fvp="3"], html[data-fvp="4"] { --fsc: .9; }
+    html[data-fvp="3"], html[data-fvp="4"], html[data-fvp="5"] { --fsc: .9; }
+    html[data-fvp="5"] { --fvw: min(100vw, calc((100svh - 3vw - 24px) * 2)); }
     html[data-fvp] .fv { height: calc(3vw + var(--fvw) / 2); }
     html[data-fvp] .fv-img { width: var(--fvw); height: calc(var(--fvw) / 2); left: calc(50% - var(--fvw) / 2); right: auto; }
     html[data-fvp] .fv-img .fv-pc { transform: scale(var(--fsc)); }
     html[data-fvp] .fv .fv-cta { left: calc(50% - var(--fvw) / 2 + var(--fvw) * (.5 + .036 * var(--fsc))); top: calc(3vw + var(--fvw) / 2 * (.5 + .308 * var(--fsc))); width: calc(var(--fvw) * .355 * var(--fsc)); min-width: 0; }
     html[data-fvp] .fv .fv-cta .btn-arw { min-height: calc(var(--fvw) * .054 * var(--fsc)); font-size: clamp(16px, calc(var(--fvw) * .02 * var(--fsc)), 38px); padding-left: 16px; padding-right: 16px; }
+    /* 5：ボタンを左右のまん中・いちばん下に */
+    html[data-fvp="5"] .fv .fv-cta { width: calc(var(--fvw) * .32 * var(--fsc)); left: calc(50% - var(--fvw) * .16 * var(--fsc)); top: calc(3vw + var(--fvw) / 2 * (.5 + .37 * var(--fsc))); }
     html[data-fvp] .fv .fv-cta .btn-arw .arw { width: calc(var(--fvw) * .038 * var(--fsc)); height: calc(var(--fvw) * .038 * var(--fsc)); margin-top: calc(var(--fvw) * -.019 * var(--fsc)); }
   }
   .fvp-sw { position: fixed; left: 12px; bottom: 140px; z-index: 9000; display: none; gap: 4px; align-items: center; background: #fff; border: 2px solid #111; border-radius: 10px; padding: 6px 8px; font-size: 12px; font-weight: 700; box-shadow: 0 4px 12px rgba(0,0,0,.25); }
@@ -2706,14 +2709,14 @@ if(!location.hash){window.scrollTo(0,0);}
 })();
 </script>
 <!-- 11/2 PC FV 見比べボタン（★本番前に削除） -->
-<div class="fvp-sw" id="fvp-sw">FV <button data-v="1">1</button><button data-v="2">2</button><button data-v="3">3</button><button data-v="4">4</button></div>
+<div class="fvp-sw" id="fvp-sw">FV <button data-v="1">1</button><button data-v="2">2</button><button data-v="3">3</button><button data-v="4">4</button><button data-v="5">5</button></div>
 <script>
 (function () {
   var sw = document.getElementById('fvp-sw'), img = document.querySelector('.fv-img .fv-pc'), orig = img.getAttribute('src'), v = '1';
   try { v = localStorage.getItem('bf_fvp') || '1'; } catch (e) {}
   function set(x) {
     document.documentElement.setAttribute('data-fvp', x);
-    img.setAttribute('src', x === '4' ? 'images/blackfriday_fv-pc-round_2880_1440.jpg' : orig);
+    img.setAttribute('src', (x === '4' || x === '5') ? 'images/blackfriday_fv-pc-round_2880_1440.jpg' : orig);
     sw.querySelectorAll('button').forEach(function (b) { b.classList.toggle('on', b.dataset.v === x); });
     try { localStorage.setItem('bf_fvp', x); } catch (e) {}
   }
