@@ -2050,7 +2050,18 @@
   .hear-card .hear-img .hear-logo { top: 12px !important; left: 12px !important; width: 84px !important; border-radius: 8px; }
   @media (max-width: 359px) { .hear-card .hear-img .hear-logo { width: 70px !important; } }
   @media (max-width: 1023px) { .hear-card .hear-body { padding: 20px 2px 0 !important; } } /* 文字を写真の板の左はしにそろえる */
-  @media (max-width: 1023px) { .hear-pr { text-align: center; } .hear-pr .hear-y { justify-content: center !important; } } /* 11/2 スマホの値段は中央に（左寄せは見づらい・Iさん） */
+  /* 11/2 スマホは「Gシリーズ」の右に右寄せで値段（Iさん）。下の値段はスマホでは隠す。PCは今まで通り下の値段 */
+  .hear-pr-r { display: none; }
+  @media (max-width: 1023px) {
+    .hear-card .hear-top { align-items: flex-end; justify-content: space-between; }
+    .hear-pr-r { display: block; text-align: right; }
+    .hear-pr-r .hear-pl { font-size: 11px; }
+    .hear-pr-r .hear-y { justify-content: flex-end !important; margin: 0 !important; }
+    .hear-pr-r .hear-y .num { font-size: 44px; }
+    .hear-pr-r .hear-y .st { font-size: 14px; margin-bottom: 4px; }
+    .hear-pr:not(.hear-pr-r) { display: none; }
+  }
+  @media (max-width: 359px) { .hear-pr-r .hear-y .num { font-size: 36px; } .hear-pr-r .hear-pl { font-size: 10px; } }
   @media (min-width: 1024px) {
     .hear-card { padding: 0 !important; }
     .hear-card .hear-img { padding: 24px 28px 28px !important; }
@@ -2378,7 +2389,7 @@
       <!-- 10/25 主役を「2週間無料でお試し」に、2,200円OFFはおまけに・特徴を1行（スターキー公式 GシリーズAI）。変更前 _保存/index.before-1025-hearpro.html -->
       <!-- 10/25 まず値段（2,200円OFF）→ 強み2つ（認定補聴器技能者・2週間無料貸出）。変更前 _保存/index.before-1025-hearpts.html -->
       <!-- 10/27 メガネのカードと同じ順に：名前 → 説明 → 線 → ラベル＋値段。変更前 _保存/変更前/1027/index.before-1027-hearorder.html -->
-      <div class="hear-top"><div><p class="hear-jp">スターキー</p><p class="hear-br">Gシリーズ</p></div></div>
+      <div class="hear-top"><div><p class="hear-jp">スターキー</p><p class="hear-br">Gシリーズ</p></div><div class="hear-pr hear-pr-r"><p class="hear-pl">ブラックフライデー限定</p><p class="hear-y"><span class="num">2<span class="cm">,</span>200</span><span class="st"><span>円</span><span>OFF</span></span></p></div></div><!-- 11/2 スマホは名前の右に値段（Iさん） -->
       <p class="hear-feat">耳かけ型｜AIがまわりの音に合わせて自動調整</p>
       <div class="hear-pr"><p class="hear-pl">ブラックフライデー限定</p><p class="hear-y"><span class="num">2<span class="cm">,</span>200</span><span class="st"><span>円</span><span>OFF</span></span></p></div>
       <!-- 10/27 A案（補聴器強み_比較.png）：1行ずつ横長に・アイコン＋見出し＋ひとこと、※と「技能者とは？」は技能者の行の中へ。変更前 _保存/変更前/1027/index.before-1027-hearptsA.html -->
