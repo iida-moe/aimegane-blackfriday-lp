@@ -1959,12 +1959,12 @@
   .exv-f .tot .max { font-size: 16px; font-weight: 900; line-height: 1.05; color: var(--tx); }
   .exv-f .tot .num { font-size: 56px; }
   .exv-f .tot .u { font-size: 20px; align-self: flex-end; margin-bottom: 3px; }
-  .exv-f .pl-sara { font-size: 14px; color: #e8352a; margin-left: 6px; vertical-align: 3px; }
+  .exv-f .lead { text-align: center; font-size: 16px; font-weight: 900; margin-bottom: 8px; }
+  .exv-f .lead em { font-style: normal; color: #e8352a; font-family: 'Barlow Semi Condensed', 'Noto Sans JP', sans-serif; font-size: 1.25em; }
+  @media (min-width: 1024px) { .exv-f .lead { font-size: 20px; margin-bottom: 4px; } }
   .exv-f .tot .u { white-space: nowrap; }
-  @media (max-width: 1023px) { .exv-f .sara { display: none; } }
   @media (max-width: 359px) { .exv-f .tot .num { font-size: 48px; } .exv-f .tab { font-size: 12px; } }
   @media (min-width: 1024px) {
-    .exv-f .pl-sara { display: none; }
     .exv-f .row { flex-direction: row; align-items: stretch; justify-content: center; }
     .exv-f .fc { flex: 1; margin-top: 30px; padding: 30px 14px 16px; }
     .exv-f .tab { font-size: 15px; left: 50%; transform: translateX(-50%); }
@@ -2165,10 +2165,11 @@
             </div>
             <!-- F Iさん案2：色つきカード（黄・緑・水色）＋上にラベルのタブ -->
             <div class="exv-f">
+              <p class="lead"><em>8<span class="cm">,</span>800円</em>になる、割引の内訳</p><!-- 11/2 「さらに」は8,800円からさらに引くように見える（Iさん）→削除して見出しで「8,800円の中身」とわかるように -->
               <div class="row">
                 <div class="fc fc-bf"><p class="tab">ブラックフライデー限定</p><div class="in"><svg class="ic" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 15V5h10l14 14-10 10z" fill="none" stroke="#111" stroke-width="2.6" stroke-linejoin="round"/><circle cx="10" cy="11" r="2.4" fill="#111"/></svg><p class="v"><span class="num">2<span class="cm">,</span>200</span><span class="u">円<br>OFF</span></p></div></div>
-                <span class="pl">＋<span class="pl-sara">さらに</span></span>
-                <div class="fc fc-line"><p class="sara">さらに</p><p class="tab">LINE新規お友だち登録で</p><div class="in"><svg class="ic" viewBox="0 0 32 32" aria-hidden="true"><path d="M5 6h22a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H15l-6 5v-5H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z" fill="#111"/></svg><p class="v"><span class="num">1<span class="cm">,</span>100</span><span class="u">円<br>OFF</span></p></div></div>
+                <span class="pl">＋</span>
+                <div class="fc fc-line"><p class="tab">LINE新規お友だち登録で</p><div class="in"><svg class="ic" viewBox="0 0 32 32" aria-hidden="true"><path d="M5 6h22a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H15l-6 5v-5H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z" fill="#111"/></svg><p class="v"><span class="num">1<span class="cm">,</span>100</span><span class="u">円<br>OFF</span></p></div></div>
                 <span class="pl">＋</span>
                 <div class="fc fc-rx"><p class="tab">眼科の処方箋ご持参で</p><div class="in"><svg class="ic" viewBox="0 0 32 32" aria-hidden="true"><path d="M7 3h13l6 6v20H7z" fill="none" stroke="#111" stroke-width="2.6" stroke-linejoin="round"/><path d="M11 14h11M11 19h11M11 24h7" stroke="#111" stroke-width="2.2"/></svg><p class="v"><span class="num">1<span class="cm">,</span>100</span><span class="u">円<br>OFF</span></p></div></div>
               </div>
