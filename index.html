@@ -2009,6 +2009,12 @@
   @media (min-width: 360px) and (max-width: 1023px) { .st4-ex-col .exc-list li.exc-start.exc-start, .st4-ex-col .exc-list li.exc-off.exc-off { padding-left: 39px !important; } .st4-ex-col .exc-list li.exc-start.exc-start { font-size: 13px !important; gap: 6px; } .st4-ex-col .exc-list li.exc-start.exc-start b { font-size: 18px !important; } } /* 8 + アイコン24 + すき間7 */
   @media (min-width: 1024px) { .st4-ex-col .exc-list li.exc-start.exc-start, .st4-ex-col .exc-list li.exc-off.exc-off { padding-left: 66px !important; } } /* 18 + 36 + 12 */
 
+  /* 11/2 2本同時の見出し：「2本同時購入」を黒のまま少し大きく・「2」と「おトク」を赤 */
+  .two-t .two-big { font-size: 1.1em; }
+  @media (min-width: 1024px) { .two-t .two-big { font-size: 1.18em; } }
+  .two-t .two-big b { color: #e8352a; font-weight: 900; }
+  .two-t .two-otoku { font-style: normal; color: #e8352a; }
+
   /* ===== 11/2 シンプル版の見比べ（html[data-simple="1"]）★本番前に決めた方だけ残して削除 ===== */
   html[data-simple="1"] .st4-hero { display: none !important; }
   .st4-catch { display: none; }
@@ -2254,7 +2260,7 @@
 
     <div class="two">
             <!-- 10/25 まず割引（2本同時で10%・20%OFF）→ だれと買ってもOK の順に。変更前 _保存/index.before-1025-review.html -->
-      <p class="two-t"><span class="sl">メガネ2本同時購入で、<br class="sp-br">もっとおトク</span><small class="two-also">上記の割引と<span class="marker">併用できます</span></small></p>
+      <p class="two-t"><span class="sl"><span class="two-tx">メガネ<span class="two-big"><b>2</b>本同時購入</span>で、<br class="sp-br">もっと<em class="two-otoku">おトク</em></span></span><!-- 11/2 2本同時購入を少し大きく・2とおトクを赤（Iさん） --><small class="two-also">上記の割引と<span class="marker">併用できます</span></small></p>
       <!-- 10/23 1本目10%・2本目以降20%の2行に（数字の左をそろえる）。変更前 _保存/index.before-1023-two.html -->
       <div class="two-rows">
         <p class="two-rl">1本目</p>
