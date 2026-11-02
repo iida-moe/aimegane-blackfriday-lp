@@ -2040,6 +2040,22 @@
   .otoku { --cut: 48px; clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - var(--cut))); padding-bottom: calc(72px + var(--cut)) !important; }
   @media (min-width: 1024px) { .otoku { --cut: 90px; padding-bottom: calc(96px + var(--cut)) !important; } }
 
+  /* 11/2 補聴器が「ダサい」（Iさん）→見出しを「補聴器もおトクに」・カードの灰色の枠をやめ、写真をうすいベージュの角丸の板に。ロゴ（白背景のメーカー画像・加工しない）は白い角丸の板にのせる */
+  .hear-otoku { font-style: normal; color: #e8352a; }
+  #hearing-aid .sec-ja { font-size: 30px; }
+  @media (max-width: 359px) { #hearing-aid .sec-ja { font-size: 26px; } }
+  @media (min-width: 1024px) { #hearing-aid .sec-ja { font-size: 46px; } }
+  .hear-card { border: 0 !important; background: transparent !important; }
+  .hear-card .hear-img { background: #f6f4ec !important; border-radius: 16px; padding: 44px 32px 20px !important; }
+  .hear-card .hear-img .hear-logo { top: 12px !important; left: 12px !important; width: 84px !important; border-radius: 8px; }
+  @media (max-width: 359px) { .hear-card .hear-img .hear-logo { width: 70px !important; } }
+  @media (max-width: 1023px) { .hear-card .hear-body { padding: 20px 2px 0 !important; } } /* 文字を写真の板の左はしにそろえる */
+  @media (min-width: 1024px) {
+    .hear-card { padding: 0 !important; }
+    .hear-card .hear-img { padding: 24px 28px 28px !important; }
+    .hear-card .hear-img .hear-logo { width: 110px !important; }
+  }
+
   /* ===== 11/2 シンプル版の見比べ（html[data-simple="1"]）★本番前に決めた方だけ残して削除 ===== */
   html[data-simple="1"] .st4-hero { display: none !important; }
   .st4-catch { display: none; }
@@ -2350,7 +2366,7 @@
 
   <!-- 10/27 A案（比較/補聴器の置き場所_比較.png）：補聴器はメガネのブランドと分けて別のセクションに -->
   <section class="sec hear-sec" id="hearing-aid">
-    <div class="sec-head"><h2 class="sec-ja">補聴器も<br class="pc-hide">ブラックフライデー対象</h2></div>
+    <div class="sec-head"><h2 class="sec-ja">補聴器も<em class="hear-otoku">おトク</em>に</h2><!-- 11/2 「補聴器もブラックフライデー対象」は長くて重い→短く（Iさん「ダサい」） --></div>
     <!-- 10/23 補聴器：白カード・中央に縦積み（補聴器_比較.html のC）。変更前 _保存/index.before-1023-starkey.html -->
     <!-- 10/23 E案：対象ブランド例のカードと同じ形（補聴器_比較2.html） -->
     <div class="hear">
