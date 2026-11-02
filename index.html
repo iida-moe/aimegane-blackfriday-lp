@@ -2084,7 +2084,7 @@
   @media (max-width: 359px) { a.btn, .float-cta .btn { font-size: 16px !important; } }
 
   /* 11/2 白（補聴器）→うすいグレー（選ばれる理由）の境目も斜めに。お得な内容の斜めと同じ向き（左が上・右が下） */
-  #reason { --cut: 48px; clip-path: polygon(0 0, 100% var(--cut), 100% 100%, 0 100%); padding-top: calc(72px + var(--cut)) !important; }
+  #reason { --cut: 48px; clip-path: polygon(0 var(--cut), 100% 0, 100% 100%, 0 100%); /* 11/2 お得な内容の斜めと反対向き（Iさん） */ padding-top: calc(72px + var(--cut)) !important; }
   @media (min-width: 1024px) { #reason { --cut: 90px; padding-top: calc(96px + var(--cut)) !important; } }
   html[data-simple="1"] #reason { padding-top: calc(104px + var(--cut)) !important; }
   @media (min-width: 1024px) { html[data-simple="1"] #reason { padding-top: calc(150px + var(--cut)) !important; } }
