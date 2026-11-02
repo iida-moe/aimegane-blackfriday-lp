@@ -2020,7 +2020,9 @@
   .pick-arw { display: none; }
   @media (max-width: 1023px) {
     .pick-dots { align-items: center; }
-    .pick-dots .pick-arw { position: static !important; margin: 0 10px; width: 36px !important; height: 36px !important; font-size: 22px !important; box-shadow: none !important; border-radius: 50% !important; background: var(--bk) !important; color: #fff !important; }
+    .pick-dots .pick-arw { position: static !important; margin: 0 16px; width: 32px !important; height: 32px !important; padding: 0 !important; box-shadow: none !important; border: 1.5px solid var(--bk) !important; border-radius: 50% !important; background: var(--bk) !important; color: #fff !important; transition: background .2s, color .2s, opacity .2s; }
+    .pick-dots .pick-arw svg { display: block; }
+    .pick-dots .pick-arw:disabled { opacity: 1; background: #fff !important; color: #ccc !important; border-color: #ddd !important; }
     .pick-arw:disabled { opacity: .2; cursor: default; }
     .pick-arw { display: flex; position: absolute; top: 90px; z-index: 3; width: 40px; height: 40px; border-radius: 50%; border: 0; background: var(--bk); color: #fff; align-items: center; justify-content: center; padding: 0 0 3px; font-size: 26px; font-weight: 700; line-height: 1; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,.18); }
     .pick-arw[hidden] { display: none; }
@@ -2868,7 +2870,7 @@ if(!location.hash){window.scrollTo(0,0);}
   t.addEventListener('scroll',upd,{passive:true}); upd();
   // 11/2 左右の丸い矢印ボタン（押して1枚ずつ動く・Iさん）
   const step=()=>cards[0].offsetWidth+12; // 11/2 矢印は点の左右に（カードの上だといびつ・Iさん）
-  const mk=(dir,label,ch)=>{const b=document.createElement('button');b.type='button';b.className='pick-arw pick-arw-'+dir;b.setAttribute('aria-label',label);b.innerHTML='<span aria-hidden="true">'+ch+'</span>';b.onclick=()=>t.scrollBy({left:(dir==='next'?1:-1)*step(),behavior:'smooth'});if(dir==='prev'){d.prepend(b);}else{d.appendChild(b);}return b;};
+  const mk=(dir,label,ch)=>{const b=document.createElement('button');b.type='button';b.className='pick-arw pick-arw-'+dir;b.setAttribute('aria-label',label);b.innerHTML='<svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="'+(dir==='next'?'M6 3l5 5-5 5':'M10 3L5 8l5 5')+'" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';b.onclick=()=>t.scrollBy({left:(dir==='next'?1:-1)*step(),behavior:'smooth'});if(dir==='prev'){d.prepend(b);}else{d.appendChild(b);}return b;};
   const prev=mk('prev','前のブランド','‹'), next=mk('next','次のブランド','›');
   const arw=()=>{prev.disabled=t.scrollLeft<8; next.disabled=t.scrollLeft>t.scrollWidth-t.clientWidth-8;};
   t.addEventListener('scroll',arw,{passive:true}); addEventListener('resize',arw); arw();
