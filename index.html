@@ -1967,6 +1967,11 @@
   .exc-sum-t { background: transparent !important; color: var(--tx) !important; border: 1.5px solid var(--tx); border-radius: 4px; padding: 3px 14px !important; }
   @media (min-width: 1024px) { .exc-sum-t { border-width: 2px; padding: 4px 18px !important; } }
 
+  /* 11/2 割引3行が見にくい（Iさん）→3行の見た目をそろえる：黒いラベルをやめてふつうの文字・アイコンは白い丸に入れる */
+  .exc-list .exc-lb .exc-bf { background: none !important; color: inherit !important; padding: 0 !important; font-size: inherit !important; }
+  .exc-ic { box-sizing: content-box; width: 16px !important; height: 16px !important; padding: 6px; background: #fff; border-radius: 50%; }
+  @media (min-width: 1024px) { .exc-ic { width: 20px !important; height: 20px !important; padding: 8px; } }
+
   /* ===== 11/2 シンプル版の見比べ（html[data-simple="1"]）★本番前に決めた方だけ残して削除 ===== */
   html[data-simple="1"] .st4-hero { display: none !important; }
   .st4-catch { display: none; }
