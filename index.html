@@ -2019,6 +2019,9 @@
   .pick-wrap { position: relative; }
   .pick-arw { display: none; }
   @media (max-width: 1023px) {
+    .pick-dots { align-items: center; }
+    .pick-dots .pick-arw { position: static !important; margin: 0 10px; width: 36px !important; height: 36px !important; font-size: 22px !important; box-shadow: none !important; border-radius: 50% !important; background: var(--bk) !important; color: #fff !important; }
+    .pick-arw:disabled { opacity: .2; cursor: default; }
     .pick-arw { display: flex; position: absolute; top: 90px; z-index: 3; width: 40px; height: 40px; border-radius: 50%; border: 0; background: var(--bk); color: #fff; align-items: center; justify-content: center; padding: 0 0 3px; font-size: 26px; font-weight: 700; line-height: 1; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,.18); }
     .pick-arw[hidden] { display: none; }
     .pick-arw-next { right: -6px; } .pick-arw-prev { left: -6px; }
@@ -2861,13 +2864,13 @@ if(!location.hash){window.scrollTo(0,0);}
   const t=document.getElementById('pickTrack'), d=document.getElementById('pickDots'); if(!t||!d) return;
   const cards=[...t.children];
   cards.forEach((c,i)=>{const b=document.createElement('button');b.type='button';b.setAttribute('aria-label',(i+1)+'枚目');b.onclick=()=>t.scrollTo({left:c.offsetLeft-t.offsetLeft-parseFloat(getComputedStyle(t).paddingLeft),behavior:'smooth'});d.appendChild(b);});
-  const upd=()=>{const w=cards[0].offsetWidth+12;const i=Math.min(cards.length-1,Math.round(t.scrollLeft/w));[...d.children].forEach((b,k)=>b.setAttribute('aria-current',k===i?'true':'false'));};
+  const upd=()=>{const w=cards[0].offsetWidth+12;const i=Math.min(cards.length-1,Math.round(t.scrollLeft/w));[...d.children].filter(b=>!b.classList.contains('pick-arw')).forEach((b,k)=>b.setAttribute('aria-current',k===i?'true':'false'));};
   t.addEventListener('scroll',upd,{passive:true}); upd();
   // 11/2 左右の丸い矢印ボタン（押して1枚ずつ動く・Iさん）
-  const wrap=t.parentElement, step=()=>cards[0].offsetWidth+12;
-  const mk=(dir,label,ch)=>{const b=document.createElement('button');b.type='button';b.className='pick-arw pick-arw-'+dir;b.setAttribute('aria-label',label);b.innerHTML='<span aria-hidden="true">'+ch+'</span>';b.onclick=()=>t.scrollBy({left:(dir==='next'?1:-1)*step(),behavior:'smooth'});wrap.appendChild(b);return b;};
+  const step=()=>cards[0].offsetWidth+12; // 11/2 矢印は点の左右に（カードの上だといびつ・Iさん）
+  const mk=(dir,label,ch)=>{const b=document.createElement('button');b.type='button';b.className='pick-arw pick-arw-'+dir;b.setAttribute('aria-label',label);b.innerHTML='<span aria-hidden="true">'+ch+'</span>';b.onclick=()=>t.scrollBy({left:(dir==='next'?1:-1)*step(),behavior:'smooth'});if(dir==='prev'){d.prepend(b);}else{d.appendChild(b);}return b;};
   const prev=mk('prev','前のブランド','‹'), next=mk('next','次のブランド','›');
-  const arw=()=>{prev.hidden=t.scrollLeft<8; next.hidden=t.scrollLeft>t.scrollWidth-t.clientWidth-8;};
+  const arw=()=>{prev.disabled=t.scrollLeft<8; next.disabled=t.scrollLeft>t.scrollWidth-t.clientWidth-8;};
   t.addEventListener('scroll',arw,{passive:true}); addEventListener('resize',arw); arw();
 })();
 
