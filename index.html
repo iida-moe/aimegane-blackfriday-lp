@@ -1851,6 +1851,24 @@
   /* 11/2 下の※3段も、割引リストの左はしにそろえる（Iさん「※の位置揃えて」）。3段のまま */
   @media (min-width: 1024px) { .ba.st4 .st4-note { width: 528px; max-width: none; margin: 8px auto 0 !important; text-align: left; font-size: 13px; line-height: 1.8; } }
 
+  /* ===== 11/2 PC FV 見比べ用（1今／2画面に収める／3＋中身90%／4＋丸メガネ）★本番前に決めた形だけ残して削除 ===== */
+  @media (min-width: 1024px) {
+    html { --fvw: 100vw; --fsc: 1; }
+    html[data-fvp="2"], html[data-fvp="3"], html[data-fvp="4"] { --fvw: min(100vw, calc((100svh - 3vw - 24px) * 2)); }
+    html[data-fvp="3"], html[data-fvp="4"] { --fsc: .9; }
+    html[data-fvp] .fv { height: calc(3vw + var(--fvw) / 2); }
+    html[data-fvp] .fv-img { width: var(--fvw); height: calc(var(--fvw) / 2); left: calc(50% - var(--fvw) / 2); right: auto; }
+    html[data-fvp] .fv-img .fv-pc { transform: scale(var(--fsc)); }
+    html[data-fvp] .fv .fv-cta { left: calc(50% - var(--fvw) / 2 + var(--fvw) * (.5 + .036 * var(--fsc))); top: calc(3vw + var(--fvw) / 2 * (.5 + .308 * var(--fsc))); width: calc(var(--fvw) * .355 * var(--fsc)); min-width: 0; }
+    html[data-fvp] .fv .fv-cta .btn-arw { min-height: calc(var(--fvw) * .054 * var(--fsc)); font-size: clamp(16px, calc(var(--fvw) * .02 * var(--fsc)), 38px); padding-left: 16px; padding-right: 16px; }
+    html[data-fvp] .fv .fv-cta .btn-arw .arw { width: calc(var(--fvw) * .038 * var(--fsc)); height: calc(var(--fvw) * .038 * var(--fsc)); margin-top: calc(var(--fvw) * -.019 * var(--fsc)); }
+  }
+  .fvp-sw { position: fixed; left: 12px; bottom: 140px; z-index: 9000; display: none; gap: 4px; align-items: center; background: #fff; border: 2px solid #111; border-radius: 10px; padding: 6px 8px; font-size: 12px; font-weight: 700; box-shadow: 0 4px 12px rgba(0,0,0,.25); }
+  @media (min-width: 1024px) { .fvp-sw { display: flex; } }
+  .fvp-sw button { width: 32px; height: 32px; border: 1.5px solid #111; border-radius: 6px; background: #fff; font-weight: 900; font-size: 14px; cursor: pointer; }
+  .fvp-sw button.on { background: #f4e030; }
+  /* ===== PC FV 見比べ用ここまで ===== */
+
   /* 11/2 ③ 曜日を固定バー・FVと同じ黄色の丸に（キャンペーン概要・最後のまとめ） */
   .ol-big small.dw, .cl-date small.dw { display: inline-flex !important; align-items: center; justify-content: center; width: 1.6em; height: 1.6em; border-radius: 50%; background: var(--ac); color: #111 !important; font-family: 'Noto Sans JP', sans-serif; font-weight: 700; line-height: 1; vertical-align: .2em; margin: 0 4px 0 3px; }
   .ol-big small.dw { font-size: 12px !important; }
@@ -2685,6 +2703,22 @@ if(!location.hash){window.scrollTo(0,0);}
   window.addEventListener('scroll',check,{passive:true});
   window.addEventListener('resize',check);
   check();
+})();
+</script>
+<!-- 11/2 PC FV 見比べボタン（★本番前に削除） -->
+<div class="fvp-sw" id="fvp-sw">FV <button data-v="1">1</button><button data-v="2">2</button><button data-v="3">3</button><button data-v="4">4</button></div>
+<script>
+(function () {
+  var sw = document.getElementById('fvp-sw'), img = document.querySelector('.fv-img .fv-pc'), orig = img.getAttribute('src'), v = '1';
+  try { v = localStorage.getItem('bf_fvp') || '1'; } catch (e) {}
+  function set(x) {
+    document.documentElement.setAttribute('data-fvp', x);
+    img.setAttribute('src', x === '4' ? 'images/blackfriday_fv-pc-round_2880_1440.jpg' : orig);
+    sw.querySelectorAll('button').forEach(function (b) { b.classList.toggle('on', b.dataset.v === x); });
+    try { localStorage.setItem('bf_fvp', x); } catch (e) {}
+  }
+  sw.addEventListener('click', function (e) { var b = e.target.closest('button'); if (b) set(b.dataset.v); });
+  set(v);
 })();
 </script>
 </body>
