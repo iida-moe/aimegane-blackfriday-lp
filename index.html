@@ -1931,6 +1931,18 @@
   .st4-ex-col .exc-list li:nth-last-child(2) { border-radius: 0 0 10px 10px; padding-bottom: 14px !important; }
   .st4-ex-col .exc-list li.exc-tot { margin-top: 16px !important; padding-top: 18px !important; border-top: 2px solid var(--tx) !important; }
   .exc-list .exc-bf { white-space: nowrap; }
+  /* 11/2 割引の行にアイコン（値札・吹き出し・書類） */
+  .exc-lb { display: inline-flex; align-items: center; gap: 8px; }
+  .exc-ic { width: 20px; height: 20px; flex: none; }
+  @media (max-width: 359px) {
+    .exc-ic { display: none; } /* 320pxは幅が足りないのでアイコンなし */
+    .st4-ex-col .exc-list li, html[data-simple="1"] .st4-ex-col .exc-list li { font-size: 12px !important; gap: 6px; }
+    .st4-ex-col .exc-list li .exc-lb span { white-space: nowrap; }
+    .st4-ex-col .exc-list b, html[data-simple="1"] .st4-ex-col .exc-list b { font-size: 17px !important; }
+    .st4-ex-col .exc-list li.exc-tot b { font-size: 22px !important; }
+    .exc-list .exc-bf { font-size: 10.5px; padding: 1px 4px; }
+  }
+  @media (min-width: 1024px) { .exc-ic { width: 26px; height: 26px; } .exc-lb { gap: 12px; } }
   @media (max-width: 1023px) { .st4-ex-col .exc-list li:not(.exc-start):not(.exc-tot) { padding-left: 10px !important; padding-right: 10px !important; gap: 8px; } .exc-list .exc-bf { font-size: 13px; } }
   @media (max-width: 359px) { .exc-list .exc-bf { font-size: 11.5px; } .st4-ex-col .exc-list li:not(.exc-start):not(.exc-tot) { padding-left: 8px !important; padding-right: 8px !important; } }
   @media (min-width: 1024px) {
@@ -2123,9 +2135,9 @@
           <p class="exc-sum"><span class="exc-sum-k">割引の内訳</span><span class="exc-sum-t">この3つの割引で、<em>8<span class="cm">,</span>800円</em>に</span><span class="exc-sum-v">合計 <b>−4<span class="cm">,</span>400<small>円</small></b></span></p><!-- 11/2 内訳の見出し＋合計（13,200→8,800の差とつなげる） -->
           <ul class="exc-list">
             <li class="exc-start"><span>標準レンズ付きセット価格</span><b>13<span class="cm">,</span>200<small>円</small></b></li><!-- 11/2 13,200円から始めて8,800円で終わるレシート型に（8,800円からさらに引くように見えるため・Iさん） -->
-            <li><span class="exc-bf">ブラックフライデー限定</span><b>−2<span class="cm">,</span>200<small>円</small></b></li>
-            <li><span>LINE新規お友だち登録</span><b>−1<span class="cm">,</span>100<small>円</small></b></li>
-            <li><span>眼科の処方箋ご持参</span><b>−1<span class="cm">,</span>100<small>円</small></b></li>
+            <li><span class="exc-lb"><svg class="exc-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11V4h7l10.5 10.5-7 7z" fill="none" stroke="#111" stroke-width="2.2" stroke-linejoin="round"/><circle cx="7.5" cy="8" r="1.7" fill="#111"/></svg><span class="exc-bf">ブラックフライデー限定</span></span><b>−2<span class="cm">,</span>200<small>円</small></b></li>
+            <li><span class="exc-lb"><svg class="exc-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-8l-5 4v-4H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" fill="#06c755"/><path d="M7 10.5h10" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg><span>LINE新規お友だち登録</span></span><b>−1<span class="cm">,</span>100<small>円</small></b></li>
+            <li><span class="exc-lb"><svg class="exc-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 2.5h10l4 4V21.5H5z" fill="none" stroke="#111" stroke-width="2.2" stroke-linejoin="round"/><path d="M8.5 11h7M8.5 14.5h7M8.5 18h4.5" stroke="#111" stroke-width="1.8"/></svg><span>眼科の処方箋ご持参</span></span><b>−1<span class="cm">,</span>100<small>円</small></b></li>
             <li class="exc-tot"><span>お支払い<small class="exc-tax">（税込）</small></span><b>8<span class="cm">,</span>800<small>円</small></b></li>
           </ul>
           <p class="exc-n2">※割引をすべて併用した場合</p>
