@@ -1732,6 +1732,7 @@
     .fc-date2 { font-family: 'Barlow', sans-serif; font-weight: 800; font-size: 26px; color: var(--ac); line-height: 1.1; }
     .fc-date2 small { font-family: 'Noto Sans JP', sans-serif; font-size: 13px; font-weight: 700; color: #111; background: var(--ac); width: 22px; height: 22px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; align-self: center; margin: 2px 0 0 5px; line-height: 1; } /* 曜日はFVと同じ黄色の丸に（Iさん） */
     .float-cta { background: #111; } /* 下の文字が透けないように */
+    .float-cta { justify-content: space-between !important; padding-left: 48px !important; padding-right: 48px !important; } /* 11/2 ボタンを帯の右はしに（Iさん）・左右の余白はヘッダーの来店予約とそろえる */
     .fc-date2 { display: flex; align-items: baseline; }
     .fc-dash { display: inline-block; width: 26px; height: 2px; background: #fff; margin: 0 10px; align-self: center; } /* 〜は分かりにくいのでFVと同じ線に（Iさん） */
   }
@@ -2213,7 +2214,7 @@
       <!-- 10/27 理由2の会話を見本（関西みらい銀行NISA LP）の形に：上半身のイラスト・白地に色のふちの吹き出し・質問1つと答え1つ。旧の丸い顔の会話（.talk）はCSSを残置 -->
       <div class="manga">
         <div class="mg-row mg-cust"><p class="mg-bub">最近、手元が見えにくくて…<br>遠近両用は<span class="nw">はじめてで不安</span></p><img src="images/blackfriday_bust-customer_400_577.png" alt="なやむお客さまのイラスト" width="400" height="577" loading="lazy"></div>
-        <div class="mg-row mg-staff"><img src="images/blackfriday_bust-staff_400_453.png" alt="スタッフのイラスト" width="400" height="453" loading="lazy"><p class="mg-bub"><span class="nw">見え方をしっかり測って、</span><br>ぴったりのレンズを<br>ご提案します！</p></div>
+        <div class="mg-row mg-staff"><img src="images/blackfriday_bust-staff_400_453.png" alt="スタッフのイラスト" width="400" height="453" loading="lazy"><p class="mg-bub"><span class="nw">見え方をしっかり測って、</span><br>ぴったりのレンズを<br class="pc-hide">ご提案します！</p><!-- 11/2 PCは2行（Iさん）・スマホは幅が足りないので3行のまま --></div>
       </div>
       <p class="worry-link"><a href="#shop-search" data-cta-location="reason_staff">▶ 近くのお店で予約する</a></p>
     </div>
