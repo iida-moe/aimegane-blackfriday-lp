@@ -1832,7 +1832,10 @@
   .exc-sum-v b { font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 800; font-size: 24px; color: #e8352a; line-height: 1; }
   .exc-sum-v b small { font-family: 'Noto Sans JP', sans-serif; font-size: 13px; font-weight: 700; margin-left: 1px; }
   @media (min-width: 1024px) {
-    .st4 > .st4-ex::after { grid-row: 4 / 9 !important; }
+    .st4 > .st4-ex::after { grid-row: 4 / 9 !important; display: none; } /* 11/2 グレーの吹き出しはわかりにくい→外す（Iさん） */
+    .st4-ex-tri { display: none !important; }
+    .st4 .st4-ex .ba-set { margin-top: 44px !important; }
+    .st4-ex-col .exc-n2 { margin-bottom: 0 !important; }
     .st4-ex-col .exc-sum { grid-column: 1 / -1; grid-row: 6; margin: 22px 40px 0; padding-top: 22px; border-top: 1px dashed #ccc; }
     .st4-ex-col .exc-list { grid-row: 7 !important; margin-top: 14px !important; padding-top: 0 !important; border-top: 0 !important; }
     .st4-ex-col .exc-n2 { grid-row: 8 !important; }
