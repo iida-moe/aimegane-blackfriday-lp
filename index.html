@@ -1919,6 +1919,11 @@
     .st4-ex .st4-ex-all { margin-top: 18px !important; }
   }
 
+  /* 11/2 一覧の1行目＝13,200円（黒）・最後＝お支払い 8,800円 */
+  .exc-list li.exc-start b { color: var(--tx); }
+  .exc-list li.exc-tot span .exc-tax { font-size: 11px; font-weight: 700; color: var(--sub); margin-left: 2px; }
+  .exc-list li.exc-tot { font-weight: 900; }
+
   /* ===== 11/2 シンプル版の見比べ（html[data-simple="1"]）★本番前に決めた方だけ残して削除 ===== */
   html[data-simple="1"] .st4-hero { display: none !important; }
   .st4-catch { display: none; }
@@ -2101,10 +2106,11 @@
           <!-- 10/30 割引の内訳を3行のリストで（グレーの枠と合計枠の代わり・Iさん C案）。比較 比較/商品例と割引の内訳_比較2.png -->
           <p class="exc-sum"><span class="exc-sum-k">割引の内訳</span><span class="exc-sum-t">この3つの割引で、<em>8<span class="cm">,</span>800円</em>に</span><span class="exc-sum-v">合計 <b>−4<span class="cm">,</span>400<small>円</small></b></span></p><!-- 11/2 内訳の見出し＋合計（13,200→8,800の差とつなげる） -->
           <ul class="exc-list">
+            <li class="exc-start"><span>標準レンズ付きセット価格</span><b>13<span class="cm">,</span>200<small>円</small></b></li><!-- 11/2 13,200円から始めて8,800円で終わるレシート型に（8,800円からさらに引くように見えるため・Iさん） -->
             <li><span class="exc-bf">ブラックフライデー限定</span><b>−2<span class="cm">,</span>200<small>円</small></b></li>
             <li><span>LINE新規お友だち登録</span><b>−1<span class="cm">,</span>100<small>円</small></b></li>
             <li><span>眼科の処方箋ご持参</span><b>−1<span class="cm">,</span>100<small>円</small></b></li>
-            <li class="exc-tot"><span>割引の合計</span><b>−4<span class="cm">,</span>400<small>円</small></b></li><!-- 11/2 スマホだけ：合計はリストの最後に -->
+            <li class="exc-tot"><span>お支払い<small class="exc-tax">（税込）</small></span><b>8<span class="cm">,</span>800<small>円</small></b></li>
           </ul>
           <p class="exc-n2">※割引をすべて併用した場合</p>
         </div>
