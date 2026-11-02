@@ -2062,6 +2062,14 @@
     .hear-pr:not(.hear-pr-r) { display: none; }
   }
   @media (max-width: 359px) { .hear-pr-r .hear-y .num { font-size: 36px; } .hear-pr-r .hear-pl { font-size: 10px; } }
+  /* 11/2 スマホ：①右半分だけの線を外す ②値段の数字の下を「Gシリーズ」の下にそろえる ③説明文の下に横いっぱいの線で、強みと分ける */
+  @media (max-width: 1023px) {
+    .hear-pr-r { border-top: 0 !important; margin-top: 0 !important; padding-top: 0 !important; }
+    .hear-card .hear-top { align-items: flex-end !important; }
+    .hear-pr-r .hear-y { line-height: .9; }
+    .hear-card .hear-feat { padding-bottom: 18px; border-bottom: 1px solid var(--line); }
+    .hear-card .hear-pt2 { margin-top: 18px !important; }
+  }
   @media (min-width: 1024px) {
     .hear-card { padding: 0 !important; }
     .hear-card .hear-img { padding: 24px 28px 28px !important; }
