@@ -1873,6 +1873,15 @@
   /* 11/2 対象ブランドの「割引をぜんぶ使うと（税込）」を消した（Iさん）→説明文との区切り線は値段の行に */
   .pick-body > .pv-a { border-top: 1px solid var(--line); margin-top: auto; padding-top: 14px; }
 
+  /* 11/2 ボタンの▶のゆれ（うねうね）はやめる→カーソルを合わせたときだけ：少し浮く・黄色が濃くなる・▶が少し右へ（Iさん） */
+  .btn-arw .arw { animation: none !important; transition: transform .2s ease; }
+  .btn, .fc-btn { transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease; }
+  @media (hover: hover) {
+    .btn:hover, .fc-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 18px rgba(0,0,0,.28); filter: none; background-color: #ffd400; opacity: 1; }
+    .btn-arw:hover .arw { transform: translateX(4px); }
+    .fv .fv-cta .btn:hover { transform: translateY(-3px); }
+  }
+
   /* 11/2 ③ 曜日を固定バー・FVと同じ黄色の丸に（キャンペーン概要・最後のまとめ） */
   .ol-big small.dw, .cl-date small.dw { display: inline-flex !important; align-items: center; justify-content: center; width: 1.6em; height: 1.6em; border-radius: 50%; background: var(--ac); color: #111 !important; font-family: 'Noto Sans JP', sans-serif; font-weight: 700; line-height: 1; vertical-align: .2em; margin: 0 4px 0 3px; }
   .ol-big small.dw { font-size: 12px !important; }
