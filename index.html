@@ -2083,6 +2083,12 @@
   }
   @media (max-width: 359px) { a.btn, .float-cta .btn { font-size: 16px !important; } }
 
+  /* 11/2 白（補聴器）→うすいグレー（選ばれる理由）の境目も斜めに。お得な内容の斜めと同じ向き（左が上・右が下） */
+  #reason { --cut: 48px; clip-path: polygon(0 0, 100% var(--cut), 100% 100%, 0 100%); padding-top: calc(72px + var(--cut)) !important; }
+  @media (min-width: 1024px) { #reason { --cut: 90px; padding-top: calc(96px + var(--cut)) !important; } }
+  html[data-simple="1"] #reason { padding-top: calc(104px + var(--cut)) !important; }
+  @media (min-width: 1024px) { html[data-simple="1"] #reason { padding-top: calc(150px + var(--cut)) !important; } }
+
   /* ===== 11/2 シンプル版の見比べ（html[data-simple="1"]）★本番前に決めた方だけ残して削除 ===== */
   html[data-simple="1"] .st4-hero { display: none !important; }
   .st4-catch { display: none; }
