@@ -1908,6 +1908,17 @@
   .exc-sum-k { display: block; width: 100%; font-size: 12px; font-weight: 700; color: var(--sub); letter-spacing: .08em; margin-bottom: 2px; }
   @media (min-width: 1024px) { .exc-sum-k { text-align: center; font-size: 14px; margin-bottom: 8px; } }
 
+  /* 11/2 スマホ：割引のまわりに余白（Iさん「もう少し余白を」） */
+  @media (max-width: 1023px) {
+    .st4-ex-col .exc-sum { margin-top: 40px !important; }
+    .exc-sum-k { margin-bottom: 4px; }
+    .st4-ex-col .exc-sum + .exc-list { margin-top: 14px !important; }
+    .st4-ex-col .exc-list li, html[data-simple="1"] .st4-ex-col .exc-list li { padding: 13px 0; }
+    .st4-ex-col .exc-list li.exc-tot { margin-top: 6px; padding-top: 16px; }
+    .st4-ex .ba-set { margin-top: 36px !important; padding-top: 32px !important; }
+    .st4-ex .st4-ex-all { margin-top: 18px !important; }
+  }
+
   /* ===== 11/2 シンプル版の見比べ（html[data-simple="1"]）★本番前に決めた方だけ残して削除 ===== */
   html[data-simple="1"] .st4-hero { display: none !important; }
   .st4-catch { display: none; }
