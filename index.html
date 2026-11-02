@@ -1840,6 +1840,79 @@
     .exc-sum-v b { font-size: 30px; } .exc-sum-v b small { font-size: 15px; }
   }
 
+  /* ===== 11/2 割引の内訳 見比べ用（★本番前に削除） ===== */
+  .exv > div { display: none; }
+  html[data-exv="a"] .exv-a, html[data-exv="b"] .exv-b { display: flex; }
+  html[data-exv="c"] .exv-c { display: grid; }
+  html[data-exv="a"] .exc-list, html[data-exv="b"] .exc-list, html[data-exv="c"] .exc-list { display: none !important; }
+  .exv { margin-top: 24px; }
+  .exv .num { font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 800; line-height: 1; }
+  .exv .yen { font-family: 'Noto Sans JP', sans-serif; font-size: .5em; font-weight: 700; margin-left: 1px; }
+  .exv .bf { background: var(--bk); color: var(--ac); padding: 1px 6px; }
+  /* A 階段 */
+  .exv-a { align-items: flex-end; height: 210px; border-bottom: 2px solid var(--tx); }
+  .exv-a .st { flex: 1; display: flex; flex-direction: column; justify-content: flex-end; height: 100%; }
+  .exv-a .cap { font-size: 10px; font-weight: 700; line-height: 1.35; margin-bottom: 6px; display: flex; flex-direction: column; align-items: center; gap: 2px; }
+  .exv-a .cap .bf { font-size: 9px; padding: 1px 3px; }
+  .exv-a .cap b { color: #e8352a; font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 800; font-size: 15px; }
+  .exv-a .bar { height: calc(var(--h) * .62); margin: 0 3px; background: #eee; border-radius: 8px 8px 0 0; padding-top: 10px; }
+  .exv-a .p { font-size: 19px; }
+  .exv-a .st:first-child .p { color: #8a8a8a; }
+  .exv-a .st:last-child .bar { background: #e8352a; color: #fff; }
+  .exv-a .st:last-child .p { font-size: 23px; }
+  /* B 計算式（スマホは縦） */
+  .exv-b { flex-direction: column; align-items: stretch; max-width: 300px; margin: 0 auto; }
+  .exv-b .it { display: flex; justify-content: space-between; align-items: center; padding: 6px 0; }
+  .exv-b .k { font-size: 13px; font-weight: 700; text-align: left; }
+  .exv-b .v { font-size: 22px; }
+  .exv-b .op { font-size: 18px; font-weight: 900; color: var(--sub); line-height: 1; text-align: left; }
+  .exv-b .gray .v { color: #8a8a8a; } .exv-b .red .v { color: #e8352a; }
+  .exv-b .res { background: #fff7c2; border-radius: 8px; padding: 8px 10px; margin-top: 4px; }
+  .exv-b .res .v { color: #e8352a; font-size: 32px; }
+  /* C 3枚カード（スマホは縦） */
+  .exv-c { grid-template-columns: 1fr; gap: 0; }
+  .exv-c .cd { display: grid; grid-template-columns: 38px 1fr auto; align-items: center; gap: 10px; border: 2px solid var(--tx); border-radius: 10px; padding: 10px 12px; text-align: left; }
+  .exv-c .cd.first { background: var(--bk); color: #fff; border-color: var(--bk); }
+  .exv-c .ic { width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 900; background: #fff7c2; }
+  .exv-c .first .ic { background: var(--ac); color: var(--bk); }
+  .exv-c .k { font-size: 13px; font-weight: 700; }
+  .exv-c .v { font-size: 26px; color: #e8352a; }
+  .exv-c .first .v { color: var(--ac); }
+  @media (max-width: 1023px) { .exv-c .cd { grid-template-columns: 1fr auto; } .exv-c .ic { display: none; } .exv-c .k { white-space: nowrap; font-size: 13px; } }
+  @media (max-width: 359px) { .exv-c .k { font-size: 11.5px; } .exv-c .v { font-size: 22px; } }
+  .exv-c .pl { font-size: 20px; font-weight: 900; color: #e8352a; line-height: 1.3; }
+  .exv-c .total { margin-top: 12px; background: #fff7c2; border-radius: 10px; display: flex; align-items: center; justify-content: center; gap: 10px; padding: 10px; font-size: 15px; font-weight: 900; }
+  .exv-c .total .v { font-size: 34px; }
+  @media (min-width: 1024px) {
+    .st4-ex-col .exv { grid-column: 1 / -1; grid-row: 7; margin: 18px 40px 0; }
+    .exv-a { height: 270px; width: 760px; margin: 0 auto; }
+    .exv-a .cap { font-size: 13px; min-height: 44px; justify-content: flex-end; }
+    .exv-a .cap .bf { font-size: 13px; padding: 1px 8px; }
+    .exv-a .cap b { font-size: 20px; }
+    .exv-a .bar { margin: 0 14px; }
+    .exv-a .p { font-size: 34px; } .exv-a .st:last-child .p { font-size: 44px; }
+    .exv-b { flex-direction: row; align-items: flex-end; justify-content: center; max-width: none; }
+    .exv-b .it { display: block; text-align: center; padding: 0 6px; }
+    .exv-b .k { text-align: center; height: 36px; display: flex; align-items: flex-end; justify-content: center; margin-bottom: 6px; line-height: 1.3; }
+    .exv-b .v { font-size: 34px; }
+    .exv-b .op { font-size: 28px; padding: 0 8px 4px; }
+    .exv-b .res { padding: 6px 14px 8px; margin: 0; }
+    .exv-b .res .v { font-size: 46px; }
+    .exv-c { grid-template-columns: 1fr 34px 1fr 34px 1fr; }
+    .exv-c .cd { display: block; text-align: center; border-radius: 12px; padding: 16px 10px 14px; }
+    .exv-c .ic { width: 44px; height: 44px; margin: 0 auto 8px; font-size: 13px; }
+    .exv-c .k { font-size: 15px; }
+    .exv-c .v { font-size: 40px; margin-top: 6px; }
+    .exv-c .pl { display: flex; align-items: center; justify-content: center; font-size: 26px; }
+    .exv-c .total { grid-column: 1 / -1; margin-top: 16px; font-size: 18px; gap: 16px; padding: 12px; }
+    .exv-c .total .v { font-size: 44px; }
+  }
+  .exv-sw { position: fixed; left: 12px; bottom: 96px; z-index: 9000; display: flex; gap: 4px; align-items: center; background: #fff; border: 2px solid #111; border-radius: 10px; padding: 6px 8px; font-size: 12px; font-weight: 700; box-shadow: 0 4px 12px rgba(0,0,0,.25); }
+  .exv-sw button { width: 32px; height: 32px; border: 1.5px solid #111; border-radius: 6px; background: #fff; font-weight: 900; font-size: 14px; cursor: pointer; }
+  .exv-sw button.on { background: #f4e030; }
+  @media (min-width: 1024px) { .exv-sw { bottom: 140px; } }
+  /* ===== 見比べ用ここまで ===== */
+
   /* 11/2 ③ 曜日を固定バー・FVと同じ黄色の丸に（キャンペーン概要・最後のまとめ） */
   .ol-big small.dw, .cl-date small.dw { display: inline-flex !important; align-items: center; justify-content: center; width: 1.6em; height: 1.6em; border-radius: 50%; background: var(--ac); color: #111 !important; font-family: 'Noto Sans JP', sans-serif; font-weight: 700; line-height: 1; vertical-align: .2em; margin: 0 4px 0 3px; }
   .ol-big small.dw { font-size: 12px !important; }
@@ -1980,6 +2053,34 @@
             <li><span>眼科の処方箋ご持参</span><b>−1<span class="cm">,</span>100<small>円</small></b></li>
             <li class="exc-tot"><span>割引の合計</span><b>−4<span class="cm">,</span>400<small>円</small></b></li><!-- 11/2 スマホだけ：合計はリストの最後に -->
           </ul>
+          <!-- 11/2 見比べ用（A階段・B計算式・C3枚カード。Dは上のレシート型）。★本番前に、決まった案だけ残して見比べボタンごと削除 -->
+          <div class="exv">
+            <div class="exv-a">
+              <div class="st"><p class="cap">標準レンズ付き<br>セット価格</p><div class="bar" style="--h:100%"><p class="p num">13<span class="cm">,</span>200<span class="yen">円</span></p></div></div>
+              <div class="st"><p class="cap"><span class="bf">ブラックフライデー限定</span><b>−2,200円</b></p><div class="bar" style="--h:83%"><p class="p num">11<span class="cm">,</span>000<span class="yen">円</span></p></div></div>
+              <div class="st"><p class="cap">LINE新規お友だち登録<b>−1,100円</b></p><div class="bar" style="--h:75%"><p class="p num">9<span class="cm">,</span>900<span class="yen">円</span></p></div></div>
+              <div class="st"><p class="cap">眼科の処方箋ご持参<b>−1,100円</b></p><div class="bar" style="--h:66%"><p class="p num">8<span class="cm">,</span>800<span class="yen">円</span></p></div></div>
+            </div>
+            <div class="exv-b">
+              <div class="it gray"><p class="k">セット価格</p><p class="v num">13<span class="cm">,</span>200<span class="yen">円</span></p></div>
+              <span class="op">−</span>
+              <div class="it red"><p class="k"><span class="bf">ブラックフライデー限定</span></p><p class="v num">2<span class="cm">,</span>200<span class="yen">円</span></p></div>
+              <span class="op">−</span>
+              <div class="it red"><p class="k">LINE新規<br class="pc-only">お友だち登録</p><p class="v num">1<span class="cm">,</span>100<span class="yen">円</span></p></div>
+              <span class="op">−</span>
+              <div class="it red"><p class="k">眼科の処方箋<br class="pc-only">ご持参</p><p class="v num">1<span class="cm">,</span>100<span class="yen">円</span></p></div>
+              <span class="op">＝</span>
+              <div class="it res"><p class="k">お支払い</p><p class="v num">8<span class="cm">,</span>800<span class="yen">円</span></p></div>
+            </div>
+            <div class="exv-c">
+              <div class="cd first"><p class="ic">BF</p><p class="k">ブラックフライデー限定</p><p class="v num">−2<span class="cm">,</span>200<span class="yen">円</span></p></div>
+              <span class="pl">＋</span>
+              <div class="cd"><p class="ic">LINE</p><p class="k">LINE新規お友だち登録</p><p class="v num">−1<span class="cm">,</span>100<span class="yen">円</span></p></div>
+              <span class="pl">＋</span>
+              <div class="cd"><p class="ic">眼科</p><p class="k">眼科の処方箋ご持参</p><p class="v num">−1<span class="cm">,</span>100<span class="yen">円</span></p></div>
+              <p class="total">合計で<span class="v num">4<span class="cm">,</span>400<span class="yen">円</span></span>OFF</p>
+            </div>
+          </div>
           <p class="exc-n2">※割引をすべて併用した場合</p>
         </div>
         <div class="st4-ex-row" hidden>
@@ -2674,6 +2775,17 @@ if(!location.hash){window.scrollTo(0,0);}
   window.addEventListener('scroll',check,{passive:true});
   window.addEventListener('resize',check);
   check();
+})();
+</script>
+<!-- 11/2 割引の内訳 見比べボタン（★本番前に削除） -->
+<div class="exv-sw" id="exv-sw">内訳 <button data-v="a">A</button><button data-v="b">B</button><button data-v="c">C</button><button data-v="d">D</button></div>
+<script>
+(function () {
+  var sw = document.getElementById('exv-sw'), v = 'd';
+  try { v = localStorage.getItem('bf_exv') || 'd'; } catch (e) {}
+  function set(x) { document.documentElement.setAttribute('data-exv', x); sw.querySelectorAll('button').forEach(function (b) { b.classList.toggle('on', b.dataset.v === x); }); try { localStorage.setItem('bf_exv', x); } catch (e) {} }
+  sw.addEventListener('click', function (e) { var b = e.target.closest('button'); if (b) set(b.dataset.v); });
+  set(v);
 })();
 </script>
 </body>
