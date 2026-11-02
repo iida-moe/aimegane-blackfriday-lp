@@ -2005,6 +2005,10 @@
   /* 11/2 「お支払い 8,800円」の行は外す（Iさん：上の商品例に8,800円があり、「13,200円から 最大4,400円OFF！」で伝わる） */
   .st4-ex-col .exc-list li.exc-tot { display: none !important; }
 
+  /* 11/2 文字の左はしをそろえる（Iさん）→13,200円の行と「13,200円から」の行をアイコンの幅だけ右へ（アイコンだけ左に出す） */
+  @media (min-width: 360px) and (max-width: 1023px) { .st4-ex-col .exc-list li.exc-start.exc-start, .st4-ex-col .exc-list li.exc-off.exc-off { padding-left: 39px !important; } .st4-ex-col .exc-list li.exc-start.exc-start { font-size: 13px !important; gap: 6px; } .st4-ex-col .exc-list li.exc-start.exc-start b { font-size: 18px !important; } } /* 8 + アイコン24 + すき間7 */
+  @media (min-width: 1024px) { .st4-ex-col .exc-list li.exc-start.exc-start, .st4-ex-col .exc-list li.exc-off.exc-off { padding-left: 66px !important; } } /* 18 + 36 + 12 */
+
   /* ===== 11/2 シンプル版の見比べ（html[data-simple="1"]）★本番前に決めた方だけ残して削除 ===== */
   html[data-simple="1"] .st4-hero { display: none !important; }
   .st4-catch { display: none; }
