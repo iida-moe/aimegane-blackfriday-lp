@@ -1782,8 +1782,12 @@
   /* 11/2 PC：上のラベルを数字の左はしにそろえる（Iさん） */
   @media (min-width: 1024px) {
     .st4-ex-col .exc-k, .st4-ex-col .exc-b, .st4-ex-col .exc-a { justify-self: start !important; text-align: left !important; }
-    .st4-ex-col .exc-k:not(.exc-k-red), .st4-ex-col .exc-b { margin-left: 24px !important; }
+    .st4-ex-col .exc-k:not(.exc-k-red), .st4-ex-col .exc-b { margin-left: 32px !important; }
+    /* ▶が8に寄りすぎ→13,200の列は中身の幅だけ、残りの空きを▶の列に（▶は円と8のまん中） */
+    .st4 > .st4-ex { grid-template-columns: 300px auto 1fr auto 28px !important; }
+    .st4-ex-col .exc-dn { justify-self: center !important; }
   }
+  @media (min-width: 1280px) { .st4 > .st4-ex { grid-template-columns: 340px auto 1fr auto 32px !important; } }
   @media (min-width: 1024px) { .st4-ex-col .exc-dn { align-self: end !important; margin-bottom: 40px !important; } }
 
   /* 11/2 ③ 曜日を固定バー・FVと同じ黄色の丸に（キャンペーン概要・最後のまとめ） */
