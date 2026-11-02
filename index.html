@@ -1903,6 +1903,11 @@
   .st4 .ba-set li.plus { color: var(--tx); font-weight: 900; font-size: 16px; }
   @media (min-width: 1024px) { .st4 .ba-set li.plus { font-size: 26px; } }
 
+  /* 11/2 「割引の内訳」も小さく書く（Iさん）→「この3つの割引で、8,800円に」の上に */
+  .exc-sum { flex-wrap: wrap; row-gap: 0; }
+  .exc-sum-k { display: block; width: 100%; font-size: 12px; font-weight: 700; color: var(--sub); letter-spacing: .08em; margin-bottom: 2px; }
+  @media (min-width: 1024px) { .exc-sum-k { text-align: center; font-size: 14px; margin-bottom: 8px; } }
+
   /* ===== 11/2 シンプル版の見比べ（html[data-simple="1"]）★本番前に決めた方だけ残して削除 ===== */
   html[data-simple="1"] .st4-hero { display: none !important; }
   .st4-catch { display: none; }
@@ -2083,7 +2088,7 @@
           <p class="exc-k exc-k-red">割引をぜんぶ使うと</p>
           <p class="exc-a"><span class="exc-n">8<span class="cm">,</span>800</span><span class="exc-u"><small>円</small><small class="exc-tax">税込</small></span></p>
           <!-- 10/30 割引の内訳を3行のリストで（グレーの枠と合計枠の代わり・Iさん C案）。比較 比較/商品例と割引の内訳_比較2.png -->
-          <p class="exc-sum"><span class="exc-sum-t">この3つの割引で、<em>8<span class="cm">,</span>800円</em>に</span><span class="exc-sum-v">合計 <b>−4<span class="cm">,</span>400<small>円</small></b></span></p><!-- 11/2 内訳の見出し＋合計（13,200→8,800の差とつなげる） -->
+          <p class="exc-sum"><span class="exc-sum-k">割引の内訳</span><span class="exc-sum-t">この3つの割引で、<em>8<span class="cm">,</span>800円</em>に</span><span class="exc-sum-v">合計 <b>−4<span class="cm">,</span>400<small>円</small></b></span></p><!-- 11/2 内訳の見出し＋合計（13,200→8,800の差とつなげる） -->
           <ul class="exc-list">
             <li><span class="exc-bf">ブラックフライデー限定</span><b>−2<span class="cm">,</span>200<small>円</small></b></li>
             <li><span>LINE新規お友だち登録</span><b>−1<span class="cm">,</span>100<small>円</small></b></li>
