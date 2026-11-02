@@ -1801,9 +1801,8 @@
     .st4-ex-col .exc-b .exc-n, .st4-ex-col .exc-b .exc-u { color: #8a8a8a; }
     .st4-ex-col .exc-b::after { background: #8a8a8a; }
     /* ④ラベルの高さをそろえる：数字は上ぞろえ（ラベル→数字の間が左右同じ）、▶は13,200の高さのまん中 */
-    .st4-ex-col .exc-a { align-self: start !important; margin-top: 10px !important; }
-    /* 11/2 数字の中心がずれて見える（Iさん）→13,200と▶は8,800の高さのまん中に */
-    .st4-ex-col .exc-b, .st4-ex-col .exc-dn { align-self: center !important; margin-top: 10px !important; margin-bottom: 40px !important; }
+    /* 11/2 数字の下のラインはそろえる（Iさん）→13,200・8,800・▶とも下ぞろえ。▶は13,200の高さのまん中 */
+    .st4-ex-col .exc-a, .st4-ex-col .exc-b, .st4-ex-col .exc-dn { align-self: end !important; margin-top: 10px !important; margin-bottom: 40px !important; }
   }
   @media (min-width: 1024px) and (max-width: 1279px) { .st4 > .st4-ex { grid-template-columns: 1fr auto 80px auto 24px !important; } .st4-ex-col .exc-k:not(.exc-k-red), .st4-ex-col .exc-b { margin-left: 24px !important; } }
 
