@@ -1963,6 +1963,10 @@
   }
   @media (min-width: 1024px) { .st4-ex-col .exc-sum + .exc-list { margin-top: 8px !important; } .st4-ex-col .exc-list li.exc-start { padding-top: 8px !important; } }
 
+  /* 11/2 「割引の内訳」は塗りつぶしではなく線の囲みに（Iさん） */
+  .exc-sum-t { background: transparent !important; color: var(--tx) !important; border: 1.5px solid var(--tx); border-radius: 4px; padding: 3px 14px !important; }
+  @media (min-width: 1024px) { .exc-sum-t { border-width: 2px; padding: 4px 18px !important; } }
+
   /* ===== 11/2 シンプル版の見比べ（html[data-simple="1"]）★本番前に決めた方だけ残して削除 ===== */
   html[data-simple="1"] .st4-hero { display: none !important; }
   .st4-catch { display: none; }
