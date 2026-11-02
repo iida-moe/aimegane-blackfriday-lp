@@ -1938,6 +1938,46 @@
     .exv-e .tot .num { font-size: 100px; }
     .exv-e .tot .u { font-size: 30px; margin-bottom: 8px; }
   }
+  /* F Iさん案2：色つきカード */
+  html[data-exv="f"] .exv-f { display: block; }
+  html[data-exv="f"] .exc-list, html[data-exv="f"] .exc-sum-t { display: none !important; }
+  .exv-f .row { display: flex; flex-direction: column; align-items: stretch; }
+  .exv-f .fc { position: relative; border-radius: 10px; padding: 26px 16px 12px; margin-top: 14px; }
+  .exv-f .fc-bf { background: var(--ac); }
+  .exv-f .fc-line { background: #a8e6a1; }
+  .exv-f .fc-rx { background: #cde8f8; }
+  .exv-f .tab { position: absolute; top: -14px; left: 12px; background: #fff; border: 2px solid #111; border-radius: 6px; padding: 2px 10px; font-size: 13px; font-weight: 900; white-space: nowrap; line-height: 1.5; }
+  .exv-f .sara { position: absolute; top: -14px; right: 12px; font-size: 14px; font-weight: 900; color: #e8352a; line-height: 1.5; background: #fff; padding: 0 6px; border-radius: 4px; }
+  .exv-f .in { display: flex; align-items: center; justify-content: center; gap: 10px; }
+  .exv-f .ic { width: 28px; height: 28px; flex: none; }
+  .exv-f .v { display: flex; align-items: flex-end; }
+  .exv-f .v .num { font-size: 44px; color: #111; }
+  .exv-f .u { font-size: 13px; font-weight: 900; line-height: 1.05; margin: 0 0 3px 4px; text-align: left; }
+  .exv-f .pl { text-align: center; font-size: 22px; font-weight: 900; color: #111; line-height: 1; margin: 8px 0 0; }
+  .exv-f .dn { display: block; width: 0; height: 0; margin: 16px auto 10px; border-left: 24px solid transparent; border-right: 24px solid transparent; border-top: 20px solid #111; }
+  .exv-f .tot { display: flex; align-items: center; justify-content: center; gap: 6px; color: #e8352a; }
+  .exv-f .tot .max { font-size: 16px; font-weight: 900; line-height: 1.05; color: var(--tx); }
+  .exv-f .tot .num { font-size: 56px; }
+  .exv-f .tot .u { font-size: 20px; align-self: flex-end; margin-bottom: 3px; }
+  .exv-f .pl-sara { font-size: 14px; color: #e8352a; margin-left: 6px; vertical-align: 3px; }
+  .exv-f .tot .u { white-space: nowrap; }
+  @media (max-width: 1023px) { .exv-f .sara { display: none; } }
+  @media (max-width: 359px) { .exv-f .tot .num { font-size: 48px; } .exv-f .tab { font-size: 12px; } }
+  @media (min-width: 1024px) {
+    .exv-f .pl-sara { display: none; }
+    .exv-f .row { flex-direction: row; align-items: stretch; justify-content: center; }
+    .exv-f .fc { flex: 1; margin-top: 30px; padding: 30px 14px 16px; }
+    .exv-f .tab { font-size: 15px; left: 50%; transform: translateX(-50%); }
+    .exv-f .sara { top: -40px; left: 50%; right: auto; transform: translateX(-50%); font-size: 16px; }
+    .exv-f .ic { width: 34px; height: 34px; }
+    .exv-f .v .num { font-size: 52px; }
+    .exv-f .u { font-size: 15px; }
+    .exv-f .pl { display: flex; align-items: center; margin: 30px 10px 0; font-size: 30px; }
+    .exv-f .dn { margin: 22px auto 12px; border-left-width: 34px; border-right-width: 34px; border-top-width: 28px; }
+    .exv-f .tot .max { font-size: 22px; }
+    .exv-f .tot .num { font-size: 80px; }
+    .exv-f .tot .u { font-size: 26px; margin-bottom: 6px; }
+  }
   .exv-sw { position: fixed; left: 12px; bottom: 96px; z-index: 9000; display: flex; gap: 4px; align-items: center; background: #fff; border: 2px solid #111; border-radius: 10px; padding: 6px 8px; font-size: 12px; font-weight: 700; box-shadow: 0 4px 12px rgba(0,0,0,.25); }
   .exv-sw button { width: 32px; height: 32px; border: 1.5px solid #111; border-radius: 6px; background: #fff; font-weight: 900; font-size: 14px; cursor: pointer; }
   .exv-sw button.on { background: #f4e030; }
@@ -2119,6 +2159,18 @@
                 <div class="it"><p class="k"><span class="sara">さらに</span><br>LINE新規お友だち登録で</p><p class="v"><span class="num">1<span class="cm">,</span>100</span><span class="u">円OFF</span></p></div>
                 <span class="pl">＋</span>
                 <div class="it"><p class="k"><br class="pc-only">眼科の処方箋ご持参で</p><p class="v"><span class="num">1<span class="cm">,</span>100</span><span class="u">円OFF</span></p></div>
+              </div>
+              <span class="dn" aria-hidden="true"></span>
+              <p class="tot"><span class="max">最<br>大</span><span class="num">4<span class="cm">,</span>400</span><span class="u">円OFF</span></p>
+            </div>
+            <!-- F Iさん案2：色つきカード（黄・緑・水色）＋上にラベルのタブ -->
+            <div class="exv-f">
+              <div class="row">
+                <div class="fc fc-bf"><p class="tab">ブラックフライデー限定</p><div class="in"><svg class="ic" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 15V5h10l14 14-10 10z" fill="none" stroke="#111" stroke-width="2.6" stroke-linejoin="round"/><circle cx="10" cy="11" r="2.4" fill="#111"/></svg><p class="v"><span class="num">2<span class="cm">,</span>200</span><span class="u">円<br>OFF</span></p></div></div>
+                <span class="pl">＋<span class="pl-sara">さらに</span></span>
+                <div class="fc fc-line"><p class="sara">さらに</p><p class="tab">LINE新規お友だち登録で</p><div class="in"><svg class="ic" viewBox="0 0 32 32" aria-hidden="true"><path d="M5 6h22a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H15l-6 5v-5H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z" fill="#111"/></svg><p class="v"><span class="num">1<span class="cm">,</span>100</span><span class="u">円<br>OFF</span></p></div></div>
+                <span class="pl">＋</span>
+                <div class="fc fc-rx"><p class="tab">眼科の処方箋ご持参で</p><div class="in"><svg class="ic" viewBox="0 0 32 32" aria-hidden="true"><path d="M7 3h13l6 6v20H7z" fill="none" stroke="#111" stroke-width="2.6" stroke-linejoin="round"/><path d="M11 14h11M11 19h11M11 24h7" stroke="#111" stroke-width="2.2"/></svg><p class="v"><span class="num">1<span class="cm">,</span>100</span><span class="u">円<br>OFF</span></p></div></div>
               </div>
               <span class="dn" aria-hidden="true"></span>
               <p class="tot"><span class="max">最<br>大</span><span class="num">4<span class="cm">,</span>400</span><span class="u">円OFF</span></p>
@@ -2821,7 +2873,7 @@ if(!location.hash){window.scrollTo(0,0);}
 })();
 </script>
 <!-- 11/2 割引の内訳 見比べボタン（★本番前に削除） -->
-<div class="exv-sw" id="exv-sw">内訳 <button data-v="a">A</button><button data-v="b">B</button><button data-v="c">C</button><button data-v="d">D</button><button data-v="e">E</button></div>
+<div class="exv-sw" id="exv-sw">内訳 <button data-v="a">A</button><button data-v="b">B</button><button data-v="c">C</button><button data-v="d">D</button><button data-v="e">E</button><button data-v="f">F</button></div>
 <script>
 (function () {
   var sw = document.getElementById('exv-sw'), v = 'd';
