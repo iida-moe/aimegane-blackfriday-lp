@@ -2089,6 +2089,22 @@
   html[data-simple="1"] #reason { padding-top: calc(104px + var(--cut)) !important; }
   @media (min-width: 1024px) { html[data-simple="1"] #reason { padding-top: calc(150px + var(--cut)) !important; } }
 
+  /* 11/2 理由1：①赤は「追加料金0円」だけ（選べるレンズは黒） ②番号の丸をカードの上辺のまん中に ③レンズ選びはたたむ */
+  .rh-r1 em { color: var(--tx) !important; }
+  .reason:has(.rh)::before { top: -20px !important; left: 50% !important; margin-left: -20px; }
+  .reasons .reason:has(.rh) { padding-top: 34px !important; }
+  .lens-more { margin-top: 18px; }
+  .lens-more > summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; border: 1.5px solid var(--tx); border-radius: 40px; padding: 12px 16px; font-size: 15px; font-weight: 900; background: #fff; white-space: nowrap; }
+  @media (max-width: 374px) { .lens-more > summary { font-size: 13px; } }
+  .lens-more > summary::-webkit-details-marker { display: none; }
+  .lens-more .lm-ico { position: relative; width: 14px; height: 14px; flex: none; }
+  .lens-more .lm-ico::before, .lens-more .lm-ico::after { content: ""; position: absolute; left: 0; right: 0; top: 6px; height: 2px; background: currentColor; }
+  .lens-more .lm-ico::after { transform: rotate(90deg); transition: transform .2s; }
+  .lens-more[open] .lm-ico::after { transform: rotate(0); }
+  .lens-more[open] > summary { margin-bottom: 4px; }
+  .lens-more .lens-hint { display: none; } /* 見出しはsummaryに移したので中の分は隠す */
+  @media (min-width: 1024px) { .lens-more > summary { font-size: 17px; max-width: 440px; margin: 0 auto; } }
+
   /* ===== 11/2 シンプル版の見比べ（html[data-simple="1"]）★本番前に決めた方だけ残して削除 ===== */
   html[data-simple="1"] .st4-hero { display: none !important; }
   .st4-catch { display: none; }
@@ -2457,11 +2473,13 @@
         <img class="rh-ill" src="images/blackfriday_temoto-woman_637_885.jpg" alt="スマホの文字が見えにくそうな女性のイラスト" width="637" height="885" loading="lazy">
         <div class="rh-txt">
           <!-- 10/27 A案（比較/遠近0円の回数_比較.png）：0円は合計の下にまかせて、理由1は「選べるレンズ」に -->
-          <h3 class="rh-gino">見え方に合わせて<em>選べるレンズ</em></h3>
+          <h3 class="rh-gino rh-r1">見え方に合わせて<em>選べるレンズ</em></h3>
           <p class="rh-also"><span class="nw">遠近・中近・近々も</span><span class="nw rh-also-r">追加料金0円</span></p>
           <p class="rh-zn">※対象のメガネ一式・標準レンズの場合</p>
         </div>
       </div>
+      <!-- 11/2 レンズ選びは長いので「くわしく見る」でたたむ（Iさん） -->
+      <details class="lens-more"><summary><span>あなたに合うレンズを見つけよう</span><span class="lm-ico" aria-hidden="true"></span></summary>
       <p class="lens-hint sl" id="lens-find"><span>あなたに合うレンズを見つけよう</span></p>
       <div class="lens-tabs" role="tablist">
         <button role="tab" aria-selected="true" data-lens="enkin">遠近両用<small>遠く〜手元</small></button>
@@ -2477,6 +2495,7 @@
         <ul class="lens-chk" id="lensChk"></ul>
         <!-- 10/27 使うシーンは外した（レンズの図・おすすめと内容がかぶるため）。データ（LENS.scene・SCENE_ICON）は残置 -->
       </div>
+      </details>
     </div>
 
     <div class="reason">
