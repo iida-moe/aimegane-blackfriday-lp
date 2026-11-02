@@ -1905,6 +1905,11 @@
 
   /* ===== 11/2 シンプル版の見比べ（html[data-simple="1"]）★本番前に決めた方だけ残して削除 ===== */
   html[data-simple="1"] .st4-hero { display: none !important; }
+  .st4-catch { display: none; }
+  html[data-simple="1"] .st4-catch { display: block; text-align: center; font-size: 24px; font-weight: 900; line-height: 1.4; margin: 0 0 26px; letter-spacing: .02em; }
+  html[data-simple="1"] .st4-catch em { font-style: normal; color: #e8352a; }
+  @media (max-width: 359px) { html[data-simple="1"] .st4-catch { font-size: 19px; } }
+  @media (min-width: 1024px) { html[data-simple="1"] .st4-catch { font-size: 34px; margin-bottom: 34px; } }
   html[data-simple="1"] .st4-ex-col .exc-n2 { display: none !important; }
   html[data-simple="1"] .st4 { padding-top: 24px; }
   html[data-simple="1"] .st4 > .st4-hero + .st4-ex { margin-top: 18px !important; }
@@ -2044,6 +2049,7 @@
     <!-- 10/22 ストーリー順：①2,200円OFF → ②商品例 13,200→11,000 → ③さらにLINE・処方箋 → ④すべて使って8,800円。変更前 _保存/index.before-1022-story.html -->
     <!-- 10/30 先頭を2,200円OFF→8,800円〜に（2,200円OFFからだと弱い・Iさん）。下は8,800円になる内訳。変更前 _保存/変更前/1030/index.before-1030-hero8800.html -->
     <div class="ba st4">
+      <p class="st4-catch">お得なメガネが、<br class="pc-hide"><em>もっとお得に。</em></p><!-- 11/2 バッジの代わりのひとこと（Iさん） -->
       <div class="st4-hero">
         <p><span class="ba-badge st4-badge">ブラックフライデー限定</span></p>
         <!-- 10/30 8,800円が何度も出てくるので、ここの8,800円と遠近0円は消してバッジ→すぐ商品例に（Iさん）。中身はhiddenで残す -->
