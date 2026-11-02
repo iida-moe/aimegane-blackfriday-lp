@@ -1788,6 +1788,9 @@
     .st4-ex-col .exc-dn { justify-self: center !important; }
   }
   @media (min-width: 1280px) { .st4 > .st4-ex { grid-template-columns: 340px auto 1fr auto 32px !important; } }
+  /* 11/2 「標準レンズ付きセット価格」と13,200の行間が広い（Iさん）→8,800との高さの差だけ下げる */
+  @media (min-width: 1024px) { .st4-ex-col .exc-k:not(.exc-k-red) { position: relative; top: 22px; } }
+  @media (min-width: 1280px) { .st4-ex-col .exc-k:not(.exc-k-red) { top: 24px; } }
   @media (min-width: 1024px) { .st4-ex-col .exc-dn { align-self: end !important; margin-bottom: 40px !important; } }
 
   /* 11/2 ③ 曜日を固定バー・FVと同じ黄色の丸に（キャンペーン概要・最後のまとめ） */
