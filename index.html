@@ -1903,6 +1903,44 @@
   .st4 .ba-set li.plus { color: var(--tx); font-weight: 900; font-size: 16px; }
   @media (min-width: 1024px) { .st4 .ba-set li.plus { font-size: 26px; } }
 
+  /* ===== 11/2 シンプル版の見比べ（html[data-simple="1"]）★本番前に決めた方だけ残して削除 ===== */
+  html[data-simple="1"] .st4-hero { display: none !important; }
+  html[data-simple="1"] .st4-ex-col .exc-n2 { display: none !important; }
+  html[data-simple="1"] .st4 { padding-top: 24px; }
+  html[data-simple="1"] .st4 > .st4-hero + .st4-ex { margin-top: 18px !important; }
+  html[data-simple="1"] .exc-a .exc-n { font-size: 68px; }
+  html[data-simple="1"] .exc-list li { font-size: 15px; padding: 9px 0; }
+  html[data-simple="1"] .exc-list b { font-size: 22px; }
+  html[data-simple="1"] .exc-list li.exc-tot b { font-size: 28px; }
+  html[data-simple="1"] .exc-sum-t { font-size: 17px; }
+  html[data-simple="1"] .st4 .ba-set li { font-size: 13px; }
+  html[data-simple="1"] .st4 .ba-set li svg { width: 38px; height: 28px; }
+  html[data-simple="1"] .st4 .ba-set li.plus { font-size: 18px; }
+  html[data-simple="1"] .st4-ex-all { font-size: 18px; }
+  @media (min-width: 1024px) {
+    html[data-simple="1"] .otoku-row .ba.st4 { padding-top: 56px; padding-bottom: 56px; }
+    html[data-simple="1"] .otoku-row .st4 > .st4-ex { margin-top: 14px !important; }
+    html[data-simple="1"] .st4-ex-col .exc-a .exc-n { font-size: 100px; }
+    html[data-simple="1"] .st4-ex-col .exc-b .exc-n { font-size: 60px; }
+    html[data-simple="1"] .st4 .st4-ex .ba-set { margin-top: 64px !important; gap: 22px; }
+    html[data-simple="1"] .st4 .st4-ex .ba-set .ico { width: 84px; height: 58px; }
+    html[data-simple="1"] .st4 .st4-ex .ba-set li { font-size: 19px; }
+    html[data-simple="1"] .st4 .ba-set li.plus { font-size: 32px; }
+    html[data-simple="1"] .st4 .st4-ex .st4-ex-all { font-size: 28px; margin-top: 20px; }
+    html[data-simple="1"] .st4-ex-col .exc-sum { margin-top: 40px; padding-top: 40px; }
+    html[data-simple="1"] .exc-sum-t { font-size: 20px; padding: 6px 16px; }
+    html[data-simple="1"] .st4-ex-col .exc-list { width: 620px !important; }
+    html[data-simple="1"] .st4-ex-col .exc-list li { font-size: 20px; padding: 14px 0; }
+    html[data-simple="1"] .st4-ex-col .exc-list b { font-size: 30px; }
+    html[data-simple="1"] .st4-ex-col .exc-list li.exc-tot b { font-size: 42px; }
+    html[data-simple="1"] .ba.st4 .st4-note { width: 620px; margin-top: 24px !important; }
+  }
+  .smp-sw { position: fixed; left: 12px; bottom: 140px; z-index: 9000; display: flex; gap: 4px; align-items: center; background: #fff; border: 2px solid #111; border-radius: 10px; padding: 6px 8px; font-size: 12px; font-weight: 700; box-shadow: 0 4px 12px rgba(0,0,0,.25); }
+  @media (max-width: 1023px) { .smp-sw { bottom: 96px; } }
+  .smp-sw button { height: 32px; padding: 0 10px; border: 1.5px solid #111; border-radius: 6px; background: #fff; font-weight: 900; font-size: 13px; cursor: pointer; font-family: inherit; }
+  .smp-sw button.on { background: #f4e030; }
+  /* ===== シンプル版の見比べここまで ===== */
+
   /* 11/2 ③ 曜日を固定バー・FVと同じ黄色の丸に（キャンペーン概要・最後のまとめ） */
   .ol-big small.dw, .cl-date small.dw { display: inline-flex !important; align-items: center; justify-content: center; width: 1.6em; height: 1.6em; border-radius: 50%; background: var(--ac); color: #111 !important; font-family: 'Noto Sans JP', sans-serif; font-weight: 700; line-height: 1; vertical-align: .2em; margin: 0 4px 0 3px; }
   .ol-big small.dw { font-size: 12px !important; }
@@ -2738,6 +2776,17 @@ if(!location.hash){window.scrollTo(0,0);}
   window.addEventListener('scroll',check,{passive:true});
   window.addEventListener('resize',check);
   check();
+})();
+</script>
+<!-- 11/2 シンプル版の見比べボタン（★本番前に削除） -->
+<div class="smp-sw" id="smp-sw">お得な内容 <button data-v="0">今</button><button data-v="1">シンプル</button></div>
+<script>
+(function () {
+  var sw = document.getElementById('smp-sw'), v = '0';
+  try { v = localStorage.getItem('bf_simple') || '0'; } catch (e) {}
+  function set(x) { document.documentElement.setAttribute('data-simple', x); sw.querySelectorAll('button').forEach(function (b) { b.classList.toggle('on', b.dataset.v === x); }); try { localStorage.setItem('bf_simple', x); } catch (e) {} }
+  sw.addEventListener('click', function (e) { var b = e.target.closest('button'); if (b) set(b.dataset.v); });
+  set(v);
 })();
 </script>
 </body>
