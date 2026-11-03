@@ -2233,6 +2233,20 @@
     #hearing-aid .hear-card .hear-pr { margin: 14px 16px 0; padding: 12px 0 18px; border-top: 1px solid #e3e3e3 !important; align-self: end; }
     #hearing-aid .hear-card .hear-pr .hear-y .num { font-size: 40px; }
     #hearing-aid .hear-card .hear-side { grid-row: 1 / -1 !important; align-self: center !important; }
+    /* 11/3 メガネのカードとサイズ感をそろえる（Iさん）：幅235px・写真は高さ150pxまで・ロゴは写真の左上に重ねる・文字もメガネと同じ大きさ */
+    #hearing-aid .hear-card { grid-template-columns: calc((1000px - 60px) / 4) 1fr !important; grid-template-rows: auto auto auto auto 1fr !important; max-width: 820px; align-items: start; }
+    #hearing-aid .hear-card::before { grid-row: 1 / 5; align-self: stretch; } /* カードは中身の高さで止める（右の列に引きのばされない） */
+    #hearing-aid .hear-card .hear-side { grid-row: 1 / 6 !important; }
+    #hearing-aid .hear-card .hear-pr { align-self: start !important; }
+    #hearing-aid .hear-card .hear-img { position: relative; padding: 14px 4px 0 !important; }
+    #hearing-aid .hear-card .hear-img .hear-logo { position: absolute !important; top: 10px !important; left: 10px !important; width: 56px !important; margin: 0 !important; z-index: 2; }
+    #hearing-aid .hear-card .hear-img .hear-prod { width: auto !important; max-width: 100% !important; height: 112px !important; margin: 10px auto 0 !important; } /* メガネの写真（高さ約107px）と同じくらい */
+    #hearing-aid .hear-card .hear-top { padding: 10px 16px 0; }
+    #hearing-aid .hear-card .hear-feat { font-size: 14px; }
+    #hearing-aid .hear-card .hear-pr { margin: 12px 16px 0; padding: 10px 0 18px; }
+    #hearing-aid .hear-card .hear-pr .hear-pl { font-size: 11px; font-weight: 700; color: #888; }
+    #hearing-aid .hear-card .hear-pr .hear-y .num { font-size: 30px; }
+    #hearing-aid .hear-card .hear-pr .hear-y .st { font-size: 13px; }
     #hearing-aid .hear-card .hear-feat { word-break: auto-phrase; }
   }
 
