@@ -2480,6 +2480,12 @@
     .reasons .reason:nth-child(3) .note { grid-row: 6 !important; max-width: 760px; width: 100%; justify-self: center; }
   }
 
+  /* 11/3 02PC：「眼鏡作製技能士」と「が全店に在籍」を同じ行に（Iさん） */
+  @media (min-width: 1024px) {
+    .reasons .reason:nth-child(2) .rh h3.rh-gino { white-space: nowrap; }
+    .reasons .reason:nth-child(2) .rh h3.rh-gino em { display: inline !important; margin: 0 4px 0 0 !important; }
+  }
+
   /* ===== 11/3 選ばれる理由：PCは「文字｜絵」の2列を左右交互に（真ん中寄せの1列は中途半端・Iさん）。番号は丸→大きい01・02・03 ===== */
   @media (min-width: 1024px) {
     .reasons { max-width: 1080px !important; }
