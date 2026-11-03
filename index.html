@@ -2339,6 +2339,28 @@
     .reasons .reason:nth-child(2) .worry-btn { padding-left: 88px; } /* 11/3 ボタンの左はしを「眼鏡作製技能士」の文字の左はしに合わせる（メダル72px＋すき間16px・Iさん） */
   }
 
+  /* ===== 11/3 理由1PC＝B案を整えた形（比較/理由1PC_3案.png・Iさん）：上に見出しを左ぞろえ、下に1つの面（タブ横1列＋場面のイラスト｜レンズの図｜おすすめ）。PCは最初から開く ===== */
+  @media (min-width: 1024px) {
+    .reasons .reason:nth-child(1) { display: block !important; }
+    .reasons .reason:nth-child(1)::before { display: block !important; width: fit-content !important; }
+    .reasons .reason:nth-child(1) .rh { display: block !important; }
+    .reasons .reason:nth-child(1) .rh-ill { display: none !important; }
+    .reasons .reason:nth-child(1) .rh-txt { text-align: left; }
+    .reasons .reason:nth-child(1) .lens-more { margin-top: 32px !important; background: #fafaf7; border-radius: 8px; padding: 28px 32px 32px; }
+    .reasons .reason:nth-child(1) .lens-more > summary { display: none !important; }
+    .reasons .reason:nth-child(1) .lens-body { display: grid; grid-template-columns: 150px minmax(0, 1fr) 250px; grid-template-areas: "tabs tabs tabs" "scene fig side"; column-gap: 36px; row-gap: 28px; align-items: start; }
+    .reasons .reason:nth-child(1) .lens-tabs { grid-area: tabs; display: grid !important; grid-template-columns: repeat(4, 1fr) !important; gap: 10px !important; margin: 0 !important; max-width: none !important; }
+    .reasons .reason:nth-child(1) .lens-tabs button { background: #fff; }
+    .reasons .reason:nth-child(1) .lens-tabs button[aria-selected="true"] { background: var(--bk); }
+    .reasons .reason:nth-child(1) .lens-scene { grid-area: scene; width: 100%; height: auto; display: block; mix-blend-mode: multiply; align-self: center; } /* 画像の白い背景を面の色になじませる（画像は加工しない） */
+    .reasons .reason:nth-child(1) .lens-figbox { grid-area: fig; }
+    .reasons .reason:nth-child(1) .lens-fig { max-width: none !important; margin: 0 !important; }
+    .reasons .reason:nth-child(1) .lens-key { flex-direction: column; align-items: center; gap: 2px; margin-bottom: 0; }
+    .reasons .reason:nth-child(1) .lens-side { grid-area: side; padding-top: 8px; }
+    .reasons .reason:nth-child(1) .lens-side .lens-for { background: none !important; padding: 0 0 12px !important; margin: 0 !important; text-align: left !important; font-size: 18px !important; font-weight: 900; border-bottom: 2px solid var(--ac); }
+    .reasons .reason:nth-child(1) .lens-side .lens-rec { margin: 16px 0 0 !important; max-width: none !important; }
+  }
+
   /* ===== 11/3 選ばれる理由：PCは「文字｜絵」の2列を左右交互に（真ん中寄せの1列は中途半端・Iさん）。番号は丸→大きい01・02・03 ===== */
   @media (min-width: 1024px) {
     .reasons { max-width: 1080px !important; }
@@ -2700,6 +2722,7 @@
       </div>
       <!-- 11/2 レンズ選びは長いので「くわしく見る」でたたむ（Iさん） -->
       <details class="lens-more"><summary><span>あなたに合うレンズを見つけよう</span><span class="lm-ico" aria-hidden="true"></span></summary>
+      <div class="lens-body"><!-- 11/3 PCはB案の3列（タブ／場面のイラスト｜レンズの図｜おすすめ）にするための入れもの -->
       <p class="lens-hint sl" id="lens-find"><span>あなたに合うレンズを見つけよう</span></p>
       <div class="lens-tabs" role="tablist">
         <button role="tab" aria-selected="true" data-lens="enkin">遠近両用<small>遠く〜手元</small></button>
@@ -2707,16 +2730,19 @@
         <button role="tab" aria-selected="false" data-lens="kinkin">近々<small>デスクワーク用</small></button>
         <button role="tab" aria-selected="false" data-lens="assist">アシスト<small>手元サポート</small></button>
       </div>
-      <div class="lens-fig"><p class="lens-cap">メガネのレンズ</p><!-- 11/3 図だけだとレンズとわかりにくい（Iさん）→レンズの真上に重ねる -->
+      <img class="lens-scene pc-only" id="lensScene" src="images/blackfriday_temoto-woman_637_885.jpg" alt="" width="637" height="885"><!-- 11/3 場面のイラスト（PCだけ・今は仮で同じ女性。タブで変える予定） -->
+      <div class="lens-figbox"><div class="lens-fig"><p class="lens-cap">メガネのレンズ</p><!-- 11/3 図だけだとレンズとわかりにくい（Iさん）→レンズの真上に重ねる -->
       <img class="reason-ill" id="lensImg" src="images/illust/lens-enkin.svg" alt="遠近両用レンズの見え方" width="640" height="360"></div>
       <p class="lens-key"><span class="lk"><i class="lk-c" aria-hidden="true"></i>色の部分：よく見える範囲</span><span class="lk"><i class="lk-d" aria-hidden="true"></i>点線の外側：ゆがみ・ぼやけが出やすい部分</span></p><!-- 11/3 点線の解説（4つの図すべてに点線あり） -->
-      <p class="lens-for" id="lensFor">遠くも手元も、これ1本で</p>
+      </div>
+      <div class="lens-side"><p class="lens-for" id="lensFor">遠くも手元も、これ1本で</p>
       <!-- 10/23 こんな方におすすめ＋使うシーン（タブで切りかえ・中身はJSのLENS）。変更前 _保存/index.before-1023-lensrec.html -->
       <div class="lens-rec">
         <p class="lens-rec-t">こんな方におすすめ！</p>
         <ul class="lens-chk" id="lensChk"></ul>
         <!-- 10/27 使うシーンは外した（レンズの図・おすすめと内容がかぶるため）。データ（LENS.scene・SCENE_ICON）は残置 -->
       </div>
+      </div></div>
       </details>
     </div>
 
@@ -3254,6 +3280,16 @@ if(!location.hash){window.scrollTo(0,0);}
   window.addEventListener('scroll',check,{passive:true});
   window.addEventListener('resize',check);
   check();
+})();
+</script>
+<script>
+/* 11/3 PCでは「あなたに合うレンズを見つけよう」を最初から開いておく（B案）。スマホは押して開く */
+(function () {
+  var d = document.querySelector('.lens-more'); if (!d) return;
+  var mq = window.matchMedia('(min-width: 1024px)');
+  function f() { if (mq.matches) d.open = true; }
+  f(); if (mq.addEventListener) mq.addEventListener('change', f);
+  d.addEventListener('toggle', function () { if (mq.matches && !d.open) d.open = true; });
 })();
 </script>
 </body>
