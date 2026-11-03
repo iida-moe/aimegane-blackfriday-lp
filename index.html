@@ -2361,18 +2361,37 @@
     .reasons .reason:nth-child(1) .lens-side .lens-rec { margin: 16px 0 0 !important; max-width: none !important; }
   }
 
-  /* 11/3 01PC：右上の空き（Iさん）→「遠近・中近・近々も 追加料金0円」を右に大きめの囲みで（見出しと上下をそろえる） */
+  /* ===== 11/3 選ばれる理由PC：3つとも「番号→見出し」をカードのまん中に、中身はその下（Iさん「中央に来たら？02・03も01に合わせたら」） ===== */
+  .rh-also .rz small { font-size: inherit; font-weight: inherit; }
   @media (min-width: 1024px) {
-    .reasons .reason:nth-child(1) { display: grid !important; grid-template-columns: minmax(0, 1fr) 340px !important; grid-template-rows: auto auto auto auto !important; column-gap: 40px !important; align-items: end !important; }
-    .reasons .reason:nth-child(1)::before { grid-column: 1; grid-row: 1; }
-    .reasons .reason:nth-child(1) .rh-to { grid-column: 1; grid-row: 2; }
-    .reasons .reason:nth-child(1) .rh, .reasons .reason:nth-child(1) .rh-txt { display: contents !important; }
-    .reasons .reason:nth-child(1) .rh-gino { grid-column: 1; grid-row: 3; }
-    .reasons .reason:nth-child(1) .rh-also { grid-column: 2; grid-row: 1 / 4; align-self: stretch; margin: 0 !important; background: #fffbe0; border-radius: 8px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px 16px 34px; font-size: 18px !important; }
-    .reasons .reason:nth-child(1) .rh-also .nw { display: block; }
-    .reasons .reason:nth-child(1) .rh-also .rh-also-r { font-size: 44px; font-weight: 900; line-height: 1.2; margin-top: 4px; }
-    .reasons .reason:nth-child(1) .rh-zn { grid-column: 2; grid-row: 3; align-self: end; text-align: center; margin: 0 0 12px !important; position: relative; z-index: 1; }
-    .reasons .reason:nth-child(1) .lens-more { grid-column: 1 / -1; grid-row: 4; }
+    .reasons .reason { display: grid !important; grid-template-columns: 1fr 1fr !important; grid-template-rows: auto !important; column-gap: 48px !important; row-gap: 0 !important; align-items: start !important; text-align: center !important; }
+    .reasons .reason:has(.rh)::before { grid-column: 1 / -1 !important; grid-row: 1 !important; justify-self: center !important; margin: 0 auto 18px !important; width: fit-content !important; display: block !important; }
+    .reasons .reason .rh-to { grid-column: 1 / -1 !important; grid-row: 2 !important; text-align: center !important; }
+    .reasons .reason .rh-to::before { margin-left: 8px !important; }
+    .reasons .reason .rh { grid-column: 1 / -1 !important; grid-row: 3 !important; display: flex !important; justify-content: center !important; align-items: center !important; gap: 20px !important; text-align: left; }
+    .reasons .reason .rh-txt { display: block !important; }
+    /* 01：見出し｜追加料金 0円（鯖江・お得な内容と同じ形）を横に並べてまん中 */
+    .reasons .reason:nth-child(1) .rh-ill { display: none !important; }
+    .reasons .reason:nth-child(1) .rh-txt { display: grid !important; grid-template-columns: auto auto; grid-template-areas: "h also" "h zn"; column-gap: 40px; align-items: end; }
+    .reasons .reason:nth-child(1) .rh-gino { grid-area: h; }
+    .reasons .reason:nth-child(1) .rh-txt { width: auto !important; flex: none !important; justify-content: center; }
+    .reasons .reason:nth-child(1) .rh-gino { margin: 0 !important; }
+    .reasons .reason:nth-child(1) .rh-also { grid-area: also; display: grid !important; grid-template-columns: auto auto; grid-template-areas: "a z" "k z"; column-gap: 10px; align-items: end; background: none !important; padding: 0 !important; margin: 0 !important; text-align: left; font-size: 20px !important; }
+    .reasons .reason:nth-child(1) .rh-also .nw { display: contents !important; }
+    .reasons .reason:nth-child(1) .rh-also-a { grid-area: a; display: block !important; font-size: 18px; letter-spacing: .06em; }
+    .reasons .reason:nth-child(1) .rh-also .rk { grid-area: k; display: block; font-size: 28px; font-weight: 900; color: #e8352a; letter-spacing: .1em; line-height: 1.2; }
+    .reasons .reason:nth-child(1) .rh-also .rz { grid-area: z; display: block; font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 800; font-size: 104px; line-height: .78; color: #e8352a; }
+    .reasons .reason:nth-child(1) .rh-also .rz small { font-family: 'Noto Sans JP', sans-serif; font-size: 32px; font-weight: 900; }
+    .reasons .reason:nth-child(1) .rh-zn { grid-area: zn; text-align: right !important; margin: 10px 0 0 !important; }
+    .reasons .reason:nth-child(1) .lens-more { grid-column: 1 / -1 !important; grid-row: 4 !important; margin-top: 36px !important; text-align: left; }
+    /* 02：見出しの下に会話（まん中）→ボタン（まん中） */
+    .reasons .reason:nth-child(2) .manga { grid-column: 1 / -1 !important; grid-row: 4 !important; max-width: 600px !important; width: 100%; margin: 32px auto 0 !important; }
+    .reasons .reason:nth-child(2) .worry-btn { grid-column: 1 / -1 !important; grid-row: 5 !important; padding-left: 0 !important; text-align: center !important; margin-top: 28px !important; }
+    .reasons .reason:nth-child(2) .worry-btn a { margin: 0 auto !important; max-width: 360px !important; }
+    /* 03：見出しの下に左右（保証｜点検・クリーニング）、注意書きは横いっぱい */
+    .reasons .reason:nth-child(3) .hs-acc { grid-column: 1 !important; grid-row: 4 !important; margin-top: 32px !important; text-align: left; }
+    .reasons .reason:nth-child(3) .hs-svc { grid-column: 2 !important; grid-row: 4 !important; margin-top: 32px !important; align-self: start !important; }
+    .reasons .reason:nth-child(3) .note { grid-column: 1 / -1 !important; grid-row: 5 !important; text-align: left !important; }
   }
 
   /* ===== 11/3 選ばれる理由：PCは「文字｜絵」の2列を左右交互に（真ん中寄せの1列は中途半端・Iさん）。番号は丸→大きい01・02・03 ===== */
@@ -2730,7 +2749,7 @@
         <div class="rh-txt">
           <!-- 10/27 A案（比較/遠近0円の回数_比較.png）：0円は合計の下にまかせて、理由1は「選べるレンズ」に -->
           <h3 class="rh-gino rh-r1">見え方に合わせて<em>選べるレンズ</em></h3>
-          <p class="rh-also"><span class="nw">遠近・中近・近々も</span><span class="nw rh-also-r">追加料金0円</span></p>
+          <p class="rh-also"><span class="nw rh-also-a">遠近・中近・近々も</span><span class="nw rh-also-r"><span class="rk">追加料金</span><span class="rz">0<small>円</small></span></span></p><!-- 11/3 PCで「追加料金」と大きい「0円」を分けて並べるため分割（スマホは見た目同じ） -->
           <p class="rh-zn">※対象のメガネ一式・標準レンズの場合</p>
         </div>
       </div>
