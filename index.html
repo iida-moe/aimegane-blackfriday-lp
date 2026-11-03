@@ -2326,6 +2326,20 @@
   /* 11/3 理由1PC：イラストをもう少し小さく・余白を詰める（Iさん） */
   @media (min-width: 1024px) { .reasons .reason:nth-child(1) .rh-ill { width: 150px !important; } .reasons .reason:nth-child(1) { column-gap: 40px !important; padding-top: 52px !important; padding-bottom: 52px !important; } .reasons .reason:nth-child(1) .lens-more { margin-top: 28px !important; } }
 
+  /* ===== 11/3 理由まわり（Iさん）：①「国家検定資格」の黒い帯をやめて文字だけ ②理由2の予約はボタンに ③01の文字の左はしを02・03とそろえる ===== */
+  .reason .rh .gino-tag { background: none !important; color: var(--tx) !important; padding: 0 !important; border-radius: 0; font-size: 14px !important; font-weight: 700; letter-spacing: .08em; margin-bottom: 2px !important; }
+  @media (min-width: 1024px) { .reason .rh .gino-tag { font-size: 16px !important; } }
+  .reason .worry-btn { margin-top: 20px; text-align: center; }
+  .reason .worry-btn a { text-decoration: none; width: 100%; max-width: 360px; margin: 0 auto; }
+  @media (max-width: 1023px) { .reason .worry-btn a { font-size: 16px !important; white-space: nowrap; padding-left: 20px !important; padding-right: 40px !important; } }
+  @media (max-width: 359px) { .reason .worry-btn a { font-size: 15px !important; } }
+  @media (min-width: 1024px) {
+    .reasons .reason:nth-child(2) .worry-btn { text-align: left; margin-top: 32px !important; }
+    .reasons .reason:nth-child(2) .worry-btn a { margin: 0; max-width: 340px; }
+    .reasons .reason:nth-child(1) { grid-template-columns: auto 1fr !important; justify-content: stretch !important; column-gap: 72px !important; }
+    .reasons .reason:nth-child(1) .rh-ill { justify-self: start !important; }
+  }
+
   /* ===== 11/3 選ばれる理由：PCは「文字｜絵」の2列を左右交互に（真ん中寄せの1列は中途半端・Iさん）。番号は丸→大きい01・02・03 ===== */
   @media (min-width: 1024px) {
     .reasons { max-width: 1080px !important; }
@@ -2724,7 +2738,7 @@
         <div class="mg-row mg-cust"><p class="mg-bub">最近、手元が見えにくくて…<br>遠近両用は<span class="nw">はじめてで不安</span></p><img src="images/blackfriday_bust-customer_400_577.png" alt="なやむお客さまのイラスト" width="400" height="577" loading="lazy"></div>
         <div class="mg-row mg-staff"><img src="images/blackfriday_bust-staff_400_453.png" alt="スタッフのイラスト" width="400" height="453" loading="lazy"><p class="mg-bub"><span class="nw">見え方をしっかり測って、</span><br>ぴったりのレンズを<br class="pc-hide">ご提案します！</p><!-- 11/2 PCは2行（Iさん）・スマホは幅が足りないので3行のまま --></div>
       </div>
-      <p class="worry-link"><a href="#shop-search" data-cta-location="reason_staff">▶ 近くのお店で予約する</a></p>
+      <p class="worry-link worry-btn"><a href="#shop-search" class="btn btn-pin" data-cta-location="reason_staff"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12,2 C7.6,2 4,5.5 4,9.9 C4,15.6 12,22 12,22 C12,22 20,15.6 20,9.9 C20,5.5 16.4,2 12,2 Z M12,13 A3.2,3.2 0 1 1 12,6.6 A3.2,3.2 0 0 1 12,13 Z"/></svg>近くのお店で予約する</a></p><!-- 11/3 テキストリンク→ボタン（Iさん） -->
     </div>
 
     <div class="reason">
