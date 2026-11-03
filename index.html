@@ -2220,6 +2220,22 @@
   }
 
   .exc-bf { line-height: 1.35; } /* 11/3 「限定値引き」でスマホは2行に（−2,200円がはみ出したため） */
+  /* ===== 11/3 補聴器PC：左＝対象ブランドのメガネと同じ幅の白いカード（写真・名前・金額）｜右＝アイメガネの補聴器サポート（Iさん） ===== */
+  @media (min-width: 1024px) {
+    #hearing-aid .hear-card { grid-template-columns: calc((100% - 60px) / 4) 1fr !important; grid-template-rows: auto auto auto 1fr !important; column-gap: 64px !important; position: relative; }
+    #hearing-aid .hear-card::before { content: ""; grid-column: 1; grid-row: 1 / -1; background: #fff; border: 1px solid #ddd; border-radius: 6px; }
+    #hearing-aid .hear-card > .hear-img, #hearing-aid .hear-card .hear-top, #hearing-aid .hear-card .hear-feat, #hearing-aid .hear-card .hear-pr { position: relative; z-index: 1; background: transparent !important; border: 0 !important; }
+    #hearing-aid .hear-card .hear-img { padding: 16px 16px 0 !important; gap: 4px; }
+    #hearing-aid .hear-card .hear-img .hear-logo { width: 72px !important; }
+    #hearing-aid .hear-card .hear-img .hear-prod { width: 100% !important; max-width: none !important; margin: 0; align-self: center; }
+    #hearing-aid .hear-card .hear-top { padding: 8px 16px 0; margin-top: 0; }
+    #hearing-aid .hear-card .hear-feat { padding: 0 16px 0; margin-top: 4px; font-size: 13px; }
+    #hearing-aid .hear-card .hear-pr { margin: 14px 16px 0; padding: 12px 0 18px; border-top: 1px solid #e3e3e3 !important; align-self: end; }
+    #hearing-aid .hear-card .hear-pr .hear-y .num { font-size: 40px; }
+    #hearing-aid .hear-card .hear-side { grid-row: 1 / -1 !important; align-self: center !important; }
+    #hearing-aid .hear-card .hear-feat { word-break: auto-phrase; }
+  }
+
   /* ===== 11/3 選ばれる理由：PCは「文字｜絵」の2列を左右交互に（真ん中寄せの1列は中途半端・Iさん）。番号は丸→大きい01・02・03 ===== */
   @media (min-width: 1024px) {
     .reasons { max-width: 1080px !important; }
