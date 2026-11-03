@@ -2337,44 +2337,6 @@
     .reasons .reason:nth-child(2) .worry-btn { text-align: left; margin-top: 32px !important; }
     .reasons .reason:nth-child(2) .worry-btn a { margin: 0; max-width: 340px; }
     .reasons .reason:nth-child(2) .worry-btn { padding-left: 88px; } /* 11/3 ボタンの左はしを「眼鏡作製技能士」の文字の左はしに合わせる（メダル72px＋すき間16px・Iさん） */
-    .reasons .reason:nth-child(1) { grid-template-columns: auto 1fr !important; justify-content: stretch !important; column-gap: 72px !important; }
-    .reasons .reason:nth-child(1) .rh-ill { justify-self: start !important; }
-  }
-
-  /* 11/3 01の右の余り（Iさん）→02と同じ並び：左に文字＋ボタン（左ぞろえ）、右半分のまん中にイラスト210px。開いた中身は横いっぱいのまま */
-  @media (min-width: 1024px) {
-    .reasons .reason:nth-child(1) { grid-template-columns: 1fr 1fr !important; column-gap: 48px !important; }
-    .reasons .reason:nth-child(1) .rh-ill { width: 210px !important; justify-self: center !important; }
-    .reasons .reason:nth-child(1) .lens-more { margin-top: 32px !important; }
-    .reasons .reason:nth-child(1) .lens-more > summary { margin: 0 !important; max-width: 400px; }
-    .reasons .reason:nth-child(1) .lens-more[open] > summary { margin-bottom: 16px !important; }
-  }
-
-  /* ===== 11/3 01のPC（Iさん「イラストで埋めるのは変」）：左＝文字＋小さいイラスト（スマホと同じ並び）、右＝「あなたに合うレンズを見つけよう」を最初から開いて置く（PCは開閉なしの見出し） ===== */
-  @media (min-width: 1024px) {
-    .reasons .reason:nth-child(1) { grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr) !important; grid-template-rows: auto auto auto 1fr !important; column-gap: 56px !important; align-items: start !important; }
-    .reasons .reason:nth-child(1) .rh { display: flex !important; align-items: center; gap: 20px; grid-column: 1; grid-row: 3; }
-    .reasons .reason:nth-child(1) .rh-ill { width: 120px !important; flex: none; justify-self: auto !important; }
-    .reasons .reason:nth-child(1) .rh-gino em { font-size: 34px !important; }
-    .reasons .reason:nth-child(1) .lens-more { grid-column: 2 !important; grid-row: 1 / -1 !important; margin-top: 0 !important; background: #fafaf7; border-radius: 8px; padding: 24px 24px 20px; }
-    .reasons .reason:nth-child(1) .lens-more > summary { pointer-events: none; border: 0 !important; padding: 0 !important; margin: 0 0 14px !important; max-width: none !important; justify-content: flex-start !important; font-size: 18px !important; }
-    .reasons .reason:nth-child(1) .lens-more > summary .lm-ico { display: none; }
-    .reasons .reason:nth-child(1) .lens-more > summary { background: none !important; }
-    .reasons .reason:nth-child(1)::before { grid-row: 1 !important; }
-    .reasons .reason:nth-child(1) .rh-to { grid-column: 1; grid-row: 2 !important; }
-    .reasons .reason:nth-child(1) .rh { grid-row: 3 !important; } /* 番号は02・03と同じくカードのいちばん上（目線をそろえる） */
-    .reasons .reason:nth-child(1) .lens-more .lens-tabs button { background: #fff; }
-    .reasons .reason:nth-child(1) .lens-more .lens-tabs button[aria-selected="true"] { background: var(--bk); }
-    .reasons .reason:nth-child(1) .lens-fig { max-width: none !important; }
-    .reasons .reason:nth-child(1) .lens-rec { max-width: none !important; }
-  }
-
-  /* 11/3 01PC：「これ1本で」「こんな方におすすめ」を左の下へ（JSで移動）。左右の高さをそろえる */
-  .r1-rec:empty { display: none; }
-  @media (min-width: 1024px) {
-    .reasons .reason:nth-child(1) .r1-rec { grid-column: 1; grid-row: 4; align-self: start; margin-top: 32px; padding-top: 28px; border-top: 1px solid #e6e6e1; }
-    .reasons .reason:nth-child(1) .r1-rec .lens-for { text-align: left; margin: 0 !important; }
-    .reasons .reason:nth-child(1) .r1-rec .lens-rec { margin-top: 16px !important; }
   }
 
   /* ===== 11/3 選ばれる理由：PCは「文字｜絵」の2列を左右交互に（真ん中寄せの1列は中途半端・Iさん）。番号は丸→大きい01・02・03 ===== */
@@ -2736,7 +2698,6 @@
           <p class="rh-zn">※対象のメガネ一式・標準レンズの場合</p>
         </div>
       </div>
-      <div class="r1-rec" aria-live="polite"></div><!-- 11/3 PCだけ：右のレンズ選びの「○○、これ1本で」「こんな方におすすめ」をここ（左の下）へ移す（右が長くて左の下が空くため・Iさん） -->
       <!-- 11/2 レンズ選びは長いので「くわしく見る」でたたむ（Iさん） -->
       <details class="lens-more"><summary><span>あなたに合うレンズを見つけよう</span><span class="lm-ico" aria-hidden="true"></span></summary>
       <p class="lens-hint sl" id="lens-find"><span>あなたに合うレンズを見つけよう</span></p>
@@ -3293,19 +3254,6 @@ if(!location.hash){window.scrollTo(0,0);}
   window.addEventListener('scroll',check,{passive:true});
   window.addEventListener('resize',check);
   check();
-})();
-</script>
-<script>
-/* 11/3 PCでは「あなたに合うレンズを見つけよう」を最初から開く（右の列に置くため）。スマホは閉じたまま */
-(function () {
-  var d = document.querySelector('.lens-more'); if (!d) return;
-  var mq = window.matchMedia('(min-width: 1024px)');
-  function f() { if (mq.matches) d.open = true; }
-  var box = document.querySelector('.r1-rec'), lf = document.getElementById('lensFor'), rec = d.querySelector('.lens-rec');
-  function mv() { if (!box || !lf || !rec) return; if (mq.matches) { box.appendChild(lf); box.appendChild(rec); } else if (lf.parentNode === box) { d.appendChild(lf); d.appendChild(rec); } }
-  mv(); if (mq.addEventListener) mq.addEventListener('change', mv);
-  f(); if (mq.addEventListener) mq.addEventListener('change', f);
-  d.addEventListener('toggle', function () { if (mq.matches && !d.open) d.open = true; });
 })();
 </script>
 </body>
