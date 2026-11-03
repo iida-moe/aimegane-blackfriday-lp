@@ -2441,6 +2441,9 @@
     .reasons .reason:nth-child(1) .lens-body { grid-template-columns: minmax(0, 1fr) 280px !important; grid-template-areas: "tabs tabs" "fig side" !important; column-gap: 48px !important; }
   }
 
+  /* 11/3 理由2のメダル・理由3の盾をPCで大きく（Iさん）72→96px */
+  @media (min-width: 1024px) { .reasons .reason .rh .rh-ico { width: 96px !important; height: 96px !important; margin-top: 0 !important; } }
+
   /* ===== 11/3 選ばれる理由：PCは「文字｜絵」の2列を左右交互に（真ん中寄せの1列は中途半端・Iさん）。番号は丸→大きい01・02・03 ===== */
   @media (min-width: 1024px) {
     .reasons { max-width: 1080px !important; }
