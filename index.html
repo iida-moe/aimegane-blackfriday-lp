@@ -2288,7 +2288,7 @@
     .reasons .reason:has(.rh)::before { content: "0" counter(reason); position: static; margin: 0 0 18px !important; width: auto; height: auto; border-radius: 0; background: none; box-shadow: none; color: var(--tx); font-size: 56px; line-height: 1; text-align: left; letter-spacing: .02em; padding-bottom: 14px; border-bottom: 2px solid var(--ac); justify-self: start; align-self: end; }
     .reasons .reason .rh { justify-content: flex-start; }
     .reasons .reason .rh-to { text-align: left; margin-bottom: 18px !important; }
-    .reasons .reason .rh-to::before { display: none; }
+    .reasons .reason .rh-to::before { margin-left: 0; width: 24px; } /* 11/3 左の線も残す（Iさん） */
     .reasons .reason .rh-to::after { width: 24px; }
     .reasons .reason .rh, .reasons .reason .rh-to, .reasons .reason:has(.rh)::before { grid-column: 1; }
     /* 理由1：右にイラスト、下に「あなたに合うレンズ」（開くと中身が横いっぱい） */
