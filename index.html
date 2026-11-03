@@ -2294,6 +2294,16 @@
     #hearing-aid .hear-card .hear-img { padding-top: 64px !important; }
   }
 
+  /* ===== 11/3 レンズの図：上に「メガネのレンズを正面から見た図」、下に色と点線の見方 ===== */
+  .lens-cap { text-align: center; font-size: 12px !important; font-weight: 700; color: var(--sub) !important; margin-top: 20px; letter-spacing: .04em; }
+  .lens-cap + #lensImg { margin-top: 2px; }
+  .lens-key { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 16px; font-size: 12px !important; color: var(--sub) !important; margin: 4px 0 12px; line-height: 1.6; }
+  .lens-key .lk { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+  .lk-c { width: 16px; height: 10px; border-radius: 50%; background: #F8EAA6; flex: none; }
+  .lk-d { width: 18px; height: 0; border-top: 2px dashed #D9822B; flex: none; }
+  .lens-key + .lens-for { margin-top: 4px; word-break: auto-phrase; }
+  @media (min-width: 1024px) { .lens-cap, .lens-key { font-size: 13px !important; } }
+
   /* ===== 11/3 選ばれる理由：PCは「文字｜絵」の2列を左右交互に（真ん中寄せの1列は中途半端・Iさん）。番号は丸→大きい01・02・03 ===== */
   @media (min-width: 1024px) {
     .reasons { max-width: 1080px !important; }
@@ -2662,7 +2672,9 @@
         <button role="tab" aria-selected="false" data-lens="kinkin">近々<small>デスクワーク用</small></button>
         <button role="tab" aria-selected="false" data-lens="assist">アシスト<small>手元サポート</small></button>
       </div>
+      <p class="lens-cap">メガネのレンズを正面から見た図</p><!-- 11/3 図だけだとレンズとわかりにくい（Iさん） -->
       <img class="reason-ill" id="lensImg" src="images/illust/lens-enkin.svg" alt="遠近両用レンズの見え方" width="640" height="360">
+      <p class="lens-key"><span class="lk"><i class="lk-c" aria-hidden="true"></i>色の部分：よく見える範囲</span><span class="lk"><i class="lk-d" aria-hidden="true"></i>点線の外側：ゆがみ・ぼやけが出やすい部分</span></p><!-- 11/3 点線の解説（4つの図すべてに点線あり） -->
       <p class="lens-for" id="lensFor">遠くも手元も、これ1本で</p>
       <!-- 10/23 こんな方におすすめ＋使うシーン（タブで切りかえ・中身はJSのLENS）。変更前 _保存/index.before-1023-lensrec.html -->
       <div class="lens-rec">
