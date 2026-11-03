@@ -2394,6 +2394,19 @@
     .reasons .reason:nth-child(3) .note { grid-column: 1 / -1 !important; grid-row: 5 !important; text-align: left !important; }
   }
 
+  /* 11/3 01PC：横並び（見出し｜0円）はごちゃつく（Iさん）→縦1列・すべて中央。0円は1行で */
+  @media (min-width: 1024px) {
+    .reasons .reason:nth-child(1) .rh-txt { display: block !important; text-align: center !important; }
+    .reasons .reason:nth-child(1) .rh-gino { text-align: center; }
+    .reasons .reason:nth-child(1) .rh-also { display: flex !important; justify-content: center; align-items: baseline; gap: 10px; margin: 14px 0 0 !important; font-size: 18px !important; }
+    .reasons .reason:nth-child(1) .rh-also .nw { display: inline !important; }
+    .reasons .reason:nth-child(1) .rh-also-a { font-size: 18px; }
+    .reasons .reason:nth-child(1) .rh-also .rk { display: inline; font-size: 26px; letter-spacing: .04em; }
+    .reasons .reason:nth-child(1) .rh-also .rz { display: inline; font-size: 44px; line-height: 1; margin-left: 2px; }
+    .reasons .reason:nth-child(1) .rh-also .rz small { font-size: 26px; }
+    .reasons .reason:nth-child(1) .rh-zn { text-align: center !important; margin: 6px 0 0 !important; }
+  }
+
   /* ===== 11/3 選ばれる理由：PCは「文字｜絵」の2列を左右交互に（真ん中寄せの1列は中途半端・Iさん）。番号は丸→大きい01・02・03 ===== */
   @media (min-width: 1024px) {
     .reasons { max-width: 1080px !important; }
