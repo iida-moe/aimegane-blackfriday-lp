@@ -2369,6 +2369,14 @@
     .reasons .reason:nth-child(1) .lens-rec { max-width: none !important; }
   }
 
+  /* 11/3 01PC：「これ1本で」「こんな方におすすめ」を左の下へ（JSで移動）。左右の高さをそろえる */
+  .r1-rec:empty { display: none; }
+  @media (min-width: 1024px) {
+    .reasons .reason:nth-child(1) .r1-rec { grid-column: 1; grid-row: 4; align-self: start; margin-top: 32px; padding-top: 28px; border-top: 1px solid #e6e6e1; }
+    .reasons .reason:nth-child(1) .r1-rec .lens-for { text-align: left; margin: 0 !important; }
+    .reasons .reason:nth-child(1) .r1-rec .lens-rec { margin-top: 16px !important; }
+  }
+
   /* ===== 11/3 選ばれる理由：PCは「文字｜絵」の2列を左右交互に（真ん中寄せの1列は中途半端・Iさん）。番号は丸→大きい01・02・03 ===== */
   @media (min-width: 1024px) {
     .reasons { max-width: 1080px !important; }
@@ -2728,6 +2736,7 @@
           <p class="rh-zn">※対象のメガネ一式・標準レンズの場合</p>
         </div>
       </div>
+      <div class="r1-rec" aria-live="polite"></div><!-- 11/3 PCだけ：右のレンズ選びの「○○、これ1本で」「こんな方におすすめ」をここ（左の下）へ移す（右が長くて左の下が空くため・Iさん） -->
       <!-- 11/2 レンズ選びは長いので「くわしく見る」でたたむ（Iさん） -->
       <details class="lens-more"><summary><span>あなたに合うレンズを見つけよう</span><span class="lm-ico" aria-hidden="true"></span></summary>
       <p class="lens-hint sl" id="lens-find"><span>あなたに合うレンズを見つけよう</span></p>
@@ -3292,6 +3301,9 @@ if(!location.hash){window.scrollTo(0,0);}
   var d = document.querySelector('.lens-more'); if (!d) return;
   var mq = window.matchMedia('(min-width: 1024px)');
   function f() { if (mq.matches) d.open = true; }
+  var box = document.querySelector('.r1-rec'), lf = document.getElementById('lensFor'), rec = d.querySelector('.lens-rec');
+  function mv() { if (!box || !lf || !rec) return; if (mq.matches) { box.appendChild(lf); box.appendChild(rec); } else if (lf.parentNode === box) { d.appendChild(lf); d.appendChild(rec); } }
+  mv(); if (mq.addEventListener) mq.addEventListener('change', mv);
   f(); if (mq.addEventListener) mq.addEventListener('change', f);
   d.addEventListener('toggle', function () { if (mq.matches && !d.open) d.open = true; });
 })();
