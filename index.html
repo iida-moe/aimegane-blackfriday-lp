@@ -2249,6 +2249,19 @@
     #hearing-aid .hear-card .hear-pr .hear-y .num { font-size: 30px; }
     #hearing-aid .hear-card .hear-pr .hear-y .st { font-size: 13px; }
     #hearing-aid .hear-card .hear-feat { word-break: auto-phrase; }
+    /* 11/3 小さくて見づらい（Iさん「この1個しかないから」）→メガネに合わせず大きめに。右ずらしはやめて中央に戻す */
+    #hearing-aid .hear-card { grid-template-columns: 340px 1fr !important; max-width: 900px; left: 0; }
+    #hearing-aid .hear-card .hear-img { padding: 18px 8px 0 !important; }
+    #hearing-aid .hear-card .hear-img .hear-logo { top: 14px !important; left: 14px !important; width: 72px !important; }
+    #hearing-aid .hear-card .hear-img .hear-prod { height: 200px !important; margin: 16px auto 0 !important; }
+    #hearing-aid .hear-card .hear-top { padding: 14px 22px 0; }
+    #hearing-aid .hear-card .hear-top .hear-jp { font-size: 12px; }
+    #hearing-aid .hear-card .hear-top .hear-br { font-size: 24px; }
+    #hearing-aid .hear-card .hear-feat { padding: 0 22px; font-size: 15px; }
+    #hearing-aid .hear-card .hear-pr { margin: 16px 22px 0; padding: 14px 0 22px; }
+    #hearing-aid .hear-card .hear-pr .hear-pl { font-size: 13px; }
+    #hearing-aid .hear-card .hear-pr .hear-y .num { font-size: 44px; }
+    #hearing-aid .hear-card .hear-pr .hear-y .st { font-size: 17px; }
   }
 
   /* ===== 11/3 選ばれる理由：PCは「文字｜絵」の2列を左右交互に（真ん中寄せの1列は中途半端・Iさん）。番号は丸→大きい01・02・03 ===== */
