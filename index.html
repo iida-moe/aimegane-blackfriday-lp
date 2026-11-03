@@ -2414,6 +2414,14 @@
   .lens-key[data-lens="assist"] .lk-rr { display: inline-flex; }
   .lens-for { word-break: auto-phrase; text-wrap: balance; }
 
+  /* 11/3 PCはタブの上に「＼ あなたに合うレンズを見つけよう ／」（Iさん：選ぶ場所だとわかるように）。スマホはボタンに同じ言葉があるので出さない */
+  @media (min-width: 1024px) {
+    .reasons .reason:nth-child(1) .lens-body > .lens-hint { display: flex !important; grid-column: 1 / -1; grid-row: 1; justify-self: center; margin: 0 !important; padding: 0 !important; border: 0 !important; font-size: 18px !important; font-weight: 900; white-space: nowrap; }
+    .reasons .reason:nth-child(1) .lens-body { grid-template-areas: "hint hint hint" "tabs tabs tabs" "scene fig side" !important; row-gap: 18px !important; }
+    .reasons .reason:nth-child(1) .lens-body > .lens-hint { grid-area: hint; }
+    .reasons .reason:nth-child(1) .lens-tabs { margin-bottom: 14px !important; }
+  }
+
   /* ===== 11/3 選ばれる理由：PCは「文字｜絵」の2列を左右交互に（真ん中寄せの1列は中途半端・Iさん）。番号は丸→大きい01・02・03 ===== */
   @media (min-width: 1024px) {
     .reasons { max-width: 1080px !important; }
