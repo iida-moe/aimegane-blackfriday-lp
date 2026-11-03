@@ -2340,6 +2340,15 @@
     .reasons .reason:nth-child(1) .rh-ill { justify-self: start !important; }
   }
 
+  /* 11/3 01の右の余り（Iさん）→02と同じ並び：左に文字＋ボタン（左ぞろえ）、右半分のまん中にイラスト210px。開いた中身は横いっぱいのまま */
+  @media (min-width: 1024px) {
+    .reasons .reason:nth-child(1) { grid-template-columns: 1fr 1fr !important; column-gap: 48px !important; }
+    .reasons .reason:nth-child(1) .rh-ill { width: 210px !important; justify-self: center !important; }
+    .reasons .reason:nth-child(1) .lens-more { margin-top: 32px !important; }
+    .reasons .reason:nth-child(1) .lens-more > summary { margin: 0 !important; max-width: 400px; }
+    .reasons .reason:nth-child(1) .lens-more[open] > summary { margin-bottom: 16px !important; }
+  }
+
   /* ===== 11/3 選ばれる理由：PCは「文字｜絵」の2列を左右交互に（真ん中寄せの1列は中途半端・Iさん）。番号は丸→大きい01・02・03 ===== */
   @media (min-width: 1024px) {
     .reasons { max-width: 1080px !important; }
