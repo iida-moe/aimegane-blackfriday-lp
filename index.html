@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja" data-simple="1"><!-- 11/3 お得な内容は「シンプル」で確定（Iさん）。見比べボタンは削除 -->
+<html lang="ja" data-simple="1" data-chic="1"><!-- 11/3 全体は「上品」で確定（Iさん）。見比べボタンは削除 --><!-- 11/3 お得な内容は「シンプル」で確定（Iさん）。見比べボタンは削除 -->
 <head>
 <meta charset="UTF-8">
 <meta name="robots" content="noindex, nofollow">
@@ -2156,7 +2156,7 @@
   }
   /* ===== シンプル版ここまで（11/3 確定・<html data-simple="1"> で固定） ===== */
 
-  /* ===== 11/3 見比べ「上品」（html[data-chic="1"]）＝余白を広く・見出しを細く小さく・線と囲みを減らす。FVとお得な内容の中身はさわらない。★決まったらボタンごと削除 ===== */
+  /* ===== 11/3「上品」（html[data-chic="1"]）＝余白を広く・見出しを細く小さく・線と囲みを減らす。FVとお得な内容の中身はさわらない。11/3 これで確定（Iさん） ===== */
   html[data-chic="1"] .sec-ja { font-weight: 700; font-size: 24px; letter-spacing: .1em; line-height: 1.6; }
   html[data-chic="1"] .sec-ja::after { width: 24px; height: 2px; border-radius: 0; margin-top: 18px; }
   html[data-chic="1"] .sec-head { margin-bottom: 52px; }
@@ -2178,10 +2178,6 @@
     html[data-chic="1"] .sec-head { margin-bottom: 72px; }
     html[data-chic="1"] .sec { padding-top: 170px; padding-bottom: 170px; }
   }
-  .chic-sw { position: fixed; left: 12px; bottom: 140px; z-index: 9000; display: flex; gap: 4px; align-items: center; background: #fff; border: 2px solid #111; border-radius: 10px; padding: 6px 8px; font-size: 12px; font-weight: 700; box-shadow: 0 4px 12px rgba(0,0,0,.25); }
-  @media (max-width: 1023px) { .chic-sw { bottom: 96px; } }
-  .chic-sw button { height: 32px; padding: 0 10px; border: 1.5px solid #111; border-radius: 6px; background: #fff; font-weight: 900; font-size: 13px; cursor: pointer; font-family: inherit; }
-  .chic-sw button.on { background: #f4e030; }
 
   /* ===== 11/3 ご来店からお受け取りまで（#flow）：スマホは縦のタイムライン・PCは横に並べる ===== */
   .flow { background: #fff; }
@@ -2220,6 +2216,42 @@
     .flow-wait-t { font-size: 17px; }
     .flow-wait-t { position: relative; }
     .flow-wait small { margin-top: 34px; font-size: 11px; line-height: 1.5; }
+  }
+
+  /* ===== 11/3 選ばれる理由：PCは「文字｜絵」の2列を左右交互に（真ん中寄せの1列は中途半端・Iさん）。番号は丸→大きい01・02・03 ===== */
+  @media (min-width: 1024px) {
+    .reasons { max-width: 1080px !important; }
+    .reasons .reason { margin-top: 32px; padding: 64px 72px !important; display: grid; grid-template-columns: 1fr 1fr; column-gap: 72px; align-items: center; text-align: left; border-radius: 4px; }
+    .reasons .reason:first-child { margin-top: 0; }
+    .reasons .reason:has(.rh)::before { content: "0" counter(reason); position: static; margin: 0 0 18px !important; width: auto; height: auto; border-radius: 0; background: none; box-shadow: none; color: var(--tx); font-size: 56px; line-height: 1; text-align: left; letter-spacing: .02em; padding-bottom: 14px; border-bottom: 2px solid var(--ac); justify-self: start; align-self: end; }
+    .reasons .reason .rh { justify-content: flex-start; }
+    .reasons .reason .rh-to { text-align: left; margin-bottom: 18px !important; }
+    .reasons .reason .rh-to::before { display: none; }
+    .reasons .reason .rh-to::after { width: 24px; }
+    .reasons .reason .rh, .reasons .reason .rh-to, .reasons .reason:has(.rh)::before { grid-column: 1; }
+    /* 理由1：右にイラスト、下に「あなたに合うレンズ」（開くと中身が横いっぱい） */
+    .reasons .reason:nth-child(1) { grid-template-rows: auto auto 1fr auto; }
+    .reasons .reason:nth-child(1) .rh { display: contents; }
+    .reasons .reason:nth-child(1) .rh-txt { grid-column: 1; grid-row: 3; align-self: start; }
+    .reasons .reason:nth-child(1) .rh-ill { grid-column: 2; grid-row: 1 / 4; width: 240px; justify-self: center; }
+    .reasons .reason:nth-child(1) .lens-more { grid-column: 1 / -1; grid-row: 4; margin-top: 40px; }
+    .reasons .reason:nth-child(1) .rh-gino em { font-size: 40px; }
+    .reasons .reason:nth-child(1) .rh-also { font-size: 16px; margin-top: 12px; }
+    .reasons .reason:nth-child(1) .rh-zn { font-size: 12px; }
+    /* 理由2：左に会話、右に見出し＋予約リンク */
+    .reasons .reason:nth-child(2) { grid-template-columns: 1.15fr 1fr; grid-template-rows: auto auto 1fr; }
+    .reasons .reason:nth-child(2)::before, .reasons .reason:nth-child(2) .rh { grid-column: 2; }
+    .reasons .reason:nth-child(2)::before { grid-row: 1; }
+    .reasons .reason:nth-child(2) .rh { grid-row: 2; }
+    .reasons .reason:nth-child(2) .manga { grid-column: 1; grid-row: 1 / 4; max-width: none; margin: 0; }
+    .reasons .reason:nth-child(2) .worry-link { grid-column: 2; grid-row: 3; align-self: start; text-align: left; margin-top: 28px; }
+    /* 理由3：左に見出し＋点検クリーニング、右に保証のアコーディオン、注意書きは下に横いっぱい */
+    .reasons .reason:nth-child(3) { grid-template-rows: auto auto 1fr auto; align-items: start; }
+    .reasons .reason:nth-child(3)::before { grid-row: 1; align-self: end; }
+    .reasons .reason:nth-child(3) .rh { grid-row: 2; }
+    .reasons .reason:nth-child(3) .hs-svc { grid-column: 1; grid-row: 3; align-self: start; margin-top: 32px; }
+    .reasons .reason:nth-child(3) .hs-acc { grid-column: 2; grid-row: 1 / 4; max-width: none; margin: 0; }
+    .reasons .reason:nth-child(3) .note { grid-column: 1 / -1; grid-row: 4; margin-top: 32px !important; }
   }
 
   /* 11/2 ③ 曜日を固定バー・FVと同じ黄色の丸に（キャンペーン概要・最後のまとめ） */
@@ -3093,17 +3125,6 @@ if(!location.hash){window.scrollTo(0,0);}
   window.addEventListener('scroll',check,{passive:true});
   window.addEventListener('resize',check);
   check();
-})();
-</script>
-<!-- 11/3 見比べ「今／上品」（★決まったらボタンごと削除） -->
-<div class="chic-sw" id="chic-sw">表示 <button data-v="0">今</button><button data-v="1">上品</button></div>
-<script>
-(function () {
-  var sw = document.getElementById('chic-sw'), v = '1';
-  try { v = localStorage.getItem('bf_chic') || '1'; } catch (e) {}
-  function set(x) { document.documentElement.setAttribute('data-chic', x); sw.querySelectorAll('button').forEach(function (b) { b.classList.toggle('on', b.dataset.v === x); }); try { localStorage.setItem('bf_chic', x); } catch (e) {} }
-  sw.addEventListener('click', function (e) { var b = e.target.closest('button'); if (b) set(b.dataset.v); });
-  set(v);
 })();
 </script>
 </body>
