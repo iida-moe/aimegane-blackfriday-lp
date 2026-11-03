@@ -2456,6 +2456,19 @@
     .reasons .reason:nth-child(1) .rh-ill { width: 150px !important; }
   }
 
+  /* 11/3 02・03の見出しも01と同じ大きさに（Iさん）。02の吹き出しは文字の長さぶんの幅に（左右の空きをなくす） */
+  @media (min-width: 1024px) {
+    .reasons .reason .rh .gino-tag { font-size: 20px !important; }
+    .reasons .reason:nth-child(2) .rh h3.rh-gino, .reasons .reason:nth-child(3) .rh h3.rh-gino { font-size: 23px !important; }
+    .reasons .reason:nth-child(2) .rh h3.rh-gino em, .reasons .reason:nth-child(3) .rh h3.rh-gino em { font-size: 46px !important; }
+    .reasons .reason .gino-n { font-size: 13px !important; }
+    .reasons .reason .gino-q .hear-q-t { font-size: 14px !important; }
+    .reasons .reason:nth-child(2) .mg-row { gap: 12px; }
+    .reasons .reason:nth-child(2) .mg-cust { justify-content: flex-end; }
+    .reasons .reason:nth-child(2) .mg-staff { justify-content: flex-start; }
+    .reasons .reason:nth-child(2) .mg-bub { flex: 0 1 auto !important; padding: 16px 28px !important; font-size: 17px !important; }
+  }
+
   /* ===== 11/3 選ばれる理由：PCは「文字｜絵」の2列を左右交互に（真ん中寄せの1列は中途半端・Iさん）。番号は丸→大きい01・02・03 ===== */
   @media (min-width: 1024px) {
     .reasons { max-width: 1080px !important; }
