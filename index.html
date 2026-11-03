@@ -2156,6 +2156,72 @@
   }
   /* ===== シンプル版ここまで（11/3 確定・<html data-simple="1"> で固定） ===== */
 
+  /* ===== 11/3 見比べ「上品」（html[data-chic="1"]）＝余白を広く・見出しを細く小さく・線と囲みを減らす。FVとお得な内容の中身はさわらない。★決まったらボタンごと削除 ===== */
+  html[data-chic="1"] .sec-ja { font-weight: 700; font-size: 24px; letter-spacing: .1em; line-height: 1.6; }
+  html[data-chic="1"] .sec-ja::after { width: 24px; height: 2px; border-radius: 0; margin-top: 18px; }
+  html[data-chic="1"] .sec-head { margin-bottom: 52px; }
+  html[data-chic="1"] .sec { padding-top: 120px; padding-bottom: 120px; }
+  html[data-chic="1"] #hearing-aid .sec-ja { font-size: 24px; }
+  html[data-chic="1"] .reason { border: 0 !important; box-shadow: none !important; border-radius: 4px; }
+  html[data-chic="1"] .pick-card { border: 0; }
+  html[data-chic="1"] .pick-img { background: #f6f6f3; }
+  html[data-chic="1"] .ol-box { border: 0; background: #f7f7f4; }
+  html[data-chic="1"] .ol-row { border-color: #e6e6e1; }
+  html[data-chic="1"] .hear-img { border: 0 !important; background: #f6f6f3; }
+  html[data-chic="1"] .flow-ic { border-width: 1.5px; }
+  html[data-chic="1"] .flow-ic svg { stroke-width: 2; }
+  html[data-chic="1"] .flow-tag { font-weight: 700; letter-spacing: .12em; }
+  @media (min-width: 1024px) {
+    html[data-chic="1"] .sec-ja { font-size: 34px; }
+    html[data-chic="1"] #hearing-aid .sec-ja { font-size: 34px; }
+    html[data-chic="1"] .sec-ja::after { width: 32px; height: 2px; margin-top: 24px; }
+    html[data-chic="1"] .sec-head { margin-bottom: 72px; }
+    html[data-chic="1"] .sec { padding-top: 170px; padding-bottom: 170px; }
+  }
+  .chic-sw { position: fixed; left: 12px; bottom: 140px; z-index: 9000; display: flex; gap: 4px; align-items: center; background: #fff; border: 2px solid #111; border-radius: 10px; padding: 6px 8px; font-size: 12px; font-weight: 700; box-shadow: 0 4px 12px rgba(0,0,0,.25); }
+  @media (max-width: 1023px) { .chic-sw { bottom: 96px; } }
+  .chic-sw button { height: 32px; padding: 0 10px; border: 1.5px solid #111; border-radius: 6px; background: #fff; font-weight: 900; font-size: 13px; cursor: pointer; font-family: inherit; }
+  .chic-sw button.on { background: #f4e030; }
+
+  /* ===== 11/3 ご来店からお受け取りまで（#flow）：スマホは縦のタイムライン・PCは横に並べる ===== */
+  .flow { background: #fff; }
+  .flow-in { max-width: 420px; margin: 0 auto; }
+  .flow-lb { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+  .flow-tag { display: inline-block; background: #111; color: var(--ac); font-size: 14px; font-weight: 900; padding: 5px 12px; letter-spacing: .05em; }
+  .flow-time { font-size: 15px; font-weight: 700; }
+  .flow-time b, .flow-wait-t b { font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 800; font-size: 1.9em; line-height: 1; margin: 0 2px; vertical-align: -2px; }
+  .flow-list { list-style: none; margin: 0; padding: 0; position: relative; }
+  .flow-list::before { content: ""; position: absolute; left: 27px; top: 28px; bottom: 28px; width: 2px; background: var(--ac); }
+  .flow-list li { position: relative; display: grid; grid-template-columns: 56px 1fr; column-gap: 16px; align-items: center; padding: 10px 0; }
+  .flow-ic { grid-row: 1 / 4; width: 56px; height: 56px; border-radius: 50%; background: #fff; border: 2px solid #111; display: flex; align-items: center; justify-content: center; position: relative; z-index: 1; }
+  .flow-ic svg { width: 32px; height: 32px; fill: none; stroke: #111; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
+  .flow-n { font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 800; font-size: 12px; letter-spacing: .1em; color: #999; line-height: 1.2; }
+  .flow-list b { font-size: 17px; font-weight: 900; line-height: 1.4; }
+  .flow-list small { font-size: 13px; color: var(--sub); line-height: 1.5; }
+  .flow-wait { margin: 18px 0; padding: 16px; text-align: center; border-top: 1px dashed #bbb; border-bottom: 1px dashed #bbb; }
+  .flow-wait-t { display: block; font-size: 16px; font-weight: 900; }
+  .flow-wait small { display: block; font-size: 12px; color: var(--sub); margin-top: 6px; }
+  .flow-day2 .flow-list::before { display: none; }
+  .flow-day2 .flow-ic { background: var(--ac); }
+  @media (min-width: 1024px) {
+    .flow-in { max-width: 1040px; display: grid; grid-template-columns: 1fr 140px 170px; align-items: start; }
+    .flow-lb { justify-content: center; margin-bottom: 22px; }
+    .flow-tag { font-size: 15px; }
+    .flow-list { display: flex; }
+    .flow-day .flow-list li { flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 6px; }
+    .flow-list::before { left: 10%; right: 10%; top: 35px; bottom: auto; width: auto; height: 2px; }
+    .flow-ic { width: 72px; height: 72px; margin-bottom: 12px; }
+    .flow-ic svg { width: 40px; height: 40px; }
+    .flow-n { font-size: 13px; }
+    .flow-list b { font-size: 17px; margin-top: 2px; }
+    .flow-list small { font-size: 13px; margin-top: 6px; word-break: auto-phrase; }
+    .flow-wait { margin: 0; padding: 0 8px; border: 0; align-self: stretch; display: flex; flex-direction: column; justify-content: flex-start; padding-top: 70px; position: relative; }
+    .flow-wait::before { content: ""; position: absolute; left: 8px; right: 8px; top: 92px; border-top: 2px dashed #bbb; }
+    .flow-wait-t { font-size: 17px; }
+    .flow-wait-t { position: relative; }
+    .flow-wait small { margin-top: 34px; font-size: 11px; line-height: 1.5; }
+  }
+
   /* 11/2 ③ 曜日を固定バー・FVと同じ黄色の丸に（キャンペーン概要・最後のまとめ） */
   .ol-big small.dw, .cl-date small.dw { display: inline-flex !important; align-items: center; justify-content: center; width: 1.6em; height: 1.6em; border-radius: 50%; background: var(--ac); color: #111 !important; font-family: 'Noto Sans JP', sans-serif; font-weight: 700; line-height: 1; vertical-align: .2em; margin: 0 4px 0 3px; }
   .ol-big small.dw { font-size: 12px !important; }
@@ -2551,6 +2617,30 @@
       <p class="hs-svc"><svg class="hs-svc-ic" viewBox="0 0 64 44" aria-hidden="true"><circle cx="19" cy="26" r="10" fill="#e3f2f9" stroke="#222" stroke-width="3.2"/><circle cx="43" cy="26" r="10" fill="#e3f2f9" stroke="#222" stroke-width="3.2"/><path d="M29,25 Q31,21.5 33,25" fill="none" stroke="#222" stroke-width="2.8" stroke-linecap="round"/><path d="M9,24 L4,19 M53,24 L58,19" stroke="#222" stroke-width="2.8" stroke-linecap="round"/><path d="M14,22 L17,20.5 M38,22 L41,20.5" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/><path d="M50 3l2 5 5 2-5 2-2 5-2-5-5-2 5-2z" fill="#f4e030" stroke="#222" stroke-width="1.4" stroke-linejoin="round"/><path d="M59 1l1 2.5 2.5 1-2.5 1-1 2.5-1-2.5-2.5-1 2.5-1z" fill="#222"/></svg>メガネの点検・クリーニングは<br><span class="marker">いつでも無料</span>です<small>ご家族のメガネや、<br>他店で買ったメガネもお気軽にどうぞ</small></p>
       <p class="note" style="margin-top:10px;">※品質保証は、通常のお取り扱いで生じた損傷が対象です（現品と交換のため、ご持参ください）。<br>※アイ情補償は、お客さまご自身で壊した場合に、同じメガネを半額でご用意します。ほかの割引とは併用できません。<br>※くわしい条件は店頭でご確認ください。</p>
     </div>
+    </div>
+  </section>
+
+  <!-- 11/3 ご来店からお受け取りまで（Zoffの遠近LPの「できるまで」を参考に、はじめての方の「何回・どれくらい？」に答える。内容はIさん） -->
+  <section class="sec flow" id="flow">
+    <div class="sec-head"><h2 class="sec-ja">ご来店から<br class="pc-hide">お受け取りまで</h2></div>
+    <div class="flow-in">
+      <div class="flow-day">
+        <p class="flow-lb"><span class="flow-tag">ご来店の日</span><span class="flow-time">約<b>1</b>時間</span></p>
+        <ol class="flow-list">
+          <li><span class="flow-ic"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="16"/><circle cx="24" cy="24" r="6"/><path d="M24 4v6M24 38v6M4 24h6M38 24h6"/></svg></span><span class="flow-n">STEP 1</span><b>目の測定</b><small>今の見え方をしっかり測ります</small></li>
+          <li><span class="flow-ic"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="14" cy="26" r="8"/><circle cx="34" cy="26" r="8"/><path d="M22 25q2-3 4 0M6 25H3M42 25h3"/></svg></span><span class="flow-n">STEP 2</span><b>フレーム選び</b><small>似合う形を、いっしょに探します</small></li>
+          <li><span class="flow-ic"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="22" cy="26" r="14"/><path d="M14 22q2-5 7-6"/><path d="M39 6v8M35 10h8"/></svg></span><span class="flow-n">STEP 3</span><b>レンズ選び</b><small>使うシーンに合わせてご提案</small></li>
+          <li><span class="flow-ic"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 30h32"/><path d="M12 30q0-8 7-8M36 30q0-8-7-8"/><path d="M30 8l8 8-12 12-8-8z"/></svg></span><span class="flow-n">STEP 4</span><b>フィッティング</b><small>お顔に合わせて、かけ心地を調整</small></li>
+          <li><span class="flow-ic"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="7" y="13" width="34" height="22" rx="3"/><path d="M7 20h34M13 29h8"/></svg></span><span class="flow-n">STEP 5</span><b>お会計</b><small>割引はすべて併用できます</small></li>
+        </ol>
+      </div>
+      <p class="flow-wait"><span class="flow-wait-t">約<b>1</b>週間</span><small>※レンズの種類によって前後します</small></p>
+      <div class="flow-day flow-day2">
+        <p class="flow-lb"><span class="flow-tag">できあがり</span></p>
+        <ol class="flow-list" start="6">
+          <li><span class="flow-ic"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="8" y="18" width="32" height="22" rx="2"/><path d="M8 26h32M24 18v22"/><path d="M24 18q-8-10-12-4t12 4q8-10 12-4t-12 4"/></svg></span><span class="flow-n">STEP 6</span><b>お受け取り</b><small>できあがったメガネをお渡しします</small></li>
+        </ol>
+      </div>
     </div>
   </section>
 
@@ -3003,6 +3093,17 @@ if(!location.hash){window.scrollTo(0,0);}
   window.addEventListener('scroll',check,{passive:true});
   window.addEventListener('resize',check);
   check();
+})();
+</script>
+<!-- 11/3 見比べ「今／上品」（★決まったらボタンごと削除） -->
+<div class="chic-sw" id="chic-sw">表示 <button data-v="0">今</button><button data-v="1">上品</button></div>
+<script>
+(function () {
+  var sw = document.getElementById('chic-sw'), v = '1';
+  try { v = localStorage.getItem('bf_chic') || '1'; } catch (e) {}
+  function set(x) { document.documentElement.setAttribute('data-chic', x); sw.querySelectorAll('button').forEach(function (b) { b.classList.toggle('on', b.dataset.v === x); }); try { localStorage.setItem('bf_chic', x); } catch (e) {} }
+  sw.addEventListener('click', function (e) { var b = e.target.closest('button'); if (b) set(b.dataset.v); });
+  set(v);
 })();
 </script>
 </body>
