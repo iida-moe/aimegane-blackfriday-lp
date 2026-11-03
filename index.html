@@ -2297,12 +2297,29 @@
   /* ===== 11/3 レンズの図：上に「メガネのレンズを正面から見た図」、下に色と点線の見方 ===== */
   .lens-cap { text-align: center; font-size: 12px !important; font-weight: 700; color: var(--sub) !important; margin-top: 20px; letter-spacing: .04em; }
   .lens-cap + #lensImg { margin-top: 2px; }
+  /* 11/3 見出しはレンズの真上に重ねる（図の上のすき間・レンズは図の左5〜51%） */
+  .lens-fig { position: relative; margin-top: 12px; }
+  .lens-fig #lensImg { margin-top: 0 !important; }
+  .lens-fig .lens-cap { position: absolute; top: 4%; left: 5%; width: 46%; margin: 0; white-space: nowrap; font-size: 12px !important; }
+  @media (min-width: 1024px) { .reasons .reason .lens-fig { max-width: 520px; margin-left: auto; margin-right: auto; } .lens-fig .lens-cap { font-size: 13px !important; top: 6%; } }
+  @media (max-width: 359px) { .lens-fig .lens-cap { font-size: 11px !important; top: 2%; } }
   .lens-key { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 16px; font-size: 12px !important; color: var(--sub) !important; margin: 4px 0 12px; line-height: 1.6; }
   .lens-key .lk { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
   .lk-c { width: 16px; height: 10px; border-radius: 50%; background: #F8EAA6; flex: none; }
   .lk-d { width: 18px; height: 0; border-top: 2px dashed #D9822B; flex: none; }
   .lens-key + .lens-for { margin-top: 4px; word-break: auto-phrase; }
   @media (min-width: 1024px) { .lens-cap, .lens-key { font-size: 13px !important; } }
+
+  /* ===== 11/3 理由2「眼鏡作製技能士とは？」（補聴器の「認定補聴器技能者とは？」と同じ見た目） ===== */
+  .reason .gino-q { border: 1px solid var(--line) !important; border-radius: 8px; background: #fff !important; margin-top: 12px !important; text-align: left; }
+  .reason .gino-q summary { display: flex !important; padding: 9px 38px 9px 10px !important; }
+  .reason .gino-q summary::after { right: 10px !important; }
+  .reason .gino-q .hear-q-t { font-size: 12px; }
+  .reason .gino-q .hear-q-d { padding: 0 12px 12px !important; font-size: 12px !important; color: var(--sub) !important; line-height: 1.7; }
+  @media (min-width: 1024px) { .reason .gino-q .hear-q-t { font-size: 13px; } .reason .gino-q .hear-q-d { font-size: 13px !important; } }
+  .reason .rh:has(.gino-q) { align-items: flex-start; } .reason .rh:has(.gino-q) .rh-ico { margin-top: 22px; } /* 説明ボタンでかたまりが長くなってもメダルは見出しの横 */
+  /* 11/3 理由1PC：イラストをもう少し小さく・余白を詰める（Iさん） */
+  @media (min-width: 1024px) { .reasons .reason:nth-child(1) .rh-ill { width: 150px !important; } .reasons .reason:nth-child(1) { column-gap: 40px !important; padding-top: 52px !important; padding-bottom: 52px !important; } .reasons .reason:nth-child(1) .lens-more { margin-top: 28px !important; } }
 
   /* ===== 11/3 選ばれる理由：PCは「文字｜絵」の2列を左右交互に（真ん中寄せの1列は中途半端・Iさん）。番号は丸→大きい01・02・03 ===== */
   @media (min-width: 1024px) {
@@ -2672,8 +2689,8 @@
         <button role="tab" aria-selected="false" data-lens="kinkin">近々<small>デスクワーク用</small></button>
         <button role="tab" aria-selected="false" data-lens="assist">アシスト<small>手元サポート</small></button>
       </div>
-      <p class="lens-cap">メガネのレンズを正面から見た図</p><!-- 11/3 図だけだとレンズとわかりにくい（Iさん） -->
-      <img class="reason-ill" id="lensImg" src="images/illust/lens-enkin.svg" alt="遠近両用レンズの見え方" width="640" height="360">
+      <div class="lens-fig"><p class="lens-cap">メガネのレンズ</p><!-- 11/3 図だけだとレンズとわかりにくい（Iさん）→レンズの真上に重ねる -->
+      <img class="reason-ill" id="lensImg" src="images/illust/lens-enkin.svg" alt="遠近両用レンズの見え方" width="640" height="360"></div>
       <p class="lens-key"><span class="lk"><i class="lk-c" aria-hidden="true"></i>色の部分：よく見える範囲</span><span class="lk"><i class="lk-d" aria-hidden="true"></i>点線の外側：ゆがみ・ぼやけが出やすい部分</span></p><!-- 11/3 点線の解説（4つの図すべてに点線あり） -->
       <p class="lens-for" id="lensFor">遠くも手元も、これ1本で</p>
       <!-- 10/23 こんな方におすすめ＋使うシーン（タブで切りかえ・中身はJSのLENS）。変更前 _保存/index.before-1023-lensrec.html -->
@@ -2692,6 +2709,7 @@
         <div class="rh-txt">
           <p class="gino-tag">国家検定資格</p><!-- 10/27 B案：リード文をやめて小さいラベルに（比較/理由2見出し_比較.png） -->
           <h3 class="rh-gino rh-gino-top"><em>眼鏡作製技能士</em>が全店に在籍</h3><!-- 10/27 Iさん指定の文言・順番 -->
+          <details class="hear-q gino-q"><summary class="hear-q-t"><span class="hear-q-i" aria-hidden="true">?</span><u>眼鏡作製技能士<span class="nw">とは？</span></u></summary><p class="hear-q-d">国が定める技能検定（国家検定）の資格です。見え方の測定からレンズ選び、かけ心地の調整まで、メガネづくりの知識と技術をもつ専門スタッフです。</p></details><!-- 11/3 補聴器の「認定補聴器技能者とは？」と同じ形（Iさん）。文言は要確認 -->
         </div>
       </div>
       <!-- 10/24 C案：お客さま⇔スタッフの会話（お悩み_比較.html） -->
