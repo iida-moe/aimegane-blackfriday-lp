@@ -2361,6 +2361,20 @@
     .reasons .reason:nth-child(1) .lens-side .lens-rec { margin: 16px 0 0 !important; max-width: none !important; }
   }
 
+  /* 11/3 01PC：右上の空き（Iさん）→「遠近・中近・近々も 追加料金0円」を右に大きめの囲みで（見出しと上下をそろえる） */
+  @media (min-width: 1024px) {
+    .reasons .reason:nth-child(1) { display: grid !important; grid-template-columns: minmax(0, 1fr) 340px !important; grid-template-rows: auto auto auto auto !important; column-gap: 40px !important; align-items: end !important; }
+    .reasons .reason:nth-child(1)::before { grid-column: 1; grid-row: 1; }
+    .reasons .reason:nth-child(1) .rh-to { grid-column: 1; grid-row: 2; }
+    .reasons .reason:nth-child(1) .rh, .reasons .reason:nth-child(1) .rh-txt { display: contents !important; }
+    .reasons .reason:nth-child(1) .rh-gino { grid-column: 1; grid-row: 3; }
+    .reasons .reason:nth-child(1) .rh-also { grid-column: 2; grid-row: 1 / 4; align-self: stretch; margin: 0 !important; background: #fffbe0; border-radius: 8px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px 16px 34px; font-size: 18px !important; }
+    .reasons .reason:nth-child(1) .rh-also .nw { display: block; }
+    .reasons .reason:nth-child(1) .rh-also .rh-also-r { font-size: 44px; font-weight: 900; line-height: 1.2; margin-top: 4px; }
+    .reasons .reason:nth-child(1) .rh-zn { grid-column: 2; grid-row: 3; align-self: end; text-align: center; margin: 0 0 12px !important; position: relative; z-index: 1; }
+    .reasons .reason:nth-child(1) .lens-more { grid-column: 1 / -1; grid-row: 4; }
+  }
+
   /* ===== 11/3 選ばれる理由：PCは「文字｜絵」の2列を左右交互に（真ん中寄せの1列は中途半端・Iさん）。番号は丸→大きい01・02・03 ===== */
   @media (min-width: 1024px) {
     .reasons { max-width: 1080px !important; }
