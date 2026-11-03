@@ -2262,6 +2262,22 @@
     #hearing-aid .hear-card .hear-pr .hear-pl { font-size: 13px; }
     #hearing-aid .hear-card .hear-pr .hear-y .num { font-size: 44px; }
     #hearing-aid .hear-card .hear-pr .hear-y .st { font-size: 17px; }
+
+    /* ===== 11/3 C案で確定（比較/補聴器PC_4案.png・Iさん）：1つの枠の中で左右に分ける。左＝写真＋名前｜値段、右＝補聴器サポート（うすいグレー） ===== */
+    #hearing-aid .hear-card { grid-template-columns: 1fr 1fr !important; grid-template-rows: auto auto 1fr !important; column-gap: 0 !important; max-width: 1000px; border: 1px solid #ddd !important; border-radius: 6px; overflow: hidden; align-items: stretch; background: #fff !important; }
+    #hearing-aid .hear-card::before { content: none; }
+    #hearing-aid .hear-card .hear-img { grid-column: 1; grid-row: 1; padding: 48px 48px 0 !important; }
+    #hearing-aid .hear-card .hear-img .hear-logo { top: 24px !important; left: 24px !important; width: 80px !important; }
+    #hearing-aid .hear-card .hear-img .hear-prod { height: 230px !important; margin: 0 auto !important; }
+    #hearing-aid .hear-card .hear-top { grid-column: 1; grid-row: 2; padding: 24px 48px 0; display: flex !important; justify-content: space-between; align-items: flex-end !important; }
+    #hearing-aid .hear-card .hear-top .hear-pr-r { display: block !important; text-align: right; border-top: 0 !important; margin: 0 !important; padding: 0 !important; }
+    #hearing-aid .hear-card .hear-top .hear-pr-r .hear-pl { font-size: 13px; font-weight: 700; color: #888; }
+    #hearing-aid .hear-card .hear-top .hear-pr-r .hear-y { justify-content: flex-end !important; margin: 4px 0 0 !important; line-height: 1; }
+    #hearing-aid .hear-card .hear-top .hear-pr-r .hear-y .num { font-size: 56px; }
+    #hearing-aid .hear-card .hear-top .hear-pr-r .hear-y .st { font-size: 18px; }
+    #hearing-aid .hear-card .hear-feat { grid-column: 1; grid-row: 3; padding: 8px 48px 44px; align-self: start; border: 0 !important; }
+    #hearing-aid .hear-card .hear-pr:not(.hear-pr-r) { display: none !important; }
+    #hearing-aid .hear-card .hear-side { grid-column: 2; grid-row: 1 / -1 !important; align-self: stretch !important; background: #fafaf7; border-left: 1px solid #eee; padding: 44px 48px; display: flex !important; flex-direction: column; justify-content: center; }
   }
 
   /* ===== 11/3 選ばれる理由：PCは「文字｜絵」の2列を左右交互に（真ん中寄せの1列は中途半端・Iさん）。番号は丸→大きい01・02・03 ===== */
