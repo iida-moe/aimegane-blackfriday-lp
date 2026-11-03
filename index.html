@@ -2318,12 +2318,13 @@
     .reasons .reason:nth-child(1) .rh-also { font-size: 16px; margin-top: 12px; }
     .reasons .reason:nth-child(1) .rh-zn { font-size: 12px; }
     /* 理由2：左に会話、右に見出し＋予約リンク */
-    .reasons .reason:nth-child(2) { grid-template-columns: 1.15fr 1fr; grid-template-rows: auto auto 1fr; }
-    .reasons .reason:nth-child(2)::before, .reasons .reason:nth-child(2) .rh { grid-column: 2; }
+    /* 11/3 理由2も文字が左・会話が右に（「左右逆じゃね？」Iさん：先に見出しを読んでから会話へ） */
+    .reasons .reason:nth-child(2) { grid-template-columns: 1fr 1.15fr; grid-template-rows: auto auto 1fr; }
+    .reasons .reason:nth-child(2)::before, .reasons .reason:nth-child(2) .rh { grid-column: 1; }
     .reasons .reason:nth-child(2)::before { grid-row: 1; }
     .reasons .reason:nth-child(2) .rh { grid-row: 2; }
-    .reasons .reason:nth-child(2) .manga { grid-column: 1; grid-row: 1 / 4; max-width: none; margin: 0; }
-    .reasons .reason:nth-child(2) .worry-link { grid-column: 2; grid-row: 3; align-self: start; text-align: left; margin-top: 28px; }
+    .reasons .reason:nth-child(2) .manga { grid-column: 2; grid-row: 1 / 4; max-width: none; margin: 0; }
+    .reasons .reason:nth-child(2) .worry-link { grid-column: 1; grid-row: 3; align-self: start; text-align: left; margin-top: 28px; }
     /* 理由3：左に見出し＋点検クリーニング、右に保証のアコーディオン、注意書きは下に横いっぱい */
     .reasons .reason:nth-child(3) { grid-template-rows: auto auto 1fr auto; align-items: start; }
     .reasons .reason:nth-child(3)::before { grid-row: 1; align-self: end; }
