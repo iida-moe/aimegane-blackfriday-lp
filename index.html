@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" data-simple="1"><!-- 11/3 お得な内容は「シンプル」で確定（Iさん）。見比べボタンは削除 -->
 <head>
 <meta charset="UTF-8">
 <meta name="robots" content="noindex, nofollow">
@@ -992,7 +992,7 @@
 
     /* PICK UP：スワイプをやめて2列×2段に並べる */
     .pick-wrap { margin: 32px 0 0; }
-    .pick-track { grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .pick-track { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; } /* 11/3 値段の長さで幅が変わり右にはみ出していた→4枚同じ幅に */
     .pick-img { padding: 24px 16px; }
     .pick-body { padding: 16px 16px 18px; }
     .pick-tx { font-size: 14px; margin-top: 8px; }
@@ -1475,7 +1475,7 @@
   .pv-k { font-size: 11px; font-weight: 700; color: #888; white-space: nowrap; margin-right: -3px; } /* 10/27 消し線の値段が何か（通常価格）を明記 */
   @media (max-width: 359px) { .pv-k { font-size: 10px; margin-right: -2px; } }
   .pick-tx { margin-bottom: 0; }
-  @media (min-width: 1024px) { .pv-a s { font-size: 18px; } .pv-a { gap: 4px; flex-wrap: nowrap; } .pv-a s, .pv-a b { white-space: nowrap; } .pv-a b { font-size: 32px; } .pv-tax { font-size: 12px; } }
+  @media (min-width: 1024px) { .pv-a s { font-size: 16px; } /* 11/3 18→16px */ .pv-a { gap: 4px; flex-wrap: nowrap; } .pv-a s, .pv-a b { white-space: nowrap; } .pv-a b { font-size: 30px; } .pv-tax { font-size: 12px; } } /* 11/3 4枚同じ幅にしたら19,250の「円〜」が右はしにくっついた→32→30px */
   /* 10/27 全体の文字を軽く：数字・値段・大見出し・ボタンは900のまま、ラベルや小見出しは700に */
   .off3-n, .st4-ex-name, .st4-ex-all, .st4-more, .st4-c-st, .off-more-t, .two-rl, .two .two-label, .two-who2 span,
   .reason .rh-also, .talk-lbl, .worry-link a, .reason .lens-hint, .lens-rec-t, .hear-t, .hear-q-t, .hearing-t,
@@ -1578,7 +1578,7 @@
     .hear-card .hear-top { grid-column: 1; grid-row: 2; margin-top: 8px; }
     .hear-card .hear-feat { grid-column: 1; grid-row: 3; }
     .hear-card .hear-pr { grid-column: 1; grid-row: 4; }
-    .hear-card .hear-side { grid-column: 2; grid-row: 1 / -1; align-self: center; }
+    .hear-card .hear-side { grid-column: 2; grid-row: 1 / -1; align-self: start; } /* 11/3 center→start：右の列を写真の上はしにそろえる（左右のバランス） */
     .hear-card .hear-why { display: block; font-size: 18px; font-weight: 700; padding-bottom: 12px; border-bottom: 2px solid var(--ac); margin-bottom: 4px; }
     .hear-card .hear-pt2 { margin-top: 0; }
     .hear-card .hear-prod { width: 280px !important; max-width: 70% !important; height: auto; } /* 写真は切らずに全体のまま。380pxは大きすぎたので280pxに（Iさん） */
@@ -1854,7 +1854,8 @@
 
   /* 11/2 PC FV 確定（見比べの5）：画面の高さに収める＋中身90%＋予約ボタンは左右のまん中・いちばん下（Iさん「一旦これで」） */
   @media (min-width: 1024px) {
-    html { --fvw: min(100vw, calc((100svh - 3vw - 24px) * 2)); --fsc: .9; }
+    /* 11/3 中身 90%→100%（Iさん「もう少し大きく」） */
+    html { --fvw: min(100vw, calc((100svh - 3vw - 24px) * 2)); --fsc: 1; }
     .fv { height: calc(3vw + var(--fvw) / 2); }
     .fv-img { width: var(--fvw); height: calc(var(--fvw) / 2); left: calc(50% - var(--fvw) / 2); right: auto; }
     .fv-img .fv-pc { transform: scale(var(--fsc)); }
@@ -1915,7 +1916,7 @@
     .st4-ex-col .exc-sum + .exc-list { margin-top: 14px !important; }
     .st4-ex-col .exc-list li, html[data-simple="1"] .st4-ex-col .exc-list li { padding: 13px 0; }
     .st4-ex-col .exc-list li.exc-tot { margin-top: 6px; padding-top: 16px; }
-    .st4-ex .ba-set { margin-top: 36px !important; padding-top: 32px !important; }
+    .st4-ex .ba-set { margin-top: 18px !important; padding-top: 32px !important; } /* 11/3 ※との間が空きすぎ 36→18px */
     .st4-ex .st4-ex-all { margin-top: 18px !important; }
   }
 
@@ -2105,7 +2106,7 @@
   .lens-more .lens-hint { display: none; } /* 見出しはsummaryに移したので中の分は隠す */
   @media (min-width: 1024px) { .lens-more > summary { font-size: 17px; max-width: 440px; margin: 0 auto; } }
 
-  /* ===== 11/2 シンプル版の見比べ（html[data-simple="1"]）★本番前に決めた方だけ残して削除 ===== */
+  /* ===== 11/2 シンプル版（html[data-simple="1"]）→ 11/3 これで確定（Iさん） ===== */
   html[data-simple="1"] .st4-hero { display: none !important; }
   .st4-catch { display: none; }
   html[data-simple="1"] .st4-catch { display: block; text-align: center; font-size: 22px; font-weight: 900; line-height: 1.4; margin: 0 0 26px; letter-spacing: .02em; }
@@ -2153,11 +2154,7 @@
     html[data-simple="1"] .sec { padding-top: 150px; padding-bottom: 150px; }
     html[data-simple="1"] .sec-head { margin-bottom: 64px; }
   }
-  .smp-sw { position: fixed; left: 12px; bottom: 140px; z-index: 9000; display: flex; gap: 4px; align-items: center; background: #fff; border: 2px solid #111; border-radius: 10px; padding: 6px 8px; font-size: 12px; font-weight: 700; box-shadow: 0 4px 12px rgba(0,0,0,.25); }
-  @media (max-width: 1023px) { .smp-sw { bottom: 96px; } }
-  .smp-sw button { height: 32px; padding: 0 10px; border: 1.5px solid #111; border-radius: 6px; background: #fff; font-weight: 900; font-size: 13px; cursor: pointer; font-family: inherit; }
-  .smp-sw button.on { background: #f4e030; }
-  /* ===== シンプル版の見比べここまで ===== */
+  /* ===== シンプル版ここまで（11/3 確定・<html data-simple="1"> で固定） ===== */
 
   /* 11/2 ③ 曜日を固定バー・FVと同じ黄色の丸に（キャンペーン概要・最後のまとめ） */
   .ol-big small.dw, .cl-date small.dw { display: inline-flex !important; align-items: center; justify-content: center; width: 1.6em; height: 1.6em; border-radius: 50%; background: var(--ac); color: #111 !important; font-family: 'Noto Sans JP', sans-serif; font-weight: 700; line-height: 1; vertical-align: .2em; margin: 0 4px 0 3px; }
@@ -2576,7 +2573,7 @@
         <p class="ol-dc-all">すべての割引を<span class="marker">併用できます</span></p></dd></div>
       <div class="ol-row"><dt>レンズ</dt><dd>標準レンズなら<b class="ol-red">追加料金0円</b><small class="ol-lens">遠近両用・中近・近々・アシストもOK</small><small>※超薄型・コーティング・<span class="nw">レンズのグレード変更等は</span><span class="nw">別途料金</span></small></dd></div>
     </dl>
-    <p class="note ol-note">※8,800円は、13,200円の対象のメガネ一式に、ブラックフライデー限定割引2,200円・LINE新規お友だち登録の当日クーポン1,100円・眼科の処方箋持参1,100円の割引をすべて使った場合の価格です<br>※対象ブランドのお取り扱いデザインは店舗によって異なります<br>※価格はすべて税込</p>
+    <p class="note ol-note">※8,800円は、13,200円の対象のメガネ一式に、ブラックフライデー限定割引2,200円・LINE新規お友だち登録の当日クーポン1,100円・眼科の処方箋ご持参1,100円の割引をすべて使った場合の価格です<br>※対象ブランドのお取り扱いデザインは店舗によって異なります<br>※価格はすべて税込</p>
   </section>
 
   <section class="sec" id="shop-search">
@@ -3006,17 +3003,6 @@ if(!location.hash){window.scrollTo(0,0);}
   window.addEventListener('scroll',check,{passive:true});
   window.addEventListener('resize',check);
   check();
-})();
-</script>
-<!-- 11/2 シンプル版の見比べボタン（★本番前に削除） -->
-<div class="smp-sw" id="smp-sw">表示 <button data-v="0">今</button><button data-v="1">シンプル</button></div>
-<script>
-(function () {
-  var sw = document.getElementById('smp-sw'), v = '0';
-  try { v = localStorage.getItem('bf_simple') || '0'; } catch (e) {}
-  function set(x) { document.documentElement.setAttribute('data-simple', x); sw.querySelectorAll('button').forEach(function (b) { b.classList.toggle('on', b.dataset.v === x); }); try { localStorage.setItem('bf_simple', x); } catch (e) {} }
-  sw.addEventListener('click', function (e) { var b = e.target.closest('button'); if (b) set(b.dataset.v); });
-  set(v);
 })();
 </script>
 </body>
