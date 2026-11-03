@@ -2298,6 +2298,9 @@
     .reasons .reason:nth-child(1) .rh-ill { grid-column: 2; grid-row: 1 / 4; width: 240px; justify-self: center; }
     .reasons .reason:nth-child(1) .lens-more { grid-column: 1 / -1; grid-row: 4; margin-top: 40px; }
     .reasons .reason:nth-child(1) .rh-gino em { font-size: 40px; }
+    /* 11/3 イラストが文字から遠く・大きすぎて何の人かわからない（Iさん）→文字のすぐ右に190pxで寄せ、2つをまん中にまとめる */
+    .reasons .reason:nth-child(1) { grid-template-columns: auto auto; justify-content: center; column-gap: 56px; }
+    .reasons .reason:nth-child(1) .rh-ill { width: 190px; align-self: center; }
     .reasons .reason:nth-child(1) .rh-also { font-size: 16px; margin-top: 12px; }
     .reasons .reason:nth-child(1) .rh-zn { font-size: 12px; }
     /* 理由2：左に会話、右に見出し＋予約リンク */
