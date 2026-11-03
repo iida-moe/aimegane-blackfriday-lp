@@ -2407,6 +2407,13 @@
     .reasons .reason:nth-child(1) .rh-zn { text-align: center !important; margin: 6px 0 0 !important; }
   }
 
+  /* 11/3 アシストの図は赤い点線の丸（手元サポート）→説明をタブで切りかえ。「これ1本で」は言葉の区切りで折る */
+  .lk-r { width: 20px; height: 10px; border-radius: 50%; border: 2px dashed #D0453A; flex: none; }
+  .lens-key .lk-rr { display: none; }
+  .lens-key[data-lens="assist"] .lk-dd { display: none; }
+  .lens-key[data-lens="assist"] .lk-rr { display: inline-flex; }
+  .lens-for { word-break: auto-phrase; text-wrap: balance; }
+
   /* ===== 11/3 選ばれる理由：PCは「文字｜絵」の2列を左右交互に（真ん中寄せの1列は中途半端・Iさん）。番号は丸→大きい01・02・03 ===== */
   @media (min-width: 1024px) {
     .reasons { max-width: 1080px !important; }
@@ -2779,7 +2786,7 @@
       <img class="lens-scene pc-only" id="lensScene" src="images/blackfriday_temoto-woman_637_885.jpg" alt="" width="637" height="885"><!-- 11/3 場面のイラスト（PCだけ・今は仮で同じ女性。タブで変える予定） -->
       <div class="lens-figbox"><div class="lens-fig"><p class="lens-cap">メガネのレンズ</p><!-- 11/3 図だけだとレンズとわかりにくい（Iさん）→レンズの真上に重ねる -->
       <img class="reason-ill" id="lensImg" src="images/illust/lens-enkin.svg" alt="遠近両用レンズの見え方" width="640" height="360"></div>
-      <p class="lens-key"><span class="lk"><i class="lk-c" aria-hidden="true"></i>色の部分：よく見える範囲</span><span class="lk"><i class="lk-d" aria-hidden="true"></i>点線の外側：ゆがみ・ぼやけが出やすい部分</span></p><!-- 11/3 点線の解説（4つの図すべてに点線あり） -->
+      <p class="lens-key" id="lensKey" data-lens="enkin"><span class="lk"><i class="lk-c" aria-hidden="true"></i>色の部分：よく見える範囲</span><span class="lk lk-dd"><i class="lk-d" aria-hidden="true"></i>点線の外側：ゆがみ・ぼやけが出やすい部分</span><span class="lk lk-rr"><i class="lk-r" aria-hidden="true"></i>赤い点線：手元を少しサポートする部分</span></p><!-- 11/3 点線の解説（4つの図すべてに点線あり） -->
       </div>
       <div class="lens-side"><p class="lens-for" id="lensFor">遠くも手元も、これ1本で</p>
       <!-- 10/23 こんな方におすすめ＋使うシーン（タブで切りかえ・中身はJSのLENS）。変更前 _保存/index.before-1023-lensrec.html -->
@@ -3336,6 +3343,13 @@ if(!location.hash){window.scrollTo(0,0);}
   function f() { if (mq.matches) d.open = true; }
   f(); if (mq.addEventListener) mq.addEventListener('change', f);
   d.addEventListener('toggle', function () { if (mq.matches && !d.open) d.open = true; });
+})();
+</script>
+<script>
+/* 11/3 レンズの説明（点線の意味）をタブに合わせて切りかえ */
+(function () {
+  var k = document.getElementById('lensKey'); if (!k) return;
+  document.querySelectorAll('.lens-tabs button').forEach(function (b) { b.addEventListener('click', function () { k.setAttribute('data-lens', b.dataset.lens); }); });
 })();
 </script>
 </body>
