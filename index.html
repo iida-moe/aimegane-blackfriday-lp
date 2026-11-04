@@ -2577,6 +2577,13 @@
   .cl-cf { position: absolute; inset: 0; pointer-events: none; z-index: 1; }
   .cl-cf i { position: absolute; display: block; background: #f4e030; transform: rotate(var(--r)) skewX(-20deg); width: var(--w); height: calc(var(--w) * .42); }
 
+  /* 11/4 商品例：8,800の上のラベルを「ブラックフライデー 最大4,400円OFF」に */
+  .exc-k-bf { display: flex; align-items: baseline; justify-content: center; gap: 8px; flex-wrap: wrap; }
+  .exc-k-bf .bf1 { font-size: 13px; font-weight: 700; color: var(--tx); }
+  .exc-k-bf .bf2 { font-family: 'Barlow', sans-serif; font-weight: 800; font-size: 26px; color: #e8352a; line-height: 1; }
+  .exc-k-bf .bf2 small { font-family: 'Noto Sans JP', sans-serif; font-size: 13px; font-weight: 900; }
+  @media (min-width: 1024px) { .exc-k-bf { justify-content: flex-start; } .exc-k-bf .bf1 { font-size: 15px; } .exc-k-bf .bf2 { font-size: 32px; } .exc-k-bf .bf2 small { font-size: 15px; } }
+
   /* ===== 11/3 選ばれる理由：PCは「文字｜絵」の2列を左右交互に（真ん中寄せの1列は中途半端・Iさん）。番号は丸→大きい01・02・03 ===== */
   @media (min-width: 1024px) {
     .reasons { max-width: 1080px !important; }
@@ -2748,7 +2755,7 @@
           <p class="exc-k">標準レンズ付きセット価格</p>
           <p class="exc-b"><span class="exc-n">13<span class="cm">,</span>200</span><span class="exc-u"><small>円</small><small class="exc-tax">税込</small></span></p>
           <p class="exc-dn" aria-hidden="true"></p>
-          <p class="exc-k exc-k-red">割引をぜんぶ使うと</p>
+          <p class="exc-k exc-k-red exc-k-bf"><span class="bf1">ブラックフライデー</span><span class="bf2"><small>最大</small>4<span class="cm">,</span>400<small>円OFF</small></span></p><!-- 11/4 「割引をぜんぶ使うと」→最大4,400円OFFを先に（Iさん）。「限定値引き」は内訳の2,200円の名前とかぶるので付けない -->
           <p class="exc-a"><span class="exc-n">8<span class="cm">,</span>800</span><span class="exc-u"><small>円</small><small class="exc-tax">税込</small></span></p>
           <!-- 10/30 割引の内訳を3行のリストで（グレーの枠と合計枠の代わり・Iさん C案）。比較 比較/商品例と割引の内訳_比較2.png -->
           <p class="exc-sum"><span class="exc-sum-t">割引の内訳</span><!-- 11/2 一覧が13,200→8,800なので見出しは「割引の内訳」だけ（Iさん） --><span class="exc-sum-v">合計 <b>−4<span class="cm">,</span>400<small>円</small></b></span></p><!-- 11/2 内訳の見出し＋合計（13,200→8,800の差とつなげる） -->
