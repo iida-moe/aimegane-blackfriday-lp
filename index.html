@@ -2640,6 +2640,12 @@
   /* 11/4 スマホも※3段を内訳カードの左はしにそろえる（Iさん） */
   @media (max-width: 1023px) { .ba.st4 .st4-note { padding-left: 12px !important; padding-right: 12px !important; text-align: left !important; } }
 
+  /* 11/4 商品例：「商品例」のラベルと、写真と価格のあいだの縦線を消す（Iさん） */
+  .st4-ex-l { display: none !important; }
+  .st4 .st4-ex .st4-ex-img { border-right: 0 !important; border-bottom: 0 !important; }
+  /* 11/4 ラベルの「最大」「円」「OFF」は黒（数字だけ赤・Iさん） */
+  .exc-k-bf .bf2 small { color: var(--tx); }
+
   /* ===== 11/3 選ばれる理由：PCは「文字｜絵」の2列を左右交互に（真ん中寄せの1列は中途半端・Iさん）。番号は丸→大きい01・02・03 ===== */
   @media (min-width: 1024px) {
     .reasons { max-width: 1080px !important; }
