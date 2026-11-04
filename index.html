@@ -2594,7 +2594,8 @@
   }
 
   /* 11/4 PCも2行に（1行はきつい・Iさん）：上に小さく「ブラックフライデー限定値引き」、下に「最大4,400円OFF」 */
-  .exc-k-bf { flex-direction: column; gap: 4px !important; align-items: center; }
+  .exc-k-bf { flex-direction: column; gap: 0 !important; align-items: center; line-height: 1.2; }
+  .exc-k-bf .bf1 { line-height: 1.2; } .exc-k-bf .bf2 { margin-top: -2px; } /* 11/4 2行をひとかたまりに（Iさん） */
   @media (min-width: 1024px) { .exc-k-bf { align-items: flex-start; } }
 
   /* ===== 11/3 選ばれる理由：PCは「文字｜絵」の2列を左右交互に（真ん中寄せの1列は中途半端・Iさん）。番号は丸→大きい01・02・03 ===== */
