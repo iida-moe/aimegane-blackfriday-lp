@@ -2519,6 +2519,19 @@
   /* 11/4 レンズ選びPC：右の「これ1本で＋おすすめ」が上に寄りすぎ（Iさん）→左の図の上下まん中にそろえる */
   @media (min-width: 1024px) { .reasons .reason:nth-child(1) .lens-side { align-self: center !important; padding-top: 0 !important; } }
 
+  /* 11/4 スマホの割引の内訳：見出しをまん中に・1行目（13,200円）の文字と数字を下の行とそろえる（Iさん「位置とサイズ感おかしい」） */
+  @media (max-width: 1023px) {
+    .st4-ex-col .exc-sum { justify-content: center !important; text-align: center; }
+    .st4-ex-col .exc-list li.exc-start span { font-size: 13.5px !important; }
+    .st4-ex-col .exc-list li.exc-start b { font-size: 20px !important; }
+  }
+  @media (max-width: 359px) { .st4-ex-col .exc-list li.exc-start span { font-size: 12px !important; } .st4-ex-col .exc-list li.exc-start b { font-size: 17px !important; } }
+  /* 11/4 PCの「メガネ2本同時購入で、もっとおトク」：黒い枠→スマホと同じ＼ ／ */
+  @media (min-width: 1024px) {
+    .two .two-t .sl { border: 0 !important; padding: 0 !important; border-radius: 0 !important; }
+    .two .two-t .sl::before, .two .two-t .sl::after { display: inline-block !important; }
+  }
+
   /* ===== 11/3 選ばれる理由：PCは「文字｜絵」の2列を左右交互に（真ん中寄せの1列は中途半端・Iさん）。番号は丸→大きい01・02・03 ===== */
   @media (min-width: 1024px) {
     .reasons { max-width: 1080px !important; }
