@@ -2556,6 +2556,9 @@
   @media (max-width: 359px) { .cl-num b { font-size: 70px; } }
   @media (min-width: 1024px) { .cl-gl { width: 52px; height: 19px; } .cl-y2 { font-size: 20px; } .cl-lab { font-size: 20px; } .cl-lab span { font-size: 28px; } .cl-num b { font-size: 120px; } .cl-num .u { font-size: 32px; } .cl-num .u small { font-size: 16px; } }
 
+  .pc-only-i { display: none; }
+  @media (min-width: 1024px) { .pc-only-i { display: inline; } .pc-hide-i { display: none; } }
+
   /* ===== 11/3 選ばれる理由：PCは「文字｜絵」の2列を左右交互に（真ん中寄せの1列は中途半端・Iさん）。番号は丸→大きい01・02・03 ===== */
   @media (min-width: 1024px) {
     .reasons { max-width: 1080px !important; }
@@ -2699,7 +2702,7 @@
     <!-- 10/22 ストーリー順：①2,200円OFF → ②商品例 13,200→11,000 → ③さらにLINE・処方箋 → ④すべて使って8,800円。変更前 _保存/index.before-1022-story.html -->
     <!-- 10/30 先頭を2,200円OFF→8,800円〜に（2,200円OFFからだと弱い・Iさん）。下は8,800円になる内訳。変更前 _保存/変更前/1030/index.before-1030-hero8800.html -->
     <div class="ba st4">
-      <p class="st4-catch">お手頃なメガネが、<br><em><span class="cslh">＼</span>もっと<b>おトク</b>に<span class="cslh">／</span></em></p><!-- 11/2 バッジの代わりのひとこと（Iさん） -->
+      <p class="st4-catch"><span class="cslh pc-only-i">＼</span>お手頃なメガネが、<br class="pc-hide"><em><span class="cslh pc-hide-i">＼</span>もっと<b>おトク</b>に<span class="cslh">／</span></em></p><!-- 11/4 PCは1行（＼を先頭に）・スマホは2行（Iさん） --><!-- 11/2 バッジの代わりのひとこと（Iさん） -->
       <div class="st4-hero">
         <p><span class="ba-badge st4-badge">ブラックフライデー限定</span></p>
         <!-- 10/30 8,800円が何度も出てくるので、ここの8,800円と遠近0円は消してバッジ→すぐ商品例に（Iさん）。中身はhiddenで残す -->
