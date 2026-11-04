@@ -2505,6 +2505,20 @@
   /* 11/4 保証の強調（何度でも無料・半額で など）：赤い下線→赤い文字・少し大きく（Iさん） */
   .hc-u, .hs-acc .hc-u { text-decoration: none !important; color: #e8352a !important; font-weight: 900 !important; font-size: 1.15em; }
 
+  /* 11/4 キッズ・白内障もPCは通常保証と同じ白いカード＋アイコン（キッズ3列・白内障4列）。スマホは今のまま（アイコンなし） */
+  @media (min-width: 1024px) {
+    .reasons .reason:nth-child(3) .hs-item .hc-grid { display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 14px !important; }
+    .reasons .reason:nth-child(3) .hs-item .hc-grid:has(> li:nth-child(4)) { grid-template-columns: repeat(4, 1fr) !important; }
+    .reasons .reason:nth-child(3) .hs-item .hc-grid li { grid-column: auto !important; display: flex !important; flex-direction: column; align-items: center; text-align: center; background: #fff !important; border: 1px solid #e3e3e3; border-radius: 10px; padding: 22px 10px 20px !important; }
+    .reasons .reason:nth-child(3) .hc-grid .hc-ic { display: block; width: 80px; height: 56px; margin-bottom: 12px; }
+    .reasons .reason:nth-child(3) .hc-grid .hg-t { font-size: 17px !important; }
+    .reasons .reason:nth-child(3) .hc-grid .hg-d { font-size: 14px !important; margin-top: 6px; line-height: 1.7; }
+    .reasons .reason:nth-child(3) .hs-item:has(.hc-grid)[open] { background: #fafaf7; }
+  }
+
+  /* 11/4 レンズ選びPC：右の「これ1本で＋おすすめ」が上に寄りすぎ（Iさん）→左の図の上下まん中にそろえる */
+  @media (min-width: 1024px) { .reasons .reason:nth-child(1) .lens-side { align-self: center !important; padding-top: 0 !important; } }
+
   /* ===== 11/3 選ばれる理由：PCは「文字｜絵」の2列を左右交互に（真ん中寄せの1列は中途半端・Iさん）。番号は丸→大きい01・02・03 ===== */
   @media (min-width: 1024px) {
     .reasons { max-width: 1080px !important; }
@@ -2928,19 +2942,19 @@
       <p class="hs-catch">元気に遊んで<span class="hearing-mk">壊しちゃっても大丈夫！</span></p>
       <p class="hs-all">3つの保証が、すべて<b>1</b>年間</p>
       <ul class="hc-grid">
-        <li><p class="hg-t">視え方保証</p><p class="hg-d">度数交換が<br><span class="nw"><span class="hc-u">何度</span>でも<span class="hc-u">無料</span></span></p></li>
-        <li><p class="hg-t">品質保証</p><p class="hg-d">不具合は<br>無料で交換</p></li>
-        <li class="hg-wide"><p class="hg-t">破損・紛失</p><p class="hg-d"><span class="hc-u">1回目は無料</span>、2回目・紛失は50%引き</p></li>
+        <li><svg class="hc-ic" viewBox="0 0 80 56" aria-hidden="true"><path d="M60 28a20 20 0 1 1-5.9-14.1" fill="none" stroke="#222" stroke-width="9" stroke-linecap="butt"/></svg><p class="hg-t">視え方保証</p><p class="hg-d">度数交換が<br><span class="nw"><span class="hc-u">何度</span>でも<span class="hc-u">無料</span></span></p></li>
+        <li><svg class="hc-ic" viewBox="0 0 80 56" aria-hidden="true"><path d="M40 4l20 7v14c0 14-9 23-20 27-11-4-20-13-20-27V11z" fill="#f4e030" stroke="#222" stroke-width="3" stroke-linejoin="round"/><path d="M31 28l6 6 12-13" fill="none" stroke="#222" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg><p class="hg-t">品質保証</p><p class="hg-d">不具合は<br><span class="nw"><span class="hc-u">無料</span>で交換</span></p></li>
+        <li class="hg-wide"><svg class="hc-ic" viewBox="0 0 80 56" aria-hidden="true"><circle cx="24" cy="30" r="13" fill="#fff" stroke="#222" stroke-width="3.5"/><circle cx="56" cy="30" r="13" fill="#fff" stroke="#222" stroke-width="3.5"/><path d="M37 28q3-5 6 0" fill="none" stroke="#222" stroke-width="3" stroke-linecap="round"/><path d="M11 28H4M69 28h7" stroke="#222" stroke-width="3.5" stroke-linecap="round"/><path d="M50 22l5 7-4 3 6 7" fill="none" stroke="#e8352a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><p class="hg-t">破損・紛失</p><p class="hg-d"><span class="nw">1回目は<span class="hc-u">無料</span>、</span><span class="nw">2回目・紛失は<span class="hc-u">50%</span>引き</span></p></li>
       </ul>
         </details>
         <details class="hs-item"><summary><span>白内障の手術後の方へ</span></summary>
       <p class="hs-catch">手術後の<span class="hearing-mk">見え方の変化にも安心</span></p>
       <p class="hs-all">4つの保証が、すべて<b>1</b>年間</p>
       <ul class="hc-grid">
-        <li><p class="hg-t">視え方保証</p><p class="hg-d">度数の変化に<br><span class="hc-u">何度でも対応</span></p></li>
-        <li><p class="hg-t">品質保証</p><p class="hg-d">不具合は<br>無料で交換</p></li>
-        <li><p class="hg-t">カラー変更</p><p class="hg-d">まぶしさに<br>合わせて色変更</p></li>
-        <li><p class="hg-t">半額補償</p><p class="hg-d">破損は<br>半額で購入</p></li>
+        <li><svg class="hc-ic" viewBox="0 0 80 56" aria-hidden="true"><path d="M60 28a20 20 0 1 1-5.9-14.1" fill="none" stroke="#222" stroke-width="9" stroke-linecap="butt"/></svg><p class="hg-t">視え方保証</p><p class="hg-d">度数の変化に<br><span class="nw"><span class="hc-u">何度</span>でも対応</span></p></li>
+        <li><svg class="hc-ic" viewBox="0 0 80 56" aria-hidden="true"><path d="M40 4l20 7v14c0 14-9 23-20 27-11-4-20-13-20-27V11z" fill="#f4e030" stroke="#222" stroke-width="3" stroke-linejoin="round"/><path d="M31 28l6 6 12-13" fill="none" stroke="#222" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg><p class="hg-t">品質保証</p><p class="hg-d">不具合は<br><span class="nw"><span class="hc-u">無料</span>で交換</span></p></li>
+        <li><svg class="hc-ic" viewBox="0 0 80 56" aria-hidden="true"><defs><linearGradient id="hcg" x1="0" y1="0" x2="1" y2="0"><stop offset=".5" stop-color="#e3f2f9"/><stop offset=".5" stop-color="#8a6a3a"/></linearGradient></defs><ellipse cx="40" cy="28" rx="24" ry="20" fill="url(#hcg)" stroke="#222" stroke-width="3"/><circle cx="66" cy="10" r="4" fill="#f4e030" stroke="#222" stroke-width="1.5"/><path d="M66 2v2M66 16v2M58 10h2M72 10h2" stroke="#222" stroke-width="1.5" stroke-linecap="round"/></svg><p class="hg-t">カラー変更</p><p class="hg-d">まぶしさに<br>合わせて色変更</p></li>
+        <li><svg class="hc-ic" viewBox="0 0 80 56" aria-hidden="true"><circle cx="24" cy="30" r="13" fill="#fff" stroke="#222" stroke-width="3.5"/><circle cx="56" cy="30" r="13" fill="#fff" stroke="#222" stroke-width="3.5"/><path d="M37 28q3-5 6 0" fill="none" stroke="#222" stroke-width="3" stroke-linecap="round"/><path d="M11 28H4M69 28h7" stroke="#222" stroke-width="3.5" stroke-linecap="round"/><path d="M50 22l5 7-4 3 6 7" fill="none" stroke="#e8352a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><p class="hg-t">半額補償</p><p class="hg-d">破損は<br><span class="nw"><span class="hc-u">半額</span>で購入</span></p></li>
       </ul>
       <p class="hs-note">※当社指定レンズが対象です</p>
         </details>
