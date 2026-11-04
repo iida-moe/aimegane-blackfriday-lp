@@ -2598,6 +2598,33 @@
   .exc-k-bf .bf1 { line-height: 1.2; } .exc-k-bf .bf2 { margin-top: -2px; } /* 11/4 2行をひとかたまりに（Iさん） */
   @media (min-width: 1024px) { .exc-k-bf { align-items: flex-start; } }
 
+  /* ===== 11/4 割引の内訳：左に「最大4,400円OFF」＝右に3つの割引（13,200円の行と合計の行は外す） ===== */
+  .exc-wrap .exc-list li.exc-start, .exc-wrap .exc-list li.exc-off, .exc-wrap .exc-list li.exc-tot { display: none !important; }
+  .exc-wrap { margin-top: 32px; padding-top: 28px; border-top: 1px dashed #ddd; }
+  .exc-big { text-align: center; }
+  .exc-big .eb-k { display: block; font-size: 13px; font-weight: 700; color: var(--tx); }
+  .exc-big .eb-v { display: inline-block; white-space: nowrap; font-family: 'Barlow', sans-serif; font-weight: 800; font-size: 44px; line-height: 1.05; color: #e8352a; }
+  .exc-big .eb-v small { font-family: 'Noto Sans JP', sans-serif; font-size: 16px; font-weight: 900; }
+  .exc-eq { display: block; text-align: center; font-size: 22px; font-weight: 900; color: #bbb; transform: rotate(90deg); margin: 2px 0 6px; }
+  .exc-wrap .exc-list { margin-top: 0 !important; }
+  .exc-wrap .exc-list li { border-radius: 0; }
+  @media (max-width: 1023px) {
+    .st4-ex .exc-wrap { order: 10; }
+    .st4-ex .st4-ex-col .exc-wrap { margin-top: 32px; }
+  }
+  @media (min-width: 1024px) {
+    .st4 .st4-ex .exc-wrap { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr auto 1.35fr; align-items: center; column-gap: 28px; width: 100%; max-width: 860px; margin: 40px auto 0 !important; padding-top: 36px; }
+    .exc-big .eb-k { font-size: 16px; }
+    .exc-big .eb-v { font-size: 64px; white-space: nowrap; }
+    .st4 .st4-ex .exc-wrap { grid-template-columns: auto auto 1fr !important; column-gap: 32px !important; }
+    .exc-big .eb-v small { font-size: 22px; }
+    .exc-eq { transform: none; font-size: 40px; margin: 0; }
+    .st4 .st4-ex .exc-wrap { grid-row: 7 !important; }
+    .st4 .st4-ex .exc-wrap .exc-list { grid-column: 3 !important; grid-row: 1 !important; width: auto !important; margin: 0 !important; }
+    .st4 .st4-ex .exc-wrap .exc-big { grid-column: 1; grid-row: 1; }
+    .st4 .st4-ex .exc-wrap .exc-eq { grid-column: 2; grid-row: 1; }
+  }
+
   /* ===== 11/3 選ばれる理由：PCは「文字｜絵」の2列を左右交互に（真ん中寄せの1列は中途半端・Iさん）。番号は丸→大きい01・02・03 ===== */
   @media (min-width: 1024px) {
     .reasons { max-width: 1080px !important; }
@@ -2772,7 +2799,9 @@
           <p class="exc-k exc-k-red exc-k-bf"><span class="bf1">ブラックフライデー限定値引き</span><span class="bf2"><small>最大</small>4<span class="cm">,</span>400<small>円OFF</small></span></p><!-- 11/4 「割引をぜんぶ使うと」→最大4,400円OFFを先に（Iさん）。「限定値引き」は内訳の2,200円の名前とかぶるので付けない -->
           <p class="exc-a"><span class="exc-n">8<span class="cm">,</span>800</span><span class="exc-u"><small>円</small><small class="exc-tax">税込</small></span></p>
           <!-- 10/30 割引の内訳を3行のリストで（グレーの枠と合計枠の代わり・Iさん C案）。比較 比較/商品例と割引の内訳_比較2.png -->
-          <p class="exc-sum"><span class="exc-sum-t">最大4,400円OFFの内訳</span><!-- 11/2 一覧が13,200→8,800なので見出しは「割引の内訳」だけ（Iさん） --><span class="exc-sum-v">合計 <b>−4<span class="cm">,</span>400<small>円</small></b></span></p><!-- 11/2 内訳の見出し＋合計（13,200→8,800の差とつなげる） -->
+          <div class="exc-wrap"><!-- 11/4 左に最大4,400円OFF＝右に3つの割引（Iさん案） -->
+          <p class="exc-big"><span class="eb-k">割引をぜんぶ使うと</span><span class="eb-v"><small>最大</small>4<span class="cm">,</span>400<small>円OFF</small></span></p>
+          <span class="exc-eq" aria-hidden="true">＝</span>
           <ul class="exc-list">
             <li class="exc-start"><span>標準レンズ付きセット価格</span><b>13<span class="cm">,</span>200<small>円</small></b></li><!-- 11/2 13,200円から始めて8,800円で終わるレシート型に（8,800円からさらに引くように見えるため・Iさん） -->
             <li><span class="exc-lb"><svg class="exc-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11V4h7l10.5 10.5-7 7z" fill="none" stroke="#111" stroke-width="2.2" stroke-linejoin="round"/><circle cx="7.5" cy="8" r="1.7" fill="#111"/></svg><span class="exc-bf">ブラックフライデー<br class="pc-hide">限定値引き</span></span><b>−2<span class="cm">,</span>200<small>円</small></b></li>
@@ -2781,6 +2810,7 @@
             <li class="exc-off"><span>13<span class="cm">,</span>200円から</span><b><small class="mx">最大</small>4<span class="cm">,</span>400<small>円OFF！</small></b></li><!-- 11/2 割引の大きさを見せる（Iさん案）。お支払い8,800円は答えとして残す -->
             <li class="exc-tot"><span>お支払い<small class="exc-tax">（税込）</small></span><b>8<span class="cm">,</span>800<small>円</small></b></li>
           </ul>
+          </div>
           <p class="exc-n2">※割引をすべて併用した場合</p>
         </div>
         <div class="st4-ex-row" hidden>
