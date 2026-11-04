@@ -2646,6 +2646,21 @@
   /* 11/4 ラベルの「最大」「円」「OFF」は黒（数字だけ赤・Iさん） */
   .exc-k-bf .bf2 small { color: var(--tx); }
 
+  /* ===== 11/4 内訳を商品例のすぐ下に（セットのアイコンより先）・見出しと13,200円の行は消す・上向きの吹き出しで8,800円につなげる（Iさん） ===== */
+  .st4-ex-col .exc-sum, .st4-ex-col .exc-list li.exc-start { display: none !important; }
+  .st4-ex-col .exc-list { position: relative; }
+  .st4-ex-col .exc-list::before { content: ""; position: absolute; top: -15px; left: var(--tip, 50%); transform: translateX(-50%); border: 14px solid transparent; border-top: 0; border-bottom: 16px solid #f6f4ec; }
+  .st4-ex-col .exc-list li:not(.exc-start):not(.exc-tot):nth-child(2) { border-radius: 10px 10px 0 0 !important; }
+  @media (max-width: 1023px) {
+    .st4-ex .exc-list { order: 0 !important; margin-top: 28px !important; }
+    .st4-ex .exc-n2 { order: 0 !important; }
+  }
+  @media (min-width: 1024px) {
+    .st4 .st4-ex .st4-ex-col .exc-list { grid-row: 3 !important; margin-top: 30px !important; --tip: 88%; }
+    .st4 .st4-ex .ba-set { grid-row: 8 !important; margin-top: 48px !important; }
+    .st4 .st4-ex .st4-ex-all { grid-row: 9 !important; }
+  }
+
   /* ===== 11/3 選ばれる理由：PCは「文字｜絵」の2列を左右交互に（真ん中寄せの1列は中途半端・Iさん）。番号は丸→大きい01・02・03 ===== */
   @media (min-width: 1024px) {
     .reasons { max-width: 1080px !important; }
