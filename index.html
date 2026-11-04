@@ -2540,6 +2540,22 @@
   }
   @media (max-width: 359px) { .reason .hs-svc { padding-left: 58px !important; } .reason .hs-svc .hs-svc-ic { width: 38px; left: 10px; } }
 
+  /* ===== 11/4 最後のまとめ：FVと同じ見せ方にそろえる（対象のメガネ一式→赤ラベル遠近両用→8,800 税込/円〜）・区切り線なし・メガネの線画 ===== */
+  .cl-en { display: inline-flex; align-items: center; gap: 10px; }
+  .cl-gl { width: 40px; height: 15px; }
+  .cl-sum { border: 0 !important; padding: 8px 0 0 !important; margin-top: 18px !important; }
+  .cl-k { font-size: 13px; color: #ccc; }
+  .cl-y2 { font-size: 16px; font-weight: 700; color: #fff; margin-top: 10px; }
+  .cl-lab { display: inline-flex; align-items: center; gap: 8px; margin-top: 10px; font-size: 16px; font-weight: 900; color: #fff; }
+  .cl-lab span { background: #d22f25; color: #fff; font-size: 22px; padding: 2px 10px 4px; border-radius: 4px; }
+  .cl-num { display: flex; justify-content: center; align-items: flex-end; margin-top: 10px; line-height: .8; }
+  .cl-num b { font-family: 'Barlow', sans-serif; font-weight: 900; font-size: 84px; color: var(--ac); letter-spacing: -.01em; }
+  .cl-num .u { display: flex; flex-direction: column; font-size: 24px; font-weight: 500; color: #fff; line-height: 1.1; margin-left: 6px; padding-bottom: 2px; text-align: left; }
+  .cl-num .u small { font-size: 13px; }
+  .cl-n { margin-top: 18px !important; }
+  @media (max-width: 359px) { .cl-num b { font-size: 70px; } }
+  @media (min-width: 1024px) { .cl-gl { width: 52px; height: 19px; } .cl-y2 { font-size: 20px; } .cl-lab { font-size: 20px; } .cl-lab span { font-size: 28px; } .cl-num b { font-size: 120px; } .cl-num .u { font-size: 32px; } .cl-num .u small { font-size: 16px; } }
+
   /* ===== 11/3 選ばれる理由：PCは「文字｜絵」の2列を左右交互に（真ん中寄せの1列は中途半端・Iさん）。番号は丸→大きい01・02・03 ===== */
   @media (min-width: 1024px) {
     .reasons { max-width: 1080px !important; }
@@ -3070,13 +3086,14 @@
   <!-- 6 最終CTA -->
   <section class="sec closing" id="closing">
     <!-- 10/27 FVのくり返しをやめて落ち着いた締めに（ひとこと→期間→値段は1行→ボタン）（Iさん「FVと一緒」）。変更前は FVと同じ形（日付→BLACK FRIDAY→8,800円→遠近0円の枠） -->
-    <p class="cl-en">BLACK FRIDAY</p>
+    <p class="cl-en"><svg class="cl-gl" viewBox="0 0 120 44" aria-hidden="true"><g fill="none" stroke="#fff" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"><path d="M8 8 H52 Q55 8 54 12 L51 30 Q49 39 39 39 H22 Q12 39 10 30 Z"/><path d="M112 8 H68 Q65 8 66 12 L69 30 Q71 39 81 39 H98 Q108 39 110 30 Z"/><path d="M54 13 Q60 8 66 13"/><path d="M8 10 L2 8 M112 10 L118 8"/></g></svg>BLACK FRIDAY</p><!-- 11/4 FVと同じ白いメガネの線画 -->
     <h2 class="cl-copy">あなたに合うメガネを、<br>この機会に。</h2>
     <p class="cl-date">11/13<small class="dw">金</small>〜11/29<small class="dw">日</small></p>
     <div class="cl-sum">
       <p class="cl-k">割引をぜんぶ使うと</p>
-      <p class="cl-y">対象のメガネ一式<b>8<span class="cm">,</span>800</b>円〜<small>(税込)</small></p>
-      <p class="cl-z">遠近両用も追加料金0円</p>
+      <p class="cl-y2">対象のメガネ一式</p><!-- 11/4 FVと同じ見せ方に（Iさん） -->
+      <p class="cl-lab"><span>遠近両用</span>レンズもOK</p>
+      <p class="cl-num"><b>8<span class="cm">,</span>800</b><span class="u"><small>税込</small>円〜</span></p>
       <p class="cl-n">※価格はすべて税込<br>※標準レンズの場合<br>※本庄南大通り店を除く</p>
     </div>
     <a href="#shop-search" class="btn" data-cta-location="closing">近くのお店で予約する</a>
