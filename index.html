@@ -2731,6 +2731,10 @@
   /* 11/4 FV（真っ黒）→お得な内容（放射線）のさかい目がくっきり見える（Iさん）→上を黒からなめらかに */
   .otoku { background: linear-gradient(#000 0, rgba(0,0,0,0) 260px), radial-gradient(ellipse at 50% 30%, rgba(255,255,255,.07) 0%, rgba(0,0,0,0) 60%), repeating-conic-gradient(from 0deg at 50% 30%, #232323 0deg 5deg, #0e0e0e 5deg 10deg) !important; }
 
+  /* 11/4 2本同時の「10」を「20」と同じ幅に（数字を同じ幅で並べる・%OFFの位置がそろう） */
+  .two-rn .num { font-variant-numeric: tabular-nums; }
+  @media (max-width: 1023px) { .two .two-rows .two-rn.two-rn-s .num { font-size: 80px !important; } .two .two-rows .two-rn.two-rn-s small { font-size: 28px !important; } }
+
   /* ===== 11/3 選ばれる理由：PCは「文字｜絵」の2列を左右交互に（真ん中寄せの1列は中途半端・Iさん）。番号は丸→大きい01・02・03 ===== */
   @media (min-width: 1024px) {
     .reasons { max-width: 1080px !important; }
@@ -2974,7 +2978,7 @@
       <div class="two-fam">
         <!-- 10/29 パソコンは大きく表示されて線がバキバキに見えるので、線を少し細く・黒をやわらかく・黄色をLPの黄にした版（スマホは小さいので太い版のまま） -->
         <picture><source media="(min-width: 1024px)" srcset="images/blackfriday_family3-mid_540_471.png"><img src="images/blackfriday_family3-thick_540_471.png" alt="メガネをかけた家族のイラスト" width="540" height="471" loading="lazy"></picture><!-- 11/2 子どももメガネの版に差しかえ（Iさん Downloads/1395469.png）。旧 family-thick/mid_540_469 は残置 -->
-        <div class="two-fam-t"><p class="two-who2"><span>ご家族・ご友人</span>とでも</p><p class="two-one">お一人で2本でもOK</p></div>
+        <div class="two-fam-t"><p class="two-who2"><span>ご家族・ご友人</span>とでも</p><!-- 11/4 「お一人で2本でもOK」は削除（Iさん） --></div>
       </div>
     </div>
   </section>
