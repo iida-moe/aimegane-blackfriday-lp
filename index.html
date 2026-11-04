@@ -2728,6 +2728,9 @@
   .btn-arw { padding-left: 16px !important; padding-right: 64px !important; }
   @media (min-width: 1024px) { .fv .fv-cta .btn-arw { padding-left: 16px !important; padding-right: calc(var(--fvw) * .038 * var(--fsc) + 24px) !important; } }
 
+  /* 11/4 FV（真っ黒）→お得な内容（放射線）のさかい目がくっきり見える（Iさん）→上を黒からなめらかに */
+  .otoku { background: linear-gradient(#000 0, rgba(0,0,0,0) 260px), radial-gradient(ellipse at 50% 30%, rgba(255,255,255,.07) 0%, rgba(0,0,0,0) 60%), repeating-conic-gradient(from 0deg at 50% 30%, #232323 0deg 5deg, #0e0e0e 5deg 10deg) !important; }
+
   /* ===== 11/3 選ばれる理由：PCは「文字｜絵」の2列を左右交互に（真ん中寄せの1列は中途半端・Iさん）。番号は丸→大きい01・02・03 ===== */
   @media (min-width: 1024px) {
     .reasons { max-width: 1080px !important; }
