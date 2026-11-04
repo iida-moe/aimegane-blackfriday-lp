@@ -2628,6 +2628,15 @@
   /* 11/4 PC：下の※3段を「最大4,400円OFF」の左はし（内訳のかたまりの左はし）にそろえる（Iさん） */
   @media (min-width: 1024px) { .ba.st4 .st4-note, html[data-simple="1"] .ba.st4 .st4-note { width: 100% !important; max-width: 860px !important; margin-left: auto !important; margin-right: auto !important; text-align: left !important; } }
 
+  /* 11/4 前の内訳の形に戻した（Iさん）。スマホは行と行のあいだを広げる（「詰まって見にくい」とのこと） */
+  @media (max-width: 1023px) {
+    .st4-ex-col .exc-list li:not(.exc-start):not(.exc-tot):not(.exc-off) { padding-top: 16px !important; padding-bottom: 16px !important; }
+    .st4-ex-col .exc-list li.exc-start + li { padding-top: 20px !important; }
+    .st4-ex-col .exc-list li:nth-last-child(3) { padding-bottom: 18px !important; }
+    .st4-ex-col .exc-list li.exc-start { padding-bottom: 14px !important; }
+    .st4-ex-col .exc-list li.exc-off { padding-top: 16px !important; padding-bottom: 18px !important; }
+  }
+
   /* ===== 11/3 選ばれる理由：PCは「文字｜絵」の2列を左右交互に（真ん中寄せの1列は中途半端・Iさん）。番号は丸→大きい01・02・03 ===== */
   @media (min-width: 1024px) {
     .reasons { max-width: 1080px !important; }
@@ -2802,9 +2811,7 @@
           <p class="exc-k exc-k-red exc-k-bf"><span class="bf1">ブラックフライデー限定値引き</span><span class="bf2"><small>最大</small>4<span class="cm">,</span>400<small>円OFF</small></span></p><!-- 11/4 「割引をぜんぶ使うと」→最大4,400円OFFを先に（Iさん）。「限定値引き」は内訳の2,200円の名前とかぶるので付けない -->
           <p class="exc-a"><span class="exc-n">8<span class="cm">,</span>800</span><span class="exc-u"><small>円</small><small class="exc-tax">税込</small></span></p>
           <!-- 10/30 割引の内訳を3行のリストで（グレーの枠と合計枠の代わり・Iさん C案）。比較 比較/商品例と割引の内訳_比較2.png -->
-          <div class="exc-wrap"><!-- 11/4 左に最大4,400円OFF＝右に3つの割引（Iさん案） -->
-          <p class="exc-big"><span class="eb-k">割引をぜんぶ使うと</span><span class="eb-v"><small>最大</small>4<span class="cm">,</span>400<small>円OFF</small></span></p>
-          <span class="exc-eq" aria-hidden="true">＝</span>
+          <p class="exc-sum"><span class="exc-sum-t">最大4,400円OFFの内訳</span><!-- 11/2 一覧が13,200→8,800なので見出しは「割引の内訳」だけ（Iさん） --><span class="exc-sum-v">合計 <b>−4<span class="cm">,</span>400<small>円</small></b></span></p><!-- 11/2 内訳の見出し＋合計（13,200→8,800の差とつなげる） -->
           <ul class="exc-list">
             <li class="exc-start"><span>標準レンズ付きセット価格</span><b>13<span class="cm">,</span>200<small>円</small></b></li><!-- 11/2 13,200円から始めて8,800円で終わるレシート型に（8,800円からさらに引くように見えるため・Iさん） -->
             <li><span class="exc-lb"><svg class="exc-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11V4h7l10.5 10.5-7 7z" fill="none" stroke="#111" stroke-width="2.2" stroke-linejoin="round"/><circle cx="7.5" cy="8" r="1.7" fill="#111"/></svg><span class="exc-bf">ブラックフライデー<br class="pc-hide">限定値引き</span></span><b>−2<span class="cm">,</span>200<small>円</small></b></li>
@@ -2813,7 +2820,6 @@
             <li class="exc-off"><span>13<span class="cm">,</span>200円から</span><b><small class="mx">最大</small>4<span class="cm">,</span>400<small>円OFF！</small></b></li><!-- 11/2 割引の大きさを見せる（Iさん案）。お支払い8,800円は答えとして残す -->
             <li class="exc-tot"><span>お支払い<small class="exc-tax">（税込）</small></span><b>8<span class="cm">,</span>800<small>円</small></b></li>
           </ul>
-          </div>
           <p class="exc-n2">※割引をすべて併用した場合</p>
         </div>
         <div class="st4-ex-row" hidden>
