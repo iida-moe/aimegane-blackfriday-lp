@@ -2593,6 +2593,10 @@
     .st4-ex > .ba-set { margin-top: 28px !important; }
   }
 
+  /* 11/4 PCも2行に（1行はきつい・Iさん）：上に小さく「ブラックフライデー限定値引き」、下に「最大4,400円OFF」 */
+  .exc-k-bf { flex-direction: column; gap: 4px !important; align-items: center; }
+  @media (min-width: 1024px) { .exc-k-bf { align-items: flex-start; } }
+
   /* ===== 11/3 選ばれる理由：PCは「文字｜絵」の2列を左右交互に（真ん中寄せの1列は中途半端・Iさん）。番号は丸→大きい01・02・03 ===== */
   @media (min-width: 1024px) {
     .reasons { max-width: 1080px !important; }
