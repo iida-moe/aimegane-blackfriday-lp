@@ -2565,6 +2565,18 @@
   /* 11/4 点検・クリーニングの帯がうすすぎ（Iさん）→少し濃いベージュに・スマホとPCで同じ色 */
   .reason .hs-svc, .reasons .reason:nth-child(3) .hs-svc { background: #f2efe6 !important; }
 
+  /* ===== 11/4 補聴器も最大4,400円OFF（Iさん・バナーに合わせる） ===== */
+  .hear-y .mx { font-size: 14px; font-weight: 900; color: #e8352a; writing-mode: vertical-rl; letter-spacing: .1em; margin-right: 2px; align-self: center; }
+  .hear-off-n { font-size: 11px; color: var(--sub); line-height: 1.6; margin-top: 6px; word-break: auto-phrase; }
+  @media (min-width: 1024px) { .hear-y .mx { font-size: 16px; } #hearing-aid .hear-card .hear-off-n { grid-column: 1 / 3; grid-row: 4; padding: 0 48px 40px; margin-top: 0; font-size: 12px; } #hearing-aid .hear-card { grid-template-rows: auto auto auto auto !important; } #hearing-aid .hear-card .hear-feat { padding-bottom: 14px !important; } #hearing-aid .hear-card .hear-side { grid-row: 1 / 5 !important; } }
+
+  /* ===== 11/4 黒いセクション（お得な内容・最後のまとめ）にバナーの雰囲気：放射線の背景＋黄色の紙吹雪 ===== */
+  .otoku, .closing { background: radial-gradient(ellipse at 50% 30%, rgba(255,255,255,.07) 0%, rgba(0,0,0,0) 60%), repeating-conic-gradient(from 0deg at 50% 30%, #232323 0deg 5deg, #0e0e0e 5deg 10deg) !important; }
+  .closing { position: relative; overflow: hidden; }
+  .closing > *:not(.cl-cf) { position: relative; z-index: 2; }
+  .cl-cf { position: absolute; inset: 0; pointer-events: none; z-index: 1; }
+  .cl-cf i { position: absolute; display: block; background: #f4e030; transform: rotate(var(--r)) skewX(-20deg); width: var(--w); height: calc(var(--w) * .42); }
+
   /* ===== 11/3 選ばれる理由：PCは「文字｜絵」の2列を左右交互に（真ん中寄せの1列は中途半端・Iさん）。番号は丸→大きい01・02・03 ===== */
   @media (min-width: 1024px) {
     .reasons { max-width: 1080px !important; }
@@ -2872,9 +2884,10 @@
       <!-- 10/25 主役を「2週間無料でお試し」に、2,200円OFFはおまけに・特徴を1行（スターキー公式 GシリーズAI）。変更前 _保存/index.before-1025-hearpro.html -->
       <!-- 10/25 まず値段（2,200円OFF）→ 強み2つ（認定補聴器技能者・2週間無料貸出）。変更前 _保存/index.before-1025-hearpts.html -->
       <!-- 10/27 メガネのカードと同じ順に：名前 → 説明 → 線 → ラベル＋値段。変更前 _保存/変更前/1027/index.before-1027-hearorder.html -->
-      <div class="hear-top"><div><p class="hear-jp">スターキー</p><p class="hear-br">Gシリーズ</p></div><div class="hear-pr hear-pr-r"><p class="hear-pl">ブラックフライデー限定</p><p class="hear-y"><span class="num">2<span class="cm">,</span>200</span><span class="st"><span>円</span><span>OFF</span></span></p></div></div><!-- 11/2 スマホは名前の右に値段（Iさん） -->
+      <div class="hear-top"><div><p class="hear-jp">スターキー</p><p class="hear-br">Gシリーズ</p></div><div class="hear-pr hear-pr-r"><p class="hear-pl">割引をぜんぶ使うと</p><p class="hear-y"><span class="mx">最大</span><span class="num">4<span class="cm">,</span>400</span><span class="st"><span>円</span><span>OFF</span></span></p></div></div><!-- 11/2 スマホは名前の右に値段（Iさん） -->
       <p class="hear-feat">耳かけ型｜AIがまわりの音に合わせて自動調整</p>
-      <div class="hear-pr"><p class="hear-pl">ブラックフライデー限定</p><p class="hear-y"><span class="num">2<span class="cm">,</span>200</span><span class="st"><span>円</span><span>OFF</span></span></p></div>
+      <p class="hear-off-n">ブラックフライデー限定値引き 2,200円＋LINE新規お友だち登録 1,100円＋眼科の処方箋ご持参 1,100円</p><!-- 11/4 補聴器もメガネと同じく最大4,400円OFF（バナーに合わせる・Iさん） -->
+      <div class="hear-pr"><p class="hear-pl">割引をぜんぶ使うと</p><p class="hear-y"><span class="mx">最大</span><span class="num">4<span class="cm">,</span>400</span><span class="st"><span>円</span><span>OFF</span></span></p></div>
       <!-- 10/27 A案（補聴器強み_比較.png）：1行ずつ横長に・アイコン＋見出し＋ひとこと、※と「技能者とは？」は技能者の行の中へ。変更前 _保存/変更前/1027/index.before-1027-hearptsA.html -->
       <div class="hear-side"><!-- 10/29 パソコンだけ右の列にまとめる（スマホは何もしない入れもの） -->
       <p class="hear-why">アイメガネの補聴器サポート</p><!-- 10/29 パソコンだけ：右の列（強み）の見出し -->
@@ -3020,7 +3033,7 @@
     <dl class="ol-box">
       <div class="ol-row"><dt>期間</dt><dd><b class="ol-big">11/13<small class="dw">金</small>〜11/29<small class="dw">日</small></b></dd></div>
       <div class="ol-row"><dt>店舗</dt><dd><b class="ol-big2">アイメガネ各店</b><small>※本庄南大通り店を除く</small></dd></div>
-      <div class="ol-row"><dt>対象</dt><dd><p>対象のメガネ一式<small>フレーム・標準レンズ・<span class="nw">ケース・クロス・保証付き</span></small></p><p class="ol-sp">補聴器<small>スターキー Gシリーズ</small></p></dd></div>
+      <div class="ol-row"><dt>対象</dt><dd><p>対象のメガネ一式<small>フレーム・標準レンズ・<span class="nw">ケース・クロス・保証付き</span></small></p><p class="ol-sp">補聴器<small>スターキー Gシリーズ（割引はメガネと同じ・最大4,400円OFF）</small></p></dd></div>
       <div class="ol-row"><dt>割引</dt><dd>
         <!-- 10/27 見やすく：名前は左・値段は右にそろえる（2本同時も同じ形）・「一緒に使える」は最後に1回だけ -->
         <ul class="ol-dc">
@@ -3094,6 +3107,7 @@
 
   <!-- 6 最終CTA -->
   <section class="sec closing" id="closing">
+    <div class="cl-cf" aria-hidden="true"><i style="left:3%;top:8%;--w:17px;--r:-32deg"></i><i style="left:9%;top:22%;--w:18px;--r:-58deg"></i><i style="left:5%;top:48%;--w:13px;--r:67deg"></i><i style="left:12%;top:70%;--w:13px;--r:23deg"></i><i style="left:4%;top:88%;--w:21px;--r:-56deg"></i><i style="left:18%;top:94%;--w:26px;--r:59deg"></i><i style="left:88%;top:6%;--w:15px;--r:-61deg"></i><i style="left:94%;top:20%;--w:13px;--r:41deg"></i><i style="left:86%;top:40%;--w:18px;--r:-53deg"></i><i style="left:96%;top:58%;--w:15px;--r:-47deg"></i><i style="left:90%;top:78%;--w:20px;--r:38deg"></i><i style="left:82%;top:92%;--w:12px;--r:-39deg"></i><i style="left:26%;top:4%;--w:15px;--r:-55deg"></i><i style="left:72%;top:3%;--w:21px;--r:31deg"></i><i style="left:30%;top:96%;--w:12px;--r:-14deg"></i><i style="left:68%;top:97%;--w:12px;--r:-36deg"></i></div><!-- 11/4 黄色の紙吹雪（文字のない四すみ寄り） -->
     <!-- 10/27 FVのくり返しをやめて落ち着いた締めに（ひとこと→期間→値段は1行→ボタン）（Iさん「FVと一緒」）。変更前は FVと同じ形（日付→BLACK FRIDAY→8,800円→遠近0円の枠） -->
     <p class="cl-en"><svg class="cl-gl" viewBox="0 0 120 44" aria-hidden="true"><g fill="none" stroke="#fff" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"><path d="M8 8 H52 Q55 8 54 12 L51 30 Q49 39 39 39 H22 Q12 39 10 30 Z"/><path d="M112 8 H68 Q65 8 66 12 L69 30 Q71 39 81 39 H98 Q108 39 110 30 Z"/><path d="M54 13 Q60 8 66 13"/><path d="M8 10 L2 8 M112 10 L118 8"/></g></svg>BLACK FRIDAY</p><!-- 11/4 FVと同じ白いメガネの線画 -->
     <h2 class="cl-copy">あなたに合うメガネを、<br>この機会に。</h2>
