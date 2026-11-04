@@ -2689,6 +2689,28 @@
     html[data-simple="1"] .st4 .st4-ex .ba-set, .st4 .st4-ex .ba-set { grid-row: 9 !important; margin-top: 0 !important; padding-top: 36px !important; }
   }
 
+  /* ===== 11/4 セットのアイコンを軽やかに（Iさん「おしゃれな感じに」）：細い線・うすい丸の上にアイコン・「＋」は細く薄く・文字は小さく細く ===== */
+  .st4 .st4-ex .ba-set .ico, .st4 .st4-ex .ba-set .ico * { stroke-width: 1.5 !important; }
+  .st4 .st4-ex .ba-set li:not(.plus) { font-weight: 500 !important; letter-spacing: .08em; color: #444; }
+  .st4 .st4-ex .ba-set li:not(.plus) .ico { background: #f6f4ec; border-radius: 50%; padding: 10px; box-sizing: content-box; }
+  .st4 .st4-ex .ba-set li.plus { font-weight: 300 !important; color: #bbb !important; }
+  .st4 .st4-ex .st4-ex-all { font-weight: 700 !important; letter-spacing: .08em; }
+  @media (max-width: 1023px) {
+    .st4 .st4-ex .ba-set li:not(.plus) { font-size: 11px !important; }
+    .st4 .st4-ex .ba-set li:not(.plus) .ico { width: 24px !important; height: 18px !important; padding: 8px 7px; margin-bottom: 6px !important; }
+    .st4 .st4-ex .ba-set { gap: 0 !important; justify-content: space-between !important; }
+    .st4 .st4-ex .ba-set li:not(.plus) { flex: none !important; width: auto !important; min-width: 0; }
+    .st4 .st4-ex .ba-set li.plus { font-size: 14px !important; padding-top: 0 !important; align-self: center; margin-top: -16px; }
+  }
+  @media (max-width: 359px) { .st4 .st4-ex .ba-set li:not(.plus) .ico { width: 20px !important; height: 15px !important; padding: 7px 6px; } .st4 .st4-ex .ba-set li:not(.plus) { font-size: 10px !important; letter-spacing: 0; } .st4 .st4-ex .ba-set li.plus { font-size: 11px !important; width: 10px !important; } }
+  @media (min-width: 1024px) {
+    .st4 .st4-ex .ba-set { gap: 22px !important; }
+    .st4 .st4-ex .ba-set li:not(.plus) { font-size: 14px !important; }
+    .st4 .st4-ex .ba-set li:not(.plus) .ico { width: 44px !important; height: 30px !important; padding: 18px 16px; margin-bottom: 10px !important; }
+    .st4 .st4-ex .ba-set li.plus { font-size: 20px !important; padding-top: 0 !important; align-self: center; margin-top: -26px; }
+    .st4 .st4-ex .st4-ex-all { font-size: 22px !important; }
+  }
+
   /* ===== 11/3 選ばれる理由：PCは「文字｜絵」の2列を左右交互に（真ん中寄せの1列は中途半端・Iさん）。番号は丸→大きい01・02・03 ===== */
   @media (min-width: 1024px) {
     .reasons { max-width: 1080px !important; }
