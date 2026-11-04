@@ -2679,6 +2679,16 @@
   }
   @media (max-width: 359px) { .st4-ex-col .exc-list li:not(.exc-start):not(.exc-tot):not(.exc-off) { padding-left: 10px !important; padding-right: 10px !important; } .st4-ex-col .exc-list li.exc-off.exc-off { padding-left: 10px !important; padding-right: 10px !important; } }
 
+  /* 11/4 「すべてセットでこの価格！」をアイコンの上に（見出しのように・Iさん） */
+  @media (max-width: 1023px) {
+    .st4-ex > .st4-ex-all { order: 1 !important; margin-top: 36px !important; }
+    .st4-ex > .ba-set { order: 2 !important; margin-top: 0 !important; border-top: 0 !important; }
+  }
+  @media (min-width: 1024px) {
+    .st4 .st4-ex .st4-ex-all { grid-row: 8 !important; margin-top: 56px !important; }
+    html[data-simple="1"] .st4 .st4-ex .ba-set, .st4 .st4-ex .ba-set { grid-row: 9 !important; margin-top: 0 !important; padding-top: 36px !important; }
+  }
+
   /* ===== 11/3 選ばれる理由：PCは「文字｜絵」の2列を左右交互に（真ん中寄せの1列は中途半端・Iさん）。番号は丸→大きい01・02・03 ===== */
   @media (min-width: 1024px) {
     .reasons { max-width: 1080px !important; }
