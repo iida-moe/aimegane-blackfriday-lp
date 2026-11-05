@@ -2739,6 +2739,14 @@
   }
   /* 11/5 フッターも黒に（最終CTAから続けて・Iさん）。ロゴは白（濃い背景は白ロゴのルール） */
   footer.footer { background: #111; color: #aaa; }
+  /* 11/5 スマホの細かい直し（Iさん） */
+  @media (max-width: 1023px) {
+    .st4 .st4-ex .st4-ex-all { margin-bottom: -22px !important; } /* 「すべてセットでこの価格！」とアイコンを近づける */
+    .st4 .st4-ex .st4-ex-col .exc-sum + .exc-list { margin-top: 26px !important; } /* 内訳の箱の三角が8,800にかぶらないように */
+    #lensKey.lens-key { flex-direction: column; align-items: flex-start; width: fit-content; margin-left: auto; margin-right: auto; gap: 2px; } /* 説明の2行を左ぞろえ（かたまりは真ん中） */
+    #lensKey.lens-key .lk-c { margin: 0 1px; }
+    .fv .fv-cta { margin-top: 4.5vw !important; } /* FVの日付の線とボタンが近いので少し下げる */
+  }
   /* 11/5 概要の日付：太すぎたので ExtraBold→Bold・少し小さく（曜日の丸はそのまま・Iさん） */
   .ol-box .ol-big { font-weight: 700 !important; font-size: 21px !important; }
   @media (max-width: 359px) { .ol-box .ol-big { font-size: 19px !important; } }
@@ -3117,7 +3125,7 @@
       <!-- 10/27 メガネのカードと同じ順に：名前 → 説明 → 線 → ラベル＋値段。変更前 _保存/変更前/1027/index.before-1027-hearorder.html -->
       <div class="hear-top"><div><p class="hear-jp">スターキー</p><p class="hear-br">Gシリーズ</p></div><div class="hear-pr hear-pr-r"><p class="hear-y"><span class="mx">最大</span><span class="num">3<span class="cm">,</span>000</span><span class="st"><span>円</span><span>OFF</span></span></p></div></div><!-- 11/2 スマホは名前の右に値段（Iさん） -->
       <p class="hear-feat">耳かけ型｜AIがまわりの音に合わせて自動調整</p>
-      <p class="hear-off-n"><span class="nw">ブラックフライデー限定値引き 2,000円</span>＋<span class="nw">LINE新規お友だち登録 1,000円</span><br>※補聴器は税抜価格からの値引きです</p><!-- 11/4 補聴器もメガネと同じく最大4,400円OFF（バナーに合わせる・Iさん） -->
+      <p class="hear-off-n"><span class="nw"><span class="pc-only-i">ブラックフライデー</span>限定値引き 2,000円</span>＋<span class="nw">LINE新規お友だち登録 1,000円</span><br>※補聴器は税抜価格からの値引きです</p><!-- 11/4 補聴器もメガネと同じく最大4,400円OFF（バナーに合わせる・Iさん） -->
       <div class="hear-pr"><p class="hear-y"><span class="mx">最大</span><span class="num">3<span class="cm">,</span>000</span><span class="st"><span>円</span><span>OFF</span></span></p></div>
       <!-- 10/27 A案（補聴器強み_比較.png）：1行ずつ横長に・アイコン＋見出し＋ひとこと、※と「技能者とは？」は技能者の行の中へ。変更前 _保存/変更前/1027/index.before-1027-hearptsA.html -->
       <div class="hear-side"><!-- 10/29 パソコンだけ右の列にまとめる（スマホは何もしない入れもの） -->
