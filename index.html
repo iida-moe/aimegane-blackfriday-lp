@@ -2775,6 +2775,17 @@
   @media (max-width: 359px) { .fv .hd:not(.is-fixed) .hd-logo img { width: 170px !important; } }
   /* 11/5 PCの商品例：13,200円と8,800円の下をそろえる（13,200が8px上に浮いていた・Iさん） */
   @media (min-width: 1024px) { .st4 .st4-ex .st4-ex-col .exc-b { position: relative; top: 8px; } .st4 .st4-ex .st4-ex-col .exc-dn { position: relative; top: 4px; } }
+  /* 11/5 予約率アップ：店舗検索まわりの言葉（Iさん） */
+  .shop-note { text-align: center; }
+  .shop-note .sn-main { display: block; font-size: 14px; color: var(--tx); font-weight: 500; }
+  .shop-note .sn-sub { display: block; font-size: 11px; color: var(--sub); margin-top: 2px; }
+  .shop-menu-guide { background: #fffbe0; border: 1px solid #f4c400; border-radius: 10px; padding: 12px 14px; margin: 16px 0 12px; font-size: 13px; line-height: 1.6; }
+  .shop-menu-guide .smg-t { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+  .shop-menu-guide .smg-m { font-size: 12.5px; color: var(--tx); }
+  .shop-menu-guide em { font-style: normal; color: #e8352a; }
+  .shop-walkin { font-size: 13px !important; color: var(--tx) !important; }
+  @media (max-width: 359px) { .shop-menu-guide { padding: 10px; } .shop-menu-guide .smg-t { font-size: 12px; } .shop-menu-guide .smg-m { font-size: 11.5px; letter-spacing: -.01em; } }
+  @media (min-width: 1024px) { .shop-menu-guide { max-width: 720px; margin-left: auto; margin-right: auto; text-align: center; } .shop-note .sn-main { font-size: 15px; } }
   footer.footer { background: #111; color: #aaa; }
   /* 11/5 スマホの細かい直し（Iさん） */
   @media (max-width: 1023px) {
@@ -3347,7 +3358,7 @@
         <button type="button" class="shop-search-btn" data-cta-location="search_submit" onclick="searchShop()">検索</button>
       </div>
     </div>
-    <p class="shop-note">※WEB予約は、3日後以降の日程でお取りいただけます。<br class="pc-hide">お急ぎの場合はお電話でお問い合わせください。</p>
+    <p class="shop-note"><span class="sn-main">お急ぎの方は、お電話でご予約いただけます</span><span class="sn-sub">※Web予約は3日後以降の日程でお取りいただけます</span></p><!-- 11/5 「すぐは無理」と思わせないよう、電話を先に（Iさん）。旧：※WEB予約は、3日後以降の日程でお取りいただけます。お急ぎの場合はお電話でお問い合わせください。 -->
 
     <div class="shop-pref-tabs" id="shopPrefTabs"></div>
 
@@ -3372,8 +3383,9 @@
     </div>
 
     <p id="shop-count" class="shop-count" style="display:none;" role="status" aria-live="polite"></p>
+    <div class="shop-menu-guide"><p class="smg-t">Web予約では、こちらをお選びください</p><p class="smg-m"><em>【メガネ】ご購入・レンズ交換・フレーム選び</em></p><p class="smg-m"><em>【補聴器】ご購入・ご相談</em></p></div><!-- 11/5 予約ページにメニューが8つあり迷うので先に案内（Iさん） -->
     <div id="shop-results" class="shop-results"></div>
-    <p class="shop-walkin">ご予約なしでもご来店いただけます</p>
+    <p class="shop-walkin">ご予約の方は、待ち時間なくご案内できます</p><!-- 11/5 予約のメリットに言いかえ（Iさん）。旧：ご予約なしでもご来店いただけます -->
   </section>
 
   <!-- 店舗一覧を見ているあいだだけ出る：条件で絞り込む／検索に戻る（ザ・セールLPと同じ仕組み） -->
