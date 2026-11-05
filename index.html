@@ -2747,7 +2747,8 @@
   .btn-arw .arw { background: none !important; border-radius: 0 !important; width: 10px !important; height: 10px !important; margin-top: -6px !important; right: 26px !important; font-size: 0 !important; padding: 0 !important; color: #111 !important; border-right: 2.5px solid currentColor; border-top: 2.5px solid currentColor; transform: rotate(45deg) !important; }
   @media (hover: hover) { .btn-arw:hover .arw { transform: translateX(4px) rotate(45deg) !important; } }
   .btn-arw { padding-left: 48px !important; padding-right: 48px !important; }
-  @media (min-width: 1024px) { .fv .fv-cta .btn-arw { padding-left: 20px !important; padding-right: 44px !important; white-space: nowrap; } .fv .fv-cta .btn-arw .arw { width: 12px !important; height: 12px !important; margin-top: -7px !important; right: 30px !important; border-width: 3px !important; } }
+  @media (min-width: 1024px) { .fv .fv-cta .btn-arw { padding-left: 20px !important; padding-right: 44px !important; white-space: nowrap; } .fv .fv-cta .btn-arw .arw { width: 12px !important; height: 12px !important; margin-top: -7px !important; right: 20px !important; border-width: 3px !important; } }
+  @media (min-width: 1024px) and (max-width: 1279px) { .fv .fv-cta .btn-arw { font-size: 16px !important; } } /* 1024〜1279pxはボタンがせまく「›」が文字にくっつくので文字を少し小さく */
   @media (max-width: 359px) { .btn-arw.btn-arw { padding-left: 32px !important; padding-right: 32px !important; } .btn-arw .arw { right: 18px !important; } }
   /* セクションのあいだをつめる（120/170px → 80/120px） */
   #otoku.sec, #pickup.sec, #hearing-aid.sec, #outline.sec { padding-top: 80px !important; padding-bottom: 80px !important; }
@@ -2762,6 +2763,13 @@
   /* 11/5 会話の吹き出し：文字は左ぞろえ・かたまりは吹き出しのまん中に（Iさん） */
   .reason .mg-bub { text-align: center !important; }
   .reason .mg-bub .mg-in { display: inline-block; text-align: left; }
+  /* 11/5 ヘッダーのロゴを大きく（Iさん）：スマホ170→200・PC 200→240／280→320。スクロール後の小さいヘッダーはそのまま */
+  .fv .hd:not(.is-fixed) .hd-logo img { width: 200px !important; }
+  @media (min-width: 1024px) { .fv .hd:not(.is-fixed) .hd-logo img { width: 240px !important; } }
+  @media (min-width: 1280px) { .fv .hd:not(.is-fixed) .hd-logo img { width: 320px !important; } }
+  @media (max-width: 359px) { .fv .hd:not(.is-fixed) .hd-logo img { width: 170px !important; } }
+  /* 11/5 PCの商品例：13,200円と8,800円の下をそろえる（13,200が8px上に浮いていた・Iさん） */
+  @media (min-width: 1024px) { .st4 .st4-ex .st4-ex-col .exc-b { position: relative; top: 8px; } .st4 .st4-ex .st4-ex-col .exc-dn { position: relative; top: 4px; } }
   footer.footer { background: #111; color: #aaa; }
   /* 11/5 スマホの細かい直し（Iさん） */
   @media (max-width: 1023px) {
