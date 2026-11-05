@@ -2739,6 +2739,26 @@
     section#closing .cl-date { font-size: 26px !important; } section#closing .cl-date small { font-size: 15px !important; }
   }
   /* 11/5 フッターも黒に（最終CTAから続けて・Iさん）。ロゴは白（濃い背景は白ロゴのルール） */
+
+  /* ===== 11/5 全体の見直し（Iさん「全部やって」） ===== */
+  /* ボタンの矢印をそろえる：FV・下の固定ボタンも「ピン＋›」（黒丸の▶をやめる） */
+  .btn-arw .arw-t { display: inline-flex; align-items: center; gap: 8px; }
+  .btn-arw .arw-t .pin { width: 1em; height: 1em; flex: none; }
+  .btn-arw .arw { background: none !important; border-radius: 0 !important; width: 10px !important; height: 10px !important; margin-top: -6px !important; right: 26px !important; font-size: 0 !important; padding: 0 !important; color: #111 !important; border-right: 2.5px solid currentColor; border-top: 2.5px solid currentColor; transform: rotate(45deg) !important; }
+  @media (hover: hover) { .btn-arw:hover .arw { transform: translateX(4px) rotate(45deg) !important; } }
+  .btn-arw { padding-left: 48px !important; padding-right: 48px !important; }
+  @media (min-width: 1024px) { .fv .fv-cta .btn-arw { padding-left: 20px !important; padding-right: 44px !important; white-space: nowrap; } .fv .fv-cta .btn-arw .arw { width: 12px !important; height: 12px !important; margin-top: -7px !important; right: 30px !important; border-width: 3px !important; } }
+  @media (max-width: 359px) { .btn-arw { padding-left: 24px !important; padding-right: 40px !important; } .btn-arw .arw { right: 18px !important; } }
+  /* セクションのあいだをつめる（120/170px → 80/120px） */
+  #otoku.sec, #pickup.sec, #hearing-aid.sec, #outline.sec { padding-top: 80px !important; padding-bottom: 80px !important; }
+  section#reason.sec.sec { padding-top: 112px !important; padding-bottom: 80px !important; }
+  #shop-search.sec { padding-bottom: 80px !important; }
+  @media (min-width: 1024px) {
+    #otoku.sec, #pickup.sec, #hearing-aid.sec, #outline.sec { padding-top: 120px !important; padding-bottom: 120px !important; }
+    #otoku.sec { padding-bottom: 136px !important; }
+    section#reason.sec.sec { padding-top: 180px !important; padding-bottom: 120px !important; }
+    #shop-search.sec { padding-bottom: 120px !important; }
+  }
   footer.footer { background: #111; color: #aaa; }
   /* 11/5 スマホの細かい直し（Iさん） */
   @media (max-width: 1023px) {
@@ -2945,7 +2965,7 @@
       </div>
     </div>
     <div class="fv-cta">
-      <a href="#shop-search" class="btn btn-arw" data-cta-location="fv"><span>近くのお店で予約する</span><span class="arw" aria-hidden="true">▶</span></a>
+      <a href="#shop-search" class="btn btn-arw" data-cta-location="fv"><span class="arw-t"><svg class="pin" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12,2 C7.6,2 4,5.5 4,9.9 C4,15.6 12,22 12,22 C12,22 20,15.6 20,9.9 C20,5.5 16.4,2 12,2 Z M12,13 A3.2,3.2 0 1 1 12,6.6 A3.2,3.2 0 0 1 12,13 Z"/></svg>近くのお店で予約する</span><span class="arw" aria-hidden="true"></span></a>
     </div>
   </header>
   <nav class="menu" id="menu" aria-hidden="true">
@@ -3116,7 +3136,7 @@
     <div class="pick-dots" id="pickDots" aria-label="スライドの位置"></div>
     <p class="pick-store">ほかにも、対象のフレームを<br class="sp-br">多数ご用意しています<br>ぜひ店頭でお試しください</p>
     <p class="note">※お取り扱いのデザインは店舗によって異なります</p>
-    <a href="#shop-search" class="btn btn-pin" data-cta-location="pickup"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12,2 C7.6,2 4,5.5 4,9.9 C4,15.6 12,22 12,22 C12,22 20,15.6 20,9.9 C20,5.5 16.4,2 12,2 Z M12,13 A3.2,3.2 0 1 1 12,6.6 A3.2,3.2 0 0 1 12,13 Z"/></svg>お近くのお店を探す</a><!-- 10/29 すぐ上の「ぜひ店頭でお試しください」につながる言葉に（Iさん） -->
+    <a href="#shop-search" class="btn btn-pin" data-cta-location="pickup"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12,2 C7.6,2 4,5.5 4,9.9 C4,15.6 12,22 12,22 C12,22 20,15.6 20,9.9 C20,5.5 16.4,2 12,2 Z M12,13 A3.2,3.2 0 1 1 12,6.6 A3.2,3.2 0 0 1 12,13 Z"/></svg>近くのお店を探す</a><!-- 10/29 すぐ上の「ぜひ店頭でお試しください」につながる言葉に（Iさん） -->
   </section>
 
   <!-- 10/27 A案（比較/補聴器の置き場所_比較.png）：補聴器はメガネのブランドと分けて別のセクションに -->
@@ -3241,7 +3261,7 @@
         <details class="hs-item" open><summary><span>通常保証<small>どなたでも</small></span></summary>
       <ul class="hc3">
         <li><svg class="hc-ic" viewBox="0 0 80 56" aria-hidden="true"><path d="M60 28a20 20 0 1 1-5.9-14.1" fill="none" stroke="#222" stroke-width="9" stroke-linecap="butt"/></svg><p class="hc-t">視え方保証</p><p class="hc-n"><span class="marker">6</span><small>か月</small></p><p class="hc-d">度数交換が<br><span class="nw"><span class="hc-u">何度</span>でも<span class="hc-u">無料</span></span></p></li>
-        <li><svg class="hc-ic" viewBox="0 0 80 56" aria-hidden="true"><path d="M40 4l20 7v14c0 14-9 23-20 27-11-4-20-13-20-27V11z" fill="#f4e030" stroke="#222" stroke-width="3" stroke-linejoin="round"/><path d="M31 28l6 6 12-13" fill="none" stroke="#222" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg><p class="hc-t">品質保証</p><p class="hc-n"><span class="marker">1</span><small>年</small></p><p class="hc-d">不具合は<br><span class="nw"><span class="hc-u">無料</span>で交換</span></p></li>
+        <li><svg class="hc-ic" viewBox="0 0 80 56" aria-hidden="true"><circle cx="40" cy="28" r="23" fill="#f4e030"/><g fill="none" stroke="#222" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M27 25a13.5 13.5 0 0 1 24-8"/><path d="M52 9v8.5h-8.5"/><path d="M53 31a13.5 13.5 0 0 1-24 8"/><path d="M28 47v-8.5h8.5"/></g></svg><p class="hc-t">品質保証</p><p class="hc-n"><span class="marker">1</span><small>年</small></p><p class="hc-d">不具合は<br><span class="nw"><span class="hc-u">無料</span>で交換</span></p></li>
         <li><svg class="hc-ic" viewBox="0 0 80 56" aria-hidden="true"><circle cx="24" cy="30" r="13" fill="#fff" stroke="#222" stroke-width="3.5"/><circle cx="56" cy="30" r="13" fill="#fff" stroke="#222" stroke-width="3.5"/><path d="M37 28q3-5 6 0" fill="none" stroke="#222" stroke-width="3" stroke-linecap="round"/><path d="M11 28H4M69 28h7" stroke="#222" stroke-width="3.5" stroke-linecap="round"/><path d="M50 22l5 7-4 3 6 7" fill="none" stroke="#e8352a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><p class="hc-t">破損補償</p><p class="hc-n"><span class="marker">1</span><small>年</small></p><p class="hc-d">壊したら、<br><span class="nw">同じメガネを</span><span class="nw"><span class="hc-u">半額</span>で</span></p></li>
       </ul>
         </details>
@@ -3281,7 +3301,7 @@
     <dl class="ol-box">
       <div class="ol-row"><dt>期間</dt><dd><b class="ol-big">11/13<small class="dw">金</small>〜11/29<small class="dw">日</small></b></dd></div>
       <div class="ol-row"><dt>店舗</dt><dd><b class="ol-big2">アイメガネ各店</b><small>※本庄南大通り店を除く</small></dd></div>
-      <div class="ol-row"><dt>対象</dt><dd><p>対象のメガネ一式<small>フレーム・標準レンズ・<span class="nw">ケース・クロス・保証付き</span></small></p><p class="ol-sp">補聴器<small>スターキー Gシリーズ（ブラックフライデー限定値引き2,000円＋LINE新規お友だち登録1,000円で最大3,000円OFF・税抜価格から）</small></p></dd></div>
+      <div class="ol-row"><dt>対象</dt><dd><p>対象のメガネ一式<small>フレーム・標準レンズ・<span class="nw">ケース・クロス・保証付き</span></small></p><p class="ol-sp">補聴器<small>スターキー Gシリーズ 最大3,000円OFF（税抜価格から）</small></p></dd></div>
       <div class="ol-row"><dt>割引</dt><dd>
         <!-- 10/27 見やすく：名前は左・値段は右にそろえる（2本同時も同じ形）・「一緒に使える」は最後に1回だけ -->
         <ul class="ol-dc">
@@ -3361,7 +3381,7 @@
     <h2 class="cl-copy">あなたに合うメガネを、<br>この機会に。</h2>
     <p class="cl-date">11/13<small class="dw">金</small>〜11/29<small class="dw">日</small></p>
     <!-- 11/4 価格のかたまり（.cl-sum）は外した：最終CTAなので期間とボタンだけ（Iさん「読みづらい・なくていい」） -->
-    <a href="#shop-search" class="btn" data-cta-location="closing">近くのお店で予約する</a>
+    <a href="#shop-search" class="btn btn-pin" data-cta-location="closing"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12,2 C7.6,2 4,5.5 4,9.9 C4,15.6 12,22 12,22 C12,22 20,15.6 20,9.9 C20,5.5 16.4,2 12,2 Z M12,13 A3.2,3.2 0 1 1 12,6.6 A3.2,3.2 0 0 1 12,13 Z"/></svg>近くのお店で予約する</a><!-- 11/5 ボタンの形をそろえる（ピン＋›） -->
     <!-- 11/5 ボタン下の「ご予約ならスムーズにご案内」は外した（Iさん） -->
   </section>
 
@@ -3378,7 +3398,7 @@
 
 <!-- 追従CTA -->
 <div class="float-cta" id="floatCta">
-  <a href="#shop-search" class="btn btn-arw" data-cta-location="floating"><span>近くのお店で予約する</span><span class="arw" aria-hidden="true">▶</span></a>
+  <a href="#shop-search" class="btn btn-arw" data-cta-location="floating"><span class="arw-t"><svg class="pin" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12,2 C7.6,2 4,5.5 4,9.9 C4,15.6 12,22 12,22 C12,22 20,15.6 20,9.9 C20,5.5 16.4,2 12,2 Z M12,13 A3.2,3.2 0 1 1 12,6.6 A3.2,3.2 0 0 1 12,13 Z"/></svg>近くのお店で予約する</span><span class="arw" aria-hidden="true"></span></a>
   <!-- 10/29 PCだけ：左にお店のアイコン＋ひとこと、右にピンつきの黄色いボタン（Iさんの見本の形）。旧＝期間と8,800円の帯 _保存\変更前\1029\index.before-1029-box2col.html -->
   <div class="fc-pc">
     <svg class="fc-ico" viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><rect x="6" y="9" width="36" height="33" rx="4"/><path d="M6,19 H42"/><path d="M15,5 V13 M33,5 V13"/><path d="M14,27 H18 M22,27 H26 M30,27 H34 M14,34 H18 M22,34 H26"/></g></svg>
