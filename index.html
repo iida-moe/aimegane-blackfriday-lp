@@ -2716,6 +2716,10 @@
   .st4 .st4-ex .ba-set .ico, .st4 .st4-ex .ba-set .ico * { stroke-width: 1.8 !important; }
   .st4 .st4-ex .ba-set li.plus { color: #999 !important; }
   .st4 .st4-ex .ba-set li:not(.plus) { color: #333 !important; }
+  /* 11/5 丸の中のアイコンを大きく（丸の大きさはそのまま・Iさん） */
+  @media (max-width: 1023px) { .st4 .st4-ex .ba-set li:not(.plus) .ico { width: 30px !important; height: 30px !important; padding: 5px !important; } }
+  @media (max-width: 359px) { .st4 .st4-ex .ba-set li:not(.plus) .ico { width: 26px !important; height: 26px !important; padding: 4px !important; } }
+  @media (min-width: 1024px) { .st4 .st4-ex .ba-set li:not(.plus) .ico { width: 54px !important; height: 54px !important; padding: 10px !important; } }
 
   /* 11/4 「メガネ2本同時購入」の字間を後ろの文字とそろえて広げる */
   .two-t .two-ls { letter-spacing: .08em; margin-right: -.04em; }
