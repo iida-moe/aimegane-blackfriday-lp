@@ -3724,7 +3724,7 @@ if(!location.hash){window.scrollTo(0,0);}
   if(!bar||!box||!res) return;
   function check(){
     const vh=innerHeight, b=box.getBoundingClientRect(), r=res.getBoundingClientRect();
-    bar.classList.toggle('show', b.bottom<0 && r.bottom>vh*0.4);
+    bar.classList.toggle('show', b.bottom<0 && r.bottom>vh*0.9); // 11/5 一覧の終わり（もっと見る）が見えてきたら隠す（最終CTAにかぶっていた・Iさん）。旧 vh*0.4
   }
   addEventListener('scroll',check,{passive:true}); addEventListener('resize',check); addEventListener('load',check); check();
 })();
