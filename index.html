@@ -2717,7 +2717,11 @@
   .st4 .st4-ex .ba-set li.plus { color: #999 !important; }
   .st4 .st4-ex .ba-set li:not(.plus) { color: #333 !important; }
   /* 11/5 理由1：見出しと「遠近・中近・近々も 追加料金0円」の間をつめる（Iさん：行間が空きすぎ） */
-  section#reason .reasons .reason .rh-also { margin-top: 0 !important; }  /* 11/5 丸の中のアイコンを大きく（丸の大きさはそのまま・Iさん） */
+  section#reason .reasons .reason .rh-also { margin-top: 0 !important; }  /* 11/5 理由1「0円」の0を下ぞろえ（0だけ少し上に浮いていた・Iさん）。円は動かさない */
+  section#reason .reasons .reason .rh-also .rz { position: relative; top: 1px; }
+  section#reason .reasons .reason .rh-also .rz small { position: relative; top: -1px; }
+  @media (min-width: 1024px) { section#reason .reasons .reason .rh-also .rz { top: 3px; } section#reason .reasons .reason .rh-also .rz small { top: -3px; } }
+  /* 11/5 丸の中のアイコンを大きく（丸の大きさはそのまま・Iさん） */
   @media (max-width: 1023px) { .st4 .st4-ex .ba-set li:not(.plus) .ico { width: 30px !important; height: 30px !important; padding: 5px !important; } }
   @media (max-width: 359px) { .st4 .st4-ex .ba-set li:not(.plus) .ico { width: 26px !important; height: 26px !important; padding: 4px !important; } }
   @media (min-width: 1024px) { .st4 .st4-ex .ba-set li:not(.plus) .ico { width: 54px !important; height: 54px !important; padding: 10px !important; } }
