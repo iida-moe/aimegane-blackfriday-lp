@@ -3724,7 +3724,13 @@ if(!location.hash){window.scrollTo(0,0);}
   if(!bar||!box||!res) return;
   function check(){
     const vh=innerHeight, b=box.getBoundingClientRect(), r=res.getBoundingClientRect();
-    bar.classList.toggle('show', b.bottom<0 && r.bottom>vh*0.9); // 11/5 一覧の終わり（もっと見る）が見えてきたら隠す（最終CTAにかぶっていた・Iさん）。旧 vh*0.4
+    // 11/5 一覧を見ているあいだは画面の下に固定、一覧の終わりまで来たら「もっと見る（＋ご予約なしでも〜）」のすぐ下に止まって一緒にスクロール（Iさん）
+    const walk=document.querySelector('.shop-walkin'), end=(walk||res).getBoundingClientRect().bottom-(walk?parseFloat(walk.style.paddingBottom)||0:0)+4, h=bar.offsetHeight;
+    if(walk && h) walk.style.paddingBottom=(h+12)+'px'; // 止まったバーが最終CTAにかぶらないように、バーの高さぶん空けておく
+    const show=b.bottom<0 && r.top<vh;
+    bar.classList.toggle('show', show);
+    if(show && end+h<vh){ bar.style.transition='none'; bar.style.transform='translateY('+(end+h-vh)+'px)'; }
+    else { bar.style.transform=''; if(bar.style.transition==='none') requestAnimationFrame(()=>{bar.style.transition='';}); }
   }
   addEventListener('scroll',check,{passive:true}); addEventListener('resize',check); addEventListener('load',check); check();
 })();
