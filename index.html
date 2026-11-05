@@ -2355,7 +2355,8 @@
     .reasons .reason:nth-child(1) .lens-scene { grid-area: scene; width: 100%; height: auto; display: block; mix-blend-mode: multiply; align-self: center; } /* 画像の白い背景を面の色になじませる（画像は加工しない） */
     .reasons .reason:nth-child(1) .lens-figbox { grid-area: fig; }
     .reasons .reason:nth-child(1) .lens-fig { max-width: none !important; margin: 0 !important; }
-    .reasons .reason:nth-child(1) .lens-key { flex-direction: column; align-items: center; gap: 2px; margin-bottom: 0; }
+    .reasons .reason:nth-child(1) .lens-key { flex-direction: column; align-items: flex-start; width: fit-content; margin-left: auto; margin-right: auto; gap: 2px; margin-bottom: 0; } /* 11/5 中央→左ぞろえ（かたまりは真ん中のまま・Iさん） */
+    .reasons .reason:nth-child(1) .lens-key .lk-c { margin: 0 1px; } /* 色の丸と点線の幅をそろえて、文字の頭もそろえる */
     .reasons .reason:nth-child(1) .lens-side { grid-area: side; padding-top: 8px; }
     .reasons .reason:nth-child(1) .lens-side .lens-for { background: none !important; padding: 0 0 12px !important; margin: 0 !important; text-align: left !important; font-size: 18px !important; font-weight: 900; border-bottom: 2px solid var(--ac); }
     .reasons .reason:nth-child(1) .lens-side .lens-rec { margin: 16px 0 0 !important; max-width: none !important; }
