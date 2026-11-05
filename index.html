@@ -2727,6 +2727,16 @@
   /* 11/5 概要の「対象」：対象のメガネ一式・補聴器を「アイメガネ各店」と同じ大きさ・太さに（サブテキストはそのまま・Iさん） */
   .ol-box .ol-row dd > p { font-size: 17px !important; font-weight: 700 !important; line-height: 1.4 !important; }
   .ol-box .ol-row dd > p > small { font-weight: 400 !important; line-height: 1.7 !important; margin-top: 4px; }
+  /* 11/5 最終CTA：FVなみに大きいので上下をせまく・文字は大きく（Iさん） */
+  section#closing.closing { padding-top: 72px !important; padding-bottom: 72px !important; }
+  section#closing .cl-en { display: none !important; }
+  section#closing .cl-copy { font-size: 25px !important; margin-top: 0 !important; }
+  section#closing .cl-date { font-size: 21px !important; } section#closing .cl-date small { font-size: 13px !important; }
+  @media (min-width: 1024px) {
+    section#closing.closing { padding-top: 96px !important; padding-bottom: 96px !important; }
+    section#closing .cl-copy { font-size: 34px !important; }
+    section#closing .cl-date { font-size: 26px !important; } section#closing .cl-date small { font-size: 15px !important; }
+  }
   /* 11/5 丸の中のアイコンを大きく（丸の大きさはそのまま・Iさん） */
   @media (max-width: 1023px) { .st4 .st4-ex .ba-set li:not(.plus) .ico { width: 30px !important; height: 30px !important; padding: 5px !important; } }
   @media (max-width: 359px) { .st4 .st4-ex .ba-set li:not(.plus) .ico { width: 26px !important; height: 26px !important; padding: 4px !important; } }
@@ -3318,12 +3328,12 @@
   <section class="sec closing" id="closing">
     <div class="cl-cf" aria-hidden="true"><i style="left:3%;top:8%;--w:17px;--r:-32deg"></i><i style="left:9%;top:22%;--w:18px;--r:-58deg"></i><i style="left:5%;top:48%;--w:13px;--r:67deg"></i><i style="left:12%;top:70%;--w:13px;--r:23deg"></i><i style="left:4%;top:88%;--w:21px;--r:-56deg"></i><i style="left:18%;top:94%;--w:26px;--r:59deg"></i><i style="left:88%;top:6%;--w:15px;--r:-61deg"></i><i style="left:94%;top:20%;--w:13px;--r:41deg"></i><i style="left:86%;top:40%;--w:18px;--r:-53deg"></i><i style="left:96%;top:58%;--w:15px;--r:-47deg"></i><i style="left:90%;top:78%;--w:20px;--r:38deg"></i><i style="left:82%;top:92%;--w:12px;--r:-39deg"></i><i style="left:26%;top:4%;--w:15px;--r:-55deg"></i><i style="left:72%;top:3%;--w:21px;--r:31deg"></i><i style="left:30%;top:96%;--w:12px;--r:-14deg"></i><i style="left:68%;top:97%;--w:12px;--r:-36deg"></i></div><!-- 11/4 黄色の紙吹雪（文字のない四すみ寄り） -->
     <!-- 10/27 FVのくり返しをやめて落ち着いた締めに（ひとこと→期間→値段は1行→ボタン）（Iさん「FVと一緒」）。変更前は FVと同じ形（日付→BLACK FRIDAY→8,800円→遠近0円の枠） -->
-    <p class="cl-en"><svg class="cl-gl" viewBox="0 0 120 44" aria-hidden="true"><g fill="none" stroke="#fff" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"><path d="M8 8 H52 Q55 8 54 12 L51 30 Q49 39 39 39 H22 Q12 39 10 30 Z"/><path d="M112 8 H68 Q65 8 66 12 L69 30 Q71 39 81 39 H98 Q108 39 110 30 Z"/><path d="M54 13 Q60 8 66 13"/><path d="M8 10 L2 8 M112 10 L118 8"/></g></svg>BLACK FRIDAY</p><!-- 11/4 FVと同じ白いメガネの線画 -->
+    <!-- 11/5 「BLACK FRIDAY」のマークは外した（Iさん） --><p class="cl-en" hidden><svg class="cl-gl" viewBox="0 0 120 44" aria-hidden="true"><g fill="none" stroke="#fff" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"><path d="M8 8 H52 Q55 8 54 12 L51 30 Q49 39 39 39 H22 Q12 39 10 30 Z"/><path d="M112 8 H68 Q65 8 66 12 L69 30 Q71 39 81 39 H98 Q108 39 110 30 Z"/><path d="M54 13 Q60 8 66 13"/><path d="M8 10 L2 8 M112 10 L118 8"/></g></svg>BLACK FRIDAY</p><!-- 11/4 FVと同じ白いメガネの線画 -->
     <h2 class="cl-copy">あなたに合うメガネを、<br>この機会に。</h2>
     <p class="cl-date">11/13<small class="dw">金</small>〜11/29<small class="dw">日</small></p>
     <!-- 11/4 価格のかたまり（.cl-sum）は外した：最終CTAなので期間とボタンだけ（Iさん「読みづらい・なくていい」） -->
     <a href="#shop-search" class="btn" data-cta-location="closing">近くのお店で予約する</a>
-    <p class="btn-sub">ご予約ならスムーズにご案内</p>
+    <!-- 11/5 ボタン下の「ご予約ならスムーズにご案内」は外した（Iさん） -->
   </section>
 
   <footer class="footer">
