@@ -2739,6 +2739,10 @@
   }
   /* 11/5 フッターも黒に（最終CTAから続けて・Iさん）。ロゴは白（濃い背景は白ロゴのルール） */
   footer.footer { background: #111; color: #aaa; }
+  /* 11/5 概要の日付：太すぎたので ExtraBold→Bold・少し小さく（曜日の丸はそのまま・Iさん） */
+  .ol-box .ol-big { font-weight: 700 !important; font-size: 21px !important; }
+  @media (max-width: 359px) { .ol-box .ol-big { font-size: 19px !important; } }
+  @media (min-width: 1024px) { .ol-box .ol-big { font-size: 24px !important; } }
   /* 11/5 最終CTAの紙ふぶき：FVと同じ動き。セクションの高さぶんだけ落ちる・下はグラデーションの黒にとけるようにうすく */
   section#closing > .fv-confetti.cl-fall { position: absolute !important; inset: 0; z-index: 1 !important; overflow: hidden; --fall: 620px; -webkit-mask-image: linear-gradient(#000 60%, transparent); mask-image: linear-gradient(#000 60%, transparent); }
   section#closing > .fv-confetti.cl-fall i { scale: 1.6; } /* 11/5 FVより背が低いぶん小さく見えるので1.6倍に（Iさん） */
