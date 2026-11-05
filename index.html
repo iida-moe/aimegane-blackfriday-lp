@@ -2748,7 +2748,7 @@
   @media (hover: hover) { .btn-arw:hover .arw { transform: translateX(4px) rotate(45deg) !important; } }
   .btn-arw { padding-left: 48px !important; padding-right: 48px !important; }
   @media (min-width: 1024px) { .fv .fv-cta .btn-arw { padding-left: 20px !important; padding-right: 44px !important; white-space: nowrap; } .fv .fv-cta .btn-arw .arw { width: 12px !important; height: 12px !important; margin-top: -7px !important; right: 30px !important; border-width: 3px !important; } }
-  @media (max-width: 359px) { .btn-arw { padding-left: 24px !important; padding-right: 40px !important; } .btn-arw .arw { right: 18px !important; } }
+  @media (max-width: 359px) { .btn-arw.btn-arw { padding-left: 32px !important; padding-right: 32px !important; } .btn-arw .arw { right: 18px !important; } }
   /* セクションのあいだをつめる（120/170px → 80/120px） */
   #otoku.sec, #pickup.sec, #hearing-aid.sec, #outline.sec { padding-top: 80px !important; padding-bottom: 80px !important; }
   section#reason.sec.sec { padding-top: 112px !important; padding-bottom: 80px !important; }
@@ -2802,8 +2802,8 @@
   @media (min-width: 1024px) { .exc-k-bf .bf1, .exc-k-bf .bf2 small { font-size: 16px !important; } }
 
   /* 11/4 ▶の丸つきボタン：文字は「丸を除いた部分」のまん中に（右の丸に寄って見えた・Iさん） */
-  .btn-arw { padding-left: 16px !important; padding-right: 64px !important; }
-  @media (min-width: 1024px) { .fv .fv-cta .btn-arw { padding-left: 16px !important; padding-right: calc(var(--fvw) * .038 * var(--fsc) + 24px) !important; } }
+  .btn-arw { padding-left: 48px !important; padding-right: 48px !important; } /* 11/5 黒丸の▶をやめたので左右同じに（文字とピンをまん中に） */
+  @media (min-width: 1024px) { .fv .fv-cta .btn-arw { padding-left: 40px !important; padding-right: 40px !important; } }
 
   /* 11/4 FV（真っ黒）→お得な内容（放射線）のさかい目がくっきり見える（Iさん）→上を黒からなめらかに */
   .otoku { background: linear-gradient(#000 0, rgba(0,0,0,0) 260px), radial-gradient(ellipse at 50% 30%, rgba(255,255,255,.07) 0%, rgba(0,0,0,0) 60%), repeating-conic-gradient(from 0deg at 50% 30%, #232323 0deg 5deg, #0e0e0e 5deg 10deg) !important; }
