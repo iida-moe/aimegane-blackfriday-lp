@@ -2722,6 +2722,7 @@
   section#reason .reasons .reason .rh-also .rz { position: relative; top: 1px; }
   section#reason .reasons .reason .rh-also .rz small { position: relative; top: -1px; }
   @media (min-width: 1024px) { section#reason .reasons .reason .rh-also .rz { top: 3px; } section#reason .reasons .reason .rh-also .rz small { top: -3px; } }
+  @media (max-width: 359px) { .st4 .st4-ex .st4-ex-all { font-size: 17px !important; letter-spacing: .04em !important; white-space: nowrap; } } /* 11/5 320pxで「この価／格！」と折れるので1行に */
   /* 11/5 スタッフの吹き出し：320pxの小さい画面だけ文字を小さく（3行に収める） */
   @media (max-width: 359px) { .mg-staff .mg-bub { font-size: 12px !important; letter-spacing: 0 !important; } }
   /* 11/5 概要の「対象」：対象のメガネ一式・補聴器を「アイメガネ各店」と同じ大きさ・太さに（サブテキストはそのまま・Iさん） */
@@ -2741,7 +2742,8 @@
   footer.footer { background: #111; color: #aaa; }
   /* 11/5 スマホの細かい直し（Iさん） */
   @media (max-width: 1023px) {
-    .st4 .st4-ex .st4-ex-all { margin-bottom: -22px !important; } /* 「すべてセットでこの価格！」とアイコンを近づける */
+    .st4 .st4-ex .st4-ex-all { margin-bottom: -14px !important; } /* 11/5 -22だと吹き出しにくっつくので -14（すき間12px） */
+    .st4 .st4-ex { padding-bottom: 26px !important; } /* 11/5 アイコン列の下に余裕（16→28px）。左右を広げると内訳の金額がはみ出すのでそのまま */ /* 「すべてセットでこの価格！」とアイコンを近づける */
     .st4 .st4-ex .st4-ex-col .exc-sum + .exc-list { margin-top: 26px !important; } /* 内訳の箱の三角が8,800にかぶらないように */
     #lensKey.lens-key { flex-direction: column; align-items: flex-start; width: fit-content; margin-left: auto; margin-right: auto; gap: 2px; } /* 説明の2行を左ぞろえ（かたまりは真ん中） */
     #lensKey.lens-key .lk-c { margin: 0 1px; }
