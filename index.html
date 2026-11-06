@@ -2791,6 +2791,7 @@
   section#reason .reasons .reason .lens-more .lens-hint { display: block !important; text-align: center; font-size: 15px; font-weight: 700; margin: 4px 0 14px; }
   @media (min-width: 1024px) {
     section#reason .reasons .reason:nth-child(1) .lens-body { grid-template-areas: "hint hint hint" "tabs tabs tabs" "fig fig side" !important; }
+    section#reason .reasons .reason:nth-child(1) .lens-figbox { margin-top: -26px; } /* 11/6 図の画像の上に余白があり、タブとの間が約90pxに見えるので約40pxに（Iさん） */
     section#reason .reasons .reason:nth-child(1) .lens-body > .lens-hint { display: flex !important; grid-area: hint !important; justify-self: center; font-size: 17px !important; margin: 0 !important; }
   }
   footer.footer { background: #111; color: #aaa; }
