@@ -2789,6 +2789,11 @@
     section#reason .reasons .reason:nth-child(1) .lens-figbox { margin-top: -26px; } /* 11/6 図の画像の上に余白があり、タブとの間が約90pxに見えるので約40pxに（Iさん） */
     section#reason .reasons .reason:nth-child(1) .lens-body > .lens-hint { display: flex !important; grid-area: hint !important; justify-self: center; font-size: 17px !important; margin: 0 !important; }
   }
+  /* 11/6 PC：店舗検索まわりのはばを店舗カード（1000px）にそろえる（Iさん） */
+  @media (min-width: 1024px) {
+    #shop-search .wait, #shop-search .shop-note, #shop-search .shop-search-box, #shop-search .shop-pref-tabs, #shop-search .shop-filter-accordion, #shop-search .shop-count { max-width: 1000px !important; }
+    #shop-search .shop-zip-input-lg { flex: 1.6; } /* 前3けた：後4けた の大きさの差をはっきり */
+  }
   footer.footer { background: #111; color: #aaa; }
   /* 11/5 スマホの細かい直し（Iさん） */
   @media (max-width: 1023px) {
