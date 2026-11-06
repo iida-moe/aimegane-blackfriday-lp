@@ -2411,6 +2411,10 @@
   /* 11/3 アシストの図は赤い点線の丸（手元サポート）→説明をタブで切りかえ。「これ1本で」は言葉の区切りで折る */
   .lk-r { width: 20px; height: 10px; border-radius: 50%; border: 2px dashed #D0453A; flex: none; }
   .lens-key .lk-rr { display: none; }
+  /* 11/6 説明の丸を図の色に合わせる（近々はピンクだけ・アシストは水色だけなのに黄色の丸だった・Iさん） */
+  .lens-key[data-lens="enkin"] .lk-c, .lens-key[data-lens="chukin"] .lk-c { background: linear-gradient(90deg, #F8EAA6 0 33%, #D6EBF7 33% 66%, #F7D3DF 66%); }
+  .lens-key[data-lens="kinkin"] .lk-c { background: #F7D3DF; }
+  .lens-key[data-lens="assist"] .lk-c { background: #D6EBF7; }
   .lens-key[data-lens="assist"] .lk-dd { display: none; }
   .lens-key[data-lens="assist"] .lk-rr { display: inline-flex; }
   .lens-for { word-break: auto-phrase; text-wrap: balance; }
