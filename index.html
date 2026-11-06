@@ -2803,6 +2803,15 @@
     #shop-search .shop-pref-tabs { margin-top: 30px !important; }
     #shop-search .shop-filter-accordion { margin-top: 16px !important; }
   }
+  /* 11/6 スマホ：理由01〜03の見出しを「アイコン上・文字も中央」に（番号と同じ軸にそろえる・Iさん A案。比較/スマホ_理由見出し_3案.png） */
+  @media (max-width: 1023px) {
+    section#reason.sec .reasons .reason .rh { flex-direction: column !important; align-items: center !important; text-align: center !important; gap: 10px !important; }
+    section#reason.sec .reasons .reason .rh .rh-ico { margin: 0 !important; align-self: center !important; }
+    section#reason.sec .reasons .reason .rh-txt, section#reason.sec .reasons .reason .rh h3, section#reason.sec .reasons .reason .rh p { text-align: center !important; }
+    section#reason.sec .reasons .reason .rh-also { justify-content: center !important; }
+    section#reason.sec .reasons .reason .rh .gino-q { margin-left: auto !important; margin-right: auto !important; }
+    section#reason.sec .reasons .reason .rh .rh-ico-lens { height: 50px !important; } /* メガネは横長なので、正方形の枠だと下に大きなすき間ができる */
+  }
   footer.footer { background: #111; color: #aaa; }
   /* 11/5 スマホの細かい直し（Iさん） */
   @media (max-width: 1023px) {
