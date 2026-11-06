@@ -2806,6 +2806,7 @@
   /* 11/6 スマホ：理由01〜03の見出しを「アイコン上・文字も中央」に（番号と同じ軸にそろえる・Iさん A案。比較/スマホ_理由見出し_3案.png） */
   @media (max-width: 1023px) {
     section#reason.sec .reasons .reason .rh { flex-direction: column !important; align-items: center !important; text-align: center !important; gap: 10px !important; }
+    section#reason.sec .reasons .reason + .reason { margin-top: 44px !important; } /* 11/6 カードのすき間16px→44px：番号の丸が上のカードに4px重なっていたので、丸の上に約24pxあける（Iさん） */
     section#reason.sec .reasons .reason .rh .rh-ico { margin: 0 !important; align-self: center !important; }
     section#reason.sec .reasons .reason .rh-txt, section#reason.sec .reasons .reason .rh h3, section#reason.sec .reasons .reason .rh p { text-align: center !important; }
     section#reason.sec .reasons .reason .rh-also { justify-content: center !important; }
