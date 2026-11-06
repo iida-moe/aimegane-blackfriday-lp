@@ -2786,6 +2786,13 @@
   .shop-walkin { font-size: 13px !important; color: var(--tx) !important; }
   @media (max-width: 359px) { .shop-menu-guide { padding: 10px; } .shop-menu-guide .smg-t { font-size: 12px; } .shop-menu-guide .smg-m { font-size: 11.5px; letter-spacing: -.01em; } }
   @media (min-width: 1024px) { .shop-menu-guide { max-width: 720px; margin-left: auto; margin-right: auto; text-align: center; } .shop-note .sn-main { font-size: 15px; } }
+  /* 11/6 レンズの選び方は開いたままにしたので、閉じるボタンをやめて「＼ あなたに合うレンズを見つけよう ／」の見出しに（Iさん） */
+  section#reason .reasons .reason .lens-more > summary { display: none !important; }
+  section#reason .reasons .reason .lens-more .lens-hint { display: block !important; text-align: center; font-size: 15px; font-weight: 700; margin: 4px 0 14px; }
+  @media (min-width: 1024px) {
+    section#reason .reasons .reason:nth-child(1) .lens-body { grid-template-areas: "hint hint hint" "tabs tabs tabs" "fig fig side" !important; }
+    section#reason .reasons .reason:nth-child(1) .lens-body > .lens-hint { display: flex !important; grid-area: hint !important; justify-self: center; font-size: 17px !important; margin: 0 !important; }
+  }
   footer.footer { background: #111; color: #aaa; }
   /* 11/5 スマホの細かい直し（Iさん） */
   @media (max-width: 1023px) {
