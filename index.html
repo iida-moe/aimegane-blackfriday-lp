@@ -2793,6 +2793,15 @@
   @media (min-width: 1024px) {
     #shop-search .wait, #shop-search .shop-note, #shop-search .shop-search-box, #shop-search .shop-pref-tabs, #shop-search .shop-filter-accordion, #shop-search .shop-count { max-width: 1000px !important; }
     #shop-search .shop-zip-input-lg { flex: 1.6; } /* 前3けた：後4けた の大きさの差をはっきり */
+    /* 11/6 横長すぎ・きゅうくつ（Iさん）→ 外わくは1000pxでそろえたまま、うすいグレーの面にして中の検索は560pxに・上下に余裕 */
+    #shop-search .shop-search-box { background: #f6f6f3; border-radius: 14px; padding: 40px 32px 36px; box-sizing: border-box; }
+    #shop-search .shop-search-box > * { max-width: 560px; margin-left: auto !important; margin-right: auto !important; }
+    #shop-search .shop-search-box .wait { margin-bottom: 22px !important; }
+    #shop-search .shop-search-box .shop-geo-btn { padding: 16px; }
+    #shop-search .shop-search-box .shop-divider { margin: 22px auto !important; }
+    #shop-search .shop-note { margin-top: 22px !important; }
+    #shop-search .shop-pref-tabs { margin-top: 30px !important; }
+    #shop-search .shop-filter-accordion { margin-top: 16px !important; }
   }
   footer.footer { background: #111; color: #aaa; }
   /* 11/5 スマホの細かい直し（Iさん） */
