@@ -2788,6 +2788,8 @@
   /* 11/6 レンズの選び方は開いたままにしたので、閉じるボタンをやめて「＼ あなたに合うレンズを見つけよう ／」の見出しに（Iさん） */
   section#reason .reasons .reason .lens-more > summary { display: none !important; }
   section#reason .reasons .reason .lens-more .lens-hint { display: block !important; text-align: center; font-size: 15px; font-weight: 700; margin: 4px 0 14px; }
+  /* 11/13 スマホ：＼／が文字にかぶっていたので少し離す（Iさん） */
+  @media (max-width: 1023px) { section#reason .reasons .reason .lens-more .lens-hint { display: flex !important; justify-content: center; gap: 10px; } }
   @media (min-width: 1024px) {
     section#reason .reasons .reason:nth-child(1) .lens-body { grid-template-areas: "hint hint hint" "tabs tabs tabs" "fig fig side" !important; }
     section#reason .reasons .reason:nth-child(1) .lens-figbox { margin-top: -26px; } /* 11/6 図の画像の上に余白があり、タブとの間が約90pxに見えるので約40pxに（Iさん） */
@@ -2856,7 +2858,7 @@
   @media (min-width: 1024px) { .ol-box .ol-big { font-size: 24px !important; } }
   /* 11/5 最終CTAの紙ふぶき：FVと同じ動き。セクションの高さぶんだけ落ちる・下はグラデーションの黒にとけるようにうすく */
   section#closing > .fv-confetti.cl-fall { position: absolute !important; inset: 0; z-index: 1 !important; overflow: hidden; --fall: 620px; -webkit-mask-image: linear-gradient(#000 60%, transparent); mask-image: linear-gradient(#000 60%, transparent); }
-  section#closing > .fv-confetti.cl-fall i { scale: 1.6; } /* 11/5 FVより背が低いぶん小さく見えるので1.6倍に（Iさん） */
+  /* 11/13 紙が大きすぎる→FVと同じ1倍に戻した（Iさん）。11/5は1.6倍だった */
   /* 11/5 最終CTAの下を黒にグラデーションでなじませて、フッターとのさかい目をなくす（Iさん） */
   section#closing.closing { background: linear-gradient(to bottom, rgba(17,17,17,0) 45%, #111 100%), radial-gradient(ellipse at 50% 30%, rgba(255,255,255,.07) 0%, rgba(0,0,0,0) 60%), repeating-conic-gradient(from 0deg at 50% 30%, #232323 0deg 5deg, #0e0e0e 5deg 10deg) !important; }
   footer.footer a { color: #ddd; }
