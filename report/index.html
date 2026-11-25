@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BF集客レポート</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1c1d21; --sub: #5f6168; --line: #e3e4e8; --bg: #f5f5f3; --card: #fff;
+    --accent: #f4e030; --dark: #16181d; --red: #c8102e;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: "Noto Sans JP", sans-serif; font-size: 15px; line-height: 1.7; font-variant-numeric: tabular-nums; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 16px 56px; }
+  header { background: var(--dark); color: #fff; padding: 28px 0 24px; margin-bottom: 24px; }
+  header .wrap { padding-bottom: 0; }
+  .eyebrow { display: inline-block; background: var(--accent); color: var(--dark); font-weight: 900; font-size: 12px; letter-spacing: .08em; padding: 2px 10px; border-radius: 3px; }
+  h1 { font-size: clamp(22px, 4vw, 30px); margin: 10px 0 4px; font-weight: 900; }
+  .meta { color: #c9cbd1; font-size: 13px; margin: 0; }
+  h2 { font-size: 18px; margin: 36px 0 4px; font-weight: 900; }
+  .lead { color: var(--sub); font-size: 13px; margin: 0 0 12px; }
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+  .tile { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; }
+  .tile small { display: block; color: var(--sub); font-size: 12px; }
+  .tile b { display: block; font-size: 24px; font-weight: 900; line-height: 1.3; margin-top: 2px; }
+  .tile span { display: block; color: var(--sub); font-size: 12px; }
+  .tablebox { background: var(--card); border: 1px solid var(--line); border-radius: 10px; overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; min-width: 640px; }
+  th, td { padding: 9px 12px; border-bottom: 1px solid var(--line); text-align: right; white-space: nowrap; font-size: 14px; }
+  th { background: #fafaf8; color: var(--sub); font-weight: 700; font-size: 12px; }
+  th:first-child, td:first-child { text-align: left; }
+  td.memo, th.memo { text-align: left; white-space: normal; min-width: 180px; color: var(--sub); font-size: 12px; }
+  tr.total td { font-weight: 900; background: #fffbd6; border-top: 2px solid var(--dark); }
+  tr.latest td { background: #fafaf8; }
+  td.na { color: #b3b5bb; }
+  .dow { color: var(--sub); font-size: 12px; margin-left: 2px; }
+  .sat { color: #2d5bd1; } .sun { color: var(--red); }
+  ul.notes { margin: 8px 0 0; padding-left: 1.2em; color: var(--sub); font-size: 13px; }
+  ul.notes li { margin-bottom: 4px; }
+  .err { background: #fff; border: 1px solid var(--red); color: var(--red); padding: 12px 16px; border-radius: 8px; }
+  /* パスワード */
+  .gate { position: fixed; inset: 0; z-index: 99; background: var(--dark); display: flex; align-items: center; justify-content: center; padding: 16px; }
+  .gate form { background: #fff; border: 2px solid var(--accent); border-radius: 12px; padding: 28px 24px; width: 100%; max-width: 320px; text-align: center; }
+  .gate p { margin: 0 0 12px; font-size: 14px; color: var(--sub); }
+  .gate p.t { font-weight: 900; font-size: 17px; color: var(--ink); margin-bottom: 6px; }
+  .gate input { width: 100%; font-size: 16px; padding: 10px 12px; border: 1px solid #ccc; border-radius: 8px; margin-bottom: 12px; }
+  .gate button { width: 100%; font-size: 15px; font-weight: 700; background: var(--accent); border: 0; border-radius: 8px; padding: 10px; cursor: pointer; }
+  .gate .e { color: var(--red); font-size: 13px; margin: 10px 0 0; display: none; }
+  body.locked main, body.locked header { display: none; }
+</style>
+</head>
+<body class="locked">
+<div class="gate" id="gate">
+  <form id="gateForm">
+    <p class="t">社内共有用レポート</p>
+    <p>パスワードを入力してください</p>
+    <input type="password" id="gateInput" autocomplete="off">
+    <button type="submit">開く</button>
+    <p class="e" id="gateErr">パスワードが違います</p>
+  </form>
+</div>
+
+<header>
+  <div class="wrap">
+    <span class="eyebrow">BLACK FRIDAY 2026</span>
+    <h1>ブラックフライデー 集客レポート</h1>
+    <p class="meta" id="meta"></p>
+  </div>
+</header>
+
+<main class="wrap" id="app"></main>
+
+<script>
+(function () {
+  var PASSWORD = 'BF2026', KEY = 'bfreport_unlocked';
+  var gate = document.getElementById('gate');
+  function unlock() { document.body.classList.remove('locked'); gate.style.display = 'none'; }
+  try { if (sessionStorage.getItem(KEY) === 'true') unlock(); } catch (e) {}
+  document.getElementById('gateForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var input = document.getElementById('gateInput');
+    if (input.value === PASSWORD) { try { sessionStorage.setItem(KEY, 'true'); } catch (e) {} unlock(); }
+    else { document.getElementById('gateErr').style.display = 'block'; input.value = ''; input.focus(); }
+  });
+})();
+
+function yen(n) { return n == null ? '—' : n.toLocaleString('ja-JP') + '円'; }
+function num(n, u) { return n == null ? '—' : n.toLocaleString('ja-JP') + (u || ''); }
+function el(tag, attrs, text) {
+  var e = document.createElement(tag);
+  if (attrs) Object.keys(attrs).forEach(function (k) { e.setAttribute(k, attrs[k]); });
+  if (text != null) e.textContent = text;
+  return e;
+}
+function table(headers, rows, opts) {
+  var box = el('div', { class: 'tablebox' }), t = el('table'), thead = el('thead'), tr = el('tr');
+  headers.forEach(function (h) { tr.appendChild(el('th', h.cls ? { class: h.cls } : null, h.label)); });
+  thead.appendChild(tr); t.appendChild(thead);
+  var tb = el('tbody');
+  rows.forEach(function (r) {
+    var row = el('tr', r.cls ? { class: r.cls } : null);
+    r.cells.forEach(function (c) {
+      var td = el('td', c.cls ? { class: c.cls } : null);
+      if (c.node) td.appendChild(c.node); else td.textContent = c.text;
+      row.appendChild(td);
+    });
+    tb.appendChild(row);
+  });
+  t.appendChild(tb); box.appendChild(t); return box;
+}
+
+fetch('data.json?v=' + Date.now()).then(function (r) { return r.json(); }).then(function (d) {
+  var app = document.getElementById('app'), T = d.totals;
+  document.getElementById('meta').textContent = '期間 ' + d.period + '　｜　' + d.through + 'までの数字（' + d.updated + ' 更新）';
+
+  // 合計
+  app.appendChild(el('h2', null, 'スタートからの合計（11/13〜' + d.through + '）'));
+  app.appendChild(el('p', { class: 'lead' }, '広告費は各広告の管理画面、人数はGA4、クーポンはデータライザーの数字です。'));
+  var tiles = el('div', { class: 'tiles' });
+  [
+    ['広告費', yen(T.spend), '上限' + yen(d.budget_limit) + 'の' + Math.round(T.spend / d.budget_limit * 100) + '%'],
+    ['LPに来た人', num(T.lp, '人'), ''],
+    ['予約フォームまで', num(T.form, '人'), 'LPの' + (T.form / T.lp * 100).toFixed(2) + '%'],
+    ['予約完了', num(T.done, '件'), 'LPから予約した人'],
+    ['BFクーポン利用', num(T.coupon_slips, '伝票'), yen(T.coupon_sales) + '（税抜）']
+  ].forEach(function (x) {
+    var t = el('div', { class: 'tile' });
+    t.appendChild(el('small', null, x[0])); t.appendChild(el('b', null, x[1])); if (x[2]) t.appendChild(el('span', null, x[2]));
+    tiles.appendChild(t);
+  });
+  app.appendChild(tiles);
+
+  // 日ごと
+  app.appendChild(el('h2', null, '日ごとの記録'));
+  app.appendChild(el('p', { class: 'lead' }, '毎朝、前の日の分を1行ずつ足していきます。前の日の行は書きかえません。'));
+  var rows = d.daily.map(function (r, i) {
+    var dateNode = el('span');
+    dateNode.appendChild(document.createTextNode(r.date));
+    var dw = el('span', { class: 'dow' + (r.dow === '土' ? ' sat' : r.dow === '日' ? ' sun' : '') }, '(' + r.dow + ')');
+    dateNode.appendChild(dw);
+    return { cls: i === d.daily.length - 1 ? 'latest' : '', cells: [
+      { node: dateNode },
+      { text: yen(r.spend), cls: r.spend == null ? 'na' : '' },
+      { text: num(r.lp, '人') }, { text: num(r.form, '人') }, { text: num(r.done, '件') },
+      { text: num(r.coupon_slips, '伝票') }, { text: yen(r.coupon_sales) },
+      { text: r.memo || '', cls: 'memo' }
+    ] };
+  });
+  rows.push({ cls: 'total', cells: [
+    { text: '合計' }, { text: yen(T.spend) }, { text: num(T.lp, '人') }, { text: num(T.form, '人') },
+    { text: num(T.done, '件') }, { text: num(T.coupon_slips, '伝票') }, { text: yen(T.coupon_sales) }, { text: '', cls: 'memo' }
+  ] });
+  app.appendChild(table([
+    { label: '日付' }, { label: '広告費' }, { label: 'LPに来た人' }, { label: '予約フォーム' },
+    { label: '予約完了' }, { label: 'クーポン' }, { label: 'クーポン売上（税抜）' }, { label: 'できごと', cls: 'memo' }
+  ], rows));
+  var n1 = el('ul', { class: 'notes' });
+  ['広告費の日ごとの数字は、各管理画面の日別データを入れたら表示されます（今は合計のみ）。',
+   '人数の合計は、同じ人を1回だけ数えるので、日ごとの人数を足した数より少なくなります。',
+   'クーポンは取り消した伝票を除いています。'].forEach(function (s) { n1.appendChild(el('li', null, s)); });
+  app.appendChild(n1);
+
+  // 媒体ごと
+  app.appendChild(el('h2', null, '広告ごとの合計（11/13〜' + d.through + '）'));
+  app.appendChild(el('p', { class: 'lead' }, '予約フォーム1人あたり＝広告費÷予約フォームの人数'));
+  app.appendChild(table([
+    { label: '広告' }, { label: '広告費' }, { label: 'クリック' }, { label: 'LPに来た人' },
+    { label: '予約フォーム' }, { label: '予約完了' }, { label: 'フォーム1人あたり' }, { label: 'メモ', cls: 'memo' }
+  ], d.channels.map(function (c) {
+    return { cells: [
+      { text: c.name }, { text: yen(c.spend) }, { text: num(c.clicks, '回') }, { text: num(c.lp, '人') },
+      { text: num(c.form, '人') }, { text: num(c.done, '件') },
+      { text: c.form ? yen(Math.round(c.spend / c.form)) : '—', cls: c.form ? '' : 'na' },
+      { text: c.note || '', cls: 'memo' }
+    ] };
+  })));
+
+  // 予約
+  app.appendChild(el('h2', null, 'LPから予約した人'));
+  app.appendChild(el('p', { class: 'lead' }, '予約した日と来店する日はちがいます。来店後にデータライザーで購入内容を確認します。'));
+  app.appendChild(table([
+    { label: '' }, { label: '入口', cls: 'memo' }, { label: '予約した日' }, { label: 'お店' }, { label: 'その後', cls: 'memo' }
+  ], d.bookings.map(function (b) {
+    return { cells: [ { text: b.no + '人目' }, { text: b.channel, cls: 'memo' }, { text: b.booked }, { text: b.store }, { text: b.status, cls: 'memo' } ] };
+  })));
+}).catch(function () {
+  var e = el('p', { class: 'err' }, 'データを読み込めませんでした。少し時間をおいて、ページを再読み込みしてください。');
+  document.getElementById('app').appendChild(e);
+});
+</script>
+</body>
+</html>

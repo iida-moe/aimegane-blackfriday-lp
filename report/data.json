@@ -1,0 +1,40 @@
+{
+  "updated": "2026-11-25",
+  "through": "11/24",
+  "period": "11/13(金)〜11/29(日)",
+  "budget_limit": 500000,
+  "totals": {
+    "spend": 329708,
+    "lp": 10810,
+    "form": 66,
+    "done": 3,
+    "coupon_slips": 176,
+    "coupon_sales": 4819226
+  },
+  "daily": [
+    {"date": "11/13", "dow": "金", "spend": null, "lp": 1201, "form": 6, "done": 0, "coupon_slips": 8,  "coupon_sales": 330550, "memo": "開始"},
+    {"date": "11/14", "dow": "土", "spend": null, "lp": 1238, "form": 5, "done": 0, "coupon_slips": 17, "coupon_sales": 422155, "memo": ""},
+    {"date": "11/15", "dow": "日", "spend": null, "lp": 1321, "form": 3, "done": 1, "coupon_slips": 24, "coupon_sales": 394310, "memo": ""},
+    {"date": "11/16", "dow": "月", "spend": null, "lp": 1424, "form": 6, "done": 0, "coupon_slips": 6,  "coupon_sales": 102700, "memo": ""},
+    {"date": "11/17", "dow": "火", "spend": null, "lp": 1644, "form": 6, "done": 0, "coupon_slips": 10, "coupon_sales": 157550, "memo": ""},
+    {"date": "11/18", "dow": "水", "spend": null, "lp": 1135, "form": 2, "done": 0, "coupon_slips": 12, "coupon_sales": 287700, "memo": "Yahoo!ディスプレイ停止・予算組みかえ"},
+    {"date": "11/19", "dow": "木", "spend": null, "lp": 541,  "form": 5, "done": 0, "coupon_slips": 10, "coupon_sales": 258350, "memo": ""},
+    {"date": "11/20", "dow": "金", "spend": null, "lp": 947,  "form": 7, "done": 0, "coupon_slips": 18, "coupon_sales": 872850, "memo": "メタをA・B同額に"},
+    {"date": "11/21", "dow": "土", "spend": null, "lp": 463,  "form": 7, "done": 1, "coupon_slips": 19, "coupon_sales": 522065, "memo": ""},
+    {"date": "11/22", "dow": "日", "spend": null, "lp": 468,  "form": 7, "done": 0, "coupon_slips": 17, "coupon_sales": 660376, "memo": ""},
+    {"date": "11/23", "dow": "月", "spend": null, "lp": 435,  "form": 1, "done": 0, "coupon_slips": 22, "coupon_sales": 580520, "memo": "メタを8,800円の画像1本に・Yahoo!検索キーワード追加"},
+    {"date": "11/24", "dow": "火", "spend": null, "lp": 486,  "form": 6, "done": 1, "coupon_slips": 13, "coupon_sales": 230100, "memo": "Yahoo!検索から予約1件"}
+  ],
+  "channels": [
+    {"name": "メタ（Instagram広告）", "spend": 131263, "clicks": 3061, "lp": 2466, "form": 26, "done": 0, "note": "A（8,800円の画像）とB（10%OFF）の合計・11/25朝まで"},
+    {"name": "P-MAX（Google）", "spend": 81248, "clicks": 7509, "lp": 2851, "form": 11, "done": 1, "note": ""},
+    {"name": "Google検索（BF広告）", "spend": 78941, "clicks": 625, "lp": 104, "form": 5, "done": 0, "note": ""},
+    {"name": "Yahoo!検索", "spend": 24844, "clicks": 278, "lp": 226, "form": 7, "done": 1, "note": "11/25に「メガネ 店」を停止"},
+    {"name": "Yahoo!ディスプレイ", "spend": 13412, "clicks": 5503, "lp": 4892, "form": 0, "done": 0, "note": "11/18に停止"}
+  ],
+  "bookings": [
+    {"no": 1, "channel": "P-MAX（Google）", "booked": "11/15", "store": "小川大塚店", "status": "11/22来店・購入済み（BFクーポンは使わず）"},
+    {"no": 2, "channel": "不明（Googleの広告が複数）", "booked": "11/21", "store": "確認中", "status": "確認中"},
+    {"no": 3, "channel": "Yahoo!検索", "booked": "11/24 16:12", "store": "エキア谷塚店", "status": "11/27 18時 来店予定"}
+  ]
+}
