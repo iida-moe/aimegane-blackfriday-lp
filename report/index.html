@@ -29,9 +29,12 @@
   .tile span { display: block; color: var(--sub); font-size: 12px; }
   .tablebox { background: var(--card); border: 1px solid var(--line); border-radius: 10px; overflow-x: auto; }
   table { width: 100%; border-collapse: collapse; min-width: 640px; }
-  .tablebox table td:first-child, .tablebox table th:first-child { position: sticky; left: 0; background: inherit; }
+  .tablebox { max-height: 80vh; overflow: auto; }
+  .tablebox table td:first-child, .tablebox table th:first-child { position: sticky; left: 0; background: inherit; z-index: 1; }
   tbody tr { background: var(--card); }
-  .tablebox table th:first-child { background: #fafaf8; z-index: 1; }
+  .tablebox thead th { position: sticky; top: 0; z-index: 2; box-shadow: 0 1px 0 var(--line); vertical-align: bottom; }
+  .tablebox table thead th:first-child { background: #fafaf8; z-index: 3; }
+  th .sub { display: block; font-weight: 500; font-size: 11px; color: var(--sub); }
   th, td { padding: 9px 12px; border-bottom: 1px solid var(--line); text-align: right; white-space: nowrap; font-size: 14px; }
   th { background: #fafaf8; color: var(--sub); font-weight: 700; font-size: 12px; }
   th:first-child, td:first-child { text-align: left; }
@@ -100,7 +103,11 @@ function el(tag, attrs, text) {
 }
 function table(headers, rows, opts) {
   var box = el('div', { class: 'tablebox' }), t = el('table'), thead = el('thead'), tr = el('tr');
-  headers.forEach(function (h) { tr.appendChild(el('th', h.cls ? { class: h.cls } : null, h.label)); });
+  headers.forEach(function (h) {
+    var th = el('th', h.cls ? { class: h.cls } : null, h.label);
+    if (h.sub) th.appendChild(el('span', { class: 'sub' }, h.sub));
+    tr.appendChild(th);
+  });
   thead.appendChild(tr); t.appendChild(thead);
   var tb = el('tbody');
   rows.forEach(function (r) {
@@ -165,8 +172,10 @@ fetch('data.json?v=' + Date.now()).then(function (r) { return r.json(); }).then(
   totalCells.push({ text: num(T.lp, '人') }, { text: num(T.form, '人') }, { text: num(T.done, '件') },
     { text: num(T.coupon_slips, '伝票') }, { text: yen(T.coupon_sales) }, { text: '', cls: 'memo' });
   rows.push({ cls: 'total', cells: totalCells });
-  var heads = [{ label: '日付' }, { label: '広告費（合計）' }];
-  AD_LABELS.forEach(function (l) { heads.push({ label: l }); });
+  var chPlan = {}, planSum = 0;
+  d.channels.forEach(function (c) { chPlan[c.key] = c.plan_daily; planSum += c.plan_daily; });
+  var heads = [{ label: '日付' }, { label: '広告費（合計）', sub: '当初 1日' + yen(planSum) }];
+  AD_LABELS.forEach(function (l, i) { heads.push({ label: l, sub: '当初 1日' + yen(chPlan[AD_KEYS[i]]) }); });
   heads.push({ label: 'LPに来た人' }, { label: '予約フォーム' }, { label: '予約完了' },
     { label: 'クーポン' }, { label: 'クーポン売上（税抜）' }, { label: 'できごと', cls: 'memo' });
   app.appendChild(table(heads, rows));
@@ -182,11 +191,13 @@ fetch('data.json?v=' + Date.now()).then(function (r) { return r.json(); }).then(
   app.appendChild(el('h2', null, '広告ごとの合計（11/13〜' + d.through + '）'));
   app.appendChild(el('p', { class: 'lead' }, '予約フォーム1人あたり＝広告費÷予約フォームの人数'));
   app.appendChild(table([
-    { label: '広告' }, { label: '広告費' }, { label: 'クリック' }, { label: 'LPに来た人' },
+    { label: '広告' }, { label: '当初の予算', sub: '1日の予算×' + d.days + '日' }, { label: '今の予算', sub: '組みかえ後' },
+    { label: '広告費' }, { label: 'クリック' }, { label: 'LPに来た人' },
     { label: '予約フォーム' }, { label: '予約完了' }, { label: 'フォーム1人あたり' }, { label: 'メモ', cls: 'memo' }
   ], d.channels.map(function (c) {
     return { cells: [
-      { text: c.name }, { text: yen(c.spend) }, { text: num(c.clicks, '回') }, { text: num(c.lp, '人') },
+      { text: c.name }, { text: yen(c.plan_total) }, { text: yen(c.budget_now) },
+      { text: yen(c.spend) }, { text: num(c.clicks, '回') }, { text: num(c.lp, '人') },
       { text: num(c.form, '人') }, { text: num(c.done, '件') },
       { text: c.form ? yen(Math.round(c.spend / c.form)) : '—', cls: c.form ? '' : 'na' },
       { text: c.note || '', cls: 'memo' }

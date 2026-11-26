@@ -243,7 +243,10 @@
       "form": 28,
       "done": 0,
       "note": "A（8,800円の画像）とB（10%OFF）の合計",
-      "key": "meta"
+      "key": "meta",
+      "plan_daily": 10000,
+      "plan_total": 170000,
+      "budget_now": 170423
     },
     {
       "name": "P-MAX（Google）",
@@ -253,7 +256,10 @@
       "form": 11,
       "done": 1,
       "note": "",
-      "key": "pmax"
+      "key": "pmax",
+      "plan_daily": 5500,
+      "plan_total": 93500,
+      "budget_now": 117500
     },
     {
       "name": "Google検索（BF広告）",
@@ -263,7 +269,10 @@
       "form": 5,
       "done": 0,
       "note": "",
-      "key": "gsearch"
+      "key": "gsearch",
+      "plan_daily": 5500,
+      "plan_total": 93500,
+      "budget_now": 124364
     },
     {
       "name": "Yahoo!検索",
@@ -273,7 +282,10 @@
       "form": 10,
       "done": 1,
       "note": "11/25に「メガネ 店」を停止",
-      "key": "ysearch"
+      "key": "ysearch",
+      "plan_daily": 3500,
+      "plan_total": 59500,
+      "budget_now": 59500
     },
     {
       "name": "Yahoo!ディスプレイ",
@@ -283,7 +295,10 @@
       "form": 0,
       "done": 0,
       "note": "11/18に停止",
-      "key": "ydisp"
+      "key": "ydisp",
+      "plan_daily": 2000,
+      "plan_total": 34000,
+      "budget_now": 13412
     }
   ],
   "bookings": [
@@ -308,5 +323,6 @@
       "store": "エキア谷塚店",
       "status": "11/27 18時 来店予定"
     }
-  ]
+  ],
+  "days": 17
 }
