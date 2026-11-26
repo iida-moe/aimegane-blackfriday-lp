@@ -4,7 +4,7 @@
   "period": "11/13(金)〜11/29(日)",
   "budget_limit": 500000,
   "totals": {
-    "spend": 355823,
+    "spend": 355819,
     "lp": 11176,
     "form": 74,
     "done": 3,
@@ -250,7 +250,7 @@
     },
     {
       "name": "P-MAX（Google）",
-      "spend": 89308,
+      "spend": 89304,
       "clicks": 7981,
       "lp": 3033,
       "form": 11,
