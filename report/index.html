@@ -29,6 +29,9 @@
   .tile span { display: block; color: var(--sub); font-size: 12px; }
   .tablebox { background: var(--card); border: 1px solid var(--line); border-radius: 10px; overflow-x: auto; }
   table { width: 100%; border-collapse: collapse; min-width: 640px; }
+  .tablebox table td:first-child, .tablebox table th:first-child { position: sticky; left: 0; background: inherit; }
+  tbody tr { background: var(--card); }
+  .tablebox table th:first-child { background: #fafaf8; z-index: 1; }
   th, td { padding: 9px 12px; border-bottom: 1px solid var(--line); text-align: right; white-space: nowrap; font-size: 14px; }
   th { background: #fafaf8; color: var(--sub); font-weight: 700; font-size: 12px; }
   th:first-child, td:first-child { text-align: left; }
@@ -136,29 +139,41 @@ fetch('data.json?v=' + Date.now()).then(function (r) { return r.json(); }).then(
   // 日ごと
   app.appendChild(el('h2', null, '日ごとの記録'));
   app.appendChild(el('p', { class: 'lead' }, '毎朝、前の日の分を1行ずつ足していきます。前の日の行は書きかえません。'));
+  var AD_KEYS = ['meta', 'pmax', 'gsearch', 'ysearch', 'ydisp'];
+  var AD_LABELS = ['メタ', 'P-MAX', 'Google検索', 'Yahoo!検索', 'Yahoo!ディスプレイ'];
+  function sumAds(a) {
+    var s = 0;
+    for (var i = 0; i < AD_KEYS.length; i++) { if (a[AD_KEYS[i]] == null) return null; s += a[AD_KEYS[i]]; }
+    return s;
+  }
+  function adCell(v) { return { text: yen(v), cls: v == null ? 'na' : '' }; }
   var rows = d.daily.map(function (r, i) {
     var dateNode = el('span');
     dateNode.appendChild(document.createTextNode(r.date));
     var dw = el('span', { class: 'dow' + (r.dow === '土' ? ' sat' : r.dow === '日' ? ' sun' : '') }, '(' + r.dow + ')');
     dateNode.appendChild(dw);
-    return { cls: i === d.daily.length - 1 ? 'latest' : '', cells: [
-      { node: dateNode },
-      { text: yen(r.spend), cls: r.spend == null ? 'na' : '' },
-      { text: num(r.lp, '人') }, { text: num(r.form, '人') }, { text: num(r.done, '件') },
-      { text: num(r.coupon_slips, '伝票') }, { text: yen(r.coupon_sales) },
-      { text: r.memo || '', cls: 'memo' }
-    ] };
+    var cells = [{ node: dateNode }, adCell(sumAds(r.ads))];
+    AD_KEYS.forEach(function (k) { cells.push(adCell(r.ads[k])); });
+    cells.push({ text: num(r.lp, '人') }, { text: num(r.form, '人') }, { text: num(r.done, '件') },
+      { text: num(r.coupon_slips, '伝票') }, { text: yen(r.coupon_sales) }, { text: r.memo || '', cls: 'memo' });
+    return { cls: i === d.daily.length - 1 ? 'latest' : '', cells: cells };
   });
-  rows.push({ cls: 'total', cells: [
-    { text: '合計' }, { text: yen(T.spend) }, { text: num(T.lp, '人') }, { text: num(T.form, '人') },
-    { text: num(T.done, '件') }, { text: num(T.coupon_slips, '伝票') }, { text: yen(T.coupon_sales) }, { text: '', cls: 'memo' }
-  ] });
-  app.appendChild(table([
-    { label: '日付' }, { label: '広告費' }, { label: 'LPに来た人' }, { label: '予約フォーム' },
-    { label: '予約完了' }, { label: 'クーポン' }, { label: 'クーポン売上（税抜）' }, { label: 'できごと', cls: 'memo' }
-  ], rows));
+  var chSpend = {};
+  d.channels.forEach(function (c) { chSpend[c.key] = c.spend; });
+  var totalCells = [{ text: '合計' }, { text: yen(T.spend) }];
+  AD_KEYS.forEach(function (k) { totalCells.push({ text: yen(chSpend[k]) }); });
+  totalCells.push({ text: num(T.lp, '人') }, { text: num(T.form, '人') }, { text: num(T.done, '件') },
+    { text: num(T.coupon_slips, '伝票') }, { text: yen(T.coupon_sales) }, { text: '', cls: 'memo' });
+  rows.push({ cls: 'total', cells: totalCells });
+  var heads = [{ label: '日付' }, { label: '広告費（合計）' }];
+  AD_LABELS.forEach(function (l) { heads.push({ label: l }); });
+  heads.push({ label: 'LPに来た人' }, { label: '予約フォーム' }, { label: '予約完了' },
+    { label: 'クーポン' }, { label: 'クーポン売上（税抜）' }, { label: 'できごと', cls: 'memo' });
+  app.appendChild(table(heads, rows));
   var n1 = el('ul', { class: 'notes' });
-  ['広告費の日ごとの数字は、各管理画面の日別データを入れたら表示されます（今は合計のみ）。',
+  ['広告費はその日に使った分です。いちばん下の合計は、スタートからの合計（各管理画面の数字）です。',
+   '「—」はまだ日別の数字を入れていないところです。1日分でも「—」があると、その日の合計も「—」になります。',
+   'Googleの日ごとの広告費はGA4経由の数字なので、管理画面と数円ずれることがあります。',
    '人数の合計は、同じ人を1回だけ数えるので、日ごとの人数を足した数より少なくなります。',
    'クーポンは取り消した伝票を除いています。'].forEach(function (s) { n1.appendChild(el('li', null, s)); });
   app.appendChild(n1);
