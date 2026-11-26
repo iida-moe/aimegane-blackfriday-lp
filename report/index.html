@@ -41,27 +41,9 @@
   ul.notes { margin: 8px 0 0; padding-left: 1.2em; color: var(--sub); font-size: 13px; }
   ul.notes li { margin-bottom: 4px; }
   .err { background: #fff; border: 1px solid var(--red); color: var(--red); padding: 12px 16px; border-radius: 8px; }
-  /* パスワード */
-  .gate { position: fixed; inset: 0; z-index: 99; background: var(--dark); display: flex; align-items: center; justify-content: center; padding: 16px; }
-  .gate form { background: #fff; border: 2px solid var(--accent); border-radius: 12px; padding: 28px 24px; width: 100%; max-width: 320px; text-align: center; }
-  .gate p { margin: 0 0 12px; font-size: 14px; color: var(--sub); }
-  .gate p.t { font-weight: 900; font-size: 17px; color: var(--ink); margin-bottom: 6px; }
-  .gate input { width: 100%; font-size: 16px; padding: 10px 12px; border: 1px solid #ccc; border-radius: 8px; margin-bottom: 12px; }
-  .gate button { width: 100%; font-size: 15px; font-weight: 700; background: var(--accent); border: 0; border-radius: 8px; padding: 10px; cursor: pointer; }
-  .gate .e { color: var(--red); font-size: 13px; margin: 10px 0 0; display: none; }
-  body.locked main, body.locked header { display: none; }
 </style>
 </head>
-<body class="locked">
-<div class="gate" id="gate">
-  <form id="gateForm">
-    <p class="t">社内共有用レポート</p>
-    <p>パスワードを入力してください</p>
-    <input type="password" id="gateInput" autocomplete="off">
-    <button type="submit">開く</button>
-    <p class="e" id="gateErr">パスワードが違います</p>
-  </form>
-</div>
+<body>
 
 <header>
   <div class="wrap">
@@ -74,19 +56,6 @@
 <main class="wrap" id="app"></main>
 
 <script>
-(function () {
-  var PASSWORD = 'BF2026', KEY = 'bfreport_unlocked';
-  var gate = document.getElementById('gate');
-  function unlock() { document.body.classList.remove('locked'); gate.style.display = 'none'; }
-  try { if (sessionStorage.getItem(KEY) === 'true') unlock(); } catch (e) {}
-  document.getElementById('gateForm').addEventListener('submit', function (e) {
-    e.preventDefault();
-    var input = document.getElementById('gateInput');
-    if (input.value === PASSWORD) { try { sessionStorage.setItem(KEY, 'true'); } catch (e) {} unlock(); }
-    else { document.getElementById('gateErr').style.display = 'block'; input.value = ''; input.focus(); }
-  });
-})();
-
 function yen(n) { return n == null ? '—' : n.toLocaleString('ja-JP') + '円'; }
 function num(n, u) { return n == null ? '—' : n.toLocaleString('ja-JP') + (u || ''); }
 function el(tag, attrs, text) {
