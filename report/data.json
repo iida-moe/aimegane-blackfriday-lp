@@ -740,5 +740,11 @@
       "status": "11/27 18時 来店予定"
     }
   ],
-  "days": 17
+  "days": 17,
+  "free_total": {
+    "lp": 219,
+    "form": 21,
+    "done": 0,
+    "note": "自然検索（Google・Yahoo!・Bing）・Googleマップ・LINE・メルマガ・ほかのサイト・直接"
+  }
 }

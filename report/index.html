@@ -39,6 +39,7 @@
   .tabs button[aria-selected="true"] { background: var(--dark); border-color: var(--dark); color: #fff; }
   .tabs button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   td.done { font-weight: 900; color: var(--red); }
+  tr.sub td { font-weight: 700; background: #fafaf8; }
   th .sub { display: block; font-weight: 500; font-size: 11px; color: var(--sub); }
   th, td { padding: 9px 12px; border-bottom: 1px solid var(--line); text-align: right; white-space: nowrap; font-size: 14px; }
   th { background: #fafaf8; color: var(--sub); font-weight: 700; font-size: 12px; }
@@ -249,13 +250,9 @@ fetch('data.json?v=' + Date.now()).then(function (r) { return r.json(); }).then(
   showTab(TABS.some(function (t) { return t[0] === savedTab; }) ? savedTab : 'all');
 
   // 媒体ごと
-  app.appendChild(el('h2', null, '広告ごとの合計（11/13〜' + d.through + '）'));
+  app.appendChild(el('h2', null, '入口ごとの合計（11/13〜' + d.through + '）'));
   app.appendChild(el('p', { class: 'lead' }, '予約フォーム1人あたり＝広告費÷予約フォームの人数'));
-  app.appendChild(table([
-    { label: '広告' }, { label: '当初の予算', sub: '1日の予算×' + d.days + '日' }, { label: '今の予算', sub: '組みかえ後' },
-    { label: '広告費' }, { label: 'クリック' }, { label: 'LPに来た人' },
-    { label: '予約フォーム' }, { label: '予約完了' }, { label: 'フォーム1人あたり' }, { label: 'メモ', cls: 'memo' }
-  ], d.channels.map(function (c) {
+  var cRows = d.channels.map(function (c) {
     return { cells: [
       { text: c.name }, { text: yen(c.plan_total) }, { text: yen(c.budget_now) },
       { text: yen(c.spend) }, { text: num(c.clicks, '回') }, { text: num(c.lp, '人') },
@@ -263,7 +260,30 @@ fetch('data.json?v=' + Date.now()).then(function (r) { return r.json(); }).then(
       { text: c.form ? yen(Math.round(c.spend / c.form)) : '—', cls: c.form ? '' : 'na' },
       { text: c.note || '', cls: 'memo' }
     ] };
-  })));
+  });
+  var ad = { lp: 0, form: 0, done: 0, clicks: 0, plan: 0, now: 0 };
+  d.channels.forEach(function (c) { ad.lp += c.lp; ad.form += c.form; ad.done += c.done; ad.clicks += c.clicks; ad.plan += c.plan_total; ad.now += c.budget_now; });
+  cRows.push({ cls: 'sub', cells: [
+    { text: '広告の合計' }, { text: yen(ad.plan) }, { text: yen(ad.now) }, { text: yen(T.spend) }, { text: num(ad.clicks, '回') },
+    { text: num(ad.lp, '人') }, { text: num(ad.form, '人') }, { text: num(ad.done, '件') },
+    { text: yen(Math.round(T.spend / ad.form)) }, { text: '', cls: 'memo' }
+  ] });
+  var F = d.free_total;
+  if (F) cRows.push({ cells: [
+    { text: '広告以外' }, { text: '—', cls: 'na' }, { text: '—', cls: 'na' }, { text: '0円' }, { text: '—', cls: 'na' },
+    { text: num(F.lp, '人') }, { text: num(F.form, '人') }, { text: num(F.done, '件') }, { text: '—', cls: 'na' },
+    { text: F.note, cls: 'memo' }
+  ] });
+  cRows.push({ cls: 'total', cells: [
+    { text: '全体' }, { text: '' }, { text: '' }, { text: yen(T.spend) }, { text: '' },
+    { text: num(T.lp, '人') }, { text: num(T.form, '人') }, { text: num(T.done, '件') }, { text: '' },
+    { text: '同じ人が広告と広告以外の両方から来ることがあるので、上の行を足した数と少しずれます。予約完了のうち1件（11/21）は入口を1つに決められません', cls: 'memo' }
+  ] });
+  app.appendChild(table([
+    { label: '入口' }, { label: '当初の予算', sub: '1日の予算×' + d.days + '日' }, { label: '今の予算', sub: '組みかえ後' },
+    { label: '広告費' }, { label: 'クリック' }, { label: 'LPに来た人' },
+    { label: '予約フォーム' }, { label: '予約完了' }, { label: 'フォーム1人あたり' }, { label: 'メモ', cls: 'memo' }
+  ], cRows));
 
   // 予約
   app.appendChild(el('h2', null, 'LPから予約した人'));
