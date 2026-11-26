@@ -4,7 +4,7 @@
   "period": "11/13(金)〜11/29(日)",
   "budget_limit": 500000,
   "totals": {
-    "spend": 329708,
+    "spend": 322407,
     "lp": 10810,
     "form": 66,
     "done": 3,
@@ -16,7 +16,7 @@
       "date": "11/13",
       "dow": "金",
       "ads": {
-        "meta": null,
+        "meta": 9472,
         "pmax": 5963,
         "gsearch": 305,
         "ysearch": null,
@@ -33,7 +33,7 @@
       "date": "11/14",
       "dow": "土",
       "ads": {
-        "meta": null,
+        "meta": 10632,
         "pmax": 5839,
         "gsearch": 779,
         "ysearch": null,
@@ -50,7 +50,7 @@
       "date": "11/15",
       "dow": "日",
       "ads": {
-        "meta": null,
+        "meta": 10461,
         "pmax": 6189,
         "gsearch": 411,
         "ysearch": null,
@@ -67,7 +67,7 @@
       "date": "11/16",
       "dow": "月",
       "ads": {
-        "meta": null,
+        "meta": 9731,
         "pmax": 6064,
         "gsearch": 159,
         "ysearch": null,
@@ -84,7 +84,7 @@
       "date": "11/17",
       "dow": "火",
       "ads": {
-        "meta": null,
+        "meta": 10163,
         "pmax": 5207,
         "gsearch": 2710,
         "ysearch": null,
@@ -101,7 +101,7 @@
       "date": "11/18",
       "dow": "水",
       "ads": {
-        "meta": null,
+        "meta": 9725,
         "pmax": 7560,
         "gsearch": 9124,
         "ysearch": null,
@@ -118,7 +118,7 @@
       "date": "11/19",
       "dow": "木",
       "ads": {
-        "meta": null,
+        "meta": 10373,
         "pmax": 7470,
         "gsearch": 11291,
         "ysearch": null,
@@ -135,7 +135,7 @@
       "date": "11/20",
       "dow": "金",
       "ads": {
-        "meta": null,
+        "meta": 9924,
         "pmax": 8799,
         "gsearch": 11038,
         "ysearch": null,
@@ -152,7 +152,7 @@
       "date": "11/21",
       "dow": "土",
       "ads": {
-        "meta": null,
+        "meta": 11715,
         "pmax": 6802,
         "gsearch": 10921,
         "ysearch": null,
@@ -169,7 +169,7 @@
       "date": "11/22",
       "dow": "日",
       "ads": {
-        "meta": null,
+        "meta": 11628,
         "pmax": 7726,
         "gsearch": 10890,
         "ysearch": null,
@@ -186,7 +186,7 @@
       "date": "11/23",
       "dow": "月",
       "ads": {
-        "meta": null,
+        "meta": 9456,
         "pmax": 9141,
         "gsearch": 10923,
         "ysearch": null,
@@ -203,7 +203,7 @@
       "date": "11/24",
       "dow": "火",
       "ads": {
-        "meta": null,
+        "meta": 10682,
         "pmax": 4484,
         "gsearch": 10391,
         "ysearch": null,
@@ -220,12 +220,12 @@
   "channels": [
     {
       "name": "メタ（Instagram広告）",
-      "spend": 131263,
-      "clicks": 3061,
+      "spend": 123962,
+      "clicks": 3089,
       "lp": 2466,
       "form": 26,
       "done": 0,
-      "note": "A（8,800円の画像）とB（10%OFF）の合計・11/25朝まで",
+      "note": "A（8,800円の画像）とB（10%OFF）の合計",
       "key": "meta"
     },
     {
