@@ -20,7 +20,7 @@
         "pmax": 5963,
         "gsearch": 305,
         "ysearch": 0,
-        "ydisp": null
+        "ydisp": 2405
       },
       "lp": 1201,
       "form": 6,
@@ -37,7 +37,7 @@
         "pmax": 5839,
         "gsearch": 779,
         "ysearch": 1639,
-        "ydisp": null
+        "ydisp": 2401
       },
       "lp": 1238,
       "form": 5,
@@ -54,7 +54,7 @@
         "pmax": 6189,
         "gsearch": 411,
         "ysearch": 1322,
-        "ydisp": null
+        "ydisp": 2400
       },
       "lp": 1321,
       "form": 3,
@@ -71,7 +71,7 @@
         "pmax": 6064,
         "gsearch": 159,
         "ysearch": 2522,
-        "ydisp": null
+        "ydisp": 2401
       },
       "lp": 1424,
       "form": 6,
@@ -88,7 +88,7 @@
         "pmax": 5207,
         "gsearch": 2710,
         "ysearch": 1558,
-        "ydisp": null
+        "ydisp": 2393
       },
       "lp": 1644,
       "form": 6,
@@ -105,7 +105,7 @@
         "pmax": 7560,
         "gsearch": 9124,
         "ysearch": 1422,
-        "ydisp": null
+        "ydisp": 1411
       },
       "lp": 1135,
       "form": 2,
@@ -290,7 +290,7 @@
     {
       "name": "Yahoo!ディスプレイ",
       "spend": 13412,
-      "clicks": 5503,
+      "clicks": 6226,
       "lp": 4892,
       "form": 0,
       "done": 0,
