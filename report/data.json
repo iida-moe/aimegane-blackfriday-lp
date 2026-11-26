@@ -19,7 +19,7 @@
         "meta": 9472,
         "pmax": 5963,
         "gsearch": 305,
-        "ysearch": null,
+        "ysearch": 0,
         "ydisp": null
       },
       "lp": 1201,
@@ -36,7 +36,7 @@
         "meta": 10632,
         "pmax": 5839,
         "gsearch": 779,
-        "ysearch": null,
+        "ysearch": 1639,
         "ydisp": null
       },
       "lp": 1238,
@@ -53,7 +53,7 @@
         "meta": 10461,
         "pmax": 6189,
         "gsearch": 411,
-        "ysearch": null,
+        "ysearch": 1322,
         "ydisp": null
       },
       "lp": 1321,
@@ -70,7 +70,7 @@
         "meta": 9731,
         "pmax": 6064,
         "gsearch": 159,
-        "ysearch": null,
+        "ysearch": 2522,
         "ydisp": null
       },
       "lp": 1424,
@@ -87,7 +87,7 @@
         "meta": 10163,
         "pmax": 5207,
         "gsearch": 2710,
-        "ysearch": null,
+        "ysearch": 1558,
         "ydisp": null
       },
       "lp": 1644,
@@ -104,7 +104,7 @@
         "meta": 9725,
         "pmax": 7560,
         "gsearch": 9124,
-        "ysearch": null,
+        "ysearch": 1422,
         "ydisp": null
       },
       "lp": 1135,
@@ -121,7 +121,7 @@
         "meta": 10373,
         "pmax": 7470,
         "gsearch": 11291,
-        "ysearch": null,
+        "ysearch": 1591,
         "ydisp": 0
       },
       "lp": 541,
@@ -138,7 +138,7 @@
         "meta": 9924,
         "pmax": 8799,
         "gsearch": 11038,
-        "ysearch": null,
+        "ysearch": 1784,
         "ydisp": 0
       },
       "lp": 947,
@@ -155,7 +155,7 @@
         "meta": 11715,
         "pmax": 6802,
         "gsearch": 10921,
-        "ysearch": null,
+        "ysearch": 1483,
         "ydisp": 0
       },
       "lp": 463,
@@ -172,7 +172,7 @@
         "meta": 11628,
         "pmax": 7726,
         "gsearch": 10890,
-        "ysearch": null,
+        "ysearch": 1806,
         "ydisp": 0
       },
       "lp": 468,
@@ -189,7 +189,7 @@
         "meta": 9456,
         "pmax": 9141,
         "gsearch": 10923,
-        "ysearch": null,
+        "ysearch": 2943,
         "ydisp": 0
       },
       "lp": 435,
@@ -206,7 +206,7 @@
         "meta": 10682,
         "pmax": 4484,
         "gsearch": 10391,
-        "ysearch": null,
+        "ysearch": 6774,
         "ydisp": 0
       },
       "lp": 486,
