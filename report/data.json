@@ -1,15 +1,15 @@
 {
-  "updated": "2026-11-25",
-  "through": "11/24",
+  "updated": "2026-11-26",
+  "through": "11/25",
   "period": "11/13(金)〜11/29(日)",
   "budget_limit": 500000,
   "totals": {
-    "spend": 322407,
-    "lp": 10810,
-    "form": 66,
+    "spend": 355823,
+    "lp": 11176,
+    "form": 74,
     "done": 3,
-    "coupon_slips": 176,
-    "coupon_sales": 4819226
+    "coupon_slips": 188,
+    "coupon_sales": 5239776
   },
   "daily": [
     {
@@ -215,24 +215,41 @@
       "coupon_slips": 13,
       "coupon_sales": 230100,
       "memo": "Yahoo!検索から予約1件"
+    },
+    {
+      "date": "11/25",
+      "dow": "水",
+      "ads": {
+        "meta": 8698,
+        "pmax": 8060,
+        "gsearch": 10950,
+        "ysearch": 5708,
+        "ydisp": 0
+      },
+      "lp": 433,
+      "form": 6,
+      "done": 0,
+      "coupon_slips": 12,
+      "coupon_sales": 420550,
+      "memo": "Yahoo!検索の「メガネ 店」を停止"
     }
   ],
   "channels": [
     {
       "name": "メタ（Instagram広告）",
-      "spend": 123962,
-      "clicks": 3089,
-      "lp": 2466,
-      "form": 26,
+      "spend": 132660,
+      "clicks": 3284,
+      "lp": 2608,
+      "form": 28,
       "done": 0,
       "note": "A（8,800円の画像）とB（10%OFF）の合計",
       "key": "meta"
     },
     {
       "name": "P-MAX（Google）",
-      "spend": 81248,
-      "clicks": 7509,
-      "lp": 2851,
+      "spend": 89308,
+      "clicks": 7981,
+      "lp": 3033,
       "form": 11,
       "done": 1,
       "note": "",
@@ -240,9 +257,9 @@
     },
     {
       "name": "Google検索（BF広告）",
-      "spend": 78941,
-      "clicks": 625,
-      "lp": 104,
+      "spend": 89891,
+      "clicks": 699,
+      "lp": 110,
       "form": 5,
       "done": 0,
       "note": "",
@@ -250,10 +267,10 @@
     },
     {
       "name": "Yahoo!検索",
-      "spend": 24844,
-      "clicks": 278,
-      "lp": 226,
-      "form": 7,
+      "spend": 30552,
+      "clicks": 336,
+      "lp": 266,
+      "form": 10,
       "done": 1,
       "note": "11/25に「メガネ 店」を停止",
       "key": "ysearch"
