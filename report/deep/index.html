@@ -132,6 +132,7 @@
 
 <nav class="toc">
   <a href="#summary">まとめ</a>
+  <a href="#plan">計画とのくらべ</a>
   <a href="#result">全体の結果</a>
   <a href="#ads">広告ごと</a>
   <a href="#who">LPに来た人</a>
@@ -161,7 +162,7 @@
       <b class="t">LPを見た人は「予約」ではなく「地図」を見ている</b>
       <ul class="dot">
         <li>「地図・営業時間を見る」を押した人 <span class="em">226人</span>／「Web予約」を押した人 62人／予約完了 4件</li>
-        <li>お店に行く気がある人は、予約しないでそのまま行っている（BFクーポン伝票は11/25までで188件）</li>
+        <li>お店に行く気がある人は、予約しないでそのまま行っている（BFクーポン伝票は<span id="couponSum">—</span>）</li>
         <li>だから、予約の数だけで広告の良し悪しを決めると、まちがえる</li>
       </ul>
     </div>
@@ -174,6 +175,28 @@
       </ul>
     </div>
   </div>
+</section>
+
+<!-- ============ 計画（ザセール基準）とのくらべ ============ -->
+<section id="plan">
+  <h2>計画（ザセール基準）とのくらべ</h2>
+  <p class="lead">BFの目標は、ザセールの割合の約1.2倍で決めました。その計画どおりだったかを見ています。</p>
+  <div class="tablebox"><table id="planTable"></table></div>
+  <div class="point" style="margin-top:10px">
+    <div class="card">
+      <b class="t">人は計画よりずっと多く、安く集まった</b>
+      <ul class="dot" id="planPoint1"></ul>
+    </div>
+    <div class="card">
+      <b class="t">でも、予約フォームまで進む人の割合がザセールの約4分の1</b>
+      <ul class="dot" id="planPoint2"></ul>
+    </div>
+  </div>
+  <ul class="notes">
+    <li>ザセール：8/7〜10/12（67日）。LPを見た人・予約はGA4、広告費はInstagram広告・P-MAX・Google検索の管理画面の合計</li>
+    <li>BFの目標：LP3,000人 → 予約フォーム90人（3.0%）→ 予約8件（8.8%）</li>
+    <li>人数はどちらも「その日のうちにLPを見て、予約フォーム・予約完了まで進んだ人」で数えています</li>
+  </ul>
 </section>
 
 <!-- ============ 全体の結果 ============ -->
@@ -509,6 +532,28 @@ fetch('../data.json?v=' + Date.now()).then(function (r) { return r.json(); }).th
   d.daily.forEach(function (row) { CH.forEach(function (c) { spend[c.key] += (row.ads && row.ads[c.key]) || 0; }); });
   var totalSpend = CH.reduce(function (a, c) { return a + spend[c.key]; }, 0);
   var t = d.totals;
+  $('couponSum').textContent = d.through + 'までで' + n(t.coupon_slips) + '件';
+
+  // 計画（ザセール基準）とのくらべ
+  var SALE = { lp: 8810, form: 219, done: 16, spend: 688112 };
+  var PLAN = { lp: 3000, form: 90, done: 8 };
+  var yd = d.channels.filter(function (c) { return c.key === 'ydisp'; })[0];
+  var lpNoYd = t.lp - (yd ? yd.lp : 0), formNoYd = t.form - (yd ? yd.form : 0);
+  tbl('planTable', ['', 'ザセール<span class="s">8/7〜10/12</span>', 'BFの目標', 'BFの実績<span class="s">' + d.daily[0].date + '〜' + d.through + '</span>'], [
+    { cells: ['LPを見た人', n(SALE.lp) + '人', n(PLAN.lp) + '人', { c: 'hi', v: n(t.lp) + '人' }] },
+    { cells: ['LP → 予約フォーム', pct(SALE.form / SALE.lp, 1), pct(PLAN.form / PLAN.lp, 1), { c: 'lo', v: pct(t.form / t.lp, 2) + '（' + t.form + '÷' + n(t.lp) + '）' }] },
+    { cells: ['予約フォーム → 予約', pct(SALE.done / SALE.form, 1), pct(PLAN.done / PLAN.form, 1), { c: 'lo', v: pct(t.done / t.form, 1) + '（' + t.done + '÷' + t.form + '）' }] },
+    { cells: ['予約', SALE.done + '件', PLAN.done + '件', { c: 'lo', v: t.done + '件' }] },
+    { cells: ['1人あたりの広告費', '約' + n(SALE.spend / SALE.lp) + '円', '', { c: 'hi', v: '約' + n(totalSpend / t.lp) + '円' }] },
+    { cells: ['予約1件あたりの広告費', '約' + (SALE.spend / SALE.done / 10000).toFixed(1) + '万円', '', { c: 'lo', v: '約' + (totalSpend / t.done / 10000).toFixed(1) + '万円' }] }
+  ]);
+  $('planPoint1').innerHTML =
+    '<li>LPを見た人は目標の<span class="em">約' + (t.lp / PLAN.lp).toFixed(1) + '倍</span>（' + n(t.lp) + '÷' + n(PLAN.lp) + '）</li>' +
+    '<li>1人あたりの広告費はザセールの<span class="u">半分以下</span>（BF 約' + n(totalSpend / t.lp) + '円／ザセール 約' + n(SALE.spend / SALE.lp) + '円）</li>';
+  $('planPoint2').innerHTML =
+    '<li>LP → 予約フォームはザセール2.5%に対してBF ' + pct(t.form / t.lp, 2) + '。ザセールの約' + ((t.form / t.lp) / (SALE.form / SALE.lp)).toFixed(2) + '倍しかない</li>' +
+    '<li>すぐ帰る人が多かったYahoo!ディスプレイ（' + n(yd ? yd.lp : 0) + '人）を除いても ' + pct(formNoYd / lpNoYd, 2) + '（' + formNoYd + '÷' + n(lpNoYd) + '）で、ザセールの半分くらい</li>' +
+    '<li>安く集められたぶん<span class="u">予約する気の少ない人が多かった</span>ことと、LPの中で<span class="u">予約まで進みにくかった</span>ことの両方が原因と考えられる（くわしくは「LPの中の行動」）</li>';
 
   $('resultLead').textContent = '広告費は各広告の管理画面（' + d.daily[0].date + '〜' + d.through + '）、人数はGA4の数字です。';
   $('kpi').innerHTML = [
