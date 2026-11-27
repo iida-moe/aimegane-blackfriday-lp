@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BF深掘りレポート</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1c1d21; --sub: #5f6168; --line: #e3e4e8; --bg: #f5f5f3; --card: #fff;
+    --accent: #f4e030; --dark: #16181d; --red: #c8102e; --bar: #3a3d45; --bar2: #c9cbd1; --good: #1f7a4d;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: "Noto Sans JP", sans-serif; font-size: 15px; line-height: 1.75; font-variant-numeric: tabular-nums; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 16px 64px; }
+  header { background: var(--dark); color: #fff; padding: 28px 0 24px; margin-bottom: 8px; }
+  header .wrap { padding-bottom: 0; }
+  .eyebrow { display: inline-block; background: var(--accent); color: var(--dark); font-weight: 900; font-size: 12px; letter-spacing: .08em; padding: 2px 10px; border-radius: 3px; }
+  h1 { font-size: clamp(22px, 4vw, 30px); margin: 10px 0 4px; font-weight: 900; }
+  .meta { color: #c9cbd1; font-size: 13px; margin: 0; }
+  .meta a { color: #fff; }
+  nav.toc { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 12px 16px; margin: 20px 0 0; font-size: 13px; }
+  nav.toc a { color: var(--ink); text-decoration: none; display: inline-block; margin: 2px 14px 2px 0; }
+  nav.toc a:hover { text-decoration: underline; }
+  section { margin-top: 44px; scroll-margin-top: 12px; }
+  h2 { font-size: 20px; margin: 0 0 4px; font-weight: 900; border-left: 6px solid var(--accent); padding-left: 10px; }
+  h3 { font-size: 16px; margin: 26px 0 6px; font-weight: 900; }
+  .lead { color: var(--sub); font-size: 13px; margin: 0 0 14px; }
+  p { margin: 0 0 10px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; }
+  .card + .card { margin-top: 10px; }
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; }
+  .tile { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; }
+  .tile small { display: block; color: var(--sub); font-size: 12px; }
+  .tile b { display: block; font-size: 24px; font-weight: 900; line-height: 1.3; margin-top: 2px; }
+  .tile span { display: block; color: var(--sub); font-size: 12px; }
+  .point { display: grid; gap: 10px; }
+  .point .card { border-left: 5px solid var(--dark); }
+  .point .card b.t { display: block; font-size: 16px; font-weight: 900; margin-bottom: 4px; }
+  .em { color: var(--red); font-weight: 900; }
+  .u { text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 4px; text-underline-offset: -1px; }
+  ul.dot { list-style: none; margin: 6px 0 0; padding: 0; }
+  ul.dot li { padding-left: 1em; text-indent: -1em; margin-bottom: 4px; }
+  ul.dot li::before { content: "・"; }
+  ul.notes { list-style: none; margin: 8px 0 0; padding: 0; color: var(--sub); font-size: 12px; }
+  ul.notes li { padding-left: 1em; text-indent: -1em; margin-bottom: 3px; }
+  ul.notes li::before { content: "※"; }
+  .tablebox { background: var(--card); border: 1px solid var(--line); border-radius: 10px; overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; min-width: 560px; }
+  th, td { padding: 9px 12px; border-bottom: 1px solid var(--line); text-align: right; white-space: nowrap; font-size: 14px; }
+  th { background: #fafaf8; color: var(--sub); font-weight: 700; font-size: 12px; vertical-align: bottom; }
+  th .s { display: block; font-weight: 500; font-size: 11px; }
+  th:first-child, td:first-child { text-align: left; }
+  td.l { text-align: left; white-space: normal; color: var(--sub); font-size: 12px; min-width: 200px; }
+  tr.total td { font-weight: 900; background: #fffbd6; border-top: 2px solid var(--dark); }
+  td.hi { font-weight: 900; color: var(--good); }
+  td.lo { font-weight: 900; color: var(--red); }
+  /* 横棒 */
+  .bars { display: grid; gap: 6px; }
+  .bar { display: grid; grid-template-columns: 9.5em 1fr 5.5em; align-items: center; gap: 8px; font-size: 13px; }
+  .bar .n { text-align: right; font-weight: 700; }
+  .bar .track { background: #eeeeec; border-radius: 3px; height: 16px; overflow: hidden; }
+  .bar .fill { background: var(--bar); height: 100%; border-radius: 3px; }
+  .bar.red .fill { background: var(--red); }
+  .bar.light .fill { background: var(--bar2); }
+  /* 積み上げ（スクロール） */
+  .stack { display: grid; grid-template-columns: 9.5em 1fr; gap: 8px; align-items: center; font-size: 13px; margin-bottom: 8px; }
+  .stack .row { display: flex; height: 22px; border-radius: 3px; overflow: hidden; }
+  .stack .row i { display: block; height: 100%; font-style: normal; font-size: 11px; color: #fff; text-align: center; line-height: 22px; overflow: hidden; }
+  .legend { display: flex; flex-wrap: wrap; gap: 12px; font-size: 12px; color: var(--sub); margin: 4px 0 10px; }
+  .legend i { display: inline-block; width: 12px; height: 12px; border-radius: 2px; vertical-align: -1px; margin-right: 4px; }
+  .s0 { background: #c8102e; } .s1 { background: #e0707f; } .s2 { background: #9a9ca3; } .s3 { background: #5f6168; } .s4 { background: #16181d; }
+  /* 縦棒（時間帯） */
+  .cols { display: flex; align-items: flex-end; gap: 3px; height: 150px; padding: 0 2px; }
+  .cols div { flex: 1; background: var(--bar2); border-radius: 2px 2px 0 0; position: relative; min-width: 6px; }
+  .cols div.pk { background: var(--dark); }
+  .colx { display: flex; gap: 3px; font-size: 10px; color: var(--sub); padding: 2px 2px 0; }
+  .colx span { flex: 1; text-align: center; min-width: 6px; }
+  /* 日ごと */
+  .daily { display: grid; gap: 4px; }
+  .daily .d { display: grid; grid-template-columns: 4.5em 1fr 1fr; gap: 8px; align-items: center; font-size: 12px; }
+  .daily .d .track { background: #eeeeec; height: 14px; border-radius: 3px; position: relative; }
+  .daily .d .fill { height: 100%; border-radius: 3px; }
+  .daily .d .lbl { position: absolute; right: 4px; top: -2px; font-size: 11px; font-weight: 700; }
+  .daily .hd { font-weight: 700; color: var(--sub); }
+  .wait { background: repeating-linear-gradient(45deg, #fafaf8, #fafaf8 10px, #f1f1ee 10px, #f1f1ee 20px); border: 1px dashed #b3b5bb; border-radius: 10px; padding: 16px 18px; color: var(--sub); font-size: 14px; }
+  .wait b { color: var(--ink); }
+  .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 10px; }
+  .flow { display: grid; gap: 6px; }
+  .flow .st { display: grid; grid-template-columns: 1fr 6em; background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 10px 14px; align-items: center; }
+  .flow .st b { font-size: 18px; text-align: right; font-weight: 900; }
+  .flow .st small { color: var(--sub); display: block; font-size: 12px; }
+  .flow .arrow { text-align: center; color: var(--sub); font-size: 12px; }
+  @media (max-width: 560px) {
+    .bar, .stack { grid-template-columns: 7em 1fr 4.5em; }
+    .stack { grid-template-columns: 7em 1fr; }
+    .daily .d { grid-template-columns: 3.8em 1fr 1fr; }
+  }
+  /* パスワード */
+  .gate { position: fixed; inset: 0; z-index: 99; background: var(--dark); display: flex; align-items: center; justify-content: center; padding: 16px; }
+  .gate form { background: #fff; border: 2px solid var(--accent); border-radius: 12px; padding: 28px 24px; width: 100%; max-width: 320px; text-align: center; }
+  .gate p { margin: 0 0 12px; font-size: 14px; color: var(--sub); }
+  .gate p.t { font-weight: 900; font-size: 17px; color: var(--ink); margin-bottom: 6px; }
+  .gate input { width: 100%; font-size: 16px; padding: 10px 12px; border: 1px solid #ccc; border-radius: 8px; margin-bottom: 12px; }
+  .gate button { width: 100%; font-size: 15px; font-weight: 700; background: var(--accent); border: 0; border-radius: 8px; padding: 10px; cursor: pointer; }
+  .gate .e { color: var(--red); font-size: 13px; margin: 10px 0 0; display: none; }
+  body.locked main, body.locked header { display: none; }
+</style>
+</head>
+<body class="locked">
+<div class="gate" id="gate">
+  <form id="gateForm">
+    <p class="t">社内共有用レポート</p>
+    <p>パスワードを入力してください</p>
+    <input type="password" id="gateInput" autocomplete="off">
+    <button type="submit">開く</button>
+    <p class="e" id="gateErr">パスワードが違います</p>
+  </form>
+</div>
+
+<header>
+  <div class="wrap">
+    <span class="eyebrow">BLACK FRIDAY 2026</span>
+    <h1>ブラックフライデー 深掘りレポート</h1>
+    <p class="meta">対象：11/13〜11/26（14日間）　<a href="../">毎日の記録はこちら</a></p>
+  </div>
+</header>
+
+<main class="wrap">
+
+<nav class="toc">
+  <a href="#summary">まとめ</a>
+  <a href="#result">全体の結果</a>
+  <a href="#ads">広告ごと</a>
+  <a href="#who">LPに来た人</a>
+  <a href="#inlp">LPの中の行動</a>
+  <a href="#after">LPのあと</a>
+  <a href="#booking">予約</a>
+  <a href="#store">お店での結果</a>
+  <a href="#roi">費用対効果</a>
+  <a href="#next">課題と次の手</a>
+</nav>
+
+<!-- ============ まとめ ============ -->
+<section id="summary">
+  <h2>まとめ</h2>
+  <p class="lead">14日間の数字から、わかったことを3つにしぼりました。</p>
+  <div class="point">
+    <div class="card">
+      <b class="t">広告によって「来る人の質」がまったくちがう</b>
+      <ul class="dot">
+        <li>Yahoo!ディスプレイは、来た人の<span class="em">約9割</span>がLPの一番上だけ見て帰っていた（平均6秒）。11/18に止めたのは正解</li>
+        <li>止めたあと、LPに来る人は1日約1,300人 → 約540人に減ったが、クーポン伝票は1日約13件 → 約16件に<span class="u">増えた</span></li>
+        <li>検索広告（Google・Yahoo!）は人数は少ないけど、<span class="u">一番よく読まれて、一番ボタンが押されている</span></li>
+        <li>P-MAXは1人あたりの費用が安く、よく読まれている。メタはその中間</li>
+      </ul>
+    </div>
+    <div class="card">
+      <b class="t">LPを見た人は「予約」ではなく「地図」を見ている</b>
+      <ul class="dot">
+        <li>「地図・営業時間を見る」を押した人 <span class="em">226人</span>／「Web予約」を押した人 62人／予約完了 4件</li>
+        <li>お店に行く気がある人は、予約しないでそのまま行っている（BFクーポン伝票は11/25までで188件）</li>
+        <li>だから、予約の数だけで広告の良し悪しを決めると、まちがえる</li>
+      </ul>
+    </div>
+    <div class="card">
+      <b class="t">LPには、すぐ直せる「もったいない」がある</b>
+      <ul class="dot">
+        <li>一番上の画像（FV）が<span class="em">1,333回</span>タップされているのに、押しても何も起きない</li>
+        <li>商品の画像も300回以上タップされている（もっと見たい人がいる）</li>
+        <li>スマホで来た人の<span class="u">半分</span>は、一番上だけ見て帰っている</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 全体の結果 ============ -->
+<section id="result">
+  <h2>全体の結果</h2>
+  <p class="lead" id="resultLead">広告費は各広告の管理画面、人数はGA4の数字です。</p>
+  <div class="tiles" id="kpi"></div>
+  <h3>日ごとの動き</h3>
+  <p class="lead">左：LPに来た人／右：BFクーポンの伝票数。広告を変えた日のあとの動きを見ています。</p>
+  <div class="card"><div class="daily" id="daily"></div></div>
+  <ul class="notes" id="dailyNote"></ul>
+</section>
+
+<!-- ============ 広告ごと ============ -->
+<section id="ads">
+  <h2>広告ごとの比較</h2>
+  <p class="lead">同じ「LPに来た1人」でも、広告によって読み方と行動がちがいます。</p>
+  <div class="tablebox"><table id="adTable"></table></div>
+  <ul class="notes">
+    <li>LPに来た人・しっかり見た人の割合・平均の滞在時間・ボタンを押した人はGA4（11/13〜11/26）</li>
+    <li>「しっかり見た人」＝10秒以上いた、またはページの中で何かした人（GA4の「エンゲージメント」）</li>
+    <li>「ボタンを押した人」＝予約・お店さがし・地図・クーポンなど、LPの中のボタンを1回でも押した人</li>
+    <li>「来店につながる行動」＝お店の「地図・営業時間を見る」「Web予約」「電話予約」を押した人</li>
+  </ul>
+
+  <h3>LPの一番上だけ見て帰った人の割合</h3>
+  <p class="lead">Clarity（LPの中の動きを記録するツール）で、どこまでスクロールしたかを見ました。</p>
+  <div class="legend">
+    <span><i class="s0"></i>0〜10%（一番上だけ）</span><span><i class="s1"></i>10〜25%</span><span><i class="s2"></i>25〜50%</span><span><i class="s3"></i>50〜75%</span><span><i class="s4"></i>75〜100%（最後のほうまで）</span>
+  </div>
+  <div class="card" id="scrollStack"></div>
+  <ul class="notes">
+    <li>Clarityの数字（訪問の数）。Clarityは記録できた訪問だけなので、GA4より数が少ない</li>
+    <li>検索広告はGoogleとYahoo!の合計（Clarityでは分けられないため）</li>
+  </ul>
+
+  <h3>広告の中身（画像・キーワードなど）</h3>
+  <div class="wait" id="adDetailWait">
+    <b>管理画面のデータを入れて追加します。</b>
+    <ul class="dot">
+      <li>メタ：広告ごと（どの画像がよかったか）・年齢と性別・表示された場所（フィード／ストーリーズ／リール）</li>
+      <li>P-MAX：画像・見出しごとの成績、どこに表示されたか</li>
+      <li>Google検索・Yahoo!検索：実際に検索された言葉と、クリックにつながった言葉</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ LPに来た人 ============ -->
+<section id="who">
+  <h2>LPに来た人</h2>
+  <p class="lead">GA4・11/13〜11/26。LPから見はじめた人を数えています。</p>
+
+  <div class="grid2">
+    <div class="card">
+      <h3 style="margin-top:0">スマホとPC</h3>
+      <div class="bars" id="device"></div>
+      <p class="lead" style="margin-top:8px">ほぼ全員がスマホ。LPはスマホで見たときを一番に考えればいい。</p>
+    </div>
+    <div class="card">
+      <h3 style="margin-top:0">はじめての人と、2回目以上の人</h3>
+      <div class="tablebox" style="border:0"><table id="newret"></table></div>
+      <p class="lead" style="margin-top:8px">2回目以上の人は、しっかり見る割合が<span class="u">80%以上</span>。1回見て、思い出してもう一度来た人は本気度が高い。</p>
+    </div>
+  </div>
+
+  <h3>年代と性別</h3>
+  <p class="lead">GA4が年代・性別を推定できた人だけ（全体の約27％・3,196人）。</p>
+  <div class="grid2">
+    <div class="card"><div class="bars" id="age"></div></div>
+    <div class="card">
+      <div class="bars" id="gender"></div>
+      <p class="lead" style="margin-top:10px">35〜54歳で約半分。女性が約6割。BFの「遠近両用」などの商品は40代以上むけなので、ねらいとは合っている。</p>
+    </div>
+  </div>
+
+  <h3>地域</h3>
+  <p class="lead">都道府県ごとの人数。お店がある県には「店」をつけています。</p>
+  <div class="card"><div class="bars" id="region"></div></div>
+  <ul class="notes">
+    <li>北海道・大阪・愛知・宮城などお店がない地域からも、合わせて約650人（全体の約5％）来ている。広告の地域設定を見直す余地あり</li>
+    <li>GA4の地域はスマホの回線から推定するので、実際の場所とずれることがある</li>
+  </ul>
+
+  <h3>時間帯</h3>
+  <p class="lead">LPに来た時間（14日間の合計）。黒い棒が多い時間帯です。</p>
+  <div class="card">
+    <div class="cols" id="hours"></div>
+    <div class="colx" id="hoursX"></div>
+    <p class="lead" style="margin-top:10px">夕方17〜20時が一番多く、朝7〜8時にも山がある。通勤・帰宅の時間に見られている。しっかり見る割合も、この時間帯が高い（約38〜41％。昼は約25％）。</p>
+  </div>
+
+  <h3>曜日</h3>
+  <div class="card"><div class="bars" id="dow"></div>
+    <ul class="notes"><li>14日間なので、どの曜日も2回ずつ。前半（11/13〜18）はYahoo!ディスプレイの人数が多いので、金〜火曜が多く見える</li></ul>
+  </div>
+</section>
+
+<!-- ============ LPの中の行動 ============ -->
+<section id="inlp">
+  <h2>LPの中の行動</h2>
+  <p class="lead">GA4（ボタンが押された数）とClarity（スクロール・タップの記録）。</p>
+
+  <h3>押されたボタン</h3>
+  <p class="lead">押した人の数（11/13〜11/26）。LPを見た人は約11,900人。</p>
+  <div class="card"><div class="bars" id="cta"></div></div>
+  <ul class="notes">
+    <li>一番押されたのは、一番上（FV）の「近くのお店で予約する」。次が「店舗検索」と「現在地から探す」</li>
+    <li>LPの途中にあるボタン（商品の下・選ばれる理由の下・最後）は、下にいくほど押されなくなる</li>
+    <li>「クーポンを見る」はメタから来た人がほとんど</li>
+  </ul>
+
+  <h3>押しても何も起きなかったところ</h3>
+  <p class="lead">Clarityの「デッドクリック」（押しても反応がない）と「イライラクリック」（同じところを何度も押す）。</p>
+  <div class="tablebox"><table id="dead"></table></div>
+  <ul class="notes">
+    <li>「近くのお店で予約する」は、押すと同じページの下に移動するので、反応がないと数えられている可能性がある（実際は動いている）</li>
+    <li>「現在地から探す」は、位置情報の許可を求める画面が出るまでの間に、反応がないと数えられている可能性がある</li>
+  </ul>
+</section>
+
+<!-- ============ LPのあと ============ -->
+<section id="after">
+  <h2>LPのあと、どこへ行ったか</h2>
+  <p class="lead">LPから先に進んだ人の数（GA4・11/13〜11/26・押した人の数）。</p>
+  <div class="flow" id="flow"></div>
+  <ul class="notes">
+    <li>同じ人が地図とWeb予約の両方を押すこともあるので、合計はぴったりではない</li>
+    <li>「アイメガネのトップページ」は、LPのロゴを押して移動した人と考えられる</li>
+    <li>地図を押したあと、実際にお店に行ったかどうかはGA4ではわからない</li>
+  </ul>
+</section>
+
+<!-- ============ 予約 ============ -->
+<section id="booking">
+  <h2>予約</h2>
+  <p class="lead">BF LPを見たあとに予約した人（GA4）。</p>
+  <div class="tablebox"><table id="bk"></table></div>
+  <ul class="notes">
+    <li>Web予約は多くの店で「3日後から」しか取れない。BF最終日（11/29）に間に合うのは、11/26ごろまでに予約した人だけ</li>
+    <li>予約フォームを開いても、BFの期間（11/29まで）が書かれていない</li>
+  </ul>
+</section>
+
+<!-- ============ お店での結果 ============ -->
+<section id="store">
+  <h2>お店での結果（BFクーポン）</h2>
+  <p class="lead">データライザーのBFクーポン伝票。</p>
+  <div class="tiles" id="couponKpi"></div>
+  <div class="wait" style="margin-top:10px">
+    <b>伝票の明細を入れて追加します。</b>
+    <ul class="dot">
+      <li>店ごとの件数と売上（どの店が強かったか）</li>
+      <li>商品ごと（遠近両用・単焦点・補聴器など）と、1件あたりの金額</li>
+      <li>はじめてのお客さまか、リピーターか</li>
+      <li>BFの前の同じ日数との比較</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 費用対効果 ============ -->
+<section id="roi">
+  <h2>費用対効果</h2>
+  <p class="lead">広告費を「何人に、何をしてもらえたか」で割りました。</p>
+  <div class="tablebox"><table id="roiTable"></table></div>
+  <ul class="notes" id="roiNote"></ul>
+</section>
+
+<!-- ============ 課題と次の手 ============ -->
+<section id="next">
+  <h2>課題と次の手（ウィンターセールにむけて）</h2>
+  <div class="point">
+    <div class="card">
+      <b class="t">LPを直す</b>
+      <ul class="dot">
+        <li>一番上の画像（FV）を押したら、お店さがしに移動するようにする</li>
+        <li>商品の画像を押したら、大きく見られるようにする</li>
+        <li>一番上で帰る人が半分いるので、一番上に「期間」「何がおトクか」「近くのお店」をまとめる</li>
+      </ul>
+    </div>
+    <div class="card">
+      <b class="t">広告のお金のかけ方を変える</b>
+      <ul class="dot">
+        <li>検索広告は、よく読まれて行動につながるので厚めにする</li>
+        <li>P-MAXは安くて質もいいので続ける。メタは画像ごとの成績を見て、よい画像に寄せる</li>
+        <li>夕方17〜20時と朝7〜8時に見られているので、この時間に多く出す</li>
+        <li>お店がない地域に出ていないか、地域設定を確認する</li>
+      </ul>
+    </div>
+    <div class="card">
+      <b class="t">効果の測り方を変える</b>
+      <ul class="dot">
+        <li>「予約の数」ではなく「クーポン伝票の数」を一番の目標にする</li>
+        <li>広告ごとにクーポンを分けて、どの広告から来たお客さまか、お店でわかるようにする</li>
+        <li>予約フォームにセールの期間を書く。「3日後から」の予約ルールはセール中だけでも見直せないか相談する</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script>
+(function () {
+  var PASSWORD = 'aimegane01', KEY = 'bfreport_unlocked';
+  var gate = document.getElementById('gate');
+  function unlock() { document.body.classList.remove('locked'); gate.style.display = 'none'; }
+  try { if (sessionStorage.getItem(KEY) === 'true') unlock(); } catch (e) {}
+  document.getElementById('gateForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var input = document.getElementById('gateInput');
+    if (input.value === PASSWORD) { try { sessionStorage.setItem(KEY, 'true'); } catch (e) {} unlock(); }
+    else { document.getElementById('gateErr').style.display = 'block'; input.value = ''; input.focus(); }
+  });
+})();
+
+/* ---------- GA4・Clarity（11/13〜11/26） ---------- */
+var CH = [
+  // key, 名前, LPに来た人(GA4 page_view), しっかり見た割合, 平均滞在(秒), ボタンを押した人, 来店につながる行動(地図+Web+電話), スマホ比率
+  { key: 'gsearch', name: 'Google検索', lp: 131, eng: 0.704, sec: 173, cta: 20, act: 13 },
+  { key: 'ysearch', name: 'Yahoo!検索', lp: 285, eng: 0.740, sec: 151, cta: 68, act: 30 },
+  { key: 'pmax',    name: 'P-MAX',      lp: 3313, eng: 0.555, sec: 53, cta: 310, act: 95 },
+  { key: 'meta',    name: 'メタ',        lp: 2922, eng: 0.278, sec: 44, cta: 475, act: 124 },
+  { key: 'ydisp',   name: 'Yahoo!ディスプレイ', lp: 4899, eng: 0.172, sec: 29, cta: 71, act: 8 }
+];
+var SCROLL = [ // Clarity 訪問数 0-10,10-25,25-50,50-75,75-100
+  { name: '検索広告', v: [71, 60, 108, 41, 154] },
+  { name: 'P-MAX', v: [937, 456, 839, 429, 933] },
+  { name: 'メタ', v: [243, 62, 191, 75, 316] },
+  { name: 'Yahoo!ディスプレイ', v: [3455, 206, 70, 17, 105] },
+  { name: 'スマホ全体', v: [4369, 714, 1206, 557, 1505] }
+];
+var DEVICE = [['スマホ', 12003], ['PC', 478], ['タブレット', 380]];
+var NEWRET = [ // 名前, 2回目以上の割合, はじめて:しっかり見た, 2回目以上:しっかり見た
+  ['P-MAX', 0.155, 0.533, 0.801],
+  ['メタ', 0.065, 0.252, 0.864],
+  ['Google検索', 0.158, 0.683, 0.864],
+  ['Yahoo!検索', 0.038, 0.740, 0.786],
+  ['Yahoo!ディスプレイ', 0.018, 0.164, 0.435]
+];
+var AGE = [['18〜24歳', 121], ['25〜34歳', 603], ['35〜44歳', 831], ['45〜54歳', 726], ['55〜64歳', 453], ['65歳以上', 462]];
+var GENDER = [['女性', 1898], ['男性', 1352]];
+var REGION = [['埼玉（店）', 6338], ['東京（店）', 2088], ['栃木（店）', 725], ['神奈川', 623], ['千葉（店）', 534], ['茨城（店）', 311], ['北海道', 243], ['大阪', 225], ['群馬（店）', 119], ['愛知', 104], ['静岡（店）', 99], ['宮城', 75]];
+var HOURS = [341,184,119,95,100,183,258,652,836,450,350,326,399,339,371,416,427,1414,1255,1206,1233,918,703,359];
+var DOW = [['月', 1940], ['火', 2200], ['水', 1638], ['木', 1086], ['金', 2225], ['土', 1811], ['日', 1872]];
+var CTA = [
+  ['一番上（FV）の予約ボタン', 392], ['店舗検索の「検索」', 322], ['現在地から探す', 291], ['商品の下のボタン', 272],
+  ['地図・営業時間を見る', 226], ['画面下にずっと出ているボタン', 107], ['LINEで友だち追加', 88], ['条件でしぼりこむ', 83],
+  ['クーポンを見る', 96], ['Web予約', 62], ['最後のボタン', 29], ['選ばれる理由の下のボタン', 16], ['電話予約', 11], ['補聴器の相談ボタン', 4]
+];
+var DEAD = [
+  ['一番上の画像（BLACK FRIDAY）', 988, 345, '画像を押してもどこにも行かない'],
+  ['商品の画像（ユーピーレノマ）', 186, 2, 'もっと見たい人がいる'],
+  ['現在地から探す', 149, 1, '※下の注を参照'],
+  ['近くのお店で予約する', 145, 1, '※下の注を参照'],
+  ['「お得な内容」の見出し', 135, 0, '見出しをボタンだと思って押している'],
+  ['上のメニュー（お得な内容・対象ブランド…）', 121, 0, ''],
+  ['商品の画像（エルブイアール）', 114, 0, 'もっと見たい人がいる'],
+  ['店舗検索の「検索」', 109, 0, '何も入れずに押した可能性']
+];
+var FLOW = [
+  ['LPを見た人', 11905, ''],
+  ['LPの中のボタンを押した人', 1024, 'LPを見た人の8.6％'],
+  ['お店の「地図・営業時間を見る」', 226, 'Googleマップが開く'],
+  ['LINEで友だち追加', 88, ''],
+  ['アイメガネのトップページ', 86, ''],
+  ['予約フォームを開いた人', 78, 'Web予約ボタン62人＋LPのあとに別の道から'],
+  ['電話予約', 18, '電話番号を押した人'],
+  ['予約完了', 4, '']
+];
+var BOOK = [
+  ['11/15', 'P-MAX', '小川大塚店', '11/22来店・購入済み（BFクーポンは使わず）'],
+  ['11/21', 'Googleの広告（複数見ていて特定できない）', '確認中', ''],
+  ['11/24', 'Yahoo!検索', 'エキア谷塚店', '11/27 18時に来店予定'],
+  ['11/26', '最初は訪問サービスの広告 → BF LPを見たあと、直接もう一度来て予約', '確認中', 'BF目的かは予約メールで確認中']
+];
+
+/* ---------- 部品 ---------- */
+function $(id) { return document.getElementById(id); }
+function n(v) { return Math.round(v).toLocaleString('ja-JP'); }
+function pct(v, d) { return (v * 100).toFixed(d == null ? 1 : d) + '％'; }
+function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+function bars(id, rows, unit, cls) {
+  var max = Math.max.apply(null, rows.map(function (r) { return r[1]; }));
+  $(id).innerHTML = rows.map(function (r) {
+    return '<div class="bar ' + (cls || '') + '"><span>' + esc(r[0]) + '</span><div class="track"><div class="fill" style="width:' + (r[1] / max * 100).toFixed(1) + '%"></div></div><span class="n">' + n(r[1]) + (unit || '') + '</span></div>';
+  }).join('');
+}
+function tbl(id, head, rows) {
+  $(id).innerHTML = '<thead><tr>' + head.map(function (h) { return '<th>' + h + '</th>'; }).join('') + '</tr></thead><tbody>' +
+    rows.map(function (r) { return '<tr' + (r.cls ? ' class="' + r.cls + '"' : '') + '>' + r.cells.map(function (c) { return typeof c === 'object' ? '<td class="' + c.c + '">' + c.v + '</td>' : '<td>' + c + '</td>'; }).join('') + '</tr>'; }).join('') + '</tbody>';
+}
+
+/* ---------- 描画（GA4・Clarity） ---------- */
+// スクロール
+$('scrollStack').innerHTML = SCROLL.map(function (s) {
+  var t = s.v.reduce(function (a, b) { return a + b; }, 0);
+  return '<div class="stack"><span>' + s.name + '</span><div class="row">' + s.v.map(function (x, i) {
+    var w = x / t * 100; return '<i class="s' + i + '" style="width:' + w.toFixed(1) + '%" title="' + w.toFixed(0) + '％">' + (w >= 7 ? w.toFixed(0) + '％' : '') + '</i>';
+  }).join('') + '</div></div>';
+}).join('');
+
+var dTot = DEVICE.reduce(function (a, b) { return a + b[1]; }, 0);
+$('device').innerHTML = DEVICE.map(function (d) {
+  return '<div class="bar"><span>' + d[0] + '</span><div class="track"><div class="fill" style="width:' + (d[1] / dTot * 100).toFixed(1) + '%"></div></div><span class="n">' + pct(d[1] / dTot) + '</span></div>';
+}).join('');
+
+tbl('newret', ['広告', '2回目以上の人<span class="s">の割合</span>', 'しっかり見た<span class="s">はじめて</span>', 'しっかり見た<span class="s">2回目以上</span>'],
+  NEWRET.map(function (r) { return { cells: [r[0], pct(r[1]), pct(r[2], 0), { c: 'hi', v: pct(r[3], 0) }] }; }));
+
+bars('age', AGE, '人');
+bars('gender', GENDER, '人');
+bars('region', REGION, '人');
+bars('dow', DOW, '回');
+
+var hMax = Math.max.apply(null, HOURS);
+$('hours').innerHTML = HOURS.map(function (v, i) { return '<div class="' + (v > 800 ? 'pk' : '') + '" style="height:' + (v / hMax * 100).toFixed(1) + '%" title="' + i + '時 ' + v + '回"></div>'; }).join('');
+$('hoursX').innerHTML = HOURS.map(function (v, i) { return '<span>' + (i % 3 === 0 ? i : '') + '</span>'; }).join('');
+
+bars('cta', CTA, '人');
+tbl('dead', ['押されたところ', 'デッドクリック', 'イライラクリック', '考えられること'],
+  DEAD.map(function (r) { return { cells: [r[0], n(r[1]), r[2] ? { c: r[2] > 100 ? 'lo' : '', v: n(r[2]) } : '0', { c: 'l', v: r[3] }] }; }));
+
+$('flow').innerHTML = FLOW.map(function (f, i) {
+  return (i ? '<div class="arrow">↓</div>' : '') + '<div class="st"><span>' + f[0] + (f[2] ? '<small>' + f[2] + '</small>' : '') + '</span><b>' + n(f[1]) + '人</b></div>';
+}).join('');
+
+tbl('bk', ['予約した日', '入口', '店', 'メモ'], BOOK.map(function (b) { return { cells: [b[0], { c: 'l', v: b[1] }, b[2] || '—', { c: 'l', v: b[3] || '' }] }; }));
+
+/* ---------- data.json（広告費・日ごと・クーポン） ---------- */
+fetch('../data.json?v=' + Date.now()).then(function (r) { return r.json(); }).then(function (d) {
+  var spend = {}; CH.forEach(function (c) { spend[c.key] = 0; });
+  d.daily.forEach(function (row) { CH.forEach(function (c) { spend[c.key] += (row.ads && row.ads[c.key]) || 0; }); });
+  var totalSpend = CH.reduce(function (a, c) { return a + spend[c.key]; }, 0);
+  var t = d.totals;
+
+  $('resultLead').textContent = '広告費は各広告の管理画面（' + d.daily[0].date + '〜' + d.through + '）、人数はGA4の数字です。';
+  $('kpi').innerHTML = [
+    ['広告費', n(totalSpend) + '円', '上限50万円の' + pct(totalSpend / 500000, 0)],
+    ['LPに来た人', n(t.lp) + '人', '1人あたり ' + n(totalSpend / t.lp) + '円'],
+    ['予約フォームまで', n(t.form) + '人', 'LPに来た人の' + pct(t.form / t.lp, 2)],
+    ['予約完了', n(t.done) + '件', ''],
+    ['BFクーポン伝票', n(t.coupon_slips) + '件', '売上 ' + n(t.coupon_sales / 10000) + '万円']
+  ].map(function (k) { return '<div class="tile"><small>' + k[0] + '</small><b>' + k[1] + '</b><span>' + k[2] + '</span></div>'; }).join('');
+
+  // 日ごと
+  var lpMax = Math.max.apply(null, d.daily.map(function (r) { return r.lp || 0; }));
+  var cMax = Math.max.apply(null, d.daily.map(function (r) { return r.coupon_slips || 0; }));
+  $('daily').innerHTML = '<div class="d hd"><span>日付</span><span>LPに来た人</span><span>クーポン伝票</span></div>' + d.daily.map(function (r) {
+    return '<div class="d"><span>' + r.date + '<small style="color:var(--sub)">(' + r.dow + ')</small></span>' +
+      '<div class="track"><div class="fill" style="background:var(--bar);width:' + ((r.lp || 0) / lpMax * 100).toFixed(1) + '%"></div><span class="lbl">' + n(r.lp || 0) + '</span></div>' +
+      '<div class="track"><div class="fill" style="background:var(--red);width:' + ((r.coupon_slips || 0) / cMax * 100).toFixed(1) + '%"></div><span class="lbl">' + (r.coupon_slips == null ? '—' : n(r.coupon_slips)) + '</span></div></div>';
+  }).join('');
+  function avg(a, b, k) { var s = d.daily.slice(a, b); return s.reduce(function (x, r) { return x + (r[k] || 0); }, 0) / s.length; }
+  $('dailyNote').innerHTML = '<li>前半（11/13〜18）：LPに来た人 1日平均' + n(avg(0, 6, 'lp')) + '人／クーポン伝票 1日平均' + avg(0, 6, 'coupon_slips').toFixed(1) + '件</li>' +
+    '<li>後半（11/19〜' + d.through + '）：LPに来た人 1日平均' + n(avg(6, d.daily.length, 'lp')) + '人／クーポン伝票 1日平均' + avg(6, d.daily.length, 'coupon_slips').toFixed(1) + '件</li>' +
+    '<li>Yahoo!ディスプレイを止めてLPの人数は大きく減ったが、クーポン伝票はむしろ増えている。減ったのは、ほとんどすぐ帰る人だった</li>';
+
+  // 広告ごと
+  var rows = CH.map(function (c) {
+    var s = spend[c.key];
+    return { cells: [c.name, n(s) + '円', n(c.lp) + '人', n(s / c.lp) + '円',
+      { c: c.eng >= .6 ? 'hi' : c.eng < .2 ? 'lo' : '', v: pct(c.eng, 0) }, c.sec + '秒',
+      { c: c.cta / c.lp >= .15 ? 'hi' : c.cta / c.lp < .02 ? 'lo' : '', v: pct(c.cta / c.lp) }, n(c.act) + '人'] };
+  });
+  tbl('adTable', ['広告', '広告費', 'LPに来た人', '1人あたり<span class="s">広告費÷人数</span>', 'しっかり見た<span class="s">人の割合</span>', '平均の<span class="s">滞在時間</span>', 'ボタンを<span class="s">押した人の割合</span>', '来店につながる<span class="s">行動をした人</span>'], rows);
+
+  // 費用対効果
+  var actTot = CH.reduce(function (a, c) { return a + c.act; }, 0);
+  var r2 = CH.map(function (c) {
+    var s = spend[c.key], eng = c.lp * c.eng;
+    return { cells: [c.name, n(s) + '円', n(s / c.lp) + '円', n(s / eng) + '円', { c: '', v: n(s / c.act) + '円' }, c.act + '人'] };
+  });
+  r2.push({ cls: 'total', cells: ['広告の合計', n(totalSpend) + '円', n(totalSpend / CH.reduce(function (a, c) { return a + c.lp; }, 0)) + '円', '—', n(totalSpend / actTot) + '円', actTot + '人'] });
+  tbl('roiTable', ['広告', '広告費', 'LPに1人<span class="s">呼ぶのに</span>', 'しっかり見た人<span class="s">1人あたり</span>', '来店につながる行動<span class="s">1人あたり</span>', '来店につながる<span class="s">行動をした人</span>'], r2);
+  $('roiNote').innerHTML = '<li>広告費は管理画面（〜' + d.through + '）、人数はGA4（11/13〜11/26）。' + (d.through !== '11/26' ? '<b>11/26の広告費を入れると、ぴったり同じ期間になります</b>' : '同じ期間') + '</li>' +
+    '<li>「しっかり見た人1人あたり」＝広告費 ÷（LPに来た人 × しっかり見た割合）</li>' +
+    '<li>「来店につながる行動1人あたり」＝広告費 ÷（地図・Web予約・電話予約を押した人）</li>' +
+    '<li>参考：広告費 ' + n(totalSpend) + '円 ÷ BFクーポン伝票 ' + t.coupon_slips + '件 ＝ 1件あたり約' + n(totalSpend / t.coupon_slips) + '円（クーポンには広告を見ていない人もふくまれる）</li>';
+
+  $('couponKpi').innerHTML = [
+    ['伝票の数', n(t.coupon_slips) + '件', '〜' + d.through],
+    ['売上', n(t.coupon_sales) + '円', ''],
+    ['1件あたり', n(t.coupon_sales / t.coupon_slips) + '円', '売上 ÷ 伝票の数'],
+    ['広告費との比較', (t.coupon_sales / totalSpend).toFixed(1) + '倍', '売上 ÷ 広告費']
+  ].map(function (k) { return '<div class="tile"><small>' + k[0] + '</small><b>' + k[1] + '</b><span>' + k[2] + '</span></div>'; }).join('');
+}).catch(function () {
+  $('kpi').innerHTML = '<div class="card">data.json を読みこめませんでした</div>';
+});
+</script>
+</body>
+</html>
