@@ -199,13 +199,13 @@
       <ul class="dot" id="planPoint1"></ul>
     </div>
     <div class="card">
-      <b class="t">でも、予約フォームまで進む人の割合がザセールの約4分の1</b>
+      <b class="t">でも、予約フォームまで進む人の割合はザセールの約半分</b>
       <ul class="dot" id="planPoint2"></ul>
     </div>
   </div>
   <ul class="notes">
     <li>ザセール：8/7〜10/12（67日）。LPを見た人・予約はGA4、広告費はInstagram広告・P-MAX・Google検索の管理画面の合計</li>
-    <li>BFの目標：LP3,000人 → 予約フォーム90人（3.0%）→ 予約8件（8.8%）</li>
+    <li>BFの目標：LP3,000人 → 予約フォーム90人（3.0%）→ 予約8件（8.8%）。広告費14.45万円で計画したとき（11/6）の目標で、11/12に予算を50万円に上げたあとは見直していない</li>
     <li>人数はどちらも「その日のうちにLPを見て、予約フォーム・予約完了まで進んだ人」で数えています</li>
   </ul>
 </section>
@@ -657,20 +657,21 @@ fetch('../data.json?v=' + Date.now()).then(function (r) { return r.json(); }).th
     { cells: ['お店カードのボタン', L('Web予約・電話予約'), L('Web予約・電話予約<br><b>＋「地図・営業時間を見る」</b>')] },
     { cells: ['季節', L('夏〜秋'), L('冬のはじめ（年末の前）')] }
   ]);
-  tbl('planTable', ['', 'ザセール<span class="s">8/7〜10/12</span>', 'BFの目標', 'BFの実績<span class="s">' + d.daily[0].date + '〜' + d.through + '</span>'], [
-    { cells: ['LPを見た人', n(SALE.lp) + '人', n(PLAN.lp) + '人', { c: 'hi', v: n(t.lp) + '人' }] },
-    { cells: ['LP → 予約フォーム', pct(SALE.form / SALE.lp, 1), pct(PLAN.form / PLAN.lp, 1), { c: 'lo', v: pct(t.form / t.lp, 2) + '（' + t.form + '÷' + n(t.lp) + '）' }] },
-    { cells: ['予約フォーム → 予約', pct(SALE.done / SALE.form, 1), pct(PLAN.done / PLAN.form, 1), { c: 'lo', v: pct(t.done / t.form, 1) + '（' + t.done + '÷' + t.form + '）' }] },
-    { cells: ['予約', SALE.done + '件', PLAN.done + '件', { c: 'lo', v: t.done + '件' }] },
-    { cells: ['1人あたりの広告費', '約' + n(SALE.spend / SALE.lp) + '円', '', { c: 'hi', v: '約' + n(totalSpend / t.lp) + '円' }] },
-    { cells: ['予約1件あたりの広告費', '約' + (SALE.spend / SALE.done / 10000).toFixed(1) + '万円', '', { c: 'lo', v: '約' + (totalSpend / t.done / 10000).toFixed(1) + '万円' }] }
+  var spendNoYd = totalSpend - spend.ydisp, doneNoYd = t.done - (yd ? yd.done : 0);
+  tbl('planTable', ['', 'ザセール<span class="s">8/7〜10/12</span>', 'BFの目標', 'BFの実績<span class="s">' + d.daily[0].date + '〜' + d.through + '・Yahoo!ディスプレイを除く</span>'], [
+    { cells: ['LPを見た人', n(SALE.lp) + '人', n(PLAN.lp) + '人', { c: 'hi', v: n(lpNoYd) + '人' }] },
+    { cells: ['LP → 予約フォーム', pct(SALE.form / SALE.lp, 1), pct(PLAN.form / PLAN.lp, 1), { c: 'lo', v: pct(formNoYd / lpNoYd, 2) + '（' + formNoYd + '÷' + n(lpNoYd) + '）' }] },
+    { cells: ['予約フォーム → 予約', pct(SALE.done / SALE.form, 1), pct(PLAN.done / PLAN.form, 1), { c: 'lo', v: pct(doneNoYd / formNoYd, 1) + '（' + doneNoYd + '÷' + formNoYd + '）' }] },
+    { cells: ['予約', SALE.done + '件', PLAN.done + '件', { c: 'lo', v: doneNoYd + '件' }] },
+    { cells: ['1人あたりの広告費', '約' + n(SALE.spend / SALE.lp) + '円', '', { c: 'hi', v: '約' + n(spendNoYd / lpNoYd) + '円' }] },
+    { cells: ['予約1件あたりの広告費', '約' + (SALE.spend / SALE.done / 10000).toFixed(1) + '万円', '', { c: 'lo', v: '約' + (spendNoYd / doneNoYd / 10000).toFixed(1) + '万円' }] }
   ]);
   $('planPoint1').innerHTML =
-    '<li>LPを見た人は目標の<span class="em">約' + (t.lp / PLAN.lp).toFixed(1) + '倍</span>（' + n(t.lp) + '÷' + n(PLAN.lp) + '）</li>' +
-    '<li>1人あたりの広告費はザセールの<span class="u">半分以下</span>（BF 約' + n(totalSpend / t.lp) + '円／ザセール 約' + n(SALE.spend / SALE.lp) + '円）</li>';
+    '<li>LPを見た人は目標の<span class="em">約' + (lpNoYd / PLAN.lp).toFixed(1) + '倍</span>（' + n(lpNoYd) + '÷' + n(PLAN.lp) + '）</li>' +
+    '<li>1人あたりの広告費はザセールの約' + Math.round((spendNoYd / lpNoYd) / (SALE.spend / SALE.lp) * 10) + '割（BF 約' + n(spendNoYd / lpNoYd) + '円／ザセール 約' + n(SALE.spend / SALE.lp) + '円）</li>';
   $('planPoint2').innerHTML =
-    '<li>LP → 予約フォームはザセール2.5%に対してBF ' + pct(t.form / t.lp, 2) + '。ザセールの約' + ((t.form / t.lp) / (SALE.form / SALE.lp)).toFixed(2) + '倍しかない</li>' +
-    '<li>すぐ帰る人が多かったYahoo!ディスプレイ（' + n(yd ? yd.lp : 0) + '人）を除いても ' + pct(formNoYd / lpNoYd, 2) + '（' + formNoYd + '÷' + n(lpNoYd) + '）で、ザセールの半分くらい</li>' +
+    '<li>LP → 予約フォームはザセール2.5%に対してBF ' + pct(formNoYd / lpNoYd, 2) + '。ザセールの約' + ((formNoYd / lpNoYd) / (SALE.form / SALE.lp)).toFixed(2) + '倍</li>' +
+    '<li>Yahoo!ディスプレイ（' + n(yd ? yd.lp : 0) + '人・' + n(spend.ydisp) + '円）は、来た人の約9割がすぐ帰っていたので、この表から除いた。入れると ' + pct(t.form / t.lp, 2) + '（' + t.form + '÷' + n(t.lp) + '）まで下がる</li>' +
     '<li>BFでは、お店カードに「地図・営業時間を見る」ボタンを足した。押した人は226人で、「Web予約」の62人より多い。予約しないでお店に行く人が、予約フォームではなく地図に流れたぶんも、割合が下がった理由と考えられる</li>' +
     '<li>そのほか、安く集められたぶん<span class="u">予約する気の少ない人が多かった</span>ことと、LPの中で<span class="u">予約まで進みにくかった</span>ことも原因と考えられる（くわしくは「LPの中の行動」）</li>';
 
