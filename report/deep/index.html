@@ -182,6 +182,9 @@
 <section id="plan">
   <h2>計画（ザセール基準）とのくらべ</h2>
   <p class="lead">BFの目標は、ザセールの割合の約1.2倍で決めました。その計画どおりだったかを見ています。</p>
+  <h3>くらべる前に：ザセールとのちがい</h3>
+  <div class="tablebox"><table id="diffTable"></table></div>
+  <h3>計画とのくらべ</h3>
   <div class="tablebox"><table id="planTable"></table></div>
   <div class="point" style="margin-top:10px">
     <div class="card">
@@ -540,6 +543,14 @@ fetch('../data.json?v=' + Date.now()).then(function (r) { return r.json(); }).th
   var PLAN = { lp: 3000, form: 90, done: 8 };
   var yd = d.channels.filter(function (c) { return c.key === 'ydisp'; })[0];
   var lpNoYd = t.lp - (yd ? yd.lp : 0), formNoYd = t.form - (yd ? yd.form : 0);
+  function L(s) { return { c: 'l', v: s }; }
+  tbl('diffTable', ['', 'ザセール', 'BF'], [
+    { cells: ['開催期間', L('8/7〜10/12（67日）'), L('11/13〜11/29（17日）<br>このレポートは' + d.daily[0].date + '〜' + d.through + '（' + d.daily.length + '日）')] },
+    { cells: ['広告費', L(n(SALE.spend) + '円<br>1日あたり約' + n(SALE.spend / 67) + '円'), L(n(totalSpend) + '円（上限50万円）<br>1日あたり約' + n(totalSpend / d.daily.length) + '円')] },
+    { cells: ['広告の種類', L('Instagram広告・P-MAX・Google検索'), L('メタ（Instagram広告）・P-MAX・Google検索<br><b>＋Yahoo!検索・Yahoo!ディスプレイ</b>')] },
+    { cells: ['お店カードのボタン', L('Web予約・電話予約'), L('Web予約・電話予約<br><b>＋「地図・営業時間を見る」</b>')] },
+    { cells: ['季節', L('夏〜秋'), L('冬のはじめ（年末の前）')] }
+  ]);
   tbl('planTable', ['', 'ザセール<span class="s">8/7〜10/12</span>', 'BFの目標', 'BFの実績<span class="s">' + d.daily[0].date + '〜' + d.through + '</span>'], [
     { cells: ['LPを見た人', n(SALE.lp) + '人', n(PLAN.lp) + '人', { c: 'hi', v: n(t.lp) + '人' }] },
     { cells: ['LP → 予約フォーム', pct(SALE.form / SALE.lp, 1), pct(PLAN.form / PLAN.lp, 1), { c: 'lo', v: pct(t.form / t.lp, 2) + '（' + t.form + '÷' + n(t.lp) + '）' }] },
@@ -554,7 +565,8 @@ fetch('../data.json?v=' + Date.now()).then(function (r) { return r.json(); }).th
   $('planPoint2').innerHTML =
     '<li>LP → 予約フォームはザセール2.5%に対してBF ' + pct(t.form / t.lp, 2) + '。ザセールの約' + ((t.form / t.lp) / (SALE.form / SALE.lp)).toFixed(2) + '倍しかない</li>' +
     '<li>すぐ帰る人が多かったYahoo!ディスプレイ（' + n(yd ? yd.lp : 0) + '人）を除いても ' + pct(formNoYd / lpNoYd, 2) + '（' + formNoYd + '÷' + n(lpNoYd) + '）で、ザセールの半分くらい</li>' +
-    '<li>安く集められたぶん<span class="u">予約する気の少ない人が多かった</span>ことと、LPの中で<span class="u">予約まで進みにくかった</span>ことの両方が原因と考えられる（くわしくは「LPの中の行動」）</li>';
+    '<li>BFでは、お店カードに「地図・営業時間を見る」ボタンを足した。押した人は226人で、「Web予約」の62人より多い。予約しないでお店に行く人が、予約フォームではなく地図に流れたぶんも、割合が下がった理由と考えられる</li>' +
+    '<li>そのほか、安く集められたぶん<span class="u">予約する気の少ない人が多かった</span>ことと、LPの中で<span class="u">予約まで進みにくかった</span>ことも原因と考えられる（くわしくは「LPの中の行動」）</li>';
 
   $('resultLead').textContent = '広告費は各広告の管理画面（' + d.daily[0].date + '〜' + d.through + '）、人数はGA4の数字です。';
   $('kpi').innerHTML = [
