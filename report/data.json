@@ -1,15 +1,15 @@
 {
-  "updated": "2026-11-26",
-  "through": "11/25",
+  "updated": "2026-11-27",
+  "through": "11/26",
   "period": "11/13(金)〜11/29(日)",
   "budget_limit": 500000,
   "totals": {
-    "spend": 355819,
-    "lp": 11176,
-    "form": 74,
-    "done": 3,
-    "coupon_slips": 188,
-    "coupon_sales": 5239776
+    "spend": 388423,
+    "lp": 11659,
+    "form": 78,
+    "done": 4,
+    "coupon_slips": 198,
+    "coupon_sales": 5503356
   },
   "daily": [
     {
@@ -648,14 +648,63 @@
           0
         ]
       }
+    },
+    {
+      "date": "11/26",
+      "dow": "木",
+      "ads": {
+        "meta": 10109,
+        "pmax": 10368,
+        "gsearch": 9691,
+        "ysearch": 2436,
+        "ydisp": 0
+      },
+      "lp": 483,
+      "form": 4,
+      "done": 1,
+      "coupon_slips": 10,
+      "coupon_sales": 263580,
+      "memo": "予約1件（訪問サービスの広告→BF LP→あとで直接来て予約）／おもちゃのまち西口店で11/20の伝票（489,600円）が取り消し",
+      "by": {
+        "meta": [
+          223,
+          0,
+          0
+        ],
+        "pmax": [
+          251,
+          0,
+          0
+        ],
+        "gsearch": [
+          11,
+          0,
+          0
+        ],
+        "ysearch": [
+          18,
+          1,
+          0
+        ],
+        "ydisp": [
+          0,
+          0,
+          0
+        ],
+        "free": [
+          10,
+          1,
+          0
+        ]
+      }
     }
   ],
   "channels": [
     {
       "name": "メタ（Instagram広告）",
-      "spend": 132660,
-      "clicks": 3284,
-      "lp": 2608,
+      "spend": 142769,
+      "clicks": 3520,
+      "lp": 2831,
       "form": 28,
       "done": 0,
       "note": "A（8,800円の画像）とB（10%OFF）の合計",
@@ -666,9 +715,9 @@
     },
     {
       "name": "P-MAX（Google）",
-      "spend": 89304,
-      "clicks": 7981,
-      "lp": 3033,
+      "spend": 99672,
+      "clicks": 8555,
+      "lp": 3284,
       "form": 11,
       "done": 1,
       "note": "",
@@ -679,9 +728,9 @@
     },
     {
       "name": "Google検索（BF広告）",
-      "spend": 89891,
-      "clicks": 699,
-      "lp": 110,
+      "spend": 99582,
+      "clicks": 759,
+      "lp": 121,
       "form": 5,
       "done": 0,
       "note": "",
@@ -692,10 +741,10 @@
     },
     {
       "name": "Yahoo!検索",
-      "spend": 30552,
-      "clicks": 336,
-      "lp": 266,
-      "form": 10,
+      "spend": 32988,
+      "clicks": 364,
+      "lp": 284,
+      "form": 11,
       "done": 1,
       "note": "11/25に「メガネ 店」を停止",
       "key": "ysearch",
@@ -738,12 +787,19 @@
       "booked": "11/24 16:12",
       "store": "エキア谷塚店",
       "status": "11/27 18時 来店予定"
+    },
+    {
+      "no": 4,
+      "channel": "訪問サービスの広告（BF以外）→BF LP→直接",
+      "booked": "11/26",
+      "store": "確認中",
+      "status": "BF目的か確認中"
     }
   ],
   "days": 17,
   "free_total": {
-    "lp": 219,
-    "form": 21,
+    "lp": 229,
+    "form": 22,
     "done": 0,
     "note": "自然検索（Google・Yahoo!・Bing）・Googleマップ・LINE・メルマガ・ほかのサイト・直接"
   }
